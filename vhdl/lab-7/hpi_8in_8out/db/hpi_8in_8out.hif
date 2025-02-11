@@ -1,0 +1,28 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+hpi_8in_8out
+# case_insensitive
+# source_file
+hpi_8in_8out.bdf
+1732108119
+23
+# storage
+db|hpi_8in_8out.(0).cnf
+db|hpi_8in_8out.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

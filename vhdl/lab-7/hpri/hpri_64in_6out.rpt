@@ -1,0 +1,838 @@
+Project Information                           e:\lab-7\hpri\hpri_64in_6out.rpt
+
+MAX+plus II Compiler Report File
+Version 9.01 07/30/98
+Compiled: 12/10/20 22:24:03
+
+Copyright (C) 1988-1998 Altera Corporation
+Any megafunction design, and related net list (encrypted or decrypted),
+support information, device programming or simulation file, and any other
+associated documentation or information provided by Altera or a partner
+under Altera's Megafunction Partnership Program may be used only to
+program PLD devices (but not masked PLD devices) from Altera.  Any other
+use of such megafunction design, net list, support information, device
+programming or simulation file, or any other related documentation or
+information is prohibited for any other purpose, including, but not
+limited to modification, reverse engineering, de-compiling, or use with
+any other silicon devices, unless such use is explicitly licensed under
+a separate agreement with Altera or a megafunction partner.  Title to
+the intellectual property, including patents, copyrights, trademarks,
+trade secrets, or maskworks, embodied in any such megafunction design,
+net list, support information, device programming or simulation file, or
+any other related documentation or information provided by Altera or a
+megafunction partner, remains with Altera, the megafunction partner, or
+their respective licensors.  No other licenses, including any licenses
+needed under any third party's intellectual property, are provided herein.
+
+
+
+***** Project compilation was unsuccessful
+
+
+
+
+** DEVICE SUMMARY **
+
+Chip/                     Input   Output   Bidir         Shareable
+POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
+
+hpri_64in_6out
+      EPM7096QC100-7       65       8        0      23      5           No Fit
+
+User Pins:                 65       8        0  
+
+
+
+Project Information                           e:\lab-7\hpri\hpri_64in_6out.rpt
+
+** PROJECT COMPILATION MESSAGES **
+
+Error: No partition possible because logic cell EO requires too many (65/36) inputs from PIA
+Error: No partition possible because logic cell G requires too many (65/36) inputs from PIA
+Error: No partition possible because logic cell a4 requires too many (49/36) inputs from PIA
+Error: No partition possible because logic cell a3 requires too many (57/36) inputs from PIA
+Error: No partition possible because logic cell a0 requires too many (44/36) inputs from PIA
+Error: No partition possible because logic cell a1 requires too many (43/36) inputs from PIA
+Error: No partition possible because logic cell a2 requires too many (41/36) inputs from PIA
+Error: No fit found, generating Report File
+
+(See individual chip error summaries for additional information)
+
+Project Information                           e:\lab-7\hpri\hpri_64in_6out.rpt
+
+** FILE HIERARCHY **
+
+
+
+|hpri_32in_5out:80|
+|hpri_32in_5out:80|hpri_16in_4out:2|
+|hpri_32in_5out:80|hpri_16in_4out:2|hpri_8in_3out:2|
+|hpri_32in_5out:80|hpri_16in_4out:2|hpri_8in_3out:1|
+|hpri_32in_5out:80|hpri_16in_4out:1|
+|hpri_32in_5out:80|hpri_16in_4out:1|hpri_8in_3out:2|
+|hpri_32in_5out:80|hpri_16in_4out:1|hpri_8in_3out:1|
+|hpri_32in_5out:82|
+|hpri_32in_5out:82|hpri_16in_4out:2|
+|hpri_32in_5out:82|hpri_16in_4out:2|hpri_8in_3out:2|
+|hpri_32in_5out:82|hpri_16in_4out:2|hpri_8in_3out:1|
+|hpri_32in_5out:82|hpri_16in_4out:1|
+|hpri_32in_5out:82|hpri_16in_4out:1|hpri_8in_3out:2|
+|hpri_32in_5out:82|hpri_16in_4out:1|hpri_8in_3out:1|
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_64in_6out.rpt
+hpri_64in_6out
+
+***** Logic for device 'hpri_64in_6out' contains errors -- see ERROR SUMMARY.
+
+
+
+
+Device: EPM7096QC100-7
+
+Device Options:
+    Turbo Bit                                    = ON
+    Security Bit                                 = OFF
+    MultiVolt I/O                              = OFF
+
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_64in_6out.rpt
+hpri_64in_6out
+
+** ERROR SUMMARY **
+
+Error: Logic cell 'a0' requires too many (44/36) inputs from PIA
+Error: Logic cell 'a1' requires too many (43/36) inputs from PIA
+Error: Logic cell 'a2' requires too many (41/36) inputs from PIA
+Error: Logic cell 'a3' requires too many (57/36) inputs from PIA
+Error: Logic cell 'a4' requires too many (49/36) inputs from PIA
+Error: Logic cell 'EO' requires too many (65/36) inputs from PIA
+Error: Logic cell 'G' requires too many (65/36) inputs from PIA
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_64in_6out.rpt
+hpri_64in_6out
+
+** RESOURCE USAGE **
+
+                                                Shareable     External
+Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
+
+A:     LC1 - LC16     0/16(  0%)   0/12(  0%)   0/16(  0%)   0/36(  0%) 
+B:    LC17 - LC32     0/16(  0%)   0/12(  0%)   0/16(  0%)   0/36(  0%) 
+C:    LC33 - LC48     0/16(  0%)   0/12(  0%)   0/16(  0%)   0/36(  0%) 
+D:    LC49 - LC64     0/16(  0%)   0/12(  0%)   0/16(  0%)   0/36(  0%) 
+E:    LC65 - LC80     0/16(  0%)   0/12(  0%)   0/16(  0%)   0/36(  0%) 
+F:    LC81 - LC96     0/16(  0%)   0/12(  0%)   0/16(  0%)   0/36(  0%) 
+
+
+Total dedicated input pins used:                 0/4      (  0%)
+Total I/O pins used:                             0/72     (  0%)
+Total logic cells used:                          0/96     (  0%)
+Total shareable expanders used:                  0/96     (  0%)
+Total Turbo logic cells used:                   23/96     ( 23%)
+Total shareable expanders not available (n/a):  18/96     ( 18%)
+Average fan-in:                                  31.91
+Total fan-in:                                   734
+
+Total input pins required:                      65
+Total output pins required:                      8
+Total bidirectional pins required:               0
+Total logic cells required:                     23
+Total flipflops required:                        0
+Total product terms required:                   96
+Total logic cells lending parallel expanders:    0
+Total shareable expanders in database:           5
+
+Synthesized logic cells:                        15/  96   ( 15%)
+
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_64in_6out.rpt
+hpri_64in_6out
+
+** INPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  ??      -   ??      INPUT               0      0   0    0    0    8    0  EI
+  ??      -   ??      INPUT               0      0   0    0    0    2    0  r0
+  ??      -   ??      INPUT               0      0   0    0    0    3    0  r1
+  ??      -   ??      INPUT               0      0   0    0    0    4    0  r2
+  ??      -   ??      INPUT               0      0   0    0    0    4    0  r3
+  ??      -   ??      INPUT               0      0   0    0    0    5    0  r4
+  ??      -   ??      INPUT               0      0   0    0    0    5    0  r5
+  ??      -   ??      INPUT               0      0   0    0    0    5    0  r6
+  ??      -   ??      INPUT               0      0   0    0    0    5    0  r7
+  ??      -   ??      INPUT               0      0   0    0    0    3    3  r8
+  ??      -   ??      INPUT               0      0   0    0    0    6    1  r9
+  ??      -   ??      INPUT               0      0   0    0    0    6    2  r11
+  ??      -   ??      INPUT               0      0   0    0    0    4    3  r12
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r13
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r14
+  ??      -   ??      INPUT               0      0   0    0    0    6    3  r15
+  ??      -   ??      INPUT               0      0   0    0    0    4    3  r16
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r17
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r18
+  ??      -   ??      INPUT               0      0   0    0    0    6    4  r19
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r20
+  ??      -   ??      INPUT               0      0   0    0    0    6    4  r21
+  ??      -   ??      INPUT               0      0   0    0    0    6    4  r22
+  ??      -   ??      INPUT               0      0   0    0    0    7    5  r23
+  ??      -   ??      INPUT               0      0   0    0    0    4    3  r24
+  ??      -   ??      INPUT               0      0   0    0    0    5    4  r25
+  ??      -   ??      INPUT               0      0   0    0    0    5    4  r26
+  ??      -   ??      INPUT               0      0   0    0    0    6    5  r27
+  ??      -   ??      INPUT               0      0   0    0    0    5    4  r28
+  ??      -   ??      INPUT               0      0   0    0    0    6    6  r29
+  ??      -   ??      INPUT               0      0   0    0    0    6    6  r30
+  ??      -   ??      INPUT               0      0   0    0    0    7    8  r31
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r32
+  ??      -   ??      INPUT               0      0   0    0    0    6    5  r33
+  ??      -   ??      INPUT               0      0   0    0    0    6    5  r34
+  ??      -   ??      INPUT               0      0   0    0    0    7    7  r35
+  ??      -   ??      INPUT               0      0   0    0    0    6    5  r36
+  ??      -   ??      INPUT               0      0   0    0    0    7    7  r37
+  ??      -   ??      INPUT               0      0   0    0    0    7    7  r38
+  ??      -   ??      INPUT               0      0   0    0    0    8   10  r39
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r40
+  ??      -   ??      INPUT               0      0   0    0    0    6    6  r41
+  ??      -   ??      INPUT               0      0   0    0    0    6    6  r42
+  ??      -   ??      INPUT               0      0   0    0    0    7    9  r43
+  ??      -   ??      INPUT               0      0   0    0    0    6    6  r44
+  ??      -   ??      INPUT               0      0   0    0    0    7    9  r45
+  ??      -   ??      INPUT               0      0   0    0    0    7    9  r46
+  ??      -   ??      INPUT               0      0   0    0    0    8   12  r47
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r48
+  ??      -   ??      INPUT               0      0   0    0    0    6    7  r49
+  ??      -   ??      INPUT               0      0   0    0    0    6    7  r50
+  ??      -   ??      INPUT               0      0   0    0    0    7   11  r51
+  ??      -   ??      INPUT               0      0   0    0    0    6    7  r52
+  ??      -   ??      INPUT               0      0   0    0    0    7   11  r53
+  ??      -   ??      INPUT               0      0   0    0    0    7   11  r54
+  ??      -   ??      INPUT               0      0   0    0    0    8   15  r55
+  ??      -   ??      INPUT               0      0   0    0    0    5    3  r56
+  ??      -   ??      INPUT               0      0   0    0    0    6    7  r57
+  ??      -   ??      INPUT               0      0   0    0    0    7    6  r58
+  ??      -   ??      INPUT               0      0   0    0    0    7   11  r59
+  ??      -   ??      INPUT               0      0   0    0    0    8    5  r60
+  ??      -   ??      INPUT               0      0   0    0    0    8   10  r61
+  ??      -   ??      INPUT               0      0   0    0    0    8   10  r62
+  ??      -   ??      INPUT               0      0   0    0    0    8   15  r63
+  ??      -   ??      INPUT               0      0   0    0    0    5    2  10
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_64in_6out.rpt
+hpri_64in_6out
+
+** OUTPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  ??     ??   ??     OUTPUT      t        4      0   1   39    5    0    0  a0
+  ??     ??   ??     OUTPUT      t        3      0   1   38    5    0    0  a1
+  ??     ??   ??     OUTPUT      t        1      0   1   36    5    0    0  a2
+  ??     ??   ??     OUTPUT      t        0      0   0   57    0    0    0  a3
+  ??     ??   ??     OUTPUT      t        0      0   0   49    0    0    0  a4
+  ??     ??   ??     OUTPUT      t        0      0   0   33    0    0    0  a5
+  ??     ??   ??     OUTPUT      t        0      0   0   65    0    0    0  EO
+  ??     ??   ??     OUTPUT      t        0      0   0   65    0    0    0  G
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_64in_6out.rpt
+hpri_64in_6out
+
+** BURIED LOGIC **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+   -     ??   ??       SOFT    s t        1      0   1   33    0    1    0  ~83~1
+   -     ??   ??       SOFT    s t        1      0   1   28    0    1    0  ~83~2
+   -     ??   ??       SOFT    s t        1      0   1   23    0    1    0  ~83~3
+   -     ??   ??       SOFT    s t        1      0   1   18    0    1    0  ~83~4
+   -     ??   ??       SOFT    s t        1      0   1   13    0    1    0  ~83~5
+   -     ??   ??       SOFT    s t        1      0   1   33    0    1    0  ~86~1
+   -     ??   ??       SOFT    s t        1      0   1   27    0    1    0  ~86~2
+   -     ??   ??       SOFT    s t        1      0   1   23    0    1    0  ~86~3
+   -     ??   ??       SOFT    s t        1      0   1   17    0    1    0  ~86~4
+   -     ??   ??       SOFT    s t        1      0   1   13    0    1    0  ~86~5
+   -     ??   ??       SOFT    s t        1      0   1   33    0    1    0  ~89~1
+   -     ??   ??       SOFT    s t        1      0   1   25    0    1    0  ~89~2
+   -     ??   ??       SOFT    s t        1      0   1   21    0    1    0  ~89~3
+   -     ??   ??       SOFT    s t        1      0   1   17    0    1    0  ~89~4
+   -     ??   ??       SOFT    s t        1      0   1   13    0    1    0  ~89~5
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_64in_6out.rpt
+hpri_64in_6out
+
+** EQUATIONS **
+
+EI       : INPUT;
+r0       : INPUT;
+r1       : INPUT;
+r2       : INPUT;
+r3       : INPUT;
+r4       : INPUT;
+r5       : INPUT;
+r6       : INPUT;
+r7       : INPUT;
+r8       : INPUT;
+r9       : INPUT;
+r11      : INPUT;
+r12      : INPUT;
+r13      : INPUT;
+r14      : INPUT;
+r15      : INPUT;
+r16      : INPUT;
+r17      : INPUT;
+r18      : INPUT;
+r19      : INPUT;
+r20      : INPUT;
+r21      : INPUT;
+r22      : INPUT;
+r23      : INPUT;
+r24      : INPUT;
+r25      : INPUT;
+r26      : INPUT;
+r27      : INPUT;
+r28      : INPUT;
+r29      : INPUT;
+r30      : INPUT;
+r31      : INPUT;
+r32      : INPUT;
+r33      : INPUT;
+r34      : INPUT;
+r35      : INPUT;
+r36      : INPUT;
+r37      : INPUT;
+r38      : INPUT;
+r39      : INPUT;
+r40      : INPUT;
+r41      : INPUT;
+r42      : INPUT;
+r43      : INPUT;
+r44      : INPUT;
+r45      : INPUT;
+r46      : INPUT;
+r47      : INPUT;
+r48      : INPUT;
+r49      : INPUT;
+r50      : INPUT;
+r51      : INPUT;
+r52      : INPUT;
+r53      : INPUT;
+r54      : INPUT;
+r55      : INPUT;
+r56      : INPUT;
+r57      : INPUT;
+r58      : INPUT;
+r59      : INPUT;
+r60      : INPUT;
+r61      : INPUT;
+r62      : INPUT;
+r63      : INPUT;
+10       : INPUT;
+
+-- Node name is 'a0' 
+-- Equation name is 'a0', type is output 
+ a0      = LCELL( _EQ001 $  _EQ002);
+  _EQ001 =  EI & !_N009 & !_N010 & !_N011 & !_N018 & !_N021 &  r2 & !r3 & !r5 & 
+             !r7 & !r9 & !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & 
+             !r25 & !r27 & !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & 
+             !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & 
+             !r61 & !r63 &  _X001 &  _X002 &  _X003
+         #  EI & !_N009 & !_N010 & !_N011 & !_N018 & !_N021 & !r1 & !r3 & !r5 & 
+             !r7 & !r9 & !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & 
+             !r25 & !r27 & !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & 
+             !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & 
+             !r61 & !r63 &  _X001 &  _X002 &  _X003
+         #  EI & !_N009 & !_N010 & !_N011 & !_N018 & !_N021 &  r4 & !r5 & !r7 & 
+             !r9 & !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & 
+             !r27 & !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & 
+             !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & 
+             !r63 &  _X001 &  _X002 &  _X003
+         #  EI & !_N009 & !_N010 & !_N011 & !_N018 & !_N021 &  r6 & !r7 & !r9 & 
+             !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & 
+             !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & 
+             !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63 & 
+              _X001 &  _X002 &  _X003;
+  _X001  = EXP( r58 & !r59 & !r61 & !r63);
+  _X002  = EXP( r60 & !r61 & !r63);
+  _X003  = EXP( r62 & !r63);
+  _EQ002 =  EI & !_N009 & !_N010 & !_N011 & !_N018 & !_N021 &  _X001 &  _X002 & 
+              _X003;
+  _X001  = EXP( r58 & !r59 & !r61 & !r63);
+  _X002  = EXP( r60 & !r61 & !r63);
+  _X003  = EXP( r62 & !r63);
+
+-- Node name is 'a1' 
+-- Equation name is 'a1', type is output 
+ a1      = LCELL( _EQ003 $  _EQ004);
+  _EQ003 =  EI & !_N012 & !_N013 & !_N014 & !_N019 & !_N022 & !r2 & !r3 & !r6 & 
+             !r7 & !r11 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & 
+             !r27 & !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & 
+             !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & 
+             !r63 &  _X004 &  _X005 & !10
+         #  EI & !_N012 & !_N013 & !_N014 & !_N019 & !_N022 &  r5 & !r6 & !r7 & 
+             !r11 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & 
+             !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & 
+             !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63 & 
+              _X004 &  _X005 & !10
+         #  EI & !_N012 & !_N013 & !_N014 & !_N019 & !_N022 &  r4 & !r6 & !r7 & 
+             !r11 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & 
+             !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & 
+             !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63 & 
+              _X004 &  _X005 & !10
+         #  EI & !_N012 & !_N013 & !_N014 & !_N019 & !_N022 &  r9 & !r11 & 
+             !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & 
+             !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & 
+             !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63 &  _X004 & 
+              _X005 & !10;
+  _X004  = EXP( r61 & !r62 & !r63);
+  _X005  = EXP( r60 & !r62 & !r63);
+  _EQ004 =  EI & !_N012 & !_N013 & !_N014 & !_N019 & !_N022 &  _X004 &  _X005;
+  _X004  = EXP( r61 & !r62 & !r63);
+  _X005  = EXP( r60 & !r62 & !r63);
+
+-- Node name is 'a2' 
+-- Equation name is 'a2', type is output 
+ a2      = LCELL( _EQ005 $  _EQ006);
+  _EQ005 =  EI & !_N015 & !_N016 & !_N017 & !_N020 & !_N023 & !r4 & !r5 & !r6 & 
+             !r7 & !r12 & !r13 & !r14 & !r15 & !r20 & !r21 & !r22 & !r23 & 
+             !r28 & !r29 & !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & !r44 & 
+             !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & 
+             !r62 & !r63
+         #  EI & !_N015 & !_N016 & !_N017 & !_N020 & !_N023 &  r11 & !r12 & 
+             !r13 & !r14 & !r15 & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & 
+             !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & 
+             !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  EI & !_N015 & !_N016 & !_N017 & !_N020 & !_N023 & !r12 & !r13 & 
+             !r14 & !r15 & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & !r30 & 
+             !r31 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & 
+             !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63 &  10
+         #  EI & !_N015 & !_N016 & !_N017 & !_N020 & !_N023 &  r9 & !r12 & 
+             !r13 & !r14 & !r15 & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & 
+             !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & 
+             !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63;
+  _EQ006 =  EI & !_N015 & !_N016 & !_N017 & !_N020 & !_N023;
+
+-- Node name is 'a3' 
+-- Equation name is 'a3', type is output 
+ a3      = LCELL( _EQ007 $  VCC);
+  _EQ007 =  EI & !r8 & !r9 & !r11 & !r12 & !r13 & !r14 & !r15 & !r16 & !r17 & 
+             !r18 & !r19 & !r20 & !r21 & !r22 & !r23 & !r24 & !r25 & !r26 & 
+             !r27 & !r28 & !r29 & !r30 & !r31 & !r32 & !r33 & !r34 & !r35 & 
+             !r36 & !r37 & !r38 & !r39 & !r40 & !r41 & !r42 & !r43 & !r44 & 
+             !r45 & !r46 & !r47 & !r48 & !r49 & !r50 & !r51 & !r52 & !r53 & 
+             !r54 & !r55 & !r56 & !r57 & !r58 & !r59 & !r60 & !r61 & !r62 & 
+             !r63 & !10;
+
+-- Node name is 'a4' 
+-- Equation name is 'a4', type is output 
+ a4      = LCELL( _EQ008 $  VCC);
+  _EQ008 =  EI & !r16 & !r17 & !r18 & !r19 & !r20 & !r21 & !r22 & !r23 & !r24 & 
+             !r25 & !r26 & !r27 & !r28 & !r29 & !r30 & !r31 & !r32 & !r33 & 
+             !r34 & !r35 & !r36 & !r37 & !r38 & !r39 & !r40 & !r41 & !r42 & 
+             !r43 & !r44 & !r45 & !r46 & !r47 & !r48 & !r49 & !r50 & !r51 & 
+             !r52 & !r53 & !r54 & !r55 & !r56 & !r57 & !r58 & !r59 & !r60 & 
+             !r61 & !r62 & !r63;
+
+-- Node name is 'a5' 
+-- Equation name is 'a5', type is output 
+ a5      = LCELL( _EQ009 $  VCC);
+  _EQ009 =  EI & !r32 & !r33 & !r34 & !r35 & !r36 & !r37 & !r38 & !r39 & !r40 & 
+             !r41 & !r42 & !r43 & !r44 & !r45 & !r46 & !r47 & !r48 & !r49 & 
+             !r50 & !r51 & !r52 & !r53 & !r54 & !r55 & !r56 & !r57 & !r58 & 
+             !r59 & !r60 & !r61 & !r62 & !r63;
+
+-- Node name is 'EO' 
+-- Equation name is 'EO', type is output 
+ EO      = LCELL( _EQ010 $  GND);
+  _EQ010 =  EI & !r0 & !r1 & !r2 & !r3 & !r4 & !r5 & !r6 & !r7 & !r8 & !r9 & 
+             !r11 & !r12 & !r13 & !r14 & !r15 & !r16 & !r17 & !r18 & !r19 & 
+             !r20 & !r21 & !r22 & !r23 & !r24 & !r25 & !r26 & !r27 & !r28 & 
+             !r29 & !r30 & !r31 & !r32 & !r33 & !r34 & !r35 & !r36 & !r37 & 
+             !r38 & !r39 & !r40 & !r41 & !r42 & !r43 & !r44 & !r45 & !r46 & 
+             !r47 & !r48 & !r49 & !r50 & !r51 & !r52 & !r53 & !r54 & !r55 & 
+             !r56 & !r57 & !r58 & !r59 & !r60 & !r61 & !r62 & !r63 & !10;
+
+-- Node name is 'G' 
+-- Equation name is 'G', type is output 
+ G       = LCELL( _EQ011 $  EI);
+  _EQ011 =  EI & !r0 & !r1 & !r2 & !r3 & !r4 & !r5 & !r6 & !r7 & !r8 & !r9 & 
+             !r11 & !r12 & !r13 & !r14 & !r15 & !r16 & !r17 & !r18 & !r19 & 
+             !r20 & !r21 & !r22 & !r23 & !r24 & !r25 & !r26 & !r27 & !r28 & 
+             !r29 & !r30 & !r31 & !r32 & !r33 & !r34 & !r35 & !r36 & !r37 & 
+             !r38 & !r39 & !r40 & !r41 & !r42 & !r43 & !r44 & !r45 & !r46 & 
+             !r47 & !r48 & !r49 & !r50 & !r51 & !r52 & !r53 & !r54 & !r55 & 
+             !r56 & !r57 & !r58 & !r59 & !r60 & !r61 & !r62 & !r63 & !10;
+
+-- Node name is '~83~1' 
+-- Equation name is '~83~1', type is buried 
+-- synthesized logic cell 
+_N009    = LCELL( _EQ012 $  GND);
+  _EQ012 =  r8 & !r9 & !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & 
+             !r27 & !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & 
+             !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & 
+             !r63
+         # !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & 
+             !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & 
+             !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63 & 
+              10
+         #  r12 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & 
+             !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & 
+             !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r14 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & 
+             !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & !r47 & 
+             !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r16 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31 & 
+             !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & !r47 & !r49 & 
+             !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63;
+
+-- Node name is '~83~2' 
+-- Equation name is '~83~2', type is buried 
+-- synthesized logic cell 
+_N010    = LCELL( _EQ013 $  GND);
+  _EQ013 =  r18 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31 & !r33 & 
+             !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & !r47 & !r49 & !r51 & 
+             !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r20 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31 & !r33 & !r35 & 
+             !r37 & !r39 & !r41 & !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & 
+             !r55 & !r57 & !r59 & !r61 & !r63
+         #  r22 & !r23 & !r25 & !r27 & !r29 & !r31 & !r33 & !r35 & !r37 & 
+             !r39 & !r41 & !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & 
+             !r57 & !r59 & !r61 & !r63
+         #  r24 & !r25 & !r27 & !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & 
+             !r41 & !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & 
+             !r59 & !r61 & !r63
+         #  r26 & !r27 & !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & 
+             !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & 
+             !r61 & !r63;
+
+-- Node name is '~83~3' 
+-- Equation name is '~83~3', type is buried 
+-- synthesized logic cell 
+_N011    = LCELL( _EQ014 $  GND);
+  _EQ014 =  r28 & !r29 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & 
+             !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & 
+             !r63
+         #  r30 & !r31 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & 
+             !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r32 & !r33 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & !r47 & 
+             !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r34 & !r35 & !r37 & !r39 & !r41 & !r43 & !r45 & !r47 & !r49 & 
+             !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r36 & !r37 & !r39 & !r41 & !r43 & !r45 & !r47 & !r49 & !r51 & 
+             !r53 & !r55 & !r57 & !r59 & !r61 & !r63;
+
+-- Node name is '~83~4' 
+-- Equation name is '~83~4', type is buried 
+-- synthesized logic cell 
+_N018    = LCELL( _EQ015 $  GND);
+  _EQ015 =  r38 & !r39 & !r41 & !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & 
+             !r55 & !r57 & !r59 & !r61 & !r63
+         #  r40 & !r41 & !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & 
+             !r57 & !r59 & !r61 & !r63
+         #  r42 & !r43 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & 
+             !r59 & !r61 & !r63
+         #  r44 & !r45 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & 
+             !r61 & !r63
+         #  r46 & !r47 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & 
+             !r63;
+
+-- Node name is '~83~5' 
+-- Equation name is '~83~5', type is buried 
+-- synthesized logic cell 
+_N021    = LCELL( _EQ016 $  GND);
+  _EQ016 =  r48 & !r49 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r50 & !r51 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r52 & !r53 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r54 & !r55 & !r57 & !r59 & !r61 & !r63
+         #  r56 & !r57 & !r59 & !r61 & !r63;
+
+-- Node name is '~86~1' 
+-- Equation name is '~86~1', type is buried 
+-- synthesized logic cell 
+_N012    = LCELL( _EQ017 $  GND);
+  _EQ017 =  r8 & !r11 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & 
+             !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & 
+             !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63 & 
+             !10
+         #  r13 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & 
+             !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & 
+             !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r12 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & 
+             !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & 
+             !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r17 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31 & 
+             !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & !r50 & 
+             !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r16 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31 & 
+             !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & !r50 & 
+             !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63;
+
+-- Node name is '~86~2' 
+-- Equation name is '~86~2', type is buried 
+-- synthesized logic cell 
+_N013    = LCELL( _EQ018 $  GND);
+  _EQ018 =  r21 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31 & !r34 & !r35 & 
+             !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & !r54 & 
+             !r55 & !r58 & !r59 & !r62 & !r63
+         #  r20 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31 & !r34 & !r35 & 
+             !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & !r54 & 
+             !r55 & !r58 & !r59 & !r62 & !r63
+         #  r25 & !r26 & !r27 & !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & 
+             !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & 
+             !r59 & !r62 & !r63
+         #  r24 & !r26 & !r27 & !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & 
+             !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & 
+             !r59 & !r62 & !r63
+         #  r29 & !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & 
+             !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & 
+             !r63;
+
+-- Node name is '~86~3' 
+-- Equation name is '~86~3', type is buried 
+-- synthesized logic cell 
+_N014    = LCELL( _EQ019 $  GND);
+  _EQ019 =  r28 & !r30 & !r31 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & 
+             !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & 
+             !r63
+         #  r33 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & 
+             !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r32 & !r34 & !r35 & !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & 
+             !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r37 & !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & 
+             !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r36 & !r38 & !r39 & !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & 
+             !r54 & !r55 & !r58 & !r59 & !r62 & !r63;
+
+-- Node name is '~86~4' 
+-- Equation name is '~86~4', type is buried 
+-- synthesized logic cell 
+_N019    = LCELL( _EQ020 $  GND);
+  _EQ020 =  r41 & !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & 
+             !r58 & !r59 & !r62 & !r63
+         #  r40 & !r42 & !r43 & !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & 
+             !r58 & !r59 & !r62 & !r63
+         #  r45 & !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & 
+             !r62 & !r63
+         #  r44 & !r46 & !r47 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & 
+             !r62 & !r63
+         #  r49 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63;
+
+-- Node name is '~86~5' 
+-- Equation name is '~86~5', type is buried 
+-- synthesized logic cell 
+_N022    = LCELL( _EQ021 $  GND);
+  _EQ021 =  r48 & !r50 & !r51 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r53 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r52 & !r54 & !r55 & !r58 & !r59 & !r62 & !r63
+         #  r57 & !r58 & !r59 & !r62 & !r63
+         #  r56 & !r58 & !r59 & !r62 & !r63;
+
+-- Node name is '~89~1' 
+-- Equation name is '~89~1', type is buried 
+-- synthesized logic cell 
+_N015    = LCELL( _EQ022 $  GND);
+  _EQ022 =  r8 & !r12 & !r13 & !r14 & !r15 & !r20 & !r21 & !r22 & !r23 & !r28 & 
+             !r29 & !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & 
+             !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & 
+             !r63
+         #  r19 & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & !r30 & !r31 & 
+             !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & !r52 & 
+             !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r18 & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & !r30 & !r31 & 
+             !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & !r52 & 
+             !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r17 & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & !r30 & !r31 & 
+             !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & !r52 & 
+             !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r16 & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & !r30 & !r31 & 
+             !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & !r52 & 
+             !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63;
+
+-- Node name is '~89~2' 
+-- Equation name is '~89~2', type is buried 
+-- synthesized logic cell 
+_N016    = LCELL( _EQ023 $  GND);
+  _EQ023 =  r27 & !r28 & !r29 & !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & 
+             !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & 
+             !r61 & !r62 & !r63
+         #  r26 & !r28 & !r29 & !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & 
+             !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & 
+             !r61 & !r62 & !r63
+         #  r25 & !r28 & !r29 & !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & 
+             !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & 
+             !r61 & !r62 & !r63
+         #  r24 & !r28 & !r29 & !r30 & !r31 & !r36 & !r37 & !r38 & !r39 & 
+             !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & !r60 & 
+             !r61 & !r62 & !r63
+         #  r35 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & 
+             !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63;
+
+-- Node name is '~89~3' 
+-- Equation name is '~89~3', type is buried 
+-- synthesized logic cell 
+_N017    = LCELL( _EQ024 $  GND);
+  _EQ024 =  r34 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & 
+             !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r33 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & 
+             !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r32 & !r36 & !r37 & !r38 & !r39 & !r44 & !r45 & !r46 & !r47 & 
+             !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r43 & !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & 
+             !r60 & !r61 & !r62 & !r63
+         #  r42 & !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & 
+             !r60 & !r61 & !r62 & !r63;
+
+-- Node name is '~89~4' 
+-- Equation name is '~89~4', type is buried 
+-- synthesized logic cell 
+_N020    = LCELL( _EQ025 $  GND);
+  _EQ025 =  r41 & !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & 
+             !r60 & !r61 & !r62 & !r63
+         #  r40 & !r44 & !r45 & !r46 & !r47 & !r52 & !r53 & !r54 & !r55 & 
+             !r60 & !r61 & !r62 & !r63
+         #  r51 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r50 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r49 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63;
+
+-- Node name is '~89~5' 
+-- Equation name is '~89~5', type is buried 
+-- synthesized logic cell 
+_N023    = LCELL( _EQ026 $  GND);
+  _EQ026 =  r48 & !r52 & !r53 & !r54 & !r55 & !r60 & !r61 & !r62 & !r63
+         #  r59 & !r60 & !r61 & !r62 & !r63
+         #  r58 & !r60 & !r61 & !r62 & !r63
+         #  r57 & !r60 & !r61 & !r62 & !r63
+         #  r56 & !r60 & !r61 & !r62 & !r63;
+
+
+
+--     Shareable expanders that are duplicated in multiple LABs:
+--     (none)
+
+
+
+
+Project Information                           e:\lab-7\hpri\hpri_64in_6out.rpt
+
+** COMPILATION SETTINGS & TIMES **
+
+Processing Menu Commands
+------------------------
+
+Design Doctor                             = off
+
+Logic Synthesis:
+
+   Synthesis Type Used                    = Standard
+
+   Default Synthesis Style                = NORMAL
+
+      Logic option settings in 'NORMAL' style for 'MAX7000' family
+
+      DECOMPOSE_GATES                     = on
+      DUPLICATE_LOGIC_EXTRACTION          = on
+      MINIMIZATION                        = full
+      MULTI_LEVEL_FACTORING               = on
+      NOT_GATE_PUSH_BACK                  = on
+      PARALLEL_EXPANDERS                  = off
+      REDUCE_LOGIC                        = on
+      REFACTORIZATION                     = on
+      REGISTER_OPTIMIZATION               = on
+      RESYNTHESIZE_NETWORK                = on
+      SLOW_SLEW_RATE                      = off
+      SOFT_BUFFER_INSERTION               = on
+      SUBFACTOR_EXTRACTION                = on
+      TURBO_BIT                           = on
+      XOR_SYNTHESIS                       = on
+      IGNORE_SOFT_BUFFERS                 = off
+      USE_LPM_FOR_AHDL_OPERATORS          = off
+
+   Other logic synthesis settings:
+
+      Automatic Global Clock              = on
+      Automatic Global Clear              = on
+      Automatic Global Preset             = on
+      Automatic Global Output Enable      = on
+      Automatic Fast I/O                  = off
+      Automatic Register Packing          = off
+      Automatic Open-Drain Pins           = on
+      Automatic Implement in EAB          = off
+      One-Hot State Machine Encoding      = off
+      Optimize                            = 5
+
+Default Timing Specifications: None
+
+Cut All Bidir Feedback Timing Paths       = on
+Cut All Clear & Preset Timing Paths       = on
+
+Ignore Timing Assignments                 = off
+
+Functional SNF Extractor                  = off
+
+Linked SNF Extractor                      = off
+Timing SNF Extractor                      = on
+Optimize Timing SNF                       = off
+Generate AHDL TDO File                    = off
+Fitter Settings                           = NORMAL
+Smart Recompile                           = off
+Total Recompile                           = off
+
+Interfaces Menu Commands
+------------------------
+
+EDIF Netlist Writer                       = off
+Verilog Netlist Writer                    = off
+VHDL Netlist Writer                       = off
+
+Compilation Times
+-----------------
+
+   Compiler Netlist Extractor             00:00:00
+   Database Builder                       00:00:00
+   Logic Synthesizer                      00:00:00
+   Partitioner                            00:00:00
+   Fitter                                 00:00:00
+   --------------------------             --------
+   Total Time                             00:00:00
+
+
+Memory Allocated
+-----------------
+
+Peak memory allocated during compilation  = 3,066K

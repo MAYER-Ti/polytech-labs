@@ -1,0 +1,253 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L42 is q~324
+--operation mode is normal
+
+A1L42 = en & (!a[0]);
+
+
+--A1L52 is q~325
+--operation mode is normal
+
+A1L52 = a[3] # a[2] # a[1] # !A1L42;
+
+
+--A1L62 is q~326
+--operation mode is normal
+
+A1L62 = en & (!a[1]);
+
+
+--A1L72 is q~327
+--operation mode is normal
+
+A1L72 = a[0] & A1L62 & !a[3] & !a[2];
+
+
+--A1L82 is q~328
+--operation mode is normal
+
+A1L82 = a[3] # a[2] # !A1L42 # !a[1];
+
+
+--A1L92 is q~329
+--operation mode is normal
+
+A1L92 = a[1] & en;
+
+
+--A1L03 is q~330
+--operation mode is normal
+
+A1L03 = a[0] & A1L92 & !a[3] & !a[2];
+
+
+--A1L13 is q~331
+--operation mode is normal
+
+A1L13 = a[3] # a[1] # !A1L42 # !a[2];
+
+
+--A1L23 is q~332
+--operation mode is normal
+
+A1L23 = a[2] & a[0] & A1L62 & !a[3];
+
+
+--A1L33 is q~333
+--operation mode is normal
+
+A1L33 = a[3] # !A1L42 # !a[1] # !a[2];
+
+
+--A1L43 is q~334
+--operation mode is normal
+
+A1L43 = a[2] & a[0] & A1L92 & !a[3];
+
+
+--A1L53 is q~335
+--operation mode is normal
+
+A1L53 = a[2] # a[1] # !A1L42 # !a[3];
+
+
+--A1L63 is q~336
+--operation mode is normal
+
+A1L63 = a[3] & a[0] & A1L62 & !a[2];
+
+
+--A1L73 is q~337
+--operation mode is normal
+
+A1L73 = a[2] # !A1L42 # !a[1] # !a[3];
+
+
+--A1L83 is q~338
+--operation mode is normal
+
+A1L83 = a[3] & a[0] & A1L92 & !a[2];
+
+
+--A1L93 is q~339
+--operation mode is normal
+
+A1L93 = a[1] # !A1L42 # !a[2] # !a[3];
+
+
+--A1L04 is q~340
+--operation mode is normal
+
+A1L04 = a[3] & a[2] & a[0] & A1L62;
+
+
+--A1L14 is q~341
+--operation mode is normal
+
+A1L14 = !A1L42 # !a[1] # !a[2] # !a[3];
+
+
+--A1L24 is q~342
+--operation mode is normal
+
+A1L24 = a[3] & a[2] & a[0] & A1L92;
+
+
+--a[3] is a[3]
+--operation mode is input
+
+a[3] = INPUT();
+
+
+--a[2] is a[2]
+--operation mode is input
+
+a[2] = INPUT();
+
+
+--a[1] is a[1]
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--en is en
+--operation mode is input
+
+en = INPUT();
+
+
+--a[0] is a[0]
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--q[0] is q[0]
+--operation mode is output
+
+q[0] = OUTPUT(!A1L52);
+
+
+--q[1] is q[1]
+--operation mode is output
+
+q[1] = OUTPUT(A1L72);
+
+
+--q[2] is q[2]
+--operation mode is output
+
+q[2] = OUTPUT(!A1L82);
+
+
+--q[3] is q[3]
+--operation mode is output
+
+q[3] = OUTPUT(A1L03);
+
+
+--q[4] is q[4]
+--operation mode is output
+
+q[4] = OUTPUT(!A1L13);
+
+
+--q[5] is q[5]
+--operation mode is output
+
+q[5] = OUTPUT(A1L23);
+
+
+--q[6] is q[6]
+--operation mode is output
+
+q[6] = OUTPUT(!A1L33);
+
+
+--q[7] is q[7]
+--operation mode is output
+
+q[7] = OUTPUT(A1L43);
+
+
+--q[8] is q[8]
+--operation mode is output
+
+q[8] = OUTPUT(!A1L53);
+
+
+--q[9] is q[9]
+--operation mode is output
+
+q[9] = OUTPUT(A1L63);
+
+
+--q[10] is q[10]
+--operation mode is output
+
+q[10] = OUTPUT(!A1L73);
+
+
+--q[11] is q[11]
+--operation mode is output
+
+q[11] = OUTPUT(A1L83);
+
+
+--q[12] is q[12]
+--operation mode is output
+
+q[12] = OUTPUT(!A1L93);
+
+
+--q[13] is q[13]
+--operation mode is output
+
+q[13] = OUTPUT(A1L04);
+
+
+--q[14] is q[14]
+--operation mode is output
+
+q[14] = OUTPUT(!A1L14);
+
+
+--q[15] is q[15]
+--operation mode is output
+
+q[15] = OUTPUT(A1L24);
+
+

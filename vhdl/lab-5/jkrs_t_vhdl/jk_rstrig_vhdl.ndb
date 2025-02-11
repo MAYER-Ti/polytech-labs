@@ -1,0 +1,100 @@
+NDB006
+The number of symbol table entries is: 1
+The length of the symbol table is: 13
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+
+The number of name info structs is : 88
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	IGdW	!	:100	"t
+#	IGdW	!	:101	"u
+$	IeEA	!	37	9	:105	"y
+%	IeEA	!	20	9	:34	"2
+&	IeEA	!	20	9	:36	"4
+'	IeEA	!	20	9	:39	"7
+(	IeEA	!	20	9	:41	"9
+)	IeEA	!	20	9	:43	";
+*	IeEA	!	20	9	:46	">
++	IeEA	!	20	9	:47	"?
+,	IeEA	!	26	25	:55	"G
+-	IGdW	!	:66	"R
+.	IGdW	!	:67	"S
+/	IGdW	!	:68	"T
+0	IGdW	!	:69	"U
+1	IGdW	!	:70	"V
+2	IGdW	!	:71	"W
+3	IGdW	!	:72	"X
+4	IGdW	!	:73	"Y
+5	IGdW	!	:74	"Z
+6	IGdW	!	:75	"[
+7	IGdW	!	:76	"\
+8	IGdW	!	:77	"]
+9	IGdW	!	:78	"^
+:	IGdW	!	:79	"_
+;	IGdW	!	:80	"`
+<	IGdW	!	:81	"a
+=	IGdW	!	:82	"b
+>	IGdW	!	:83	"c
+?	IGdW	!	:84	"d
+@	IGdW	!	:85	"e
+A	IGdW	!	:86	"f
+B	IGdW	!	:87	"g
+C	IGdW	!	:88	"h
+D	IGdW	!	:89	"i
+E	IGdW	!	:90	"j
+F	IGdW	!	:91	"k
+G	IGdW	!	:92	"l
+H	IGdW	!	:93	"m
+I	IGdW	!	:94	"n
+J	IGdW	!	:95	"o
+K	IGdW	!	:96	"p
+L	IGdW	!	:97	"q
+M	IGdW	!	:98	"r
+N	IGdW	!	:99	"s
+O	L8ef	!	7	9	1	t	j	p
+P	L8ef	!	10	9	1	t	k	r
+Q	IeE[	!	12	9	q	s
+R	L8eg	!	13	9	1	t	qi	t
+S	L8ef	!	9	9	2	Q	R	r	q
+T	L8ef	!	6	9	1	t	s	o
+U	IFkI	!	~100~1	"t
+V	IFkI	!	~101~1	"u
+W	IdL3	!	20	9	~39~1	"7
+X	IdL3	!	20	9	~43~1	";
+Y	IdL3	!	20	9	~47~1	"?
+Z	IFkI	!	~66~1	"R
+[	IFkI	!	~67~1	"S
+\	IFkI	!	~68~1	"T
+]	IFkI	!	~69~1	"U
+^	IFkI	!	~70~1	"V
+_	IFkI	!	~71~1	"W
+`	IFkI	!	~72~1	"X
+a	IFkI	!	~73~1	"Y
+b	IFkI	!	~74~1	"Z
+c	IFkI	!	~75~1	"[
+d	IFkI	!	~76~1	"\
+e	IFkI	!	~77~1	"]
+f	IFkI	!	~78~1	"^
+g	IFkI	!	~79~1	"_
+h	IFkI	!	~81~1	"a
+i	IFkI	!	~82~1	"b
+j	IFkI	!	~83~1	"c
+k	IFkI	!	~84~1	"d
+l	IFkI	!	~85~1	"e
+m	IFkI	!	~86~1	"f
+n	IFkI	!	~87~1	"g
+o	IFkI	!	~88~1	"h
+p	IFkI	!	~89~1	"i
+q	IFkI	!	~90~1	"j
+r	IFkI	!	~91~1	"k
+s	IFkI	!	~92~1	"l
+t	Kx.7	!	2	Q	R	~93~1	"m
+u	IFkI	!	~94~1	"n
+v	IFkI	!	~95~1	"o
+w	IFkI	!	~96~1	"p
+x	IFkI	!	~97~1	"q
+y	IFkI	!	~99~1	"s

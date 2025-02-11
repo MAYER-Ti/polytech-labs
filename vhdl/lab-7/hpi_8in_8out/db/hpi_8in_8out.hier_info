@@ -1,0 +1,26 @@
+|hpi_8in_8out
+a0 <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+r7 => inst.IN0
+r7 => a7.DATAIN
+r5 => inst8.IN0
+r5 => inst15.IN2
+r6 => inst7.IN0
+r6 => inst14.IN1
+r4 => inst9.IN0
+r4 => inst16.IN3
+r1 => inst12.IN0
+r1 => inst19.IN6
+r2 => inst11.IN0
+r2 => inst18.IN5
+r0 => inst20.IN6
+r3 => inst10.IN0
+r3 => inst17.IN4
+a1 <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+a2 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+a3 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+a4 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+a5 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+a6 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+a7 <= r7.DB_MAX_OUTPUT_PORT_TYPE
+
+

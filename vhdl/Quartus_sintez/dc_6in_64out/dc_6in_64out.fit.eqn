@@ -1,0 +1,1010 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L1 is dc_3in_8out:\gen_top_decoders:0:dec_top_inst|Mux~162 at LC_X1_Y9_N8
+--operation mode is normal
+
+B1L1 = !a[2] & !a[1];
+
+
+--B1L2 is dc_3in_8out:\gen_top_decoders:0:dec_top_inst|Mux~163 at LC_X1_Y8_N2
+--operation mode is normal
+
+B1L2 = a[1] & (!a[0]);
+
+
+--B1L3 is dc_3in_8out:\gen_top_decoders:0:dec_top_inst|Mux~164 at LC_X1_Y8_N6
+--operation mode is normal
+
+B1L3 = a[1] & (a[0]);
+
+
+--B1L4 is dc_3in_8out:\gen_top_decoders:0:dec_top_inst|Mux~165 at LC_X1_Y7_N6
+--operation mode is normal
+
+B1L4 = a[2] & !a[1];
+
+
+--A1L9 is enable_s~161 at LC_X1_Y19_N9
+--operation mode is normal
+
+A1L9 = !a[3] & en & (a[4]);
+
+
+--A1L101 is q~1282 at LC_X1_Y9_N2
+--operation mode is normal
+
+A1L101 = B1L1 & !a[0] & A1L9 & !a[5];
+
+
+--A1L201 is q~1283 at LC_X1_Y9_N5
+--operation mode is normal
+
+A1L201 = B1L1 & a[0] & A1L9 & !a[5];
+
+
+--A1L301 is q~1284 at LC_X1_Y7_N2
+--operation mode is normal
+
+A1L301 = A1L9 & !a[2] & !a[5] & B1L2;
+
+
+--A1L401 is q~1285 at LC_X1_Y19_N2
+--operation mode is normal
+
+A1L401 = !a[2] & A1L9 & !a[5] & B1L3;
+
+
+--A1L501 is q~1286 at LC_X1_Y7_N9
+--operation mode is normal
+
+A1L501 = A1L9 & !a[0] & !a[5] & B1L4;
+
+
+--A1L601 is q~1287 at LC_X1_Y7_N7
+--operation mode is normal
+
+A1L601 = A1L9 & a[0] & !a[5] & B1L4;
+
+
+--A1L701 is q~1288 at LC_X1_Y7_N8
+--operation mode is normal
+
+A1L701 = A1L9 & a[2] & !a[5] & B1L2;
+
+
+--A1L801 is q~1289 at LC_X1_Y6_N4
+--operation mode is normal
+
+A1L801 = A1L9 & !a[5] & a[2] & B1L3;
+
+
+--A1L01 is enable_s~162 at LC_X1_Y19_N3
+--operation mode is normal
+
+A1L01 = a[3] & en & (a[4]);
+
+
+--A1L901 is q~1290 at LC_X1_Y9_N3
+--operation mode is normal
+
+A1L901 = B1L1 & !a[0] & A1L01 & !a[5];
+
+
+--A1L011 is q~1291 at LC_X1_Y9_N4
+--operation mode is normal
+
+A1L011 = B1L1 & a[0] & A1L01 & !a[5];
+
+
+--A1L111 is q~1292 at LC_X1_Y6_N3
+--operation mode is normal
+
+A1L111 = A1L01 & !a[5] & !a[2] & B1L2;
+
+
+--A1L211 is q~1293 at LC_X1_Y6_N7
+--operation mode is normal
+
+A1L211 = A1L01 & !a[5] & !a[2] & B1L3;
+
+
+--A1L311 is q~1294 at LC_X1_Y9_N6
+--operation mode is normal
+
+A1L311 = A1L01 & !a[0] & !a[5] & B1L4;
+
+
+--A1L411 is q~1295 at LC_X1_Y7_N1
+--operation mode is normal
+
+A1L411 = A1L01 & a[0] & !a[5] & B1L4;
+
+
+--A1L511 is q~1296 at LC_X1_Y8_N4
+--operation mode is normal
+
+A1L511 = A1L01 & !a[5] & a[2] & B1L2;
+
+
+--A1L611 is q~1297 at LC_X1_Y6_N6
+--operation mode is normal
+
+A1L611 = A1L01 & !a[5] & a[2] & B1L3;
+
+
+--A1L711 is q~1298 at LC_X1_Y9_N7
+--operation mode is normal
+
+A1L711 = B1L1 & !a[0] & A1L9 & a[5];
+
+
+--A1L811 is q~1299 at LC_X1_Y9_N9
+--operation mode is normal
+
+A1L811 = B1L1 & a[0] & A1L9 & a[5];
+
+
+--A1L911 is q~1300 at LC_X1_Y6_N9
+--operation mode is normal
+
+A1L911 = A1L9 & a[5] & !a[2] & B1L2;
+
+
+--A1L021 is q~1301 at LC_X1_Y6_N8
+--operation mode is normal
+
+A1L021 = A1L9 & a[5] & !a[2] & B1L3;
+
+
+--A1L121 is q~1302 at LC_X1_Y7_N0
+--operation mode is normal
+
+A1L121 = A1L9 & !a[0] & a[5] & B1L4;
+
+
+--A1L221 is q~1303 at LC_X1_Y7_N4
+--operation mode is normal
+
+A1L221 = A1L9 & a[0] & a[5] & B1L4;
+
+
+--A1L321 is q~1304 at LC_X1_Y6_N1
+--operation mode is normal
+
+A1L321 = A1L9 & a[5] & a[2] & B1L2;
+
+
+--A1L421 is q~1305 at LC_X1_Y6_N0
+--operation mode is normal
+
+A1L421 = A1L9 & a[5] & a[2] & B1L3;
+
+
+--A1L521 is q~1306 at LC_X1_Y9_N0
+--operation mode is normal
+
+A1L521 = B1L1 & !a[0] & A1L01 & a[5];
+
+
+--A1L621 is q~1307 at LC_X1_Y9_N1
+--operation mode is normal
+
+A1L621 = B1L1 & a[0] & A1L01 & a[5];
+
+
+--A1L721 is q~1308 at LC_X1_Y8_N8
+--operation mode is normal
+
+A1L721 = A1L01 & a[5] & !a[2] & B1L2;
+
+
+--A1L821 is q~1309 at LC_X1_Y6_N5
+--operation mode is normal
+
+A1L821 = A1L01 & a[5] & !a[2] & B1L3;
+
+
+--A1L921 is q~1310 at LC_X1_Y7_N3
+--operation mode is normal
+
+A1L921 = A1L01 & !a[0] & a[5] & B1L4;
+
+
+--A1L031 is q~1311 at LC_X1_Y7_N5
+--operation mode is normal
+
+A1L031 = A1L01 & a[0] & a[5] & B1L4;
+
+
+--A1L131 is q~1312 at LC_X1_Y8_N3
+--operation mode is normal
+
+A1L131 = A1L01 & a[5] & a[2] & B1L2;
+
+
+--A1L231 is q~1313 at LC_X1_Y6_N2
+--operation mode is normal
+
+A1L231 = A1L01 & a[5] & a[2] & B1L3;
+
+
+--A1L331 is q~1314 at LC_X1_Y21_N1
+--operation mode is normal
+
+A1L331 = !a[3] & !a[4] & en & A1L67;
+
+
+--A1L67 is q~805 at LC_X1_Y21_N9
+--operation mode is normal
+
+A1L67 = !a[2] & !a[1] & !a[5] & !a[0];
+
+
+--A1L431 is q~1315 at LC_X1_Y21_N0
+--operation mode is normal
+
+A1L431 = !a[3] & !a[4] & en & A1L77;
+
+
+--A1L77 is q~820 at LC_X1_Y21_N8
+--operation mode is normal
+
+A1L77 = !a[2] & !a[1] & !a[5] & a[0];
+
+
+--A1L531 is q~1316 at LC_X1_Y19_N4
+--operation mode is normal
+
+A1L531 = !a[3] & en & A1L87 & !a[4];
+
+
+--A1L87 is q~835 at LC_X1_Y21_N5
+--operation mode is normal
+
+A1L87 = !a[2] & a[1] & !a[5] & !a[0];
+
+
+--A1L631 is q~1317 at LC_X1_Y23_N0
+--operation mode is normal
+
+A1L631 = A1L97 & en & !a[4] & !a[3];
+
+
+--A1L97 is q~850 at LC_X1_Y23_N4
+--operation mode is normal
+
+A1L97 = a[1] & !a[5] & !a[2] & a[0];
+
+
+--A1L731 is q~1318 at LC_X1_Y23_N2
+--operation mode is normal
+
+A1L731 = A1L08 & en & !a[4] & !a[3];
+
+
+--A1L08 is q~865 at LC_X1_Y23_N8
+--operation mode is normal
+
+A1L08 = !a[1] & !a[5] & a[2] & !a[0];
+
+
+--A1L831 is q~1319 at LC_X1_Y23_N9
+--operation mode is normal
+
+A1L831 = en & !a[4] & A1L18 & !a[3];
+
+
+--A1L18 is q~880 at LC_X1_Y23_N1
+--operation mode is normal
+
+A1L18 = !a[1] & !a[5] & a[2] & a[0];
+
+
+--A1L931 is q~1320 at LC_X1_Y19_N6
+--operation mode is normal
+
+A1L931 = !a[3] & en & A1L28 & !a[4];
+
+
+--A1L28 is q~895 at LC_X1_Y23_N5
+--operation mode is normal
+
+A1L28 = a[1] & !a[5] & a[2] & !a[0];
+
+
+--A1L041 is q~1321 at LC_X1_Y19_N1
+--operation mode is normal
+
+A1L041 = !a[3] & en & A1L38 & !a[4];
+
+
+--A1L38 is q~910 at LC_X1_Y19_N7
+--operation mode is normal
+
+A1L38 = a[2] & a[1] & !a[5] & a[0];
+
+
+--A1L141 is q~1322 at LC_X1_Y22_N5
+--operation mode is normal
+
+A1L141 = !a[2] & !a[5] & !a[4] & A1L48;
+
+
+--A1L48 is q~925 at LC_X1_Y22_N9
+--operation mode is normal
+
+A1L48 = a[3] & !a[1] & en & !a[0];
+
+
+--A1L241 is q~1323 at LC_X1_Y20_N9
+--operation mode is normal
+
+A1L241 = A1L58 & !a[5] & !a[4] & a[0];
+
+
+--A1L58 is q~940 at LC_X1_Y20_N4
+--operation mode is normal
+
+A1L58 = !a[2] & en & a[3] & !a[1];
+
+
+--A1L341 is q~1324 at LC_X1_Y24_N7
+--operation mode is normal
+
+A1L341 = A1L68 & !a[5] & !a[4] & a[1];
+
+
+--A1L68 is q~955 at LC_X1_Y24_N8
+--operation mode is normal
+
+A1L68 = a[3] & !a[0] & !a[2] & en;
+
+
+--A1L441 is q~1325 at LC_X1_Y20_N5
+--operation mode is normal
+
+A1L441 = !a[4] & a[0] & !a[5] & A1L78;
+
+
+--A1L78 is q~970 at LC_X1_Y20_N6
+--operation mode is normal
+
+A1L78 = !a[2] & en & a[3] & a[1];
+
+
+--A1L541 is q~1326 at LC_X1_Y22_N7
+--operation mode is normal
+
+A1L541 = a[2] & !a[5] & !a[4] & A1L48;
+
+
+--A1L641 is q~1327 at LC_X1_Y20_N0
+--operation mode is normal
+
+A1L641 = !a[4] & !a[5] & A1L88 & a[0];
+
+
+--A1L88 is q~1000 at LC_X1_Y20_N1
+--operation mode is normal
+
+A1L88 = a[2] & en & a[3] & !a[1];
+
+
+--A1L741 is q~1328 at LC_X1_Y22_N8
+--operation mode is normal
+
+A1L741 = a[2] & !a[5] & !a[4] & A1L98;
+
+
+--A1L98 is q~1015 at LC_X1_Y22_N4
+--operation mode is normal
+
+A1L98 = a[3] & a[1] & en & !a[0];
+
+
+--A1L841 is q~1329 at LC_X1_Y22_N3
+--operation mode is normal
+
+A1L841 = a[2] & !a[5] & !a[4] & A1L09;
+
+
+--A1L09 is q~1030 at LC_X1_Y22_N0
+--operation mode is normal
+
+A1L09 = a[3] & a[1] & en & a[0];
+
+
+--A1L941 is q~1330 at LC_X1_Y19_N5
+--operation mode is normal
+
+A1L941 = !a[3] & en & A1L19 & !a[2];
+
+
+--A1L19 is q~1045 at LC_X1_Y20_N7
+--operation mode is normal
+
+A1L19 = !a[4] & !a[1] & a[5] & !a[0];
+
+
+--A1L051 is q~1331 at LC_X1_Y24_N9
+--operation mode is normal
+
+A1L051 = !a[3] & a[0] & en & A1L29;
+
+
+--A1L29 is q~1060 at LC_X1_Y24_N6
+--operation mode is normal
+
+A1L29 = !a[2] & a[5] & !a[4] & !a[1];
+
+
+--A1L151 is q~1332 at LC_X1_Y22_N2
+--operation mode is normal
+
+A1L151 = !a[3] & A1L39 & en & a[1];
+
+
+--A1L39 is q~1075 at LC_X1_Y22_N1
+--operation mode is normal
+
+A1L39 = !a[2] & a[5] & !a[4] & !a[0];
+
+
+--A1L251 is q~1333 at LC_X1_Y24_N0
+--operation mode is normal
+
+A1L251 = !a[3] & a[0] & en & A1L49;
+
+
+--A1L49 is q~1090 at LC_X1_Y24_N4
+--operation mode is normal
+
+A1L49 = !a[2] & a[5] & !a[4] & a[1];
+
+
+--A1L351 is q~1334 at LC_X1_Y19_N0
+--operation mode is normal
+
+A1L351 = !a[3] & en & A1L19 & a[2];
+
+
+--A1L451 is q~1335 at LC_X1_Y24_N5
+--operation mode is normal
+
+A1L451 = !a[3] & a[0] & A1L59 & en;
+
+
+--A1L59 is q~1120 at LC_X1_Y24_N1
+--operation mode is normal
+
+A1L59 = a[2] & a[5] & !a[4] & !a[1];
+
+
+--A1L551 is q~1336 at LC_X1_Y19_N8
+--operation mode is normal
+
+A1L551 = !a[3] & en & A1L69 & a[2];
+
+
+--A1L69 is q~1135 at LC_X1_Y20_N8
+--operation mode is normal
+
+A1L69 = !a[4] & a[1] & a[5] & !a[0];
+
+
+--A1L651 is q~1337 at LC_X1_Y20_N3
+--operation mode is normal
+
+A1L651 = a[2] & en & !a[3] & A1L79;
+
+
+--A1L79 is q~1150 at LC_X1_Y20_N2
+--operation mode is normal
+
+A1L79 = !a[4] & a[1] & a[5] & a[0];
+
+
+--A1L751 is q~1338 at LC_X1_Y23_N3
+--operation mode is normal
+
+A1L751 = !a[1] & en & !a[2] & A1L89;
+
+
+--A1L89 is q~1165 at LC_X1_Y22_N6
+--operation mode is normal
+
+A1L89 = a[3] & a[5] & !a[4] & !a[0];
+
+
+--A1L851 is q~1339 at LC_X1_Y21_N7
+--operation mode is normal
+
+A1L851 = A1L99 & !a[1] & !a[2] & a[0];
+
+
+--A1L99 is q~1180 at LC_X1_Y21_N2
+--operation mode is normal
+
+A1L99 = en & !a[4] & a[5] & a[3];
+
+
+--A1L951 is q~1340 at LC_X1_Y24_N3
+--operation mode is normal
+
+A1L951 = en & !a[0] & A1L001 & a[1];
+
+
+--A1L001 is q~1195 at LC_X1_Y24_N2
+--operation mode is normal
+
+A1L001 = a[3] & !a[4] & !a[2] & a[5];
+
+
+--A1L061 is q~1341 at LC_X1_Y23_N7
+--operation mode is normal
+
+A1L061 = a[1] & en & A1L001 & a[0];
+
+
+--A1L161 is q~1342 at LC_X1_Y23_N6
+--operation mode is normal
+
+A1L161 = !a[1] & en & a[2] & A1L89;
+
+
+--A1L261 is q~1343 at LC_X1_Y21_N4
+--operation mode is normal
+
+A1L261 = A1L99 & !a[1] & a[2] & a[0];
+
+
+--A1L361 is q~1344 at LC_X1_Y21_N6
+--operation mode is normal
+
+A1L361 = A1L99 & a[1] & a[2] & !a[0];
+
+
+--A1L461 is q~1345 at LC_X1_Y21_N3
+--operation mode is normal
+
+A1L461 = A1L99 & a[1] & a[2] & a[0];
+
+
+--en is en at PIN_L20
+--operation mode is input
+
+en = INPUT();
+
+
+--a[3] is a[3] at PIN_L22
+--operation mode is input
+
+a[3] = INPUT();
+
+
+--a[4] is a[4] at PIN_L21
+--operation mode is input
+
+a[4] = INPUT();
+
+
+--a[5] is a[5] at PIN_T20
+--operation mode is input
+
+a[5] = INPUT();
+
+
+--a[2] is a[2] at PIN_M20
+--operation mode is input
+
+a[2] = INPUT();
+
+
+--a[1] is a[1] at PIN_M21
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--a[0] is a[0] at PIN_M22
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--q[0] is q[0] at PIN_G18
+--operation mode is output
+
+q[0] = OUTPUT(A1L331);
+
+
+--q[1] is q[1] at PIN_J21
+--operation mode is output
+
+q[1] = OUTPUT(A1L431);
+
+
+--q[2] is q[2] at PIN_K20
+--operation mode is output
+
+q[2] = OUTPUT(A1L531);
+
+
+--q[3] is q[3] at PIN_F21
+--operation mode is output
+
+q[3] = OUTPUT(A1L631);
+
+
+--q[4] is q[4] at PIN_J19
+--operation mode is output
+
+q[4] = OUTPUT(A1L731);
+
+
+--q[5] is q[5] at PIN_H19
+--operation mode is output
+
+q[5] = OUTPUT(A1L831);
+
+
+--q[6] is q[6] at PIN_D22
+--operation mode is output
+
+q[6] = OUTPUT(A1L931);
+
+
+--q[7] is q[7] at PIN_N20
+--operation mode is output
+
+q[7] = OUTPUT(A1L041);
+
+
+--q[8] is q[8] at PIN_E19
+--operation mode is output
+
+q[8] = OUTPUT(A1L141);
+
+
+--q[9] is q[9] at PIN_E21
+--operation mode is output
+
+q[9] = OUTPUT(A1L241);
+
+
+--q[10] is q[10] at PIN_E22
+--operation mode is output
+
+q[10] = OUTPUT(A1L341);
+
+
+--q[11] is q[11] at PIN_G21
+--operation mode is output
+
+q[11] = OUTPUT(A1L441);
+
+
+--q[12] is q[12] at PIN_G20
+--operation mode is output
+
+q[12] = OUTPUT(A1L541);
+
+
+--q[13] is q[13] at PIN_L17
+--operation mode is output
+
+q[13] = OUTPUT(A1L641);
+
+
+--q[14] is q[14] at PIN_F18
+--operation mode is output
+
+q[14] = OUTPUT(A1L741);
+
+
+--q[15] is q[15] at PIN_J17
+--operation mode is output
+
+q[15] = OUTPUT(A1L841);
+
+
+--q[16] is q[16] at PIN_R22
+--operation mode is output
+
+q[16] = OUTPUT(A1L101);
+
+
+--q[17] is q[17] at PIN_P21
+--operation mode is output
+
+q[17] = OUTPUT(A1L201);
+
+
+--q[18] is q[18] at PIN_W20
+--operation mode is output
+
+q[18] = OUTPUT(A1L301);
+
+
+--q[19] is q[19] at PIN_K21
+--operation mode is output
+
+q[19] = OUTPUT(A1L401);
+
+
+--q[20] is q[20] at PIN_T18
+--operation mode is output
+
+q[20] = OUTPUT(A1L501);
+
+
+--q[21] is q[21] at PIN_R20
+--operation mode is output
+
+q[21] = OUTPUT(A1L601);
+
+
+--q[22] is q[22] at PIN_Y21
+--operation mode is output
+
+q[22] = OUTPUT(A1L701);
+
+
+--q[23] is q[23] at PIN_W19
+--operation mode is output
+
+q[23] = OUTPUT(A1L801);
+
+
+--q[24] is q[24] at PIN_M17
+--operation mode is output
+
+q[24] = OUTPUT(A1L901);
+
+
+--q[25] is q[25] at PIN_R21
+--operation mode is output
+
+q[25] = OUTPUT(A1L011);
+
+
+--q[26] is q[26] at PIN_V21
+--operation mode is output
+
+q[26] = OUTPUT(A1L111);
+
+
+--q[27] is q[27] at PIN_T19
+--operation mode is output
+
+q[27] = OUTPUT(A1L211);
+
+
+--q[28] is q[28] at PIN_T22
+--operation mode is output
+
+q[28] = OUTPUT(A1L311);
+
+
+--q[29] is q[29] at PIN_AA17
+--operation mode is output
+
+q[29] = OUTPUT(A1L411);
+
+
+--q[30] is q[30] at PIN_U22
+--operation mode is output
+
+q[30] = OUTPUT(A1L511);
+
+
+--q[31] is q[31] at PIN_P19
+--operation mode is output
+
+q[31] = OUTPUT(A1L611);
+
+
+--q[32] is q[32] at PIN_P20
+--operation mode is output
+
+q[32] = OUTPUT(A1L941);
+
+
+--q[33] is q[33] at PIN_D19
+--operation mode is output
+
+q[33] = OUTPUT(A1L051);
+
+
+--q[34] is q[34] at PIN_G22
+--operation mode is output
+
+q[34] = OUTPUT(A1L151);
+
+
+--q[35] is q[35] at PIN_H20
+--operation mode is output
+
+q[35] = OUTPUT(A1L251);
+
+
+--q[36] is q[36] at PIN_N21
+--operation mode is output
+
+q[36] = OUTPUT(A1L351);
+
+
+--q[37] is q[37] at PIN_G19
+--operation mode is output
+
+q[37] = OUTPUT(A1L451);
+
+
+--q[38] is q[38] at PIN_D20
+--operation mode is output
+
+q[38] = OUTPUT(A1L551);
+
+
+--q[39] is q[39] at PIN_D21
+--operation mode is output
+
+q[39] = OUTPUT(A1L651);
+
+
+--q[40] is q[40] at PIN_F22
+--operation mode is output
+
+q[40] = OUTPUT(A1L751);
+
+
+--q[41] is q[41] at PIN_H21
+--operation mode is output
+
+q[41] = OUTPUT(A1L851);
+
+
+--q[42] is q[42] at PIN_H17
+--operation mode is output
+
+q[42] = OUTPUT(A1L951);
+
+
+--q[43] is q[43] at PIN_K17
+--operation mode is output
+
+q[43] = OUTPUT(A1L061);
+
+
+--q[44] is q[44] at PIN_B21
+--operation mode is output
+
+q[44] = OUTPUT(A1L161);
+
+
+--q[45] is q[45] at PIN_E20
+--operation mode is output
+
+q[45] = OUTPUT(A1L261);
+
+
+--q[46] is q[46] at PIN_H22
+--operation mode is output
+
+q[46] = OUTPUT(A1L361);
+
+
+--q[47] is q[47] at PIN_J20
+--operation mode is output
+
+q[47] = OUTPUT(A1L461);
+
+
+--q[48] is q[48] at PIN_T21
+--operation mode is output
+
+q[48] = OUTPUT(A1L711);
+
+
+--q[49] is q[49] at PIN_N17
+--operation mode is output
+
+q[49] = OUTPUT(A1L811);
+
+
+--q[50] is q[50] at PIN_U20
+--operation mode is output
+
+q[50] = OUTPUT(A1L911);
+
+
+--q[51] is q[51] at PIN_P17
+--operation mode is output
+
+q[51] = OUTPUT(A1L021);
+
+
+--q[52] is q[52] at PIN_R19
+--operation mode is output
+
+q[52] = OUTPUT(A1L121);
+
+
+--q[53] is q[53] at PIN_AA20
+--operation mode is output
+
+q[53] = OUTPUT(A1L221);
+
+
+--q[54] is q[54] at PIN_Y20
+--operation mode is output
+
+q[54] = OUTPUT(A1L321);
+
+
+--q[55] is q[55] at PIN_V22
+--operation mode is output
+
+q[55] = OUTPUT(A1L421);
+
+
+--q[56] is q[56] at PIN_W18
+--operation mode is output
+
+q[56] = OUTPUT(A1L521);
+
+
+--q[57] is q[57] at PIN_W21
+--operation mode is output
+
+q[57] = OUTPUT(A1L621);
+
+
+--q[58] is q[58] at PIN_AA21
+--operation mode is output
+
+q[58] = OUTPUT(A1L721);
+
+
+--q[59] is q[59] at PIN_U19
+--operation mode is output
+
+q[59] = OUTPUT(A1L821);
+
+
+--q[60] is q[60] at PIN_AB19
+--operation mode is output
+
+q[60] = OUTPUT(A1L921);
+
+
+--q[61] is q[61] at PIN_W22
+--operation mode is output
+
+q[61] = OUTPUT(A1L031);
+
+
+--q[62] is q[62] at PIN_U21
+--operation mode is output
+
+q[62] = OUTPUT(A1L131);
+
+
+--q[63] is q[63] at PIN_U18
+--operation mode is output
+
+q[63] = OUTPUT(A1L231);
+
+
+

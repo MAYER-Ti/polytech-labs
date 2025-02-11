@@ -1,0 +1,62 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+mux_64in_1out
+# case_insensitive
+# source_file
+mux_64in_1out.bdf
+1732980540
+23
+# storage
+db|mux_64in_1out.(0).cnf
+db|mux_64in_1out.(0).cnf
+# hierarchies {
+|
+}
+# end
+# entity
+mux_4in_1out
+# case_insensitive
+# source_file
+mux_4in_1out.bdf
+1732977375
+23
+# storage
+db|mux_64in_1out.(1).cnf
+db|mux_64in_1out.(1).cnf
+# hierarchies {
+mux_4in_1out:inst21
+mux_4in_1out:inst9
+mux_4in_1out:inst
+mux_4in_1out:inst2
+mux_4in_1out:inst3
+mux_4in_1out:inst4
+mux_4in_1out:inst10
+mux_4in_1out:inst5
+mux_4in_1out:inst6
+mux_4in_1out:inst7
+mux_4in_1out:inst8
+mux_4in_1out:inst19
+mux_4in_1out:inst11
+mux_4in_1out:inst12
+mux_4in_1out:inst13
+mux_4in_1out:inst14
+mux_4in_1out:inst20
+mux_4in_1out:inst15
+mux_4in_1out:inst16
+mux_4in_1out:inst17
+mux_4in_1out:inst18
+}
+# end
+# complete
+

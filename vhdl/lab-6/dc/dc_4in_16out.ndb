@@ -1,0 +1,95 @@
+NDB006
+The number of symbol table entries is: 4
+The length of the symbol table is: 61
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|dc_3in_8out:3|
+>	|dc_3in_8out:4|
+N	|dc_3in_8out:1|
+
+The number of name info structs is : 80
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	IGdW	!	:29	"N
+#	IGdW	!	:30	"M
+$	Ky&|	!	16	)	*	1	2	3	4	5	6	7	8	+	,	-	.	/	0	a0	o
+%	Ky&|	!	16	)	*	1	2	3	4	5	6	7	8	+	,	-	.	/	0	a1	s
+&	Ky&|	!	16	)	*	1	2	3	4	5	6	7	8	+	,	-	.	/	0	a2	r
+'	Ky&|	!	16	)	*	1	2	3	4	5	6	7	8	+	,	-	.	/	0	a3	q
+(	Ky&|	!	16	)	*	1	2	3	4	5	6	7	8	+	,	-	.	/	0	en	p
+)	IGdq	!	q0	"%
+*	IGdq	!	q1	"$
++	IGdq	!	q10	y
+,	IGdq	!	q11	v
+-	IGdq	!	q12	x
+.	IGdq	!	q13	w
+/	IGdq	!	q14	t
+0	IGdq	!	q15	u
+1	IGdq	!	q2	"#
+2	IGdq	!	q3	~
+3	IGdq	!	q4	""
+4	IGdq	!	q5	"!
+5	IGdq	!	q6	{
+6	IGdq	!	q7	}
+7	IGdq	!	q8	|
+8	IGdq	!	q9	z
+9	IGdW	N	:12	#;
+:	IGdW	N	:13	#:
+;	IGdW	N	:14	#9
+<	IVOQ	N	D	:35	#<
+=	IVOQ	N	E	:36	#C
+>	IVOQ	N	F	:37	#B
+?	IVOQ	N	G	:38	#A
+@	IVOQ	N	H	:39	#@
+A	IVOQ	N	I	:40	#?
+B	IVOQ	N	J	:41	#>
+C	IVOQ	N	K	:42	#=
+D	INu}	N	<	q0	#<
+E	INu}	N	=	q1	#C
+F	INu}	N	>	q2	#B
+G	INu}	N	?	q3	#A
+H	INu}	N	@	q4	#@
+I	INu}	N	A	q5	#?
+J	INu}	N	B	q6	#>
+K	INu}	N	C	q7	#=
+L	IGdW	.	:12	"b
+M	IGdW	.	:13	"a
+N	IGdW	.	:14	"`
+O	IVOQ	.	W	:35	"c
+P	IVOQ	.	X	:36	"j
+Q	IVOQ	.	Y	:37	"i
+R	IVOQ	.	Z	:38	"h
+S	IVOQ	.	[	:39	"g
+T	IVOQ	.	\	:40	"f
+U	IVOQ	.	]	:41	"e
+V	IVOQ	.	^	:42	"d
+W	INu}	.	O	q0	"c
+X	INu}	.	P	q1	"j
+Y	INu}	.	Q	q2	"i
+Z	INu}	.	R	q3	"h
+[	INu}	.	S	q4	"g
+\	INu}	.	T	q5	"f
+]	INu}	.	U	q6	"e
+^	INu}	.	V	q7	"d
+_	IGdW	>	:12	"~
+`	IGdW	>	:13	"}
+a	IGdW	>	:14	"|
+b	IVOQ	>	j	:35	#!
+c	IVOQ	>	k	:36	#(
+d	IVOQ	>	l	:37	#'
+e	IVOQ	>	m	:38	#&
+f	IVOQ	>	n	:39	#%
+g	IVOQ	>	o	:40	#$
+h	IVOQ	>	p	:41	##
+i	IVOQ	>	q	:42	#"
+j	INu}	>	b	q0	#!
+k	INu}	>	c	q1	#(
+l	INu}	>	d	q2	#'
+m	INu}	>	e	q3	#&
+n	INu}	>	f	q4	#%
+o	INu}	>	g	q5	#$
+p	INu}	>	h	q6	##
+q	INu}	>	i	q7	#"

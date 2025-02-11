@@ -1,0 +1,121 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+hpri_32in_5out_vhdl
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+hpri_32in_5out_vhdl.vhd
+1732103112
+4
+# storage
+db|hpri_64in_6out_vhdl.(1).cnf
+db|hpri_64in_6out_vhdl.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+hpri_32in_5out_vhdl:hpri_first
+hpri_32in_5out_vhdl:hpri_second
+}
+# end
+# entity
+hpri_16in_4out_vhdl
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+hpri_16in_4out_vhdl.vhd
+1732103135
+4
+# storage
+db|hpri_64in_6out_vhdl.(2).cnf
+db|hpri_64in_6out_vhdl.(2).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first
+hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second
+hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first
+hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second
+}
+# end
+# entity
+hpri_8in_3out_vhdl
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+hpri_8in_3out_vhdl.vhd
+1732103434
+4
+# storage
+db|hpri_64in_6out_vhdl.(3).cnf
+db|hpri_64in_6out_vhdl.(3).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_first
+hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second
+hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first
+hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second
+hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_first
+hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second
+hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first
+hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second
+}
+# end
+# entity
+hpri_64in_6out_vhdl
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+hpri_64in_6out_vhdl.vhd
+1732104313
+4
+# storage
+db|hpri_64in_6out_vhdl.(0).cnf
+db|hpri_64in_6out_vhdl.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# complete
+
