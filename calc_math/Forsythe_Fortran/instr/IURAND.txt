@@ -1,0 +1,80 @@
+
+     PAÇÄEË:    BÛPAÁOTKA CËÓ×AÉHÛX ×ÈCEË
+
+     ÏPOÃPAMMA: URAND
+
+     HAÇHA×EHÈE:ÏOÄÏPOÃPAMMA-ÔÓHKÖÈß URAND BÛ×ÈCËßET
+                PABHOMEPHO PACÏPEÄEËEHHÛE CËÓ×AÉHÛE ×ÈCËA
+                ÈÇ ÈHTEPBAËA (0,1).
+                  URAND OCHOBAH HA TEOPÈÈ È ÏPEÄËOÆEHÈßX,
+                COÄEPÆAÙÈXCß B KHÈÃE KHÓT (1969), TOM 2.
+
+1. OÏÈCAHÈE ÏPOÃPAMMÛ È EE ÔOPMAËÜHÛX ÏAPAMETPOB
+
+      REAL FUNCTION URAND(IY)
+C
+      INTEGER IY
+C
+C  BXOÄHOÉ ÏAPAMETP
+C
+C     IY     ÖEËAß ÏEPEMEHHAß, KOTOPOÉ ÏEPEÄ ÏEPBÛM
+C            OÁPAÙEHÈEM K URAND CËEÄÓET ÏPÈCBOÈTÜ
+C            ÏPOÈÇBOËÜHOE ÖEËO×ÈCËEHHOE HA×AËÜHOE ÇHA×EHÈE.
+C
+C  BÛXOÄHÛE ÏAPAMETPÛ
+C
+C    URAND  CËÓ×AÉHOE ×ÈCËO ÈÇ ÈHTEPBAËA (0,1).
+C
+C    IY     ÏEPEMEHHAß, ÇHA×EHÈE KOTOPOÉ ÄOËÆHO ÁÛTÜ
+C           COXPAHEHO ÄËß ÏOCËEÄÓÙÈX OÁPAÙEHÈÉ
+
+2. ÄËß TOÃO ×TOÁÛ ÏOËÓ×ÈTÜ CËÓ×AÉHOE ×ÈCËO HEOÁXOÄÈMO:
+
+   1. OÏÈCATÜ B BÛÇÛBAÞÙEÉ ÏPOÃPAMME ÏEPEMEHHÛE,
+      ßBËßÞÙÈECß ÏAPAMETPAMÈ ÏOÄÏPOÃPAMMÛ-ÔÓHKÖÈÈ
+
+   2. ÇAÄATÜ ÏPOÈÇBOËÜHOE ÇHA×EHÈß BXOÄHOÃO ÏAPAMETPA:
+
+   3. OÁPATÈTÜCß K ÏOÄÏPOÃPAMME-ÔÓHKÖÈÈ URAND
+
+             Z=URAND(IY)
+
+3. ÏPÈMEP ÈCÏOËÜÇOBAHÈß ÏOÄÏPOÃPAMMÛ.
+
+C     ÈËËÞCTPÈPÓÞÙAß ÏPOÃPAMMA ÄËß URAND
+C
+      IY=0
+      DO 10 I=1,10
+         Z=URAND(IY)
+         PRINT 1,Z
+   1  FORMAT('    Z=',F10.7)
+  10  CONTINUE
+      STOP
+      END
+
+   B PEÇÓËÜTATE EE BÛÏOËHEHÈß ÁÓÄET ÏOËÓ×EHO
+
+    Z= 0.2113248
+    Z= 0.7560438
+    Z= 0.0002211
+    Z= 0.3303270
+    Z= 0.6653811
+    Z= 0.6283917
+    Z= 0.8497452
+    Z= 0.6857309
+    Z= 0.8782164
+    Z= 0.0683740
+
+4. ÇAME×AHÈß
+
+   1. PEÇÓËÜTATÛ ÏOËÓ×EHÛ HA EC-1045 (TPAHCËßTOP FORTOE)
+
+   2. BEPCÈß ÏOÄÏPOÃPAMMÛ URAND C ÄBOÉHOÉ TO×HOCTÜÞ
+      OTCÓTCTBÓET
+
+5. ËÈTEPATÓPA
+
+   1. ÔOPCAÉT ÄÆ.,MAËÜKOËÜM M., MOÓËEP K.
+      MAØÈHHÛE METOÄÛ MATEMATÈ×ECKÈX BÛ×ÈCËEHÈÉ.
+      M.: MÈP, 1980, C.260 - 270.
+

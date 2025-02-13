@@ -1,0 +1,98 @@
+
+    PAÇÄEË:    ÈHTEPÏOËßÖÈß
+
+    ÏPOÃPAMMA: SEVAL
+
+    HAÇHA×EHÈE:ÏOÄÏPOÃPAMMA-ÔÓHKÖÈß SEVAL BÛ×ÈCËßET ÇHA×EHÈE
+               KÓÁÈ×ECKOÃO CÏËAÉHA, KOÝÔÔÈÖÈEHTÛ KOTOPOÃO
+               ÏPEÄBAPÈTEËÜHO BÛ×ÈCËEHÛ ÏPOÃPAMMOÉ SPLINE,
+
+                SEVAL=Y(I)+B(I)*(U-X(I))+C(I)*(U-X(I))**2+
+                                        +D(I)*(U-X(I))**3
+
+               ÃÄE X(I).LT.U.LT.X(I+1).
+
+               ECËÈ U.LT.X(1), TO ÁEPETCß ÇHA×EHÈE I=1.
+               ECËÈ U.GE.X(N), TO ÁEPETCß ÇHA×EHÈE I=N.
+
+
+1. OÏÈCAHÈE ÏOÄÏPOÃPAMMA È EE ÔOPMAËÜHÛX ÏAPAMETPOB
+
+      REAL FUNCTION SEVAL(N,U,X,Y,B,C,D)
+      INTEGER N
+      REAL U,X(N),Y(N),B(N),C(N),D(N)
+
+C  BXOÄHÛE ÏAPAMETPÛ
+C
+C     N     -×ÈCËO ÇAÄAHHÛX TO×EK
+C
+C     U     -AÁCÖÈCCA, ÄËß KOTOPOÉ BÛ×ÈCËßETCß ÇHA×EHÈE
+C            CÏËAÉHA
+C
+C     X,Y   -MACCÈBÛ ÇAÄAHHÛX AÁCÖÈCC È OPÄÈHAT
+C
+C     B,C,D -MACCÈBÛ KOÝÔÔÈÖÈEHTOB CÏËAÉHA, BÛ×ÈCËEHHÛE
+C
+C            ÏOÄÏPOÃPAMMOÉ SPLINE
+C
+C  BÛXOÄHOÉ ÏAPAMETP
+C
+C     SEVAL -ÇHA×EHÈE KÓÁÈ×ECKOÃO CÏËAÉHA
+
+2. ÄËß TOÃO ×TOÁÛ BÛ×ÈCËÈTÜ ÇHA×EHÈE KÓÁÈ×ECKOÃO CÏËAÉHA
+   HEOÁXOÄÈMO:
+
+   1. OÏÈCATÜ B BÛÇÛBAÞÙEÉ ÏPOÃPAMME BCE ÏEPEMEHHÛE
+      È MACCÈBÛ, ßBËßÞÙÈECß ÏAPAMETPAMÈ ÏOÄÏPOÃPAMMÛ
+
+   2. ÇAÄATÜ ÇHA×EHÈß BXOÄHÛX ÏAPAMETPOB:
+
+   3. OÁPATÈTÜCß K ÏOÄÏPOÃPAMME-ÔÓHKÖÈÈ SEVAL
+
+          S=SEVAL(N,U,X,Y,B,C,D)
+
+3. ÏPÈMEP ÈCÏOËÜÇOBAHÈß ÏOÄÏPOÃPAMMÛ.
+
+C     ÈËËÞCTPÈPÓÞÙAß ÏPOÃPAMMA ÄËß SEVAL
+C
+      INTEGER N,I
+      REAL X(10),Y(10),B(10),C(10),D(10)
+      N=10
+      DO 10 I=1,N
+        X(I)=I
+        Y(I)=X(I)**3
+   10 CONTINUE
+C
+      CALL SPLINE (N,X,Y,B,C,D)
+C
+      U=2.5
+      S=SEVAL(N,U,X,Y,B,C,D)
+C
+      PRINT 102,U,S
+      STOP
+  102 FORMAT(14X,'U=',F3.1,5X,'S=',F10.7)
+      END
+
+   B PEÇÓËÜTATE EE BÛÏOËHEHÈß ÁÓÄET ÏOËÓ×EHO
+
+              U=2.5     S=15.6250000
+
+4. ÇAME×AHÈß
+
+   1. PEÇÓËÜTATÛ ÏOËÓ×EHÛ HA EC-1045 (TPAHCËßTOP FORTOE)
+
+   2. ÄËß BÛ×ÈCËEHß ÇHA×EHÈß KÓÁÈ×ECKOÃO ÏOËÈHOMA ÈCÏOËÜ-
+      ÇÓETCß CXEMA ÃOPHEPA.
+
+   3. AHAËOÃ ÏOÄÏPOÃPAMMÛ SEVAL, HO C ÄBOÉHOÉ TO×HOCTÜÞ -
+      ÏOÄÏPOÃPAMMA DSEVAL. ÏOCËEÄOBATEËÜHOCTÜ ÓKAÇAHÈß
+      ÏAPAMETPOB ÏPÈ BÛÇOBE ÏOÄÏPOÃAMMÛ DSEVAL TA ÆE,
+      ×TO È Ó SEVAL, ÇA ÈCKËÞ×EHÈEM TOÃO, ×TO ÏEPEMEHHÛE
+      U, X, Y, B, C, D ÈMEÞT TÈÏ DOUBLE PRECISION
+
+5. ËÈTEPATÓPA
+
+   1. ÔOPCAÉT ÄÆ.,MAËÜKOËÜM M., MOÓËEP K.
+      MAØÈHHÛE METOÄÛ MATEMATÈ×ECKÈX BÛ×ÈCËEHÈÉ.
+      M.: MÈP, 1980, C.78 - 98.
+

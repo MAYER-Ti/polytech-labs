@@ -1,0 +1,109 @@
+
+     PAÇÄEË:     HEËÈHEÉHÛE ÓPABHEHÈß
+
+     ÏPOÃPAMMA:  ZEROIN
+
+     HAÇHA×EHÈE: ÏOÄÏPOÃPAMMA-ÔÓHKÖÈß ZEROIN BÛ×ÈCËßET
+                 HÓËÜ ÔÓHKÖÈÈ F(X) B ÈHTEPBAËE A,B
+
+1. OÏÈCAHÈE ÏOÄÏPOÃPAMMÛ È EE ÔOPMAËÜHÛX ÏAPAMETPOB
+
+      REAL FUNCTION ZEROIN(AX,BX,F,TOL)
+C
+      EXTERNAL F
+      REAL AX,BX,F,TOL
+C
+C  BXOÄHÛE ÏAPAMETPÛ
+C
+C     AX     ËEBÛÉ KOHEÖ ÈCXOÄHOÃO ÈHTEPBAËA
+C
+C     BX     ÏPABÛÉ KOHEÖ ÈCXOÄHOÃO ÈHTEPBAËA
+C
+C     F      ÏOÄÏPOÃPAMMA-ÔÓHKÖÈß, KOTOPAß BÛ×ÈCËßET F(X)
+C            ÄËß ËÞÁOÃO X B ÈHTEPBAËE AX BX
+C
+C     TOL    ÆEËAEMAß ÄËÈHA ÈHTEPBAËA HEOÏPEÄEËEHHOCTÈ
+C            KOHE×HOÃO PEÇÓËÜTATA
+C
+C  BÛXOÄHÛE ÏAPAMETPÛ
+C
+C     ZEROIN AÁCÖÈCCA, AÏÏPOKCÈMÈPÓÞÙAß HÓËÜ ÔÓHKÖÈÈ F B
+C            ÈHTEPBAËE AX, BX
+C
+C  ÇAME×AHÈß
+C
+C        ÁEÇ ÏPOBEPKÈ ÏPEÄÏOËAÃAETCß, ×TO F(AX) È F(BX)
+C     ÈMEÞT ÏPOTÈBOÏOËOÆHÛE ÇHAKÈ.
+C        ZEROIN BÛ×ÈCËßET HÓËÜ F(X) B ÇAÄAHHOM ÈHTEPBAËE
+C     AX, BX B ÏPEÄEËAX ÄOÏÓCKA HA OØÈÁKÓ  4*MACHEPS*ABS(X)
+C     + TOL, ÃÄE MACHEPS-OTHOCÈTEËÜHAß MAØÈHHAß TO×HOCTÜ.
+C
+
+2. ÄËß TOÃO ×TOÁÛ HAÉTÈ HÓËÜ ÔÓHKÖÈÈ F(X) HA
+   ÈHTEPBAËE AX,BX HEOÁXOÄÈMO:
+
+   1. HAÏÈCATÜ ÏOÄÏPOÃPAMMÓ-ÔÓHKÖÈÞ F(X)
+
+        REAL FUNCTION F(X)
+        REAL X,F
+C       F=
+        RETURN
+        END
+
+      BÛ×ÈCËßÞÙÓÞ ÔÓHKÖÈÞ F(X) B TO×KE X
+
+   2. OÏÈCATÜ B BÛÇÛBAÞÙEÉ ÏPOÃPAMME BCE ÏEPEMEHHÛE,
+      ßBËßÞÙÈECß ÏAPAMETPAMÈ ÏOÄÏPOÃPAMMÛ
+
+   3. OÁ'ßBÈTÜ F B OÏEPATOPE EXTERNAL B BÛÇÛBAÞÙEÉ ÏPOÃPAMME
+
+   4. ÇAÄATÜ ÇHA×EHÈß BXOÄHÛX ÏAPAMETPOB:
+
+C     AX     ËEBÛÉ KOHEÖ ÈCXOÄHOÃO ÈHTEPBAËA
+C     BX     ÏPABÛÉ KOHEÖ ÈCXOÄHOÃO ÈHTEPBAËA
+C     TOL    ÆEËAEMÓÞ ÄËÈHÓ ÈHTEPBAËA HEOÏPEÄEËEHHOCTÈ
+C            KOHE×HOÃO PEÇÓËÜTATA
+
+   5. OÁPATÈTÜCß K ÏOÄÏPOÃPAMME-ÔÓHKÖÈÈ ZEROIN
+
+         Z=ZEROIN(AX,BX,F,TOL)
+
+3. ÏPÈMEP ÈCÏOËÜÇOBAHÈß ÏOÄÏPOÃPAMMÛ.
+
+      REAL FUNCTION F(X)
+      REAL X
+      F=X*(X*X-2.0)-5.0
+      RETURN
+      END
+C
+      EXTERNAL F
+      REAL F,A,B,Z,TOL,ZEROIN
+      A=2.0
+      B=3.0
+      TOL=1.0E-7
+      Z=ZEROIN(A,B,F,TOL)
+      PRINT 1,Z
+    1 FORMAT('   Z=',F10.7)
+      STOP
+      END
+
+   B PEÇÓËÜTATE EE BÛÏOËHEHÈß ÁÓÄET ÏOËÓ×EHO
+
+      Z= 2.0945511
+
+4. ÇAME×AHÈß
+
+   1. PEÇÓËÜTATÛ ÏOËÓ×EHÛ HA EC-1045 (TPAHCËßTOP FORTOE)
+
+   2. AHAËOÃ ÏOÄÏPOÃPAMMÛ ZEROIN, HO C ÄBOÉHOÉ TO×HOCTÜÞ -
+      ÏOÄÏPOÃPAMMA DZEROI. ÏOCËEÄOBATEËÜHOCTÜ ÓKAÇAHÈß
+      ÏAPAMETPOB ÏPÈ BÛÇOBE ÏOÄÏPOÃAMMÛ DZEROI TA ÆE,
+      ×TO È Ó ZEROIN, ÇA ÈCKËÞ×EHÈEM TOÃO, ×TO ÏEPEMEHHÛE
+      AX, BX, F, TOL  ÈMEÞT TÈÏ DOUBLE PRECISION
+
+5. ËÈTEPATÓPA
+
+   1. ÔOPCAÉT ÄÆ.,MAËÜKOËÜM M., MOÓËEP K.
+      MAØÈHHÛE METOÄÛ MATEMATÈ×ECKÈX BÛ×ÈCËEHÈÉ.
+      M.: MÈP, 1980, C.172 - 194.
+
