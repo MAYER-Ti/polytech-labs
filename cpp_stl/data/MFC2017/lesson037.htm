@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)lesson037.htm -->
+<HTML xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><HEAD><TITLE>ﾏ&#57517;胙瑟頏魵瑙韃 浯 Visual C++</TITLE>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">&#1050;&#1088;&#1091;&#1075;&#1083;&#1086;&#1074; &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1050;&#1086;&#1085;&#1089;&#1090;&#1072;&#1085;&#1090;&#1080;&#1085;&#1086;&#1074;&#1080;&#1095;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">9200.00000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">&#1050;&#1088;&#1091;&#1075;&#1083;&#1086;&#1074; &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1050;&#1086;&#1085;&#1089;&#1090;&#1072;&#1085;&#1090;&#1080;&#1085;&#1086;&#1074;&#1080;&#1095;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x0101002C05377DDBA1DA4998D7B8B3F4A9A863</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</HEAD><BODY background="../bgrwhite.gif">
+      <CENTER><B>ﾓ&#57517;・VII</B></CENTER></FONT>
+      <P>
+      <P align=center><FONT color=black face=ARIAL size=4>ﾑ・鍄籵湜・&#57705;磊&#57887;・・
+      &#63729;・・炅瑟・&#58082;&#57503;粱褊・</FONT></P>
+            <UL type=square>
+              <LI>ﾑ裨&#58819;・籵・浯蒡 &#57503;銜珮ⅳ瑣・蒻琿魲魵・ ・淲・ 
+              <B>IDD_CUSTOM_DIALOG</B>, ・・・&#59223;&#63730;, ・&#57893;&#57517;・糺 碯蒟&#57884; 糺礪&#57503;&#57907; 
+              &#58633;褪 ・&#58070;・ ﾂ浯&#58819;・ ・ 裹 &#57706;&#57517;裲&#57887;&#57522;褌, 鈞&#57884;・&#57705;鈕琅韲 濵糺・
+              ・瑰・ ・&#57893;&#57530;・碯蒟・ⅳ粢&#58819;&#57907; 鈞 &#63729;&#57898; 蒻琿魲魵・ ・淲・, &#57693;&#63731;趺・裙・
+              ・肭珞燾・・瑰&#57705;・・&#57693;&#63731;趺・&#63729;・・炅・&#58082;&#57503;粱褊・ ・&#57705;磊&#57887;&#63731;・, ・
+              ・蒡・ 
+              <P align=center><FONT color=red face=TAHOMA 
+              size=+1><B>ﾏ&#57517;裲&#57887;&#57517;籵湜・蒻琿魲魵鵫 ・淲・</B></FONT></P>ﾑ裨&#58819;・・ 
+              粨銛琿・・&#57706;&#57517;裲&#57887;&#57522;褌 蒻琿魲魵・ ・淲・. ﾄ・ &#63729;&#57893;胛 粹璞琿・
+              糺礪&#57508;&#57884; 鈞・琅・ <B>"Resourse View"</B> ・&#57503;&#57701;&#57517;鶯・・渼・
+              <B>Graph Resource</B>. ﾂ靃鸙湜&#57884; &#57702;蒟・&#59203;・蒟鴦&#57881;・ <BR>
+              <LI>ﾙ褄・頸・・珞鵫 ・ⅰ・・・&#59015; 浯 <B>ﾂ&#59027;蕀・/B>. 
+              <LI>ﾂ ・&#63731;粨糲褌・ ・炅裲&#57704;黑 ・・ 糺礪&#57503;褌 <B>Insert 
+              Dialog</B>(糂&#57879;粨&#57907; 蒻琿魲). 
+              <LI>Visual C++ &#57705;鈕瑰・濵糺・蒻琿魲 c 頸褊蒻&#58263;・&#57893;&#57517;・
+              <B>IDD_DIALOG1</B>, 籵・浯蒡 ・・・&#57907; 裙・浯 
+              <B>IDD_CUSTOM_DIALOG</B>. 
+              <LI>ﾑ ・・&#59223;&#63730; ・淲・ <B>Controls</B> &#57503;&#57708;&#57879;紆&#57884; &#63729;・・炅・ 
+              &#58082;&#57503;粱褊・ ・・・・鈞濵 浯 &#57511;・ 2.0 ・&#57705;肭瑰濵 &#57879;硴頽・2.0. 
+              <P align=center><IMG 
+              src="lesson037.files/vc_resource_dlgcustom_proekt.gif"></P>
+              <P align=center><FONT color=red><B>ﾒ珮・&#58631; 2.0</B></FONT></P>
+              <DIV align=center>
+              <TABLE bgColor=#ffffbb border=1 cellPadding=0 cellSpacing=0 
+              width=440>
+                <TBODY>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>ﾎ磅裲・/B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ﾑ粽鴦&#57881;・/B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ﾓ&#57709;瑙魵・</B></FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Dialog Box</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL 
+                  size=2><B>IDD_CUSTOM_DIALOG</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Set Graph</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Font</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>System, Size 10, &#57709;&#57503;湜&#58631; 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Radio Button</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID<B></FONT></B></B></TD>
+                  <TD><FONT face=ARIAL 
+size=2><B>IDC_RED_RADIO</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>&amp;Red</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Group</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; 
+                  General</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Modal frame</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Client edge</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Static edge</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Radio Button</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID<B></FONT></B></B></TD>
+                  <TD><FONT face=ARIAL 
+                size=2><B>IDC_GREEN_RADIO</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>&amp;Green</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Group</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>淲 ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; 
+                    General</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Modal frame</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Client edge</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Static edge</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Radio Button</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID<B></FONT></B></B></TD>
+                  <TD><FONT face=ARIAL 
+                size=2><B>IDC_BLUE_RADIO</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>&amp;Blue</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Group</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>淲 ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; 
+                    General</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Modal frame</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Client edge</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Static edge</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>ⅳ・&#58824;・ &#57709;&#57503;湜&#58631; Extended 
+                    Styles</FONT></TD></TR></TBODY></TABLE></DIV>
+              <LI>ﾐ珸・&#57709;頸・&#57503;蒻鶴濵・・髜&#63731;鈞&#57884;・濵 ・&#57893;・・・蓐・・・&#57893;&#57517;・・・
+              萵燾 ・&#57879;硴頽・ ﾍ・鈞碯蕈&#57884; &#58084;&#57879;濵粨&#57907; &#57693;鵫&#57709;粽 <B>Group</B> ・
+              &#57503;蒻鶴濵・・<B>Red</B>. ﾝ&#57893; 鰀浯&#58819;褪, &#58837;・糂・&#57895;・&#57503;蒻鶴濵・・
+              碯蔘・髜栁蒻淲燾 ・鮏炫 胙&#58082;・, ・・・糺碚&#57508; 鮏濵・韈 湜・ 鈿璞裲 
+              "ⅳ・&#58824;濵" 碯蒟・・&#57508;・&#59195;&#57907;・. 
+              <LI>ﾇ琺蒻&#57884; ・<B>Resource Symbols</B> ・・・ <B>View</B> ・
+              &#58068;裝頸褥・・&#57893;・ &#58837;・頸褊蒻&#58263;・&#57893;&#57530; ・ⅰ鶴 &#63731;粱&#63731;&#63730;&#57896;&#63731; 
+              ・&#57702;裝魵瑣褄・鐱 &#58827;&#57702;・ </LI></UL>
+            <UL type=square>
+              <P align=center><FONT color=red face=TAHOMA size=+1><B>ﾑ・鍄籵湜・
+              ・&#57508;・澵鵫 ・&#57503;蒻鶴濵・瑟・/B></FONT></P>
+              <LI>ﾒ襃褞・籵・淲髜&#58457;蒻・ &#57693;&#63731;鈞&#57907; ・&#57508;・澵・ ・&#57503;蒻鶴濵・瑟・ 
+              ・&#57893;&#57530;・糺 &#57503;銕褥&#57887;・ ・蒻琿魲魵鵫 ・淲・ 
+              <B>IDD_CUSTOM_DIALOG</B>. 
+              <LI>ﾂ靃鸙湜&#57884; ・珞隆 &#59200;・鶴 ・ ・渼&#57898; <B>IDD_CUSTOM_DIALOG</B>, ・
+              糺礪&#57511;&#57884; ・渼・<B>ClassWizard</B> ・・・ <B>View</B>. 
+              <LI>ﾏ・粨&#57907;・ 蒻琿魲魵・ ・淲・(Add class), ・&#57893;&#57503;&#63731; &#57706;&#57517;&#57699;・籵・ 
+              &#57705;鈕瑣・濵糺・・瑰・齏・蒡矜粨&#57907; ・&#57710;&#59200;&#57709;糒&#63730;&#59203;・ ﾂ・糺礪&#57503;褪・
+              &#57705;鈕瑣・濵糺・<B>Create a new class</B>, ・&#59200;・瑯&#57884; ・ ・ⅰ・ 
+              <B>OK</B>. 
+              <LI>ﾂ 蒻琿魲魵鵫 ・淲・ <B>New Class</B> 鈞萵鶯・韲&#63731; 
+              <B>CSetDlg</B>. ﾈ &#59200;・湜&#57884; ・ ・ⅰ・ <B>OK</B>. 
+              <LI>ﾓ砒蒻&#57884;&#57719;, &#58837;・鶴濵 ・<B>Class Name</B> &#58084;&#57879;濵粱褊・浯 
+              CSetDlg. ﾇ瑣褌 &#59200;・湜&#57884; 浯 ・渼・<B>Member Varibles</B> ・糺礪&#57511;&#57884; 
+              ・渼・<B>IDC_RED_RADIO</B>. 
+              <LI>ﾍ琥・&#57884; 浯 ・ⅰ・ <B>Add Varible</B> ・鈞萵鶯・・・&#63731;粨糲褌・ 
+              蒻琿魲魵黑 鶴淲 <B><LEFT>Variable Name: m_RedRadio Category: Value 
+              Variable Type: int </LEFT></B>
+              <LI>ﾙ褄・頸・・ ・ⅰ・ <B>OK</B>. 
+              <LI>ﾑ・蒡籵&#57884;・濵, ・聿・鈿璞褊韃 ・&#57515;褊濵・<B>m_RedRadio</B> 
+              &#57503;粹・0 - 糺碣瑙・&#57503;蒻鶴濵・・<B>RED</B>, ・聿・1 - &#57503;蒻鶴濵・・
+              <B>CREEN</B>, ・聿・2 - &#57503;蒻鶴濵・・<B>BLUE</B>. </LI></UL>
+            <UL type=square>
+              <P align=center><FONT color=red face=TAHOMA size=+1><B>ﾑ鰀萵湜・
+              髜栁・・・瑰&#57691; CSetDlg</B></FONT></P>
+              <LI>ﾂ ・裝鏸&#58092;裨 肭珞・糺 &#57705;鈕琿・・瑰・<B>CSetDlg()</B>. ﾎ・
+              &#63731;粱&#63731;褪・ ・鵰鈔鮏燾・・&#57708;黑 ⅳ ・瑰&#57691; <B>CDialog</B>, ・蒻琿魲魵・ 
+              ・淲・ <B>IDD_CUSTOM_DIALOG</B> &#57693;&#63731;鈞浯 ・・瑰&#57705;・<B>CSetDlg</B>. 
+              C ・瑰&#57705;・<B>CSetDlg</B> 瑰&#57705;&#58639;頏魵瑙・葢・&#58255;鴉・: 
+              <B>SetDlg.cpp</B> ・<B>SetDlg.h</B>. 
+              <LI>ﾒ襃褞・糺 &#57705;鈕琅頸・髜栁・ ・瑰&#57691; <B>CSetDlg</B>. ﾂ 髜・粱褊韃 
+              ・瑰&#57691; <B>CGraphDlg</B>(・&#58255;鴉・CGraphDlg.h) 蒡矜紆&#57884; &#57702;裝・&#59203;・
+              ・・ ・&#57893;&#57530;・髜・粱&#63731;褪 ・&#57508;・澵・ <B>m_dlg</B> 髜栁・黑 ・瑰&#57691; 
+              <B>CSetDlg</B>. ﾝ&#57893; 炫跫・蓁&#63731; &#57893;胛, &#58837;髜・・ ・肭・韲褪・蒡&#57709;&#58082; ・
+              ・&#57508;・澵隯 ・瑰&#57691; <B>CSetDlg</B>:<BR>
+              <P><B>class CGraphDlg : public CDialog<BR>{<BR>// 
+              Construction<BR>public:<BR>CGraphDlg(CWnd* pParent = NULL); // 
+              standard constructor
+              <P>////ﾌ鵫 ・・浯&#58827;浯褪・ 鈕褥・///
+              <P>CSetDlg m_dlg;
+              <P>////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 鈕褥・///<BR>...<BR>}<BR></B></P>
+              <LI>ﾂ粢蒟澵隆 籵・ ・・&#57705;鈕瑯・髜栁・ <B>m_dlg</B> ・瑰&#57691; 
+              <B>CSetDlg</B>. 
+              <LI>ﾎ蓖瑕・ ・聿・・・齏&#63731;&#57893;・糂&#57895;褶瑯・&#57702;魵・<B>CSetDlg</B> ・
+              &#58255;鴉・<B>CGraphDlg</B>, ・ 裙・淲 ・鴈褪. ﾇ浯&#58827;・浯蒡 蒡矜粨&#57907; 
+              &#57702;裝・&#59203;・ⅰ褞瑣ⅱ <B>#include</B> ・&#58255;鴉 <B>CGraphDlg</B>, ・
+              &#57691;・・浯&#58819;・:<BR>
+              <P><B>// GraphDlg.h : header file<BR>//
+              <P>////ﾌ鵫 ・・浯&#58827;浯褪・ 鈕褥・///
+              <P>#include "SetDlg.h"
+              <P>////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 
+              鈕褥・///<BR>...<BR>...<BR></B></P></LI></UL>
+            <UL type=square>
+              <P><FONT color=red size=+1><B>ﾌ鮏頡韭璋・ ・萵 ・ⅰ・ Draw 
+              Graphics</B></FONT></P>
+              <LI>ﾑ裨&#58819;・糺 ・蒻&#58263;&#58639;&#57522;褪・・・&#58274;渼&#58639;・
+              <B>OnDrawgraphicsButton</B> &#57702;裝・&#59203;・髜&#57503;鉋・ </LI></UL>
+            <UL type=round>
+              <LI>ﾂ鎤褞褪・<B>ClassWizard</B> ・・・ <B>View</B> 
+              <LI>ﾂ鎤褞褪・鈞・琅・ <B>Message Maps</B> ・・淲・ 
+              <B>ClassWizard</B> 
+              <LI>ﾈ&#57706;鸙・&#58076;&#57884; 蒻琿魲魵・ ・淲・ <B>ClassWizard</B> 蓁&#63731; 糺碚&#57503; 
+              &#57702;裝・&#59200;胛 &#57705;磊&#57887;&#63731;:<BR><LEFT><B>Class Name: CGraphDlg<BR>Object 
+              ID: IDC_DRAWGRAPHICS_BUTTON<BR>Messages: BN_CLICKED<BR></B></LEFT>
+              <LI>ﾙ褄・頸・浯 ・ⅰ・ <B>Add Fucntion</B> ・・&#57503;&#57701;&#57530;糲褌・ 鶴淲 
+              浯跪頸・・ⅰ・ <B>OK</B>. </LI></UL>
+            <UL type=square>
+              <LI>ﾍ琥・&#57884; ・ⅰ・ <B>Edit Code</B> ・浯・&#59015;&#57884; &#57702;裝・&#59203;・・・・
+              &#58274;渼&#58639;・<B>OnDrawgraphicsButton()</B>: 
+              <P><B>BOOL CGraphDlg::OnDrawgraphicsButton()<BR>{<BR>// TODO: Add 
+              your message handler code here
+              <P>////////ﾌ鵫 ・・浯&#58827;浯褪・ 鈕褥・//////////
+              <P>m_dlg.DoModal();
+              <P>////////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 鈕褥・//////////
+              <P>}<BR></B></P>
+              <LI>ﾂ・蒡矜粨・ 裝竟&#57709;粢澵燾・ⅰ褞a&#57893;・<BR>m_dlg.DoModal();
+              <P>・&#57893;&#57530;・糺鍄籵褪 蒻琿胛糒&#63730; ・淲・ 
+              <B>IDD_CUSTOM_DIALOG</B>(糺粽蒻・髜栁・ <B>m_dlg</B>). </P>
+              <LI>ﾕⅳ&#63731; ・・襌・淲 鈞・煆褊, ・跫・・&#57703;ⅳ&#57508;&#57907; &#58819;&#57709;顆&#57893; 粐裝褊燾・
+              ・・ 
+              <LI>ﾏⅲ&#57895;鵫&#57884; ・糺・・頸・・魲&#57503;・・ 
+              <LI>ﾍ琥・&#57884; 浯 ・ⅰ・ <B>Draw Graphics</B>, ・&#63729;・・&#57508;・炅頏&#58076;&#57884; ・
+              &#57503;蒻鶴濵・瑟・ </LI></UL>
+            <UL type=square>
+              <P><FONT color=red size=+1><B>ﾈ湜&#58639;琿韈璋・ 
+              &#57503;蒻鶴濵・・/B></FONT></P>
+              <LI>ﾂ瑟 淲髜&#58457;蒻・ 粲・&#58827;&#57907; ・・魲&#57503;・・・・ ・&#57893;&#57530;・
+              竟頽鞨・鉅&#57522;褪 &#57503;蒻鶴濵・・<B>RED</B>, 糺礪&#57503;・裹 ・・鈞・&#57701;・
+              ・魲&#57503;・・ </LI></UL>
+            <UL type=round>
+              <LI>ﾂ鎤褞褪・<B>ClassWizard</B> ・・・ <B>View</B> 
+              <LI>ﾂ鎤褞褪・鈞・琅・ <B>Message Maps</B> ・・淲・ 
+              <B>ClassWizard</B> 
+              <LI>ﾈ&#57706;鸙・&#58076;&#57884; 蒻琿魲魵・ ・淲・ <B>ClassWizard</B> 蓁&#63731; 糺碚&#57503; 
+              &#57702;裝・&#59200;胛 &#57705;磊&#57887;&#63731;:<BR><LEFT><B>Class Name: CGraphDlg<BR>Object 
+              ID: CGraphDlg<BR>Messages: WM_INITDIALOG<BR></B></LEFT>
+              <LI>ﾙ褄・頸・浯 ・ⅰ・ <B>Add Fucntion</B> ・・&#57503;&#57701;&#57530;糲褌・ 鶴淲 
+              浯跪頸・・ⅰ・ <B>OK</B>. </LI></UL>
+            <UL type=square>
+              <LI>ﾍ琥・&#57884; ・ⅰ・ <B>Edit Code</B> ・浯・&#59015;&#57884; &#57702;裝・&#59203;・・・・
+              &#58274;渼&#58639;・<B>OnInitDialog()</B>: 
+              <P><B>BOOL 
+              CGraphDlg::OnInitDialog()<BR>{<BR>CDialog::OnInitDialog();<BR>//....<BR>////////ﾌ鵫 
+              ・・浯&#58827;浯褪・ 鈕褥・//////////
+              <P>///ﾓ&#57709;瑙魵頸・&#57699;&#57709;褌燾・&#57879;鴈褞<BR>int 
+              iInstallResult;<BR>iInstallResult=SetTimer(1, 50, 
+              NULL);<BR>if(iInstallResult==FALSE)<BR>{<BR>MessageBox("Cannot 
+              install timer",<BR>"Error message",<BR>MB_OK+MB_ICONERROR);<BR>}
+              <P>//ﾂ鎤&#57503;&#57907; &#57503;蒻鶴濵・・RED<BR>m_dlg.m_RedRadio=0;
+              <P>////////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 鈕褥・//////////
+              <P>return TRUE; // return TRUE unless you set the focus to a 
+              control<BR>}<BR></B></P>
+              <LI>ﾊ鮏, ・&#57893;&#57530;・糺 粐褄・・頌籵鞣瑯・・&#57508;・澵鵫 <B>m_RedRadio</B> 
+              鈿璞褊韃 0, 頌・・銛&#63731; 蓁&#63731; &#63729;&#57893;胛 髜栁・ ・瑰&#57691; <B>m_dlg</B>, ・・ 
+              ・&#57508;・澵・ <B>m_RedRadio</B>, &#63731;粱&#63731;褪・ &#58830;褊黑 ・瑰&#57691; 
+              <B>CSetDlg</B>. </LI></UL>
+            <UL type=square>
+              <P><FONT color=red size=+1><B>ﾄ髜珞・湜・・&#57508;・澵顥 &#63729;・・炅魵 ・
+              ・瑰・CGraphDlg</B></FONT></P>
+              <LI>ﾒ襃褞・籵・淲髜&#58457;蒻・ 粲・&#58827;&#57907; 葢・・&#57508;・澵鐱 ・・瑰・
+              <B>CGraphDlg</B>, &#57879;・&#58837;髜・・・磊・ 蒡&#57709;&#58082;燾 韈 ・碚・
+              &#58274;渼&#58639;・&#63729;・・炅・・瑰&#57691;&#63730; 
+              <LI>ﾂ・&#63730;&#58827;&#57884; 髜・粱褊・ ・・瑰・<B>CGraphDlg</B> &#57702;蒟・&#59203;・
+              髜&#57503;鉋・<BR>
+              <P><B>class CGraphDlg : public CDialog<BR>{<BR>// 
+              Construction<BR>public:<BR>CGraphDlg(CWnd* pParent = NULL); // 
+              standard constructor
+              <P>////ﾌ鵫 ・・浯&#58827;浯褪・ 鈕褥・///
+              <P>CSetDlg m_dlg;
+              <P>int m_Radius;<BR>int m_Direction;
+              <P>////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 
+            鈕褥・///<BR>...<BR>}<BR></B></P></LI></UL>
+            <UL type=square>
+              <P><FONT color=red size=+1><B>ﾈ湜&#58639;琿韈璋・ 
+              &#57503;蒻鶴濵・・/B></FONT></P>
+              <LI>ﾂ瑟 炫跫・浯・&#57691;&#57907; ・・ ・&#57893;&#57530;・竟頽鞨・鉅&#57522;褪 ・&#57508;・澵鐱 
+              <B>m_Radius</B> ・<B>m_Direction</B>. </LI></UL>
+            <UL type=round>
+              <LI>ﾂ鎤褞褪・<B>ClassWizard</B> ・・・ <B>View</B> 
+              <LI>ﾂ鎤褞褪・鈞・琅・ <B>Message Maps</B> ・・淲・ 
+              <B>ClassWizard</B> 
+              <LI>ﾈ&#57706;鸙・&#58076;&#57884; 蒻琿魲魵・ ・淲・ <B>ClassWizard</B> 蓁&#63731; 糺碚&#57503; 
+              &#57702;裝・&#59200;胛 &#57705;磊&#57887;&#63731;:<BR><LEFT><B>Class Name: CGraphDlg<BR>Object 
+              ID: CGraphDlg<BR>Messages: WM_INITDIALOG<BR></B></LEFT>
+              <LI>ﾙ褄・頸・浯 ・ⅰ・ <B>Add Fucntion</B> ・・&#57503;&#57701;&#57530;糲褌・ 鶴淲 
+              浯跪頸・・ⅰ・ <B>OK</B>. </LI></UL>
+            <UL type=square>
+              <LI>ﾍ琥・&#57884; ・ⅰ・ <B>Edit Code</B> ・浯・&#59015;&#57884; &#57702;裝・&#59203;・・・・
+              &#58274;渼&#58639;・<B>OnInitDialog()</B>: 
+              <P><B>BOOL 
+              CGraphDlg::OnInitDialog()<BR>{<BR>CDialog::OnInitDialog();<BR>//....<BR>////////ﾌ鵫 
+              ・・浯&#58827;浯褪・ 鈕褥・//////////
+              <P>///ﾓ&#57709;瑙魵頸・&#57699;&#57709;褌燾・&#57879;鴈褞<BR>int 
+              iInstallResult;<BR>iInstallResult=SetTimer(1, 50, 
+              NULL);<BR>if(iInstallResult==FALSE)<BR>{<BR>MessageBox("Cannot 
+              install timer",<BR>"Error message",<BR>MB_OK+MB_ICONERROR);<BR>}
+              <P>//ﾂ鎤&#57503;&#57907; &#57503;蒻鶴濵・・RED<BR>m_dlg.m_RedRadio=0;
+              <P>m_Radius=50;<BR>m_Direction=1;
+              <P>////////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 鈕褥・//////////
+              <P>return TRUE; // return TRUE unless you set the focus to a 
+              control<BR>}<BR></B></P>
+              <LI>ﾊ鮏, ・&#57893;&#57530;・糺 粐褄・竟頽鞨・鉅&#57522;褪 ・&#57515;褊燾・<B>m_Radius</B> 
+              ・<B>m_Direction</B>:
+              <P><B>m_Radius=50;<BR>m_Direction=1;
+              <P></B></P></LI></UL>
+            <UL type=square>
+              <P><FONT color=red size=+1><B>ﾑ・鈔瑙韃 ・萵 ・&#57705;磊&#57887;褌 
+              Timer</B></FONT></P>ﾂ 浯&#58819;・ ・魲&#57503;・・・ 浯・&#57691;・ ・・ ・&#57893;&#57530;・
+              肄淲&#57511;&#57522;褪 &#57705;磊&#57887;・<B>WM_TIMER</B>, ・趾鐱 500 ・・頌・・淸. 
+              ﾒ襃褞・淲髜&#58457;蒻・ 蒡・・頸・&#63729;&#57893;・・・ </UL>
+            <UL type=round>
+              <LI>ﾂ鎤褞褪・<B>ClassWizard</B> ・・・ <B>View</B> 
+              <LI>ﾂ鎤褞褪・鈞・琅・ <B>Message Maps</B> ・・淲・ 
+              <B>ClassWizard</B> 
+              <LI>ﾈ&#57706;鸙・&#58076;&#57884; 蒻琿魲魵・ ・淲・ <B>ClassWizard</B> 蓁&#63731; 糺碚&#57503; 
+              &#57702;裝・&#59200;胛 &#57705;磊&#57887;&#63731;:<BR><LEFT><B>Class Name: CGraphDlg<BR>Object 
+              ID: ﾑGraphDlg<BR>Messages: WM_TIMER<BR></B></LEFT></LI></UL>
+            <UL type=square>
+              <LI>ﾍ琥・&#57884; ・ⅰ・ <B>Edit Code</B> ・浯・&#59015;&#57884; &#57702;裝・&#59203;・・・・
+              &#58274;渼&#58639;・<B>OnTimer()</B>: 
+              <P><B>BOOL CGraphDlg::OnTimer(UINT 
+              nIDEvent)<BR>{<BR>//....<BR>////////ﾌ鵫 ・・浯&#58827;浯褪・ 
+              鈕褥・//////////
+              <P>//MessageBeep((WORD)-2);
+              <P>m_Radius=m_Radius+m_Direction;<BR>if(m_Radius&gt;=100)<BR>{<BR>m_Direction=-1;<BR>}<BR>if(m_Radius&lt;=10)<BR>{<BR>m_Direction=1;<BR>}
+              <P>//ﾈ湜&#58639;頏魵瑣・頌・・褊韃 &#58274;渼&#58639;・OnPaint() Invalidate(); 
+              ////////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 鈕褥・//////////
+              <P>CDialog::OnTimer(UINT nIDEvent);<BR>}<BR></B></P>
+              <LI>ﾏ褞褌褊浯&#63731; <B>m_Direction</B> ・趺・・竟韲瑣・鈿璞褊・ 1 齏・
+              -1. ﾇ浯&#58827;・・・糺・・褊韋 ⅰ褞瑣ⅱ・
+              <B>m_Radius=m_Radius+m_Direction;</B> 鈿璞褊韃 ・&#57508;・澵鵫 碯蒟・
+              &#58079;褊・瑣・&#63731; 齏・&#58069;褄顆鞣瑣・&#63731;, 粡珞頌韲ⅲ&#57887; ⅳ &#57893;胛 ・・・鈿璞褊・
+              韲裹・・&#57508;・澵・ <B>m_Direction</B>. ﾒ瑕韲 髜&#57503;鉋・&#57503;蒻&#58084; ・&#58070;・
+              碯蒟・&#57893; &#58069;褄顆鞣瑣・&#63731;, &#57893; &#58079;褊・瑣・&#63731;. 
+              <LI>ﾗ&#57893;磊 &#57503;蒻&#58084;・・&#58070;・碯鈬&#57503;湜&#58832;・淲 &#58069;褄顆鞣琿・ ・淲 
+              &#58079;褊・琿・, 糺 浯・&#57691;・ &#57702;裝・&#59214;&#63730; ・瀨&#57895;&#58077;&#58639;&#63730; ⅰ褞瑣ⅱ魵 <B>IF</B> 
+              ・&#58274;渼&#58639;・
+              <B>OnTimer</B>:<BR>if(m_Radius&gt;=100)<BR>{<BR>m_Direction=-1;<BR>}<BR>if(m_Radius&lt;=10)<BR>{<BR>m_Direction=1;<BR>}
+              <P>・&#57893;&#57530;・ⅰ褞蒟・&#63730;・ 1) 褥・ 鈿璞褊韃 ・&#57508;・澵鵫 <B>m_Radius</B> 
+              碚・&#59012; 齏・&#57503;粹・100, &#57893; ・&#57508;・澵・ <B>m_Direction</B> ・竟韲瑯・
+              鈿璞褊韃 -1, ・&#57893;聿・&#57503;蒻&#58084; ・&#58070;・浯&#58827;浯褪 &#58079;褊・瑣・&#63731;. 2) ・聿・
+              鈿璞褊韃 ・&#57508;・澵鵫 &#57503;粹・<B>m_Radius</B> ・犱&#59012; 齏・&#57503;粹・10, 
+              &#57893;聿・糂・・鵰&#57712;鮏頸 浯髜ⅱⅳ. </P>
+              <LI>ﾏⅲ・蓖韜 ⅰ褞瑣ⅱ, ・&#57893;&#57530;・糺 浯・&#57691;・ <B>Invalidate()</B> 
+              肄淲&#57511;&#57522;褪 ・竟&#58071;頸褄・・&#57705;磊&#57887;・<B>WM_PAINT</B>, ・&#57893;&#57517;・糺鍄籵褪 
+              ・趾隆 &#57503;・&#58274;渼&#58639;&#63730; <B>OnPaint()</B>. </LI></UL>
+            <UL type=square>
+              <P><FONT color=red size=+1><B>ﾌ鮏頡韭璋・ ・萵, &#57693;&#63731;鈞澵魲・・
+              &#57705;磊&#57887;褌 WM_POINT</B></FONT></P></UL>
+            <UL type=round>
+              <LI>ﾂ鎤褞褪・<B>ClassWizard</B> ・・・ <B>View</B> 
+              <LI>ﾂ鎤褞褪・鈞・琅・ <B>Message Maps</B> ・・淲・ 
+              <B>ClassWizard</B> 
+              <LI>ﾈ&#57706;鸙・&#58076;&#57884; 蒻琿魲魵・ ・淲・ <B>ClassWizard</B> 蓁&#63731; 糺碚&#57503; 
+              &#57702;裝・&#59200;胛 &#57705;磊&#57887;&#63731;:<BR><LEFT><B>Class Name: CGraphDlg<BR>Object 
+              ID: CGraphDlg<BR>Messages: WM_PAINT<BR></B></LEFT></LI></UL>
+            <UL type=square>
+              <LI>ﾌ鮏頡頽頏&#58076;&#57884; ・・・&#58274;渼&#58639;・<B>OnPaint()</B> &#57702;裝・&#59203;・
+              髜&#57503;鉋・ 
+              <P><B>void CGraphDlg::OnPaint() <BR>{<BR>if 
+              (IsIconic())<BR>{<BR>//....<BR>}<BR>else<BR>{
+              <P>////ﾌ鵫 ・・浯&#58827;浯褪・ 鈕褥・///
+              <P>// OnDrawgraphicsButton();
+              <P>///ﾑ鰀萵&#57907; 髜栁・ ・炅裲&#57709;・&#58084;&#57895;鵫&#57709;籵(DC)<BR>CPaintDC 
+dc(this);
+              <P>//ﾑ鰀萵&#57907; 濵粽・・&#57517;<BR>CPen 
+              MyNewPen;<BR>MyNewPen.CreatePen(PS_SOLID, 10, RGB(255,0,0));
+              <P>//ﾂ鎤&#57503;&#57907; ・&#57517;<BR>CPen* 
+              pOriginalPen;<BR>pOriginalPen=dc.SelectObject(&amp;MyNewPen);<BR>// 
+              CRect MyRectangle(20, 10, 120,110);
+              <P>CRect MyRectangle(20, 10, 20+m_Radius*2,10+m_Radius*2);
+              <P>//ﾍ瑩頌魵瑣・・&#58070;<BR>dc.Ellipse(&amp;MyRectangle);
+              <P>//ﾂ鎤&#57503;&#57907; ・&#57505;・璞琿・鮱 ・&#57517;<BR>dc.SelectObject(pOriginalPen);
+              <P>////ﾌ鵫 ・・鈞・煆鞣瑯&#57896;&#63731; 鈕褥・///
+              <P>//...<BR>}<BR>}<BR></B></P>
+              <LI>ﾂ・・・&#57709;齏・&#57709;瑩隆 ・・ ・・&#57893;&#57517;・糺 鈞萵籵・ ・ⅱ蒻浯&#57906; 
+              ・琅&#57503;&#57879;, ・・・褊&#57879;&#57511;・ 
+              <LI>ﾌ鮏頡頽頏魵琿・&#57709;瑩隆 ・・ &#57879;・&#58837;・&#57503;蒻&#58084; ・&#58070;・碯蒟・鈞粨&#57696;&#57907; 
+              ⅳ ・&#57508;・澵鵫 <B>m_Radius</B>. ﾌ・浯・&#57691;・:<BR><B>CRect 
+              MyRectangle(20, 10, 20+m_Radius*2,10+m_Radius*2);
+              <P></B>粨蓖・&#58837;・ ・聿・鈿璞褊韃 ・&#57508;・澵鵫 <B>m_Radius</B> 碯蒟・
+              &#57503;粹・50, &#57893; 蒻瑟褪・・&#58070;・碯蒟・&#57503;粢・<B>20+50*2=120</B>. ﾊ魲萵 
+              鈿璞褊韃 ・&#57508;・澵鵫 <B>m_Direction</B> 碯蒟・&#57503;粹・-1, &#57893; &#57503;蒻&#58084; 
+              碯蒟・&#58079;褊・瑣・&#63731;. 
+              <P><FONT color=red size=+1><B>ﾓ・珞・湜・&#58633;褪黑</B></FONT></P>
+              <LI>ﾏ&#57517;胙瑟・ <B>Graph</B> &#57511;&#57710;褪 ・&#58070;・・瑰濵胛 &#58633;褪・ &#58837;髜 
+              韈・・&#57907; &#58633;褪 ・&#58070;・- &#63729;&#57893; 蒟・&#57907; 浯蒡 ・・・&#59223;&#63730; ・淲・ 
+              <B>IDD_CUSTOM_DIALOG</B>. ﾂ &#58082;&#57503;跫褊韋, ・・煜・&#63729;&#57893;・肭珞・ 碯蒟・
+              &#57503;&#57708;・&#57895;褊 ・・ ・&#57893;&#57530;・・鈔鸙&#63731;褪 &#57511;&#57705;籵&#57907; ・&#58070;・糺碣瑙淏・&#58633;褪・ 
+              &#58633;褪・ </LI></UL>ﾂ・鈞・煆齏・&#57693;&#63731;鍄籵湜・&#57705;磊&#57887;・・&#63729;・・炅瑟・
+            &#58082;&#57503;粱褊・ 
+            <P><div align="center">ﾐ裼&#63730;・ ・&#58082;&#57503;跫褊韃 <br><A 
+            href="lesson027.htm"><B 
+            class=base2>&lt;-ﾍ珸琅</B></A> || <A 
+            href="lesson047.htm"><B 
+            class=base2>ﾄ琿・・-&gt;</B></A> </div>
+      </P></FONT>
+<p><div align="center"><a href="lesson.htm"><img src="../soder.gif" width=120 height=31 border=0 alt=""></a></div></p>			  
+	  </BODY></HTML>

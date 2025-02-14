@@ -125,7 +125,7 @@ int main() {
     setlocale(LC_ALL, "rus");
 
     // Чтение данных из файла
-    std::vector<int> test_vector = readDataFromFile("..\\data.txt");
+    std::vector<int> test_vector = readDataFromFile("data.txt");
     if (test_vector.empty()) {
         std::cerr << "Файл 'data.txt' пуст или не удалось прочитать данные.\n";
         return 1;

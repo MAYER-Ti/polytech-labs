@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://click.ipc.ru/~vc/html/Lessons/lesson019.htm -->
+<HTML xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><HEAD><TITLE>ﾏ&#57517;胙瑟頏魵瑙韃 浯 Visual C++</TITLE>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">&#1050;&#1088;&#1091;&#1075;&#1083;&#1086;&#1074; &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1050;&#1086;&#1085;&#1089;&#1090;&#1072;&#1085;&#1090;&#1080;&#1085;&#1086;&#1074;&#1080;&#1095;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">7600.00000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">&#1050;&#1088;&#1091;&#1075;&#1083;&#1086;&#1074; &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1050;&#1086;&#1085;&#1089;&#1090;&#1072;&#1085;&#1090;&#1080;&#1085;&#1086;&#1074;&#1080;&#1095;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x0101002C05377DDBA1DA4998D7B8B3F4A9A863</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</HEAD>
+<BODY background="../bgrwhite.gif">
+      <CENTER><B>ﾓ&#57517;・IX</B></CENTER></FONT>
+      <P>
+      <P align=center><FONT color=black face=ARIAL size=4>ﾏ&#57517;裲&#57887;&#57517;籵湜・
+      蒻琿魲魵鵫 ・淲・</FONT></P>
+  
+ ﾑ裨&#58819;・・ 粨銛琿・・
+            &#57706;&#57517;裲&#57887;&#57522;褌 蒻琿魲魵・ ・淲・. ﾄ・ &#63729;&#57893;胛 粹璞琿・糺礪&#57508;&#57884; 鈞・琅・ 
+            <B>"Resourse View"</B> ・&#57503;&#57701;&#57517;鶯・・渼・<B>FourUp Resource</B>. 
+            ﾂ靃鸙湜&#57884; &#57702;蒟・&#59203;・蒟鴦&#57881;・ <BR>
+            <UL type=square>
+              <LI>ﾙ褄・頸・葢・&#57503;鈞 ・ 浯蔡頌・<B>IDD_FOURUP_DIALOG</B>. ﾑ・珞・
+              ・&#63731;粨&#57896;&#63731; 鶴濵 ・鮱・頏魵瑙・ 蒻琿魲魵鵫 ・淲・. 
+              <LI>ﾄ・ &#57893;胛 , &#58837;髜・&#57706;&#57517;裲&#57887;&#57517;籵&#57907; 蒻琿魲魵・ ・淲・ 籵・
+              ・浯蒡礪&#57907;・ &#57508;&#57710;&#57520;・ ・・ 韭・・ ・&#57521;, &#57511;&#57710;渼・ ﾑ・&#58819;鶯・頷 ・ 琅&#57508;&#57710;  <A              href="http://click.ipc.ru/~vc/html/Lessons/Visual%20Progs/MFC_Source/ln9res.zip"><B>http://click.ipc.ru/~vc/html/Lessons/
+Visual%20Progs/MFC_Source/ln9res.zip </B></A>. 
+
+              <LI>ﾄ髜珞・・糂・韭・・ ・&#57511;&#57710;渼・・&#57693;鵫 ・鮱・ ・・・&#59223;&#63730; 
+              <B>WorkSpace</B>. ﾎ&#57889;&#57517;鶯・鈞・琅・ ・&#57508;&#57710;&#57520;瑟・ 浯鱠・・渼・
+              <B>Icons</B>, ・糺鉋粨&#57884; ・炅裲&#57704;鮱 ・・, &#57879;・浯鱠頸・
+              <B>Insert...</B>, ・&#63731;粨&#57896;&#63731; &#57879;・・蒻琿魲魵鮱 鶴濵: 
+              <P align=center><IMG src="lesson019.files/vc_insert_icon.gif"></P>
+              <LI>ﾙ裲・湜&#57884; 浯 ・ⅰ・ <B>Import</B>, ・・・&#63731;粨糲裘・ 鶴淲 糺碚&#57503; 
+              &#58255;鴉・浯鱠頸・韭・・, ・&#57893;&#57530;・糺 &#57701;璞琿・・&#63729;&#57893;胛 &#57691;鶯・ 蒡矜紆&#57884; 
+              頷 ・・・蓐・・
+              <LI>ﾒ襃褞・炫跫・・・・&#57907; 韲褊・韭・鶴, 糺蒟・&#57884; 韭・・ ・糺鉋粢&#57884; 
+              ・炅裲&#57704;鮱 ・・ <B>Propertions</B>. 
+              <LI>ﾂ ・渼&#57884; <B>ID</B> 糺 碯蒟&#57884; ・・&#57907; 竟蒟&#57887;&#58263;・&#57893;・韭・・. 
+              <LI>ﾈ銕褊頸・浯鈔瑙・ 韭・鶴 &#57705;肭瑰濵 頷 韲褊瑟, ・&#57893;&#57530;・糺 ・趺&#57884; 
+              ・&#57703;ⅳ&#57508;&#57907; ・&#57893;・趺 鶴淲 ・・渼&#57884; <B>File Name</B>. 
+              <DIV align=center>
+              <TABLE bgColor=#ffffbb border=1 cellPadding=0 cellSpacing=0 
+              width="80%">
+                <TBODY>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>ﾍ珸籵湜・/B></FONT></TD>
+                  <TD><FONT face=ARIAL 
+size=2><B>ﾈ淸褪頡韭瑣ⅱ</B></FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2>Misc34.ico</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_HEART</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2>Misc35.ico</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_CLUB</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2>Misc36.ico</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_DIAMOND</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2>Misc37.ico</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_SPADE</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2>Icon1.ico</FONT></TD>
+                  <TD><FONT face=ARIAL 
+                size=2>IDR_MAINFRAME</FONT></TD></TR></TBODY></TABLE></DIV>
+              <P></P>
+              <LI>ﾄ髜珞・・・&#57508;&#57710;&#57520;・・・・<B>Bitmap</B>, ⅳ・&#57907;&#57884; &#57508;&#57710;&#57520;・ 
+              糺鉋粨&#57884; ・炅裲&#57704;鮱 ・・, 糺礪&#57508;&#57884; &#57879;・<B>Insert...</B>, ・
+              ・&#63731;粨糲褌・ 蒻琿魲魵黑 鶴淲 糺礪&#57511;&#57884; <B>Bitmap</B> ・浯跪頸・
+              ・ⅰ・ <B>Import</B>. 糺礪&#57508;&#57884; ・&#57521;竟・ <B>Bitres1.bmp</B> ・
+              <B>Bitres2.bmp</B>. 
+              <LI>ﾑ ・・&#59223;&#63730; ・淲・ <B>Controls</B> &#57503;&#57708;&#57879;紆&#57884; &#63729;・・炅・ 
+              &#58082;&#57503;粱褊・ ・・・・鈞濵 浯 &#57511;・ 2.0 ・&#57705;肭瑰濵 &#57879;硴頽・2.0. 
+              <P align=center><IMG src="lesson019.files/vc_main.gif"></P>
+              <P align=center><FONT color=red><B>ﾒ珮・&#58631; 2.0</B></FONT></P>
+              <DIV align=center>
+              <TABLE bgColor=#ffffbb border=1 cellPadding=0 cellSpacing=0 
+              width="80%">
+                <TBODY>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>ﾎ磅裲・/B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ﾑ粽鴦&#57881;・/B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ﾓ&#57709;瑙魵・</B></FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Dialog Box</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL 
+                  size=2><B>IDD_FOURUP_DIALOG</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>The FourUp Program</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Font</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>System, Size 10, &#57709;&#57503;湜&#58631; 
+                    Styles</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Picture</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_STATIC</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Type</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Icon</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Image</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDR_MAINFRAME</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Picture</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_STAT</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Type</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Bitmap</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Image</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDB_BITMAP1</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Group Box</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_AMT_LEFT</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Amount Remaning $ 
+                100.</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Picture</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_CARD1</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Type</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Icon</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Image</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_HEART</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Picture</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_CARD2</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Type</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Icon</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Image</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_CLUB</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Picture</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_CARD3</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Type</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Icon</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Image</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_DIAMOND</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Picture</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_CARD4</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Type</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Icon</FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Image</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>IDI_SPADE</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Group Box</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_STATIC</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>Payouts</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Static Text</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_STATIC</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>2 pair \t\t\t\t3.00</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Static Text</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_STATIC</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>3 of kids 
+\t\t\t6.00</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Static Text</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDC_STATIC</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>4 of kids 
+\t\t\t9.00</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Push Button</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID<B></FONT></B></B></TD>
+                  <TD><FONT face=ARIAL 
+size=2><B>IDC_DEALCARDS</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>&amp;Deal - $ 2.00</FONT></TD></TR>
+                <TR>
+                  <TD><FONT face=ARIAL size=2><B>Push Button</B></FONT></TD>
+                  <TD><FONT face=ARIAL size=2><B>ID<B></FONT></B></B></TD>
+                  <TD><FONT face=ARIAL size=2><B>IDCANCEL</B></FONT></TD></TR>
+                <TR>
+                  <TD></TD>
+                  <TD><FONT face=ARIAL size=2>Caption</FONT></TD>
+                  <TD><FONT face=ARIAL size=2>&amp;Cash 
+                Out</FONT></TD></TR></TBODY></TABLE></DIV>
+              <P><BR>
+              <P></P>
+              <LI>ﾂ浯&#58819;・ 糺 蒡矜粨・ 葢・韭・・, &#63729;&#57893; 鈞胛・粲・浯&#59012;・鞳&#57530;, &#57879;・
+              蓁&#63731; ・瑰ⅳ・ ・&#57893;・糺 蒡矜粨・ &#63729;・・炅 <B>Group Box</B> ・韈・湜・ 
+              竟蒟&#57887;&#58263;・&#57893;・ &#57879;・・・浯・淲 ・ⅲ&#57893; 炫趺・&#57709;瑣顆褥・・鈞胛・粽・ 
+              ・浯・炫跫・&#57879;・・・鍄籵&#57907; ・・粽 蒟淲・浯 &#57714;褪・ 
+              <LI>ﾏⅳ黑 糺 蒡矜粨・ 4 韭・・ ・・頌粽齏・・趾鵫 &#57693;鵫 
+              竟蒟&#57887;&#58263;・&#57893;・ ・・浯赳&#57887;・浯 ・ⅰ・ <B>Deal Cards</B>, 韭・・ 
+              碯蔘・・・&#57907;・. 
+              <LI>ﾑ&#57879;&#57887;&#58824;&#57701;韜 &#57884;・・・・鍄籵褪 ・・粽 糺鞳&#57530;&#59007; ・鈞粨&#57699;・&#57709;・ⅳ 
+              糺・蓼頷 ・&#57521;. 
+              <LI>ﾏ&#57511; 浯赳&#57887;・浯 ・ⅰ・ <B>Cash Out</B> 糺粽蒻&#57896;&#63731; 鶴濵 &#57705;髜&#59200;湜&#63731; 
+              ・・・粽・蒟淲・浯 &#57714;褪・ 鈞・&#57907;&#57884;, &#58837;・・ 頌・珞齏・竟蒟&#57887;&#58263;・&#57893;・
+              ・ⅰ・ 浯 &#57709;瑙萵&#57521;燾・ &#58073;・&#57710;&#59200;&#57709;糒&#63730;&#59203;・ &#63729;&#57893; 鈿璞頸, &#58837;・・ ・ⅲ&#57893; 
+              ・&#57508;・鮱・&#57705;髜&#59200;湜・・・&#57508;・&#57884;・ ・・鈞粢&#57527;頸・&#63731; ・魲&#57503;・・糺萵蒻・
+              &#57705;髜&#59200;湜・ 
+              <LI>ﾒ襃褞・浯&#58832;褌 ・&#57893;胛, &#58837;・蒡矜粨・&#58824;&#57906;&#57508; ・&#57508;・澵鐱 &#57887;・ 
+              <B>HICON</B> ・鈞胙・韲 ・湜・韭・・. 
+              <LI>C ・・・ <B>WorkSpace</B> 蒡矜紆&#57884; ・・瑰・<B>CFourUpDlg</B> 
+              &#58824;&#57906;&#57508; ・&#57508;・澵鐱 ・&#57887;・・<B>HICON</B> ・浯鈔瑙・・ <B>m_Club</B>, 
+              <B>m_Diamond</B>, <B>m_Spade</B>, <B>m_Heart</B>. 
+              <LI>ﾒ襃褞・蒡矜紆&#57884; &#57702;裝・&#59203;・・・・・淲・・瀨&#57895;&#58077;&#57893;&#57503; ・瑰&#57691; 
+              <B>CFourUpDlg</B> &#57702;裝&#58092;韃 &#57709;&#57517;・:
+              <P><B>m_Club = AfxGetApp()-&gt;LoadIcon(IDI_CLUB);<BR>m_Diamond = 
+              AfxGetApp()-&gt;LoadIcon(IDI_DIAMOND);<BR>m_Heart = 
+              AfxGetApp()-&gt;LoadIcon(IDI_HEART);<BR>m_Spade = 
+              AfxGetApp()-&gt;LoadIcon(IDI_SPADE);
+              <P></B></P>
+              <LI>ﾝ&#57887; ⅰ褞瑣ⅱ・鈞胙&#58073;・・・&#57503;・&#57895;・韭・鶴 ・・&#57508;・澵鐱-髜栁・・ 
+              ・・・&#59223;&#63730; ・&#57893;&#57530;・・ 碯蒟・・・&#57907; 韭・・. 
+              <LI>ﾒ襃褞・&#57693;&#63731;趺・&#63729;・・炅・&#58082;&#57503;粱褊・ 韭・・・ ・・&#57508;・澵隯・ 
+              ・&#57893;&#57530;・ ・ 碯蒟・・・&#57907; &#57691;・ 韭・・. 
+              <LI>ﾎ&#57889;&#57517;鶯・<B>ClassWizard</B> 浯 鈞・琅・ <B>Member 
+              Variables</B> ・蒡矜紆&#57884; 韭・・・<B>IDC_CARD1</B> - 
+              <B>IDC_CARD4</B>, ・&#57508;・澵鐱 ・&#57884;胛&#57511;・<B>Control</B> ・韲褊瑟・
+              &#57705;ⅳ粢&#57896;&#57881;褊濵 <B>m_Card1</B> -<B>m_Card4</B>. 
+              <LI>ﾄ髜珞・・&#63729;・・炅・<B>IDC_AMT_LEFT</B> ・&#57508;・澵・ ・浯鈔瑙韃・
+              <B>m_Amt_Left</B> ・&#57884;胛&#57511;・<B>Control</B>. 
+              <LI>ﾄ髜珞・・・・瑰・<B>CFourUpDlg</B> ・&#57508;・澵・ 
+              <B>m_Amt_Remaining</B> ・&#57887;・・<B>double</B>, &#63729;&#57879; ・&#57508;・澵・ 碯蒟・
+              &#58459;瑙頸・鈿璞褊韃 糺鱚&#57530;&#59007;. 
+              <LI>ﾒ襃褞・炫跫・&#57693;&#63731;鈞&#57907; ・・・&#57705;磊&#57887;褌 <B>BN_CLICKED</B> ・ⅰ・ 
+              <B>Deal Cards</B>, ・・浯赳&#57887;・浯 淲・蒡・燾 &#57695;珞瑣・&#63731; ・&#57521;・ 
+              ・蓴&#58827;&#57906;籵&#57907;・ 糺鱚&#57530;・ 
+              <P><div align="center"><BR><BR>ﾑ・鍄籵湜・&#63729;・・炅魵 &#58082;&#57503;粱褊・ ・&#57705;磊&#57887;&#63731;・ <BR><A 
+              href="lesson009.htm"><B 
+              class=base2>&lt;-ﾍ珸琅</B></A> | <A 
+              href="lesson029.htm"><B 
+              class=base2>ﾄ琿・・&gt;</B></A> </div>
+      </P></LI></UL></FONT>
+<p><div align="center"><a href="lesson.htm"><img src="../soder.gif" width=120 height=31 border=0 alt=""></a></div></p>			  
+	  </BODY></HTML>
