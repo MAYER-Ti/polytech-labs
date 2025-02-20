@@ -1,3 +1,0 @@
-C:/polytech-labs/math_modeling/lab_1/out/build/x64-debug/CMakeFiles/lab_1.dir
-C:/polytech-labs/math_modeling/lab_1/out/build/x64-debug/CMakeFiles/edit_cache.dir
-C:/polytech-labs/math_modeling/lab_1/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
