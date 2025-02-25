@@ -7,7 +7,7 @@ struct Point {
 	double y = 0.0;
 };
 
-std::vector<Point> AilerCalc(double x, double k, double a1, double a2, double b1, double b2, int nIter = 1000, double h = 0.05) {
+std::vector<Point> AilerCalc(double x, double k, double a1, double a2, double b1, double b2, int nIter = 580, double h = 0.05) {
 	std::vector<Point> res(nIter);
 	double z1 = 0;
 	double z2 = 0;
@@ -51,12 +51,15 @@ int main()
 
 
 	file << "t" << "\t" << "y" << "\n";
-	for (const auto& p : data) {
-		file << p.t << "\t" << p.y << "\n";
+	//for (const auto& p : data) {
+	//	file << p.t << "\t" << p.y << "\n";
+	//}
+	
+	for (int i = 0; i < data.size(); ++i) {
+		if (i % 2 == 0) {
+			file << data[i].t << "\t" << data[i].y << "\n";
+		}
 	}
 	
-	
-
-
 	return 0;
 }
