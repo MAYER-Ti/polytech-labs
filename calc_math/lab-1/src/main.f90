@@ -5,6 +5,7 @@
 ! обеих аппроксимаций в точках x(k)=1.1875+0.375k (k=0,1,..,7)
 !
 program matrix_analysis
+!    use integral_func_mod
     implicit none
 
     interface
@@ -15,19 +16,20 @@ program matrix_analysis
             real, intent(out)   :: B(N), C(N), D(N) ! Массивы определенных выше коэффициентов сплайна
         end subroutine SPLINE
     
-        function SEVAL(Xi, X, Y, B, C, D, N) result(seval_value) 
+        function SEVAL(N, Xi, X, Y, B, C, D) result(seval_value) 
             integer, intent(in) :: N 
             real, intent(in)    :: Xi, X(N), Y(N), B(N), C(N), D(N) 
             real                :: seval_value
         end function SEVAL 
 
-        subroutine quanc8(f, a, b, abserr, relerr, res, errest, nofun, flag, x)
-            external f 
-            real, intent(in)     :: a, b, abserr, relerr, x 
-            real, intent(out)    :: res, errest
-            integer, intent(out) :: nofun 
-            real, intent(out)    :: flag
-        end subroutine quanc8
+   !    ! subroutine quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
+
+   !    !     external :: integral_func
+   !    !     real, intent(in)     :: a, b, abserr, relerr 
+   !    !     real, intent(out)    :: res, errest
+   !    !     integer, intent(out) :: nofun 
+   !    !     real, intent(out)    :: flag
+   !    ! end subroutine quanc8
     end interface
 
     real    :: a, b, relerr, abserr, res, errest, flag
@@ -37,6 +39,10 @@ program matrix_analysis
     integer :: i, k, x_n
     real    :: xk, spline_val, lagrange_val
 
+    external quanc8
+    !external seval
+    !external spline
+
     ! Установка параметров интегрирования
     a = 0.0
     b = 20.0
@@ -45,6 +51,7 @@ program matrix_analysis
     h = 0.375
     x = 1.0
     i = 1
+    x_n = 1
 
     DO WHILE (x <= 4) 
         x = x + h
@@ -56,7 +63,8 @@ program matrix_analysis
 
     ! Вычисление значений функции f(x) для 1 <= x <= 4 с шагом h
     DO WHILE (x <= 4.0)
-        CALL quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag, x)
+        CALL quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
+        print *, flag
         x_values(i) = x
         f_values(i) = res
         x = x + h
@@ -66,12 +74,13 @@ program matrix_analysis
     ! Вызов подпрограммы SPLINE для вычисления коэффициентов сплайна
     CALL SPLINE(x_n, x_values, f_values, b_coef, c_coef, d_coef)
 
+    !print *, f_values
     ! Сравнение значений в точках xk = 1.1875 + 0.375k (k=0,1,...,7)
     WRITE(*, '(A10, A15, A15)') 'xk', 'spline(xk)', 'lagrange(xk)'
     DO k = 0, 7
         xk = 1.1875 + 0.375 * k
         ! Вычисление значений сплайна и полинома Лагранжа в точке xk
-        spline_val = SEVAL(xk, x_values, f_values, b_coef, c_coef, d_coef, 10)
+        spline_val = SEVAL(x_n, xk, x_values, f_values, b_coef, c_coef, d_coef)
         lagrange_val = compute_lagrange(xk, x_values, f_values)
         WRITE(*, '(F10.4, F15.6, F15.6)') xk, spline_val, lagrange_val
     END DO
@@ -100,11 +109,10 @@ contains
         END DO
     END FUNCTION compute_lagrange
 
-    real FUNCTION integral_func(z, x) RESULT(func_value)
-        real, intent(in) :: z, x
+    real FUNCTION integral_func(x, z) RESULT(func_value)
+        real, intent(in) :: x, z
         func_value = 1.0 / (EXP(z) * (z + x))
     END FUNCTION integral_func
-
 
 end program matrix_analysis
 

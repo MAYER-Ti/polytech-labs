@@ -43,8 +43,7 @@ std::string formatText(const std::string& input) {
 
     // Убираем пробелы перед знаками препинания
     for (char punct : {'.', ',', '!', '?', ':', ';'}) {
-        std::string punctStr(1, punct);
-        while ((pos = result.find(" " + punctStr)) != std::string::npos) {
+        while ((pos = result.find(" " + std::string(1, punct))) != std::string::npos) {
             result.erase(pos, 1);
         }
     }
@@ -73,10 +72,13 @@ std::string replaceLongWords(const std::string& input) {
             end = result.size();
         }
 
+        std::string wordToReplace("Vau!!!");
+        size_t max_len = 10;
+
         std::string word = result.substr(start, end - start);
-        if (word.length() > 10) {
-            result.replace(start, word.length(), "Vau!!!");
-            end = start + 6; // Длина "Vau!!!"
+        if (word.length() > max_len) {
+            result.replace(start, word.length(), wordToReplace);
+            end = start + wordToReplace.size();
         }
 
         start = end + 1;
@@ -111,7 +113,7 @@ std::vector<std::string> splitIntoLines(const std::string& input, size_t maxLine
 
 int main() {
     // Открываем файл для чтения
-    std::ifstream file("data.txt");
+    std::ifstream file("../lab_2/main.cpp"); //
     if (!file.is_open()) {
         std::cerr << "Ошибка открытия файла data.txt" << std::endl;
         return 1;
