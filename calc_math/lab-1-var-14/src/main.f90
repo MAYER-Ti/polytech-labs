@@ -4,7 +4,7 @@
 ! сплайн-функцию и полином Лагранжа 8-й степени. Сравнить значения 
 ! обеих аппроксимаций в точках x(k)=1.1875+0.375k (k=0,1,..,7)
 !
-program matrix_analysis
+program main
     use integral_func_mod
     implicit none
 
@@ -24,6 +24,8 @@ program matrix_analysis
 
     end interface
 
+    external quanc8
+
     real    :: a, b, relerr, abserr, res, errest, flag
     integer :: nofun
     real, allocatable :: x_values(:), f_values(:)
@@ -31,7 +33,6 @@ program matrix_analysis
     integer :: i, k, x_n
     real    :: xk, spline_val, lagrange_val
 
-    external quanc8
     ! Установка параметров интегрирования
     a = 0.0
     b = 20.0
@@ -98,5 +99,5 @@ contains
         END DO
     END FUNCTION compute_lagrange
 
-  end program matrix_analysis
+  end program main 
 
