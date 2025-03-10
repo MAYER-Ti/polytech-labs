@@ -5,7 +5,7 @@
 ! обеих аппроксимаций в точках x(k)=1.1875+0.375k (k=0,1,..,7)
 !
 program matrix_analysis
-!    use integral_func_mod
+    use integral_func_mod
     implicit none
 
     interface
@@ -34,15 +34,12 @@ program matrix_analysis
 
     real    :: a, b, relerr, abserr, res, errest, flag
     integer :: nofun
-    real    :: x, h
-    real, allocatable :: x_values(:), f_values(:), b_coef(:), c_coef(:), d_coef(:)
+    real, allocatable :: x_values(:), f_values(:)
+    real, allocatable :: b_coef(:), c_coef(:), d_coef(:)
     integer :: i, k, x_n
     real    :: xk, spline_val, lagrange_val
 
     external quanc8
-    !external seval
-    !external spline
-
     ! Установка параметров интегрирования
     a = 0.0
     b = 20.0
@@ -50,7 +47,6 @@ program matrix_analysis
     abserr = 0.0
     h = 0.375
     x = 1.0
-    i = 1
     x_n = 1
 
     DO WHILE (x <= 4) 
@@ -61,12 +57,14 @@ program matrix_analysis
 
     ALLOCATE(x_values(x_n), f_values(x_n), b_coef(x_n), c_coef(x_n), d_coef(x_n))
 
+    i = 1
     ! Вычисление значений функции f(x) для 1 <= x <= 4 с шагом h
     DO WHILE (x <= 4.0)
         CALL quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
-        print *, flag
         x_values(i) = x
         f_values(i) = res
+        print *, x_values(i), f_values(i)
+
         x = x + h
         i = i + 1
     END DO
@@ -74,7 +72,6 @@ program matrix_analysis
     ! Вызов подпрограммы SPLINE для вычисления коэффициентов сплайна
     CALL SPLINE(x_n, x_values, f_values, b_coef, c_coef, d_coef)
 
-    !print *, f_values
     ! Сравнение значений в точках xk = 1.1875 + 0.375k (k=0,1,...,7)
     WRITE(*, '(A10, A15, A15)') 'xk', 'spline(xk)', 'lagrange(xk)'
     DO k = 0, 7
@@ -109,10 +106,5 @@ contains
         END DO
     END FUNCTION compute_lagrange
 
-    real FUNCTION integral_func(x, z) RESULT(func_value)
-        real, intent(in) :: x, z
-        func_value = 1.0 / (EXP(z) * (z + x))
-    END FUNCTION integral_func
-
-end program matrix_analysis
+  end program matrix_analysis
 
