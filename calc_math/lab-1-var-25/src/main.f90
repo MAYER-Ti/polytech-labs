@@ -6,6 +6,7 @@
 ! от 0 до 2.1 (abs(x^2+2*x-3))^m dx, для m = -1 и для m = -0.5
 !
 program main
+  use integral_func_mod
   implicit none
 
     interface
@@ -29,14 +30,13 @@ program main
   integer, parameter :: n = 9, m = 8
   integer :: k = 0
   real :: x_values(n), f_values(n)
-  real :: y_values(m), f_interp(m), spline_interp(m)
-!  real :: integral_m1, integral_m05
-!  integer :: i
-!
+  real :: y_values(m), f_interp(m), spline_interp(m), simple_data(m)
+  real :: integral_m1, integral_m05
+
   ! Задание узлов интерполяции
   do k = 0, n-1
      x_values(k+1) = 0.2 * k
-     f_values(k+1) = cos(x_values(k+1)) / (1.0 + x_values(k+1))
+     f_values(k+1) = func(x_values(k+1))
   end do
 
   ! Задание точек для вычислений
@@ -44,24 +44,25 @@ program main
      y_values(k+1) = 0.1 + 0.2 * k
   end do
 
+  ! Простое вычисление функции
+  call simple_calc(m, y_values, simple_data)
+
   ! Интерполяция методом Лагранжа
   call lagrange_interpolation(n, x_values, f_values, m, y_values, f_interp)
 
-  print *, f_interp(:)
-
   ! Сплайн-интерполяция
   call spline_interpolation(n, x_values, f_values, m, y_values, spline_interp)
-  print *, spline_interp(:)
-!
-!  ! Вычисление интегралов
-!  call compute_integral(-1.0d0, integral_m1)
-!  call compute_integral(-0.5d0, integral_m05)
-!
-!  ! Вывод результатов
-!  print *, 'Лагранж:', f_interp
-!  print *, 'Сплайн:', spline_interp
-!  print *, 'Интеграл (m=-1):', integral_m1
-!  print *, 'Интеграл (m=-0.5):', integral_m05
+
+  ! Вычисление интегралов
+  integral_m1 = compute_integral(-1.0, 0.0, 21.0)
+  integral_m05 = compute_integral(5.0, 0.0, 21.0)
+
+  ! Вывод результатов
+  print *, 'Функция:', simple_data
+  print *, 'Лагранж:', f_interp
+  print *, 'Сплайн: ', spline_interp
+  print *, 'Интеграл (m=-1):', integral_m1
+  print *, 'Интеграл (m=-0.5):', integral_m05
 
 contains
 
@@ -99,12 +100,34 @@ contains
        spline_interp(i) = SEVAL(n, y(i), x, f, b_coef, c_coef, d_coef)
     end do
   end subroutine spline_interpolation
-!
-!  subroutine compute_integral(m_exp, result)
-!    real(8), intent(in) :: m_exp
-!    real(8), intent(out) :: result
-!    call QUANC8("abs(x**2 + 2*x - 3)**m_exp", 0.0d0, 2.1d0, result)
-!  end subroutine compute_integral
-!
+
+  subroutine simple_calc(m, y, values)
+      integer, intent(in) :: m
+      real, intent(in) :: y(m)
+      real, intent(out) :: values(m)
+      integer :: i = 0 
+      do i = 1, m 
+         values(i) = func(y(i))
+      end do
+
+  end subroutine simple_calc
+
+  real function func(x)
+      real, intent(in) :: x 
+      func = cos(x) / (1.0 + x)
+  end function func
+
+  real function compute_integral(x, a, b)
+     real, intent(in) :: x 
+     real, intent(in) :: a, b 
+
+     real :: abserr = 0.0, relerr = 1.E-06, res, errest, nofun, flag
+
+     m_mod = x
+     call quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
+     compute_integral = res
+
+  end function compute_integral
+  
 end program main
 

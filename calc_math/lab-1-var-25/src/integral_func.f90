@@ -1,13 +1,13 @@
 MODULE integral_func_mod
     IMPLICIT NONE
 
-    real :: x, h
+    real :: m_mod
 
 CONTAINS
 
-    real FUNCTION integral_func(z) RESULT(func_value)
-        real, intent(in) :: z
-        func_value = 1.0 / (EXP(z) * (z + x))
+    real FUNCTION integral_func(x) RESULT(func_value)
+        real, intent(in) :: x
+        func_value =  (abs(x*x + 2*x-3))**m_mod
     END FUNCTION integral_func
 
 
