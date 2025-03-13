@@ -31,7 +31,7 @@ program main
     real, allocatable :: x_values(:), f_values(:)
     real, allocatable :: b_coef(:), c_coef(:), d_coef(:)
     integer :: i, k, x_n
-    real    :: xk, spline_val, lagrange_val
+    real    :: xk, spline_val, lagrange_val, func_val
 
     ! Установка параметров интегрирования
     a = 0.0
@@ -56,7 +56,6 @@ program main
         CALL quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
         x_values(i) = x
         f_values(i) = res
-        print *, x_values(i), f_values(i)
 
         x = x + h
         i = i + 1
@@ -72,6 +71,7 @@ program main
         ! Вычисление значений сплайна и полинома Лагранжа в точке xk
         spline_val = SEVAL(x_n, xk, x_values, f_values, b_coef, c_coef, d_coef)
         lagrange_val = compute_lagrange(xk, x_values, f_values)
+        func_val = 
         WRITE(*, '(F10.4, F15.6, F15.6)') xk, spline_val, lagrange_val
     END DO
 
