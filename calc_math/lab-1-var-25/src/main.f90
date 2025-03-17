@@ -54,15 +54,17 @@ program main
   call spline_interpolation(n, x_values, f_values, m, y_values, spline_interp)
 
   ! Вычисление интегралов
-  integral_m1 = compute_integral(-1.0, 0.0, 21.0)
-  integral_m05 = compute_integral(5.0, 0.0, 21.0)
+  integral_m1 = compute_integral(-1.0, 0.0, 2.1)
+  integral_m05 = compute_integral(0.5, 0.0, 2.1)
 
   ! Вывод результатов
-  print *, 'Функция:', simple_data
-  print *, 'Лагранж:', f_interp
-  print *, 'Сплайн: ', spline_interp
-  print *, 'Интеграл (m=-1):', integral_m1
-  print *, 'Интеграл (m=-0.5):', integral_m05
+  write (*, '(A15, 9F15.6)') 'Функция:', simple_data
+  write (*, '(A15, 9F15.6)') 'Лагранж:', f_interp
+  write (*, '(A15, 9F15.6)') 'Сплайн: ', spline_interp
+  write (*, '(A35, 9F15.6)') 'Функция - Сплайн:  ', simple_data - spline_interp
+  write (*, '(A35, 9F15.6)') 'Функция - Лагранж: ', simple_data - f_interp
+  write (*, '(A25, F10.6)')  'Интеграл (m=-1):  ', integral_m1
+  write (*, '(A25, F10.6)')  'Интеграл (m=-0.5):', integral_m05
 
 contains
 

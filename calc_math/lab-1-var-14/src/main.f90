@@ -31,7 +31,7 @@ program main
     real, allocatable :: x_values(:), f_values(:)
     real, allocatable :: b_coef(:), c_coef(:), d_coef(:)
     integer :: i, k, x_n
-    real    :: xk, spline_val, lagrange_val, func_val
+    real    :: xk, spline_val, lagrange_val
 
     ! Установка параметров интегрирования
     a = 0.0
@@ -61,18 +61,22 @@ program main
         i = i + 1
     END DO
 
+    
+
     ! Вызов подпрограммы SPLINE для вычисления коэффициентов сплайна
     CALL SPLINE(x_n, x_values, f_values, b_coef, c_coef, d_coef)
 
     ! Сравнение значений в точках xk = 1.1875 + 0.375k (k=0,1,...,7)
-    WRITE(*, '(A10, A15, A15)') 'xk', 'spline(xk)', 'lagrange(xk)'
+    WRITE(*, '(A20, A20, A20, A20, A20, A20)') 'xk', 'f(xk)', 'spline(xk)', 'lagrange(xk)', 'f(xk)-spline(xk)', 'f(xk)-lagrange(xk)'
     DO k = 0, 7
         xk = 1.1875 + 0.375 * k
-        ! Вычисление значений сплайна и полинома Лагранжа в точке xk
+        ! Вычисление значений сплайна, полинома Лагранжа и функции в точке xk
         spline_val = SEVAL(x_n, xk, x_values, f_values, b_coef, c_coef, d_coef)
         lagrange_val = compute_lagrange(xk, x_values, f_values)
-        func_val = 
-        WRITE(*, '(F10.4, F15.6, F15.6)') xk, spline_val, lagrange_val
+        x = xk
+        CALL quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
+        
+        WRITE(*, '(F20.4, F20.6, F20.6, F20.6, F20.6, F20.6)') xk,res,spline_val,lagrange_val,res-spline_val,res-lagrange_val
     END DO
 
     DEALLOCATE(x_values, f_values, b_coef, c_coef, d_coef)
