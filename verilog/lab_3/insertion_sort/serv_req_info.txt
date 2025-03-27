@@ -1,0 +1,24 @@
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>MEM</sub_system>
+	<file>./mem_manager.cpp</file>
+	<line>825</line>
+	<error>Attempting to allocate -2004318064 bytes</error>
+	<date>Sun Apr 04 23:41:20 2021</date>
+	<version>Quartus II Version 5.0 Build 148 04/26/2005 SJ Full Version</version>
+	<full_error>Internal Error: Sub-system: MEM, File: ./mem_manager.cpp, Line: 825
+Attempting to allocate -2004318064 bytes
+Quartus II Version 5.0 Build 148 04/26/2005 SJ Full Version </full_error>
+</internal_error>
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>PJM</sub_system>
+	<file>./pjm_dock_bar.cpp</file>
+	<line>237</line>
+	<error>view_popup != NULL</error>
+	<date>Tue Apr 06 00:57:48 2021</date>
+	<version>Quartus II Version 5.0 Build 148 04/26/2005 SJ Full Version</version>
+	<full_error>Internal Error: Sub-system: PJM, File: ./pjm_dock_bar.cpp, Line: 237
+view_popup != NULL
+Quartus II Version 5.0 Build 148 04/26/2005 SJ Full Version </full_error>
+</internal_error>

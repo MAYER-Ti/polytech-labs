@@ -1,0 +1,27 @@
+Design: 20:34, 4 апреля 2021 г.
+Design: Opening design "V:\lab_2\dp32_test\dp32_test.adf"
+Compilation...
+File: .\src\dp32_test.vhd
+Compile Entity "dp32_test"
+Compile Architecture "structure" of Entity "dp32_test"
+Warning: COMP96_0140: dp32_test.vhd : (37, 2): There is no default binding for component "dp32".
+Compile Configuration "dp32_behaviour_test"
+Error: COMP96_0078: dp32_test.vhd : (57, 20): Unknown identifier "dp32".
+File: .\src\alu_32.vhd
+Compile Package "dp32_types"
+Package "dp32_types" has been skipped - no difference detected.
+Compile Package Body "dp32_types"
+Compile Package "alu_32_types"
+Package "alu_32_types" has been skipped - no difference detected.
+Compile Entity "ALU_32"
+Compile Architecture "behaviour" of Entity "ALU_32"
+File: .\src\memory.vhd
+Compile Entity "memory"
+Compile Architecture "behaviour" of Entity "memory"
+File: .\src\clk_gen.vhd
+Compile Entity "clock_gen"
+Compile Architecture "behaviour" of Entity "clock_gen"
+File: .\src\dp32_behav.vhd
+Compile Architecture "behaviour" of Entity "dp32"
+Error: COMP96_0056: dp32_behav.vhd : (4, 1): Cannot find referenced entity declaration "dp32".
+Compile failure 2 Errors 1 Warnings  Analysis time :  2.0 [s]

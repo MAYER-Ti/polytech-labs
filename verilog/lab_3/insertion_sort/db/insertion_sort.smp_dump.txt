@@ -1,0 +1,8 @@
+
+State Machine - |insertion_sort|state
+Name state.COPY state.SORT state.INSERT state.IDLE state.DONE 
+state.IDLE 0 0 0 0 0 
+state.INSERT 0 0 1 1 0 
+state.SORT 0 1 0 1 0 
+state.COPY 1 0 0 1 0 
+state.DONE 0 0 0 1 1 
