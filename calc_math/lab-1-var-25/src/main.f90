@@ -1,5 +1,5 @@
 ! Вариант 25
-! Для функции f(x) = cos(x) / (1+x) по ущлам xk = 0.2k (k=0,1,..8) построить
+! Для функции f(x) = cos(x) / (1+x) по узлам xk = 0.2k (k=0,1,..8) построить
 ! полином Лагранжа L(x) 8-й степени и сплайн-функцию S(x). Вычислить значения
 ! всех трех функций в точках yk = 0.1 + 0.2k (k=0,1,..7). Построить графики.
 ! Используя программу QUANC8 вычислить два интеграла:
@@ -53,18 +53,19 @@ program main
   ! Сплайн-интерполяция
   call spline_interpolation(n, x_values, f_values, m, y_values, spline_interp)
 
-  ! Вычисление интегралов
-  integral_m1 = compute_integral(-1.0, 0.0, 2.1)
-  integral_m05 = compute_integral(0.5, 0.0, 2.1)
 
   ! Вывод результатов
   write (*, '(A15, 9F15.6)') 'Функция:', simple_data
   write (*, '(A15, 9F15.6)') 'Лагранж:', f_interp
   write (*, '(A15, 9F15.6)') 'Сплайн: ', spline_interp
-  write (*, '(A35, 9F15.6)') 'Функция - Сплайн:  ', simple_data - spline_interp
-  write (*, '(A35, 9F15.6)') 'Функция - Лагранж: ', simple_data - f_interp
-  write (*, '(A25, F10.6)')  'Интеграл (m=-1):  ', integral_m1
-  write (*, '(A25, F10.6)')  'Интеграл (m=-0.5):', integral_m05
+  write (*, '(A35, 9F15.6)') 'Функция - Сплайн:  ', abs(simple_data - spline_interp)
+  write (*, '(A35, 9F15.6)') 'Функция - Лагранж: ', abs(simple_data - f_interp)
+
+  ! Вычисление интегралов
+  write (*, '(A25)')  'Интеграл (m=-1):  '
+  integral_m1 = compute_integral(-1.0, 0.0, 2.1)
+  write (*, '(A25)')  'Интеграл (m=-0.5):'
+  integral_m05 = compute_integral(0.5, 0.0, 2.1)
 
 contains
 
@@ -122,12 +123,24 @@ contains
   real function compute_integral(x, a, b)
      real, intent(in) :: x 
      real, intent(in) :: a, b 
+     real :: res_func = 0.0
+     real :: abserr = 0.0, res, errest, nofun, flag
 
-     real :: abserr = 0.0, relerr = 1.E-06, res, errest, nofun, flag
+     real, parameter :: relerr(*) = &
+         [1.E-00, 1.E-01, 1.E-02, 1.E-03, 1.E-04, 1.E-05, 1.E-06, 1.E-07, 1.E-08, 1.E-09]
+     integer :: i = 0 
 
      m_mod = x
-     call quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
-     compute_integral = res
+
+     write (*, '(A15, A10, A15)') "relerr", "flag", "result"
+     do i = 1, 10
+        call quanc8(integral_func, a, b, abserr, relerr(i), res, errest, nofun, flag)
+        if (relerr(i) == 1.E-03) then
+            res_func = res 
+        end if
+        write (*, '(f15.9, f10.3, f15.9)') relerr(i), flag, res
+     end do
+     compute_integral = res_func
 
   end function compute_integral
   
