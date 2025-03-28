@@ -5,14 +5,12 @@
 #include <cstdlib>
 #include <ctime>
 
-using namespace std;
-
 // Определение структуры DataStruct
-typedef struct {
+struct DataStruct {
     int key1;
     int key2;
-    string str;
-} DataStruct;
+    std::string str;
+} ;
 
 // Функция для генерации случайного числа в диапазоне [min, max]
 int getRandomNumber(int min, int max) {
@@ -20,11 +18,11 @@ int getRandomNumber(int min, int max) {
 }
 
 // Функция для вывода вектора на печать
-void printVector(const vector<DataStruct>& vec) {
+void printVector(const std::vector<DataStruct>& vec) {
     for (const auto& data : vec) {
-        cout << "key1: " << data.key1 << ", key2: " << data.key2 << ", str: " << data.str << endl;
+        std::cout << "key1: " << data.key1 << ", key2: " << data.key2 << ", str: " << data.str << std::endl;
     }
-    cout << "-----------------------------" << endl;
+    std::cout << "-----------------------------" << std::endl;
 }
 
 // Функция для сравнения двух структур DataStruct
@@ -43,13 +41,13 @@ int main() {
     srand(static_cast<unsigned int>(time(0)));
 
     // Таблица строк для заполнения поля str
-    vector<string> strTable = {
+    std::vector<std::string> strTable = {
         "apple", "banana", "cherry", "date", "elderberry",
         "fig", "grape", "honeydew", "kiwi", "lemon"
     };
 
     // Создание вектора структур DataStruct
-    vector<DataStruct> dataVector;
+    std::vector<DataStruct> dataVector;
 
     // Заполнение вектора случайными данными
     for (int i = 0; i < 10; ++i) {
@@ -61,14 +59,14 @@ int main() {
     }
 
     // Вывод исходного вектора на печать
-    cout << "Original vector:" << endl;
+    std::cout << "Original vector:" << std::endl;
     printVector(dataVector);
 
     // Сортировка вектора по заданным критериям
-    sort(dataVector.begin(), dataVector.end(), compareDataStruct);
+    std::sort(dataVector.begin(), dataVector.end(), compareDataStruct);
 
     // Вывод отсортированного вектора на печать
-    cout << "Sorted vector:" << endl;
+    std::cout << "Sorted vector:" << std::endl;
     printVector(dataVector);
 
     return 0;

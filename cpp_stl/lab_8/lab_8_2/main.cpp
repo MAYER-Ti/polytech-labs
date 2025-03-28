@@ -1,3 +1,5 @@
+// Лютов А.В. 30022
+
 #include <iostream>
 #include <list>
 #include <algorithm> // Для std::sort, std::for_each

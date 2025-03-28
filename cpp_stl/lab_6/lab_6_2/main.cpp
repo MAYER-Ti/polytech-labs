@@ -29,7 +29,7 @@
 // typedef struct {
 //     int x, y;
 // } Point;
-//
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

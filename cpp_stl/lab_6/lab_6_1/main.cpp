@@ -21,9 +21,9 @@ std::string to_lower(const std::string& str) {
 }
 
 int main() {
-    std::ifstream file("..\\input.txt");
+    std::ifstream file("..\\input.txt"); //C:\polytech-labs\cpp_stl\lab_6\lab_6_1\main.cpp //"..\\input.txt"
     if (!file.is_open()) {
-        std::cerr << "Не удалось открыть файл!" << std::endl;
+        std::cerr << "Error open file!" << std::endl;
         return 1;
     }
 

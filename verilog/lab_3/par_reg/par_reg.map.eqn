@@ -1,0 +1,223 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L32 is res[1]~378
+--operation mode is normal
+
+A1L32 = !RESET & (EWR & B1_Buf # !EWR & (DATA[1]));
+
+
+--A1L42 is res[2]~379
+--operation mode is normal
+
+A1L42 = !RESET & (EWR & B2_Buf # !EWR & (DATA[2]));
+
+
+--A1L52 is res[3]~380
+--operation mode is normal
+
+A1L52 = !RESET & (EWR & B3_Buf # !EWR & (DATA[3]));
+
+
+--A1L62 is res[4]~381
+--operation mode is normal
+
+A1L62 = !RESET & (EWR & B4_Buf # !EWR & (DATA[4]));
+
+
+--A1L72 is res[5]~382
+--operation mode is normal
+
+A1L72 = !RESET & (EWR & B5_Buf # !EWR & (DATA[5]));
+
+
+--A1L82 is res[6]~383
+--operation mode is normal
+
+A1L82 = !RESET & (EWR & B6_Buf # !EWR & (DATA[6]));
+
+
+--A1L92 is res[7]~384
+--operation mode is normal
+
+A1L92 = !RESET & (EWR & B7_Buf # !EWR & (DATA[7]));
+
+
+--B7L2 is DTrigger:Dtrig7|always0~0
+--operation mode is normal
+
+B7L2 = RESET # EWR;
+
+
+--B1_Buf is DTrigger:Dtrig1|Buf
+--operation mode is normal
+
+B1_Buf = B7L2 & (B1_Buf) # !B7L2 & DATA[1];
+
+
+--B2_Buf is DTrigger:Dtrig2|Buf
+--operation mode is normal
+
+B2_Buf = B7L2 & (B2_Buf) # !B7L2 & DATA[2];
+
+
+--B3_Buf is DTrigger:Dtrig3|Buf
+--operation mode is normal
+
+B3_Buf = B7L2 & (B3_Buf) # !B7L2 & DATA[3];
+
+
+--B4_Buf is DTrigger:Dtrig4|Buf
+--operation mode is normal
+
+B4_Buf = B7L2 & (B4_Buf) # !B7L2 & DATA[4];
+
+
+--B5_Buf is DTrigger:Dtrig5|Buf
+--operation mode is normal
+
+B5_Buf = B7L2 & (B5_Buf) # !B7L2 & DATA[5];
+
+
+--B6_Buf is DTrigger:Dtrig6|Buf
+--operation mode is normal
+
+B6_Buf = B7L2 & (B6_Buf) # !B7L2 & DATA[6];
+
+
+--B7_Buf is DTrigger:Dtrig7|Buf
+--operation mode is normal
+
+B7_Buf = B7L2 & (B7_Buf) # !B7L2 & DATA[7];
+
+
+--CLOCK is CLOCK
+--operation mode is input
+
+CLOCK = INPUT();
+
+
+--DATA[0] is DATA[0]
+--operation mode is input
+
+DATA[0] = INPUT();
+
+
+--EDY is EDY
+--operation mode is input
+
+EDY = INPUT();
+
+
+--RESET is RESET
+--operation mode is input
+
+RESET = INPUT();
+
+
+--DATA[1] is DATA[1]
+--operation mode is input
+
+DATA[1] = INPUT();
+
+
+--EWR is EWR
+--operation mode is input
+
+EWR = INPUT();
+
+
+--DATA[2] is DATA[2]
+--operation mode is input
+
+DATA[2] = INPUT();
+
+
+--DATA[3] is DATA[3]
+--operation mode is input
+
+DATA[3] = INPUT();
+
+
+--DATA[4] is DATA[4]
+--operation mode is input
+
+DATA[4] = INPUT();
+
+
+--DATA[5] is DATA[5]
+--operation mode is input
+
+DATA[5] = INPUT();
+
+
+--DATA[6] is DATA[6]
+--operation mode is input
+
+DATA[6] = INPUT();
+
+
+--DATA[7] is DATA[7]
+--operation mode is input
+
+DATA[7] = INPUT();
+
+
+--OUTRESULT[0] is OUTRESULT[0]
+--operation mode is output
+
+OUTRESULT[0] = OUTPUT(!RESET);
+
+
+--OUTRESULT[1] is OUTRESULT[1]
+--operation mode is output
+
+OUTRESULT[1] = OUTPUT(A1L32);
+
+
+--OUTRESULT[2] is OUTRESULT[2]
+--operation mode is output
+
+OUTRESULT[2] = OUTPUT(A1L42);
+
+
+--OUTRESULT[3] is OUTRESULT[3]
+--operation mode is output
+
+OUTRESULT[3] = OUTPUT(A1L52);
+
+
+--OUTRESULT[4] is OUTRESULT[4]
+--operation mode is output
+
+OUTRESULT[4] = OUTPUT(A1L62);
+
+
+--OUTRESULT[5] is OUTRESULT[5]
+--operation mode is output
+
+OUTRESULT[5] = OUTPUT(A1L72);
+
+
+--OUTRESULT[6] is OUTRESULT[6]
+--operation mode is output
+
+OUTRESULT[6] = OUTPUT(A1L82);
+
+
+--OUTRESULT[7] is OUTRESULT[7]
+--operation mode is output
+
+OUTRESULT[7] = OUTPUT(A1L92);
+
+
