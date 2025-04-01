@@ -18,7 +18,9 @@ Point gauss_seidel_search(std::function<double(double, double)> f,
                          double x0, double y0,
                          double initial_step, double min_step,
                          int max_iter,
-                         double epsilon, bool verbose = false) {
+                         double epsilon,
+                         bool verbose = false,
+                         int verboseStep = 100) {
     Point current_point = {x0, y0, f(x0, y0)};
     Point previous_point = {0.0, 0.0, DBL_MAX};
     double step = initial_step;
@@ -74,7 +76,7 @@ Point gauss_seidel_search(std::function<double(double, double)> f,
             step *= 0.5;
         }
 
-        if (verbose && iter % 100 == 0) {
+        if (verbose && iter % verboseStep == 0) {
             std::cout << "Итерация " << iter << ": (" << current_point.x << ", " << current_point.y
                  << "), значение: " << current_point.value << ", шаг: " << step << std::endl;
         }
@@ -111,7 +113,9 @@ void testSearchFunc(std::function<double(double, double)> f,
                     double x0, double y0,
                     double initial_step, double min_step,
                     int max_iter,
-                    double epsilon) {
+                    double epsilon,
+                    bool verbose = true,
+                    int verboseStep = 100) {
 
     std::cout << "Начальный шаг = " << initial_step << std::endl;
     std::cout << "Минимальный шаг = " << min_step << std::endl;
@@ -119,7 +123,7 @@ void testSearchFunc(std::function<double(double, double)> f,
     std::cout << "Эпсилон = " << epsilon << std::endl;
     std::cout << "Начальные координаты = " << "(" << x0 << "," << y0 << ")\n";
     Point res_ell = gauss_seidel_search(f, x0, y0, initial_step, min_step,
-        max_iter, epsilon, true);
+        max_iter, epsilon, verbose, verboseStep);
 
     std::cout << "\nРезультат:\nНайденный минимум: (" << res_ell.x << ", " << res_ell.y << ")\n"
          << "Значение функции: " << res_ell.value << std::endl;
@@ -140,19 +144,19 @@ int main() {
     std::cout << "Тест 1\n";
     std::cout << "При A = " << global_A << ", " << "B = " << global_B << std::endl;
     auto ellipsoid_func = [](double x, double y) { return ellipsoid(x, y, global_A, global_B); };
-    testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon);
+    testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon, true, 2);
     std::cout << "Тест 2\n";
     global_A = 5.0;
     global_B = 0.5;
     std::cout << "При A = " << global_A << ", " << "B = " << global_B << std::endl;
-    testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon);
+    testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon, true, 2);
 
     // Тест 2: Розенброк
     std::cout << "\n=== Функция Розенброка ===" << std::endl;
     std::cout << "Тест 1\n";
-    testSearchFunc(rosenbrock, -2.0, 1.0, initial_step, min_step, max_iter, epsilon);
+    testSearchFunc(rosenbrock, -2.0, 1.0, initial_step, min_step, max_iter, epsilon, true, 50);
     std::cout << "Тест 2\n";
-    testSearchFunc(rosenbrock, 2.0, 1.0, initial_step, min_step, max_iter, epsilon);
+    testSearchFunc(rosenbrock, 2.0, 1.0, initial_step, min_step, max_iter, epsilon, true, 50);
 
 
     return 0;
