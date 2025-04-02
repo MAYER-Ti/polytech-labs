@@ -15,12 +15,12 @@ struct Point {
 };
 
 // Улучшенный метод случайного поиска с адаптацией области
-Point improved_random_search(function<double(double, double)> f,
+Point random_search(function<double(double, double)> f,
                              double x0,    double y0,
                              double x_min, double x_max,
                              double y_min, double y_max,
-                             int max_iter, double epsilon,
-                             bool verbose = false,
+                             int searchSize, int max_iter,
+                             double epsilon, bool verbose = false,
                              int verboseStep = 100) {
     random_device rd;
     mt19937 gen(rd());
@@ -29,11 +29,10 @@ Point improved_random_search(function<double(double, double)> f,
     // uniform_real_distribution<double> x_dist(x_min, x_max);
     // uniform_real_distribution<double> y_dist(y_min, y_max);
 
-
-    Point best_point;
     Point previous_point {0.0, 0.0, DBL_MAX};
     // best_point.x = x_dist(gen);
     // best_point.y = y_dist(gen);
+    Point best_point;
     best_point.x = x0;
     best_point.y = y0;
     best_point.value = f(best_point.x, best_point.y);
@@ -54,20 +53,29 @@ Point improved_random_search(function<double(double, double)> f,
         //                                              min(x_max, best_point.x + current_range_x / 2));
         // uniform_real_distribution<double> new_y_dist(max(y_min, best_point.y - current_range_y / 2),
         //                                              min(y_max, best_point.y + current_range_y / 2));
-
         uniform_real_distribution<double> new_x_dist(max(x_min, best_point.x - initial_range_x / 2),
                                                      min(x_max, best_point.x + initial_range_x / 2));
         uniform_real_distribution<double> new_y_dist(max(y_min, best_point.y - initial_range_y / 2),
                                                      min(y_max, best_point.y + initial_range_y / 2));
+        Point tryes[searchSize];
+        // набор новых случайных точек в диапазоне
+        for (int i = 0; i < searchSize; ++i) {
+            tryes[i].x = new_x_dist(gen);
+            tryes[i].y = new_y_dist(gen);
+            tryes[i].value = f(tryes[i].x, tryes[i].y);
+        }
+
+        Point* min = std::min_element(tryes, tryes + searchSize,
+                         [](const Point& a, const Point& b) { return a.value < b.value;});
 
         Point current_point;
         current_point.x = new_x_dist(gen);
         current_point.y = new_y_dist(gen);
         current_point.value = f(current_point.x, current_point.y);
 
-        if (current_point.value < best_point.value) {
+        if (min->value < best_point.value) {
             previous_point = best_point;
-            best_point = current_point;
+            best_point = *min;
             countTry = 0;
         }
         else {
@@ -88,18 +96,18 @@ Point improved_random_search(function<double(double, double)> f,
         // }
 
 
-        // if (countTry > 10000) {
-        //     if (verbose) {
-        //         std::cout << "Достигнуто количество попыток " << "> 10000" << " на итерации " << i << std::endl;
-        //     }
-        //     break;
-        // }
-        if (std::abs(best_point.value - previous_point.value) <= epsilon) {
-            if (verbose) {
-                std::cout << "Достигнута требуемая точность на итерации " << i << std::endl;
-            }
-            break;
-        }
+         if (countTry > 1000) {
+             if (verbose) {
+                 std::cout << "Достигнуто количество попыток " << "> 1000" << " на итерации " << i << std::endl;
+             }
+             break;
+         }
+//        if (std::abs(best_point.value - previous_point.value) <= epsilon) {
+//            if (verbose) {
+//                std::cout << "Достигнута требуемая точность на итерации " << i << std::endl;
+//            }
+//            break;
+//        }
     }
 
     return best_point;
@@ -119,7 +127,7 @@ void testSearchFunc(std::function<double(double, double)> f,
                     double x0, double y0,
                     double x_min, double x_max,
                     double y_min, double y_max,
-                    int max_iter,
+                    int searchSize, int max_iter,
                     double epsilon,
                     bool verbose = true,
                     int verboseStep = 100) {
@@ -129,7 +137,8 @@ void testSearchFunc(std::function<double(double, double)> f,
     std::cout << "Максимальное кол-во итераций = " << max_iter << std::endl;
     std::cout << "Эпсилон = " << epsilon << std::endl;
     std::cout << "Начальные координаты = " << "(" << x0 << "," << y0 << ")\n";
-    Point res_ell = improved_random_search(ellipsoid, x0, y0, x_min, x_max, y_min, y_max, max_iter, epsilon, verbose, verboseStep);
+    Point res_ell = random_search(ellipsoid, x0, y0, x_min, x_max, y_min, y_max,
+                                  searchSize, max_iter, epsilon, verbose, verboseStep);
 
     std::cout << "\nРезультат:\nНайденный минимум: (" << res_ell.x << ", " << res_ell.y << ")\n"
               << "Значение функции: " << res_ell.value << std::endl;
@@ -139,33 +148,38 @@ int main() {
     setlocale(LC_ALL, "rus");
     // Параметры поиска
     const int max_iter = 5000000;
+    const int searchSize = 1000;
     const double epsilon = 1e-6;
-    const double x_min = -0.5;
-    const double x_max = 0.5;
-    const double y_min = -0.5;
-    const double y_max = 0.5;
+    const double x_min = -1.5;
+    const double x_max = 1.5;
+    const double y_min = -1.5;
+    const double y_max = 1.5;
 
 
-    std::cout << std::fixed << std::setprecision(6);
+    std::cout << std::fixed << std::setprecision(7);
 
     // Тест 1: Эллипсоид
     std::cout << "=== Функция эллипсоида ===" << std::endl;
     std::cout << "Тест 1\n";
     std::cout << "При A = " << global_A << ", " << "B = " << global_B << std::endl;
 
-    testSearchFunc(ellipsoid, 2.1, 0.5, x_min, x_max, y_min, y_max, max_iter, epsilon, true, 10000);
+    testSearchFunc(ellipsoid, 2.1, 0.5, x_min, x_max, y_min, y_max,
+                   searchSize, max_iter, epsilon, true, 1000);
     std::cout << "Тест 2\n";
     global_A = 5.0;
     global_B = 0.5;
     std::cout << "При A = " << global_A << ", " << "B = " << global_B << std::endl;
-    testSearchFunc(ellipsoid, 2.1, 0.5, x_min, x_max, y_min, y_max, max_iter, epsilon, true, 10000);
+    testSearchFunc(ellipsoid, 2.1, 0.5, x_min, x_max, y_min, y_max,
+                   searchSize, max_iter, epsilon, true, 1000);
 
     // Тест 2: Розенброк
     std::cout << "\n=== Функция Розенброка ===" << std::endl;
     std::cout << "Тест 1\n";
-    testSearchFunc(rosenbrock, -2.0, 1.0, x_min, x_max, y_min, y_max, max_iter, epsilon, true, 10000);
+    testSearchFunc(rosenbrock, 2.0, 1.0, x_min, x_max, y_min, y_max,
+                   searchSize, max_iter, epsilon, true, 1000);
     std::cout << "Тест 2\n";
-    testSearchFunc(rosenbrock, 2.0, 1.0, x_min, x_max, y_min, y_max, max_iter, epsilon, true, 10000);
+    testSearchFunc(rosenbrock, -2.0, 1.0, x_min, x_max, y_min, y_max,
+                   searchSize, max_iter, epsilon, true, 1000);
 
 
     return 0;
