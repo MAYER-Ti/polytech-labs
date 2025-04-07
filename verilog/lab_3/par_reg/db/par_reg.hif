@@ -11,36 +11,6 @@ VRSM_ON
 VHSM_ON
 0
 # entity
-DTrigger
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-dtrigger.v
-1743195767
-7
-# storage
-db|par_reg.(1).cnf
-db|par_reg.(1).cnf
-# internal_option {
-ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
-ON
-AUTO_RESOURCE_SHARING
-OFF
-}
-# hierarchies {
-DTrigger:Dtrig1
-DTrigger:Dtrig2
-DTrigger:Dtrig3
-DTrigger:Dtrig4
-DTrigger:Dtrig5
-DTrigger:Dtrig6
-DTrigger:Dtrig7
-}
-# end
-# entity
 par_reg
 # logic_option {
 AUTO_RAM_RECOGNITION
@@ -49,7 +19,7 @@ ON
 # case_sensitive
 # source_file
 par_reg.v
-1743196111
+1744031152
 7
 # storage
 db|par_reg.(0).cnf
@@ -60,14 +30,39 @@ ON
 AUTO_RESOURCE_SHARING
 OFF
 }
-# user_parameter {
-numbits
-7
-PARAMETER_DEC
-DEF
-}
 # hierarchies {
 |
+}
+# end
+# entity
+DTrigger
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+dtrigger.v
+1744031168
+7
+# storage
+db|par_reg.(1).cnf
+db|par_reg.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+DTrigger:dtrig_gen[0].Dtrig
+DTrigger:dtrig_gen[1].Dtrig
+DTrigger:dtrig_gen[2].Dtrig
+DTrigger:dtrig_gen[3].Dtrig
+DTrigger:dtrig_gen[4].Dtrig
+DTrigger:dtrig_gen[5].Dtrig
+DTrigger:dtrig_gen[6].Dtrig
+DTrigger:dtrig_gen[7].Dtrig
 }
 # end
 # complete

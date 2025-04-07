@@ -1,36 +1,31 @@
-module RStrigger (out,x,xdop);
-   
-   input x,xdop;
-   output out;
-   reg res;
-
-   always @(xdop or x)
-      begin
-        if (~xdop)
-           res = 1'd0;
-        else
-          if (~x)
-           res = 1'd1;
-      end
-   assign out = !res;
+module RStrigger (
+    output reg out,
+    input x,    // S 
+    input xdop  // R 
+);
+    always @(*) begin
+        if (!xdop) 
+            out = 1'b0;  // R=0
+        else if (!x) 
+            out = 1'b1;  // S=0
+    end
 endmodule
 
-module Filter (OutResult, X, A, B);
+module Filter (
+    output OutResult,
+    input X, 
+    input A, 
+    input B
+);
+    wire o1, o2, o3, o4, Ainv, Binv;
 
-   input   X, A, B;
-   output  OutResult;
-   wire AInv;
-   wire BInv;  
-   wire ou1, ou2, ou3, ou4;
+	not not1 (Ainv, A);
+	not not2 (Binv, B);
 
-   not NOT1 (AInv, A);
-   not NOT2 (BInv, B);
+    RStrigger r1 (o1, X, A);    // S=X, R=A
+    RStrigger r2 (o2, X, B);    // S=X, R=B
+    RStrigger r3 (o3, X, Ainv);   // S=X, R=not A
+    RStrigger r4 (o4, X, Binv);   // S=X, R=not B
 
-   RStrigger call1 (ou1, X, A);
-   RStrigger call2 (ou2, X, B);
-   RStrigger call3 (ou3, X, AInv);
-   RStrigger call4 (ou4, X, BInv);
-
-   and  AND1 (OutResult,ou1, ou2, ou3, ou4);
+    assign OutResult = o1 & o2 & o3 & o4;
 endmodule
-         

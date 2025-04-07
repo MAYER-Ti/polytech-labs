@@ -1,3 +1,18 @@
+module DTrigger (
+    output reg Result,
+    input Data, 
+    input Clock, 
+    input Reset, 
+    input Ewr
+);
+    always @(posedge Clock or posedge Reset) begin
+        if (Reset)
+            Result <= 0;  
+        else if (!Ewr) 
+            Result <= Data;
+    end
+endmodule
+/*
 // модуль D-триггер
  module DTrigger (Result, Data, Clock, Reset, Ewr);
 	// определение параметров:
@@ -9,7 +24,7 @@
  	reg Res, Buf; // регистровые переменные
 
 	// меняем состояние D - триггера, если меняется один из сигналов
- 	always @(Clock or Reset or Ewr)
+ 	always @(posedge Clock or posedge Reset)
  	begin
 		// если RESET==1, то устанавливаем в ноль регистр Res
  		if (Reset)
@@ -33,3 +48,4 @@
 	assign Result = !Res;
 endmodule
 // конец модуля
+*/

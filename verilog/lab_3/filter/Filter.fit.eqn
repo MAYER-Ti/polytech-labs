@@ -11,58 +11,58 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---A1L2 is AND1~24 at LC_X1_Y1_N2
+--A1L4 is OutResult~27 at LC_X1_Y1_N2
 --operation mode is normal
 
-A1L2 = !B2_res & !B3_res & !B1_res & !B4_res;
+A1L4 = B2_out & B3_out & B1_out & B4_out;
 
 
---B2L1 is RStrigger:call2|always0~16 at LC_X1_Y1_N7
+--B2L1 is RStrigger:r2|always0~16 at LC_X1_Y1_N7
 --operation mode is normal
 
 B2L1 = X # B;
 
 
---B4_res is RStrigger:call4|res at LC_X1_Y1_N8
+--B4_out is RStrigger:r4|out at LC_X1_Y1_N8
 --operation mode is normal
 
-B4_res = !B & (B4_res # !B2L1);
+B4_out = !B & (B4_out # !B2L1);
 
 
---B1L1 is RStrigger:call1|always0~16 at LC_X1_Y1_N3
+--B1L1 is RStrigger:r1|always0~16 at LC_X1_Y1_N3
 --operation mode is normal
 
 B1L1 = A # X;
 
 
---B3_res is RStrigger:call3|res at LC_X1_Y1_N9
+--B3_out is RStrigger:r3|out at LC_X1_Y1_N9
 --operation mode is normal
 
-B3_res = !A & (B3_res # !B1L1);
+B3_out = !A & (B3_out # !B1L1);
 
 
---B2L2 is RStrigger:call2|always0~17 at LC_X1_Y1_N1
+--B2L2 is RStrigger:r2|always0~17 at LC_X1_Y1_N1
 --operation mode is normal
 
 B2L2 = X & B;
 
 
---B2_res is RStrigger:call2|res at LC_X1_Y1_N4
+--B2_out is RStrigger:r2|out at LC_X1_Y1_N4
 --operation mode is normal
 
-B2_res = B & (B2L2 & B2_res # !X);
+B2_out = B & (B2L2 & B2_out # !X);
 
 
---B1L2 is RStrigger:call1|always0~17 at LC_X1_Y1_N5
+--B1L2 is RStrigger:r1|always0~17 at LC_X1_Y1_N5
 --operation mode is normal
 
 B1L2 = A & X;
 
 
---B1_res is RStrigger:call1|res at LC_X1_Y1_N6
+--B1_out is RStrigger:r1|out at LC_X1_Y1_N6
 --operation mode is normal
 
-B1_res = A & (B1L2 & B1_res # !X);
+B1_out = A & (B1L2 & B1_out # !X);
 
 
 --X is X at PIN_W19
@@ -86,7 +86,7 @@ A = INPUT();
 --OutResult is OutResult at PIN_W20
 --operation mode is output
 
-OutResult = OUTPUT(A1L2);
+OutResult = OUTPUT(A1L4);
 
 
 

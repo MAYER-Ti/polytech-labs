@@ -1,5 +1,5 @@
 Assembler report for alu
-Mon Apr 12 00:30:15 2021
+Wed Apr 21 19:22:40 2021
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Apr 12 00:30:15 2021 ;
+; Assembler Status      ; Successful - Wed Apr 21 19:22:40 2021 ;
 ; Revision Name         ; alu                                   ;
 ; Top-level Entity Name ; alu                                   ;
 ; Family                ; Stratix                               ;
@@ -116,10 +116,10 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Mon Apr 12 00:30:12 2021
+    Info: Processing started: Wed Apr 21 19:22:37 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off alu -c alu
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Processing ended: Mon Apr 12 00:30:15 2021
+    Info: Processing ended: Wed Apr 21 19:22:40 2021
     Info: Elapsed time: 00:00:03
 
 

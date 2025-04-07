@@ -11,214 +11,251 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---A1L32 is res[1]~378 at LC_X1_Y2_N1
+--res[0] is res[0] at LC_X52_Y30_N4
 --operation mode is normal
 
-A1L32 = !RESET & (EWR & (B1_Buf) # !EWR & DATA[1]);
+res[0]_lut_out = GND;
+res[0] = DFFEAS(res[0]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , B1_Result, , , VCC);
 
 
---A1L42 is res[2]~379 at LC_X1_Y2_N3
+--A1L32Q is always0~8 at LC_X51_Y30_N2
 --operation mode is normal
 
-A1L42 = !RESET & (EWR & (B2_Buf) # !EWR & DATA[2]);
+A1L32Q_lut_out = GND;
+A1L32Q = DFFEAS(A1L32Q_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , EDY, , , VCC);
 
 
---A1L52 is res[3]~380 at LC_X1_Y2_N0
+--res[1] is res[1] at LC_X52_Y30_N2
 --operation mode is normal
 
-A1L52 = !RESET & (EWR & B3_Buf # !EWR & (DATA[3]));
+res[1]_lut_out = B2_Result;
+res[1] = DFFEAS(res[1]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , , , , );
 
 
---A1L62 is res[4]~381 at LC_X1_Y2_N8
+--res[2] is res[2] at LC_X52_Y30_N8
 --operation mode is normal
 
-A1L62 = !RESET & (EWR & B4_Buf # !EWR & (DATA[4]));
+res[2]_lut_out = B3_Result;
+res[2] = DFFEAS(res[2]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , , , , );
 
 
---A1L72 is res[5]~382 at LC_X1_Y2_N7
+--res[3] is res[3] at LC_X52_Y30_N5
 --operation mode is normal
 
-A1L72 = !RESET & (EWR & (B5_Buf) # !EWR & DATA[5]);
+res[3]_lut_out = B4_Result;
+res[3] = DFFEAS(res[3]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , , , , );
 
 
---A1L82 is res[6]~383 at LC_X1_Y1_N8
+--res[4] is res[4] at LC_X52_Y30_N7
 --operation mode is normal
 
-A1L82 = !RESET & (EWR & (B6_Buf) # !EWR & DATA[6]);
+res[4]_lut_out = GND;
+res[4] = DFFEAS(res[4]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , B5_Result, , , VCC);
 
 
---A1L92 is res[7]~384 at LC_X1_Y1_N6
+--res[5] is res[5] at LC_X50_Y30_N4
 --operation mode is normal
 
-A1L92 = !RESET & (EWR & B7_Buf # !EWR & (DATA[7]));
+res[5]_lut_out = GND;
+res[5] = DFFEAS(res[5]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , B6_Result, , , VCC);
 
 
---B7L2 is DTrigger:Dtrig7|always0~0 at LC_X1_Y1_N7
+--res[6] is res[6] at LC_X50_Y30_N9
 --operation mode is normal
 
-B7L2 = EWR # RESET;
+res[6]_lut_out = B7_Result;
+res[6] = DFFEAS(res[6]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , , , , );
 
 
---B1_Buf is DTrigger:Dtrig1|Buf at LC_X1_Y2_N9
+--res[7] is res[7] at LC_X50_Y30_N6
 --operation mode is normal
 
-B1_Buf = GLOBAL(B7L2) & B1_Buf # !GLOBAL(B7L2) & (DATA[1]);
+res[7]_lut_out = B8_Result;
+res[7] = DFFEAS(res[7]_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , , , , , );
 
 
---B2_Buf is DTrigger:Dtrig2|Buf at LC_X1_Y2_N5
+--B1_Result is DTrigger:dtrig_gen[0].Dtrig|Result at LC_X52_Y30_N1
 --operation mode is normal
 
-B2_Buf = GLOBAL(B7L2) & (B2_Buf) # !GLOBAL(B7L2) & DATA[2];
+B1_Result_lut_out = GND;
+B1_Result = DFFEAS(B1_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, DATA[0], , , VCC);
 
 
---B3_Buf is DTrigger:Dtrig3|Buf at LC_X1_Y2_N4
+--B2_Result is DTrigger:dtrig_gen[1].Dtrig|Result at LC_X52_Y30_N9
 --operation mode is normal
 
-B3_Buf = GLOBAL(B7L2) & B3_Buf # !GLOBAL(B7L2) & (DATA[3]);
+B2_Result_lut_out = GND;
+B2_Result = DFFEAS(B2_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, DATA[1], , , VCC);
 
 
---B4_Buf is DTrigger:Dtrig4|Buf at LC_X1_Y2_N2
+--B3_Result is DTrigger:dtrig_gen[2].Dtrig|Result at LC_X52_Y30_N0
 --operation mode is normal
 
-B4_Buf = GLOBAL(B7L2) & B4_Buf # !GLOBAL(B7L2) & (DATA[4]);
+B3_Result_lut_out = DATA[2];
+B3_Result = DFFEAS(B3_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, , , , );
 
 
---B5_Buf is DTrigger:Dtrig5|Buf at LC_X1_Y2_N6
+--B4_Result is DTrigger:dtrig_gen[3].Dtrig|Result at LC_X52_Y30_N6
 --operation mode is normal
 
-B5_Buf = GLOBAL(B7L2) & (B5_Buf) # !GLOBAL(B7L2) & DATA[5];
+B4_Result_lut_out = GND;
+B4_Result = DFFEAS(B4_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, DATA[3], , , VCC);
 
 
---B6_Buf is DTrigger:Dtrig6|Buf at LC_X1_Y1_N5
+--B5_Result is DTrigger:dtrig_gen[4].Dtrig|Result at LC_X52_Y30_N3
 --operation mode is normal
 
-B6_Buf = GLOBAL(B7L2) & B6_Buf # !GLOBAL(B7L2) & (DATA[6]);
+B5_Result_lut_out = DATA[4];
+B5_Result = DFFEAS(B5_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, , , , );
 
 
---B7_Buf is DTrigger:Dtrig7|Buf at LC_X1_Y1_N2
+--B6_Result is DTrigger:dtrig_gen[5].Dtrig|Result at LC_X50_Y30_N5
 --operation mode is normal
 
-B7_Buf = GLOBAL(B7L2) & B7_Buf # !GLOBAL(B7L2) & (DATA[7]);
+B6_Result_lut_out = DATA[5];
+B6_Result = DFFEAS(B6_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, , , , );
 
 
---CLOCK is CLOCK at PIN_T21
+--B7_Result is DTrigger:dtrig_gen[6].Dtrig|Result at LC_X50_Y30_N2
+--operation mode is normal
+
+B7_Result_lut_out = DATA[6];
+B7_Result = DFFEAS(B7_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, , , , );
+
+
+--B8_Result is DTrigger:dtrig_gen[7].Dtrig|Result at LC_X50_Y30_N8
+--operation mode is normal
+
+B8_Result_lut_out = GND;
+B8_Result = DFFEAS(B8_Result_lut_out, GLOBAL(CLOCK), !GLOBAL(RESET), , !EWR, DATA[7], , , VCC);
+
+
+--CLOCK is CLOCK at PIN_L2
 --operation mode is input
 
 CLOCK = INPUT();
 
 
---DATA[0] is DATA[0] at PIN_G19
---operation mode is input
-
-DATA[0] = INPUT();
-
-
---EDY is EDY at PIN_AB19
---operation mode is input
-
-EDY = INPUT();
-
-
---RESET is RESET at PIN_Y19
+--RESET is RESET at PIN_L3
 --operation mode is input
 
 RESET = INPUT();
 
 
---DATA[1] is DATA[1] at PIN_W22
+--EDY is EDY at PIN_E2
 --operation mode is input
 
-DATA[1] = INPUT();
+EDY = INPUT();
 
 
---EWR is EWR at PIN_AA21
+--DATA[0] is DATA[0] at PIN_D1
+--operation mode is input
+
+DATA[0] = INPUT();
+
+
+--EWR is EWR at PIN_B4
 --operation mode is input
 
 EWR = INPUT();
 
 
---DATA[2] is DATA[2] at PIN_U20
+--DATA[1] is DATA[1] at PIN_F3
+--operation mode is input
+
+DATA[1] = INPUT();
+
+
+--DATA[2] is DATA[2] at PIN_F4
 --operation mode is input
 
 DATA[2] = INPUT();
 
 
---DATA[3] is DATA[3] at PIN_U19
+--DATA[3] is DATA[3] at PIN_E1
 --operation mode is input
 
 DATA[3] = INPUT();
 
 
---DATA[4] is DATA[4] at PIN_Y20
+--DATA[4] is DATA[4] at PIN_D2
 --operation mode is input
 
 DATA[4] = INPUT();
 
 
---DATA[5] is DATA[5] at PIN_P17
+--DATA[5] is DATA[5] at PIN_D4
 --operation mode is input
 
 DATA[5] = INPUT();
 
 
---DATA[6] is DATA[6] at PIN_Y21
+--DATA[6] is DATA[6] at PIN_C4
 --operation mode is input
 
 DATA[6] = INPUT();
 
 
---DATA[7] is DATA[7] at PIN_AA20
+--DATA[7] is DATA[7] at PIN_A4
 --operation mode is input
 
 DATA[7] = INPUT();
 
 
---OUTRESULT[0] is OUTRESULT[0] at PIN_AA18
+--OUTRESULT[0] is OUTRESULT[0] at PIN_C2
 --operation mode is output
 
-OUTRESULT[0] = OUTPUT(!RESET);
+OUTRESULT[0]_tri_out = TRI(res[0], !A1L32Q);
+OUTRESULT[0] = OUTPUT(OUTRESULT[0]_tri_out);
 
 
---OUTRESULT[1] is OUTRESULT[1] at PIN_W18
+--OUTRESULT[1] is OUTRESULT[1] at PIN_G7
 --operation mode is output
 
-OUTRESULT[1] = OUTPUT(A1L32);
+OUTRESULT[1]_tri_out = TRI(res[1], !A1L32Q);
+OUTRESULT[1] = OUTPUT(OUTRESULT[1]_tri_out);
 
 
---OUTRESULT[2] is OUTRESULT[2] at PIN_W21
+--OUTRESULT[2] is OUTRESULT[2] at PIN_D3
 --operation mode is output
 
-OUTRESULT[2] = OUTPUT(A1L42);
+OUTRESULT[2]_tri_out = TRI(res[2], !A1L32Q);
+OUTRESULT[2] = OUTPUT(OUTRESULT[2]_tri_out);
 
 
---OUTRESULT[3] is OUTRESULT[3] at PIN_T18
+--OUTRESULT[3] is OUTRESULT[3] at PIN_B2
 --operation mode is output
 
-OUTRESULT[3] = OUTPUT(A1L52);
+OUTRESULT[3]_tri_out = TRI(res[3], !A1L32Q);
+OUTRESULT[3] = OUTPUT(OUTRESULT[3]_tri_out);
 
 
---OUTRESULT[4] is OUTRESULT[4] at PIN_P19
+--OUTRESULT[4] is OUTRESULT[4] at PIN_B3
 --operation mode is output
 
-OUTRESULT[4] = OUTPUT(A1L62);
+OUTRESULT[4]_tri_out = TRI(res[4], !A1L32Q);
+OUTRESULT[4] = OUTPUT(OUTRESULT[4]_tri_out);
 
 
---OUTRESULT[5] is OUTRESULT[5] at PIN_U18
+--OUTRESULT[5] is OUTRESULT[5] at PIN_K7
 --operation mode is output
 
-OUTRESULT[5] = OUTPUT(A1L72);
+OUTRESULT[5]_tri_out = TRI(res[5], !A1L32Q);
+OUTRESULT[5] = OUTPUT(OUTRESULT[5]_tri_out);
 
 
---OUTRESULT[6] is OUTRESULT[6] at PIN_W19
+--OUTRESULT[6] is OUTRESULT[6] at PIN_C3
 --operation mode is output
 
-OUTRESULT[6] = OUTPUT(A1L82);
+OUTRESULT[6]_tri_out = TRI(res[6], !A1L32Q);
+OUTRESULT[6] = OUTPUT(OUTRESULT[6]_tri_out);
 
 
---OUTRESULT[7] is OUTRESULT[7] at PIN_W20
+--OUTRESULT[7] is OUTRESULT[7] at PIN_J7
 --operation mode is output
 
-OUTRESULT[7] = OUTPUT(A1L92);
+OUTRESULT[7]_tri_out = TRI(res[7], !A1L32Q);
+OUTRESULT[7] = OUTPUT(OUTRESULT[7]_tri_out);
 
 
 
