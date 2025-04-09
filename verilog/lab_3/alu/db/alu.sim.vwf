@@ -319,7 +319,7 @@ TRANSITION_LIST("command_code[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -337,7 +337,7 @@ TRANSITION_LIST("command_code[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -355,7 +355,8 @@ TRANSITION_LIST("flagO")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 27.256;
+		LEVEL 1 FOR 972.744;
 	}
 }
 
@@ -364,7 +365,8 @@ TRANSITION_LIST("flagZ")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 27.236;
+		LEVEL 1 FOR 972.764;
 	}
 }
 
@@ -409,8 +411,7 @@ TRANSITION_LIST("result[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27.189;
-		LEVEL 1 FOR 972.811;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -419,8 +420,7 @@ TRANSITION_LIST("result[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27.2;
-		LEVEL 1 FOR 972.8;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -429,8 +429,7 @@ TRANSITION_LIST("result[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27.179;
-		LEVEL 1 FOR 972.821;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -439,8 +438,7 @@ TRANSITION_LIST("result[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 27.22;
-		LEVEL 1 FOR 972.78;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -485,7 +483,7 @@ TRANSITION_LIST("ydata[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -512,7 +510,7 @@ TRANSITION_LIST("ydata[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -529,7 +527,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "command_code";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
+	RADIX = Binary;
 	TREE_INDEX = 1;
 	TREE_LEVEL = 0;
 	CHILDREN = 2, 3, 4;

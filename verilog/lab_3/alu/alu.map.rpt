@@ -1,5 +1,5 @@
 Analysis & Synthesis report for alu
-Mon Apr 12 00:30:05 2021
+Wed Apr 21 19:22:29 2021
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -45,7 +45,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Apr 12 00:30:05 2021    ;
+; Analysis & Synthesis Status ; Successful - Wed Apr 21 19:22:29 2021    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; alu                                      ;
 ; Top-level Entity Name       ; alu                                      ;
@@ -339,7 +339,7 @@ The equations can be found in V:/lab_3/alu/alu.map.eqn.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Mon Apr 12 00:30:00 2021
+    Info: Processing started: Wed Apr 21 19:22:22 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alu -c alu
 Warning: (10273) Verilog HDL warning at alu.v(91): extended using "x" or "z"
 Warning: (10273) Verilog HDL warning at alu.v(234): extended using "x" or "z"
@@ -433,7 +433,7 @@ Info: Implemented 158 device resources after synthesis - the final resource coun
     Info: Implemented 11 output pins
     Info: Implemented 135 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Processing ended: Mon Apr 12 00:30:05 2021
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Wed Apr 21 19:22:28 2021
+    Info: Elapsed time: 00:00:06
 
 

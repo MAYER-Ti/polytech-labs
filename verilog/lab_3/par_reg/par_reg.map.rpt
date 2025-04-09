@@ -1,5 +1,5 @@
 Analysis & Synthesis report for par_reg
-Mon Apr 12 01:08:49 2021
+Wed Apr 21 18:11:29 2021
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -12,12 +12,10 @@ Version 5.0 Build 148 04/26/2005 SJ Full Version
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. User-Specified and Inferred Latches
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |par_reg
- 11. Analysis & Synthesis Equations
- 12. Analysis & Synthesis Messages
+  7. General Register Statistics
+  8. Inverted Register Statistics
+  9. Analysis & Synthesis Equations
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -43,12 +41,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Apr 12 01:08:49 2021    ;
+; Analysis & Synthesis Status ; Successful - Wed Apr 21 18:11:29 2021    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; par_reg                                  ;
 ; Top-level Entity Name       ; par_reg                                  ;
 ; Family                      ; Stratix                                  ;
-; Total logic elements        ; 15                                       ;
+; Total logic elements        ; 17                                       ;
 ; Total pins                  ; 20                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; Total memory bits           ; 0                                        ;
@@ -131,55 +129,39 @@ applicable agreement for further details.
 +---------------------------------+-----------+
 ; Resource                        ; Usage     ;
 +---------------------------------+-----------+
-; Total logic elements            ; 15        ;
-; Total combinational functions   ; 15        ;
-;     -- Total 4-input functions  ; 7         ;
-;     -- Total 3-input functions  ; 7         ;
-;     -- Total 2-input functions  ; 1         ;
+; Total logic elements            ; 17        ;
+; Total combinational functions   ; 0         ;
+;     -- Total 4-input functions  ; 0         ;
+;     -- Total 3-input functions  ; 0         ;
+;     -- Total 2-input functions  ; 0         ;
 ;     -- Total 1-input functions  ; 0         ;
 ;     -- Total 0-input functions  ; 0         ;
 ; Combinational cells for routing ; 0         ;
-; Total registers                 ; 0         ;
+; Total registers                 ; 17        ;
 ; I/O pins                        ; 20        ;
-; Maximum fan-out node            ; RESET     ;
-; Maximum fan-out                 ; 9         ;
-; Total fan-out                   ; 59        ;
-; Average fan-out                 ; 1.69      ;
+; Maximum fan-out node            ; CLOCK     ;
+; Maximum fan-out                 ; 17        ;
+; Total fan-out                   ; 75        ;
+; Average fan-out                 ; 2.03      ;
 +---------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
-+----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name      ;
-+----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------+
-; |par_reg                   ; 15 (7)      ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 20   ; 0            ; 15 (7)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg                 ;
-;    |DTrigger:Dtrig1|       ; 1 (1)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:Dtrig1 ;
-;    |DTrigger:Dtrig2|       ; 1 (1)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:Dtrig2 ;
-;    |DTrigger:Dtrig3|       ; 1 (1)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:Dtrig3 ;
-;    |DTrigger:Dtrig4|       ; 1 (1)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:Dtrig4 ;
-;    |DTrigger:Dtrig5|       ; 1 (1)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:Dtrig5 ;
-;    |DTrigger:Dtrig6|       ; 1 (1)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:Dtrig6 ;
-;    |DTrigger:Dtrig7|       ; 2 (2)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:Dtrig7 ;
-+----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                               ;
++----------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
+; Compilation Hierarchy Node       ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name                  ;
++----------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
+; |par_reg                         ; 17 (9)      ; 17           ; 0           ; 0            ; 0       ; 0         ; 0         ; 20   ; 0            ; 0 (0)        ; 17 (9)            ; 0 (0)            ; 0 (0)           ; |par_reg                             ;
+;    |DTrigger:dtrig_gen[0].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[0].Dtrig ;
+;    |DTrigger:dtrig_gen[1].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[1].Dtrig ;
+;    |DTrigger:dtrig_gen[2].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[2].Dtrig ;
+;    |DTrigger:dtrig_gen[3].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[3].Dtrig ;
+;    |DTrigger:dtrig_gen[4].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[4].Dtrig ;
+;    |DTrigger:dtrig_gen[5].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[5].Dtrig ;
+;    |DTrigger:dtrig_gen[6].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[6].Dtrig ;
+;    |DTrigger:dtrig_gen[7].Dtrig| ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; |par_reg|DTrigger:dtrig_gen[7].Dtrig ;
++----------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------+
-; User-Specified and Inferred Latches               ;
-+-----------------------------------------------+---+
-; Latch Name                                    ;   ;
-+-----------------------------------------------+---+
-; DTrigger:Dtrig1|Buf                           ;   ;
-; DTrigger:Dtrig2|Buf                           ;   ;
-; DTrigger:Dtrig3|Buf                           ;   ;
-; DTrigger:Dtrig4|Buf                           ;   ;
-; DTrigger:Dtrig5|Buf                           ;   ;
-; DTrigger:Dtrig6|Buf                           ;   ;
-; DTrigger:Dtrig7|Buf                           ;   ;
-; Number of user-specified and inferred latches ; 7 ;
-+-----------------------------------------------+---+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -187,33 +169,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 17    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 17    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |par_reg|res[1]            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |par_reg ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; numbits        ; 7     ; Integer                                        ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; always0~8                              ; 8       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +--------------------------------+
@@ -228,37 +201,32 @@ The equations can be found in V:/lab_3/par_reg/par_reg.map.eqn.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Mon Apr 12 01:08:47 2021
+    Info: Processing started: Wed Apr 21 18:11:27 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off par_reg -c par_reg
-Warning: (10273) Verilog HDL warning at par_reg.v(41): extended using "x" or "z"
-Info: (10281) Verilog HDL information at par_reg.v(15): variable name "Res" and variable name "res" should not differ only in case
+Warning: (10273) Verilog HDL warning at par_reg.v(32): extended using "x" or "z"
+Info: (10281) Verilog HDL information at par_reg.v(11): variable name "res" and variable name "Res" should not differ only in case
 Info: Found 1 design units, including 1 entities, in source file par_reg.v
     Info: Found entity 1: par_reg
 Info: Found 1 design units, including 1 entities, in source file dtrigger.v
     Info: Found entity 1: DTrigger
 Info: Elaborating entity "par_reg" for the top level hierarchy
-Warning: Verilog HDL assignment warning at par_reg.v(32): truncated value with size 32 to match size of target (1)
-Warning: Verilog HDL Always Construct warning at par_reg.v(38): variable "EDY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning: Verilog HDL Always Construct warning at par_reg.v(39): variable "Res" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning: Verilog HDL assignment warning at par_reg.v(41): truncated value with size 32 to match size of target (8)
-Warning: Verilog HDL Always Construct warning at par_reg.v(27): variable "i" may not be assigned a new value in every possible path through the Always Construct.  Variable "i" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
-Warning: Tied undriven net "Res[0]" at par_reg.v(15) to 0
-Info: Elaborating entity "DTrigger" for hierarchy "DTrigger:Dtrig1"
-Warning: Verilog HDL assignment warning at dtrigger.v(16): truncated value with size 32 to match size of target (1)
-Warning: Verilog HDL Always Construct warning at dtrigger.v(24): variable "Data" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning: Verilog HDL Always Construct warning at dtrigger.v(25): variable "Data" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning: Verilog HDL Always Construct warning at dtrigger.v(29): variable "Buf" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning: Verilog HDL Always Construct warning at dtrigger.v(12): variable "Buf" may not be assigned a new value in every possible path through the Always Construct.  Variable "Buf" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
-Warning: Design contains 3 input pin(s) that do not drive logic
-    Warning: No output dependent on input pin "CLOCK"
-    Warning: No output dependent on input pin "DATA[0]"
-    Warning: No output dependent on input pin "EDY"
-Info: Implemented 35 device resources after synthesis - the final resource count might be different
+Info: Elaborating entity "DTrigger" for hierarchy "DTrigger:dtrig_gen[0].Dtrig"
+Warning: Verilog HDL assignment warning at dtrigger.v(10): truncated value with size 32 to match size of target (1)
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "always0~9" merged to single register "always0~8"
+    Info: Duplicate register "always0~10" merged to single register "always0~8"
+    Info: Duplicate register "always0~11" merged to single register "always0~8"
+    Info: Duplicate register "always0~12" merged to single register "always0~8"
+    Info: Duplicate register "always0~13" merged to single register "always0~8"
+    Info: Duplicate register "always0~14" merged to single register "always0~8"
+    Info: Duplicate register "always0~15" merged to single register "always0~8"
+Info: Registers with preset signals will power-up high
+Info: Implemented 37 device resources after synthesis - the final resource count might be different
     Info: Implemented 12 input pins
     Info: Implemented 8 output pins
-    Info: Implemented 15 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Processing ended: Mon Apr 12 01:08:49 2021
+    Info: Implemented 17 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Processing ended: Wed Apr 21 18:11:29 2021
     Info: Elapsed time: 00:00:02
 
 

@@ -1,5 +1,5 @@
 Flow report for par_reg
-Mon Apr 12 01:09:00 2021
+Wed Apr 21 18:11:42 2021
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,13 +36,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +--------------------------+------------------------------------------+
-; Flow Status              ; Successful - Mon Apr 12 01:09:00 2021    ;
+; Flow Status              ; Successful - Wed Apr 21 18:11:42 2021    ;
 ; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name            ; par_reg                                  ;
 ; Top-level Entity Name    ; par_reg                                  ;
 ; Family                   ; Stratix                                  ;
 ; Met timing requirements  ; Yes                                      ;
-; Total logic elements     ; 15 / 10,570 ( < 1 % )                    ;
+; Total logic elements     ; 17 / 10,570 ( < 1 % )                    ;
 ; Total pins               ; 20 / 336 ( 5 % )                         ;
 ; Total virtual pins       ; 0                                        ;
 ; Total memory bits        ; 0 / 920,448 ( 0 % )                      ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/12/2021 01:08:48 ;
+; Start date & time ; 04/21/2021 18:11:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; par_reg             ;
 +-------------------+---------------------+
@@ -72,9 +72,9 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Analysis & Synthesis ; 00:00:02     ;
 ; Fitter               ; 00:00:05     ;
-; Assembler            ; 00:00:02     ;
-; Timing Analyzer      ; 00:00:01     ;
-; Total                ; 00:00:10     ;
+; Assembler            ; 00:00:03     ;
+; Timing Analyzer      ; 00:00:02     ;
+; Total                ; 00:00:12     ;
 +----------------------+--------------+
 
 
