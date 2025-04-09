@@ -11,11 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
         qCritical() << "Failed to open camera!";
         return;
     }
-
     // Таймер для обновления кадров
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateFrame);
-    timer->start(30); // Обновление каждые 30 мс
+    timer->start(15); // Обновление каждые 30 мс
 
     // Кнопка записи
     connect(ui->recordButton_3, &QPushButton::clicked, this, &MainWindow::toggleRecording);
@@ -37,6 +36,10 @@ void MainWindow::updateFrame()
     // Яркость
     int brightness = ui->brightnessSlider_3->value();
     frame += cv::Scalar(brightness, brightness, brightness);
+    int redKoef = ui->brightnessSlider_4->value();
+    int blueKoef = ui->brightnessSlider_6->value();
+    int greenKoef = ui->brightnessSlider_5->value();
+    frame += cv::Scalar(blueKoef,greenKoef, redKoef);
 
     // Размытие
     if (ui->blurCheckbox_3->isChecked()) {
@@ -59,9 +62,17 @@ void MainWindow::toggleRecording()
     if (isRecording) {
         QString filename = "output.avi";
         int fourcc = cv::VideoWriter::fourcc('M', 'J', 'P', 'G');
-        double fps = cap.get(cv::CAP_PROP_FPS);
-        cv::Size size(cap.get(cv::CAP_PROP_FRAME_WIDTH), cap.get(cv::CAP_PROP_FRAME_HEIGHT));
+        double fps = 15;
+        cv::Size size(
+            static_cast<int>(cap.get(cv::CAP_PROP_FRAME_WIDTH)),
+            static_cast<int>(cap.get(cv::CAP_PROP_FRAME_HEIGHT))
+        );
         writer.open(filename.toStdString(), fourcc, fps, size);
+        if (!writer.isOpened()) {
+            qCritical() << "Failed to open video writer!";
+            isRecording = false;
+            return;
+        }
         ui->recordButton_3->setText("Stop Recording");
         ui->statusBar->showMessage("Recording...");
     } else {
