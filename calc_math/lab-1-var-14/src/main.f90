@@ -42,11 +42,12 @@ program main
     x = 1.0
     x_n = 1
 
-    DO WHILE (x <= 4) 
+    DO WHILE (x < 4)
         x = x + h
         x_n = x_n + 1
-    END DO 
+    END DO
     x = 1.0
+
 
     ALLOCATE(x_values(x_n), f_values(x_n), b_coef(x_n), c_coef(x_n), d_coef(x_n))
 
@@ -56,7 +57,6 @@ program main
         CALL quanc8(integral_func, a, b, abserr, relerr, res, errest, nofun, flag)
         x_values(i) = x
         f_values(i) = res
-
         x = x + h
         i = i + 1
     END DO
