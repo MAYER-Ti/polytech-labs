@@ -1,21 +1,21 @@
 #ifndef NOTE_H
 #define NOTE_H
 
-#include <QString>
+#include <string>
 #include <set>
+#include <QJsonObject>
 
-
-//!
-//! \brief Структура для хранения записи
-//! Хранит текст записи и набор хэштегов к ней
 struct Note
 {
     std::string text;
+    std::string title;
     std::set<std::string> hashtags;
 
-    // bool operator ==(const Note& b);
-
     void updateHashtags();
+    QJsonObject toJson() const;
+    static Note fromJson(const QJsonObject &json);
 };
+
+Q_DECLARE_METATYPE(std::shared_ptr<Note>)
 
 #endif // NOTE_H
