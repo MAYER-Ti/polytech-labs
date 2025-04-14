@@ -75,59 +75,6 @@ void MainWindow::initializeGui()
     layout->addWidget(m_editor.get(), 4);
 
     setCentralWidget(centralWidget);
-
-    // Создаем панель навигации
-    m_navigationToolBar = std::make_unique<QToolBar>("Навигация");
-    addToolBar(Qt::TopToolBarArea, m_navigationToolBar.get());
-
-    // Создаем действия для навигации
-    m_ActionPrevNote = std::make_unique<QAction>("← Предыдущая");
-    m_ActionNextNote = std::make_unique<QAction>("Следующая →");
-
-    // Настраиваем иконки (опционально)
-    m_ActionPrevNote->setIcon(QIcon::fromTheme("go-previous"));
-    m_ActionNextNote->setIcon(QIcon::fromTheme("go-next"));
-
-    // Добавляем действия на панель
-    m_navigationToolBar->addAction(m_ActionPrevNote.get());
-    m_navigationToolBar->addAction(m_ActionNextNote.get());
-
-    // Подключаем сигналы
-    connect(m_ActionPrevNote.get(), &QAction::triggered, this, &MainWindow::showPreviousNote);
-    connect(m_ActionNextNote.get(), &QAction::triggered, this, &MainWindow::showNextNote);
-
-    m_ActionPrevNote->setShortcut(QKeySequence("Ctrl+Left"));
-    m_ActionNextNote->setShortcut(QKeySequence("Ctrl+Right"));
-
-    // Настройка автодополнения для хэштегов
-    m_completerModel = std::make_unique<QStringListModel>();
-    m_hashtagCompleter = std::make_unique<QCompleter>(m_editor.get());
-    m_hashtagCompleter->setModel(m_completerModel.get());
-    m_hashtagCompleter->setCaseSensitivity(Qt::CaseInsensitive);
-    m_hashtagCompleter->setCompletionMode(QCompleter::PopupCompletion);
-
-    // Обновляем модель автодополнения
-    updateHashtagCompleter();
-
-    // Подключаем к редактору через event filter
-    m_editor->installEventFilter(this);
-
-    // Простые подсказки при вводе #
-    connect(m_editor.get(), &QPlainTextEdit::textChanged, [this]() {
-        QTextCursor cursor = m_editor->textCursor();
-        QString textBeforeCursor = cursor.block().text().left(cursor.positionInBlock());
-
-        if (textBeforeCursor.endsWith("#")) {
-            QPoint p(0.0,0.0);
-            QToolTip::showText(m_editor->mapToGlobal(p),
-                               "Доступные хэштеги: " + m_completerModel->stringList().join(", "),
-                               m_editor.get());
-        }
-    });
-    connect(m_hashtagCompleter.get(), QOverload<const QString &>::of(&QCompleter::activated),
-            [this](const QString& completeText){
-                m_currentCompletion = completeText;
-    });
 }
 
 void MainWindow::loadNotes()
@@ -137,6 +84,7 @@ void MainWindow::loadNotes()
         m_currentNote = m_noteManager.allNotes().front();
         m_editor->setPlainText(QString::fromStdString(m_currentNote->text));
     }
+    updateHashtagsTree();
 }
 
 void MainWindow::updateNotesTree()
@@ -168,88 +116,35 @@ void MainWindow::onNoteSelected(QTreeWidgetItem* item, int column)
     connect(m_editor.get(), &QPlainTextEdit::textChanged, this, &MainWindow::onTextChanged);
 }
 
-bool MainWindow::eventFilter(QObject *obj, QEvent *event)
-{
-    if (obj == m_editor.get() && event->type() == QEvent::KeyPress) {
-        QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-
-
-        if (keyEvent->text() == Qt::Key_Tab || keyEvent->text() == Qt::Key_Enter) {
-            if (m_hashtagCompleter->popup()->isVisible()) {
-                if (!m_currentCompletion.isEmpty()) {
-                    m_editor->insertPlainText(m_currentCompletion);
-                    m_currentCompletion.clear();
-                }
-            }
-        }
-        // Автодополнение при вводе #
-        // if (keyEvent->text() == "#") {
-        //     showHashtagCompleter();
-        //     return true;
-        // }
-
-        // Автодополнение при наборе текста после #
-        QTextCursor cursor = m_editor->textCursor();
-        cursor.movePosition(QTextCursor::Left, QTextCursor::KeepAnchor, 1);
-        if (cursor.selectedText() == "#") {
-            showHashtagCompleter();
-        }
-    }
-    return QMainWindow::eventFilter(obj, event);
-}
-
-void MainWindow::showPreviousNote()
-{
-    if (!m_currentNote || m_noteManager.allNotes().size() <= 1) return;
-
-    auto notes = m_noteManager.allNotes();
-    auto it = std::find(notes.begin(), notes.end(), m_currentNote);
-
-    if (it == notes.end() || it == notes.begin()) {
-        it = notes.end();
-    }
-
-    --it;
-    selectNoteInTree(*it);
-}
-
-void MainWindow::showNextNote()
-{
-    if (!m_currentNote || m_noteManager.allNotes().size() <= 1) return;
-
-    auto notes = m_noteManager.allNotes();
-    auto it = std::find(notes.begin(), notes.end(), m_currentNote);
-
-    if (it != notes.end()) {
-        ++it;
-        if (it == notes.end()) {
-            it = notes.begin();
-        }
-        selectNoteInTree(*it);
-    }
-}
-
 void MainWindow::filterNotesByHashtag()
 {
     QString filter = m_hashtagFilter->text().trimmed();
     if (filter.isEmpty()) {
-        // Показать все заметки, если фильтр пуст
-        updateNotesTree();
+        updateNotesTree(); // Показать все заметки если фильтр пуст
         return;
     }
 
-    // Разбиваем введенные хэштеги (могут быть через пробел или запятую)
+    // Разбиваем введенные хэштеги (разделители: пробелы, запятые)
     QStringList tags = filter.split(QRegularExpression("[\\s,]+"), Qt::SkipEmptyParts);
 
     m_filesTree->clear();
+
     for (const auto& note : m_noteManager.allNotes()) {
         bool matchesAll = true;
-        for (const QString& tag : tags) {
-            std::string stdTag = tag.startsWith('#')
-            ? tag.mid(1).toStdString()
-            : tag.toStdString();
 
-            if (note->hashtags.find(stdTag) == note->hashtags.end()) {
+        for (const QString& tag : tags) {
+            QString cleanTag = tag.startsWith('#') ? tag.mid(1) : tag;
+            bool tagFound = false;
+
+            // Проверяем каждый хэштег заметки на частичное совпадение
+            for (const auto& noteTag : note->hashtags) {
+                if (QString::fromStdString(noteTag).contains(cleanTag, Qt::CaseInsensitive)) {
+                    tagFound = true;
+                    break;
+                }
+            }
+
+            if (!tagFound) {
                 matchesAll = false;
                 break;
             }
@@ -289,7 +184,7 @@ void MainWindow::updateHashtagsTree()
         item->setToolTip(0, QString("Кликните для просмотра всех заметок с хэштегом #%1")
                                 .arg(QString::fromStdString(tag)));
     }
-    updateHashtagCompleter();
+    //updateHashtagCompleter();
 }
 
 void MainWindow::onTextChanged()
@@ -388,40 +283,6 @@ void MainWindow::showNotesWithHashtag(const std::string &hashtag)
     layout->addWidget(notesList);
     dialog->setLayout(layout);
     dialog->exec();
-}
-
-void MainWindow::updateHashtagCompleter()
-{
-    QStringList tags;
-    for (const auto& tag : m_noteManager.allHashtags()) {
-        tags << "#" + QString::fromStdString(tag);
-    }
-    m_completerModel->setStringList(tags);
-}
-
-void MainWindow::showHashtagCompleter()
-{
-    QTextCursor cursor = m_editor->textCursor();
-    QRect cursorRect = m_editor->cursorRect(cursor);
-
-    // // Позиционируем completer под курсором
-    m_hashtagCompleter->setCompletionPrefix(getCurrentHashtagPrefix());
-    //m_hashtagCompleter->complete();
-    m_hashtagCompleter->setWidget(m_editor.get());
-    m_hashtagCompleter->complete();
-}
-
-QString MainWindow::getCurrentHashtagPrefix() const
-{
-    QTextCursor cursor = m_editor->textCursor();
-    QString textBeforeCursor = cursor.block().text().left(cursor.positionInBlock());
-
-    // Находим последний # в тексте
-    int hashPos = textBeforeCursor.lastIndexOf('#');
-    if (hashPos >= 0) {
-        return textBeforeCursor.mid(hashPos);
-    }
-    return QString();
 }
 
 void MainWindow::deleteSelectedNote()

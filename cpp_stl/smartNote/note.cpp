@@ -5,7 +5,7 @@
 void Note::updateHashtags()
 {
     hashtags.clear();
-    QRegularExpression re("#(\\w+)");
+    QRegularExpression re("#([\\wа-яА-ЯёЁ]+)");
     QRegularExpressionMatchIterator i = re.globalMatch(QString::fromStdString(text));
     while (i.hasNext()) {
         QRegularExpressionMatch match = i.next();
