@@ -1,0 +1,244 @@
+Analysis & Synthesis report for insertion_sorter
+Fri Apr 23 02:03:09 2021
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |insertion_sorter|current_state
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Equations
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Apr 23 02:03:09 2021    ;
+; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
+; Revision Name               ; insertion_sorter                         ;
+; Top-level Entity Name       ; insertion_sorter                         ;
+; Family                      ; Stratix                                  ;
+; Total logic elements        ; 123                                      ;
+; Total pins                  ; 68                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++--------------------------------------------------------------------+------------------+------------------+
+; Option                                                             ; Setting          ; Default Value    ;
++--------------------------------------------------------------------+------------------+------------------+
+; Top-level entity name                                              ; insertion_sorter ; insertion_sorter ;
+; Family name                                                        ; Stratix          ; Stratix          ;
+; Use smart compilation                                              ; Off              ; Off              ;
+; Restructure Multiplexers                                           ; Auto             ; Auto             ;
+; Create Debugging Nodes for IP Cores                                ; off              ; off              ;
+; Preserve fewer node names                                          ; On               ; On               ;
+; Disable OpenCore Plus hardware evaluation                          ; Off              ; Off              ;
+; Verilog Version                                                    ; Verilog_2001     ; Verilog_2001     ;
+; VHDL Version                                                       ; VHDL93           ; VHDL93           ;
+; State Machine Processing                                           ; Auto             ; Auto             ;
+; Extract Verilog State Machines                                     ; On               ; On               ;
+; Extract VHDL State Machines                                        ; On               ; On               ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On               ; On               ;
+; DSP Block Balancing                                                ; Auto             ; Auto             ;
+; Maximum DSP Block Usage                                            ; -1               ; -1               ;
+; NOT Gate Push-Back                                                 ; On               ; On               ;
+; Power-Up Don't Care                                                ; On               ; On               ;
+; Remove Redundant Logic Cells                                       ; Off              ; Off              ;
+; Remove Duplicate Registers                                         ; On               ; On               ;
+; Ignore CARRY Buffers                                               ; Off              ; Off              ;
+; Ignore CASCADE Buffers                                             ; Off              ; Off              ;
+; Ignore GLOBAL Buffers                                              ; Off              ; Off              ;
+; Ignore ROW GLOBAL Buffers                                          ; Off              ; Off              ;
+; Ignore LCELL Buffers                                               ; Off              ; Off              ;
+; Ignore SOFT Buffers                                                ; On               ; On               ;
+; Limit AHDL Integers to 32 Bits                                     ; Off              ; Off              ;
+; Optimization Technique -- Stratix/Stratix GX                       ; Balanced         ; Balanced         ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70               ; 70               ;
+; Auto Carry Chains                                                  ; On               ; On               ;
+; Auto Open-Drain Pins                                               ; On               ; On               ;
+; Remove Duplicate Logic                                             ; On               ; On               ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off              ; Off              ;
+; Perform gate-level register retiming                               ; Off              ; Off              ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On               ; On               ;
+; Auto ROM Replacement                                               ; On               ; On               ;
+; Auto RAM Replacement                                               ; On               ; On               ;
+; Auto DSP Block Replacement                                         ; On               ; On               ;
+; Auto Shift Register Replacement                                    ; On               ; On               ;
+; Auto Clock Enable Replacement                                      ; On               ; On               ;
+; Allows Synchronous Control Signal Usage in Normal Mode Logic Cells ; On               ; On               ;
+; Auto RAM Block Balancing                                           ; On               ; On               ;
+; Auto Resource Sharing                                              ; Off              ; Off              ;
+; Allow Any RAM Size For Recognition                                 ; Off              ; Off              ;
+; Allow Any ROM Size For Recognition                                 ; Off              ; Off              ;
+; Allow Any Shift Register Size For Recognition                      ; Off              ; Off              ;
+; Maximum Number of M512 Memory Blocks                               ; -1               ; -1               ;
+; Maximum Number of M4K Memory Blocks                                ; -1               ; -1               ;
+; Maximum Number of M-RAM Memory Blocks                              ; -1               ; -1               ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off              ; Off              ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On               ; On               ;
++--------------------------------------------------------------------+------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                   ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+
+; insertion_sorter.vhd             ; yes             ; User VHDL File  ; V:/lab_2/insertion_sorter/insertion_sorter.vhd ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++-----------------------------------+---------+
+; Resource                          ; Usage   ;
++-----------------------------------+---------+
+; Total logic elements              ; 123     ;
+; Total combinational functions     ; 91      ;
+;     -- Total 4-input functions    ; 44      ;
+;     -- Total 3-input functions    ; 37      ;
+;     -- Total 2-input functions    ; 10      ;
+;     -- Total 1-input functions    ; 0       ;
+;     -- Total 0-input functions    ; 0       ;
+; Combinational cells for routing   ; 0       ;
+; Total registers                   ; 82      ;
+; Total logic cells in carry chains ; 8       ;
+; I/O pins                          ; 68      ;
+; Maximum fan-out node              ; clk     ;
+; Maximum fan-out                   ; 82      ;
+; Total fan-out                     ; 631     ;
+; Average fan-out                   ; 3.30    ;
++-----------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
+; |insertion_sorter          ; 123 (123)   ; 82           ; 0           ; 0            ; 0       ; 0         ; 0         ; 68   ; 0            ; 41 (41)      ; 32 (32)           ; 50 (50)          ; 8 (8)           ; |insertion_sorter   ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |insertion_sorter|current_state                                                                                               ;
++--------------------------+--------------------+--------------------------+--------------------------+--------------------+--------------------+
+; Name                     ; current_state.done ; current_state.sort_inner ; current_state.sort_outer ; current_state.load ; current_state.idle ;
++--------------------------+--------------------+--------------------------+--------------------------+--------------------+--------------------+
+; current_state.idle       ; 0                  ; 0                        ; 0                        ; 0                  ; 0                  ;
+; current_state.load       ; 0                  ; 0                        ; 0                        ; 1                  ; 1                  ;
+; current_state.sort_outer ; 0                  ; 0                        ; 1                        ; 0                  ; 1                  ;
+; current_state.sort_inner ; 0                  ; 1                        ; 0                        ; 0                  ; 1                  ;
+; current_state.done       ; 1                  ; 0                        ; 0                        ; 0                  ; 1                  ;
++--------------------------+--------------------+--------------------------+--------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 82    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 82    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 72    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |insertion_sorter|key[0]         ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |insertion_sorter|data_reg[2][7] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |insertion_sorter|data_reg[3][5] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |insertion_sorter|data_reg[0][4] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |insertion_sorter|data_reg[1][2] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |insertion_sorter|j[0]           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |insertion_sorter|Mux~8          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in V:/lab_2/insertion_sorter/insertion_sorter.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Fri Apr 23 02:03:06 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off insertion_sorter -c insertion_sorter
+Info: Found 2 design units, including 1 entities, in source file insertion_sorter.vhd
+    Info: Found design unit 1: insertion_sorter-Behavioral
+    Info: Found entity 1: insertion_sorter
+Info: Elaborating entity "insertion_sorter" for the top level hierarchy
+Info: VHDL Case Statement information at insertion_sorter.vhd(95): OTHERS choice is never selected
+Info: State machine "|insertion_sorter|current_state" contains 5 states and 0 state bits
+Info: Selected Auto state machine encoding method for state machine "|insertion_sorter|current_state"
+Info: Encoding result for state machine "|insertion_sorter|current_state"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "current_state.done"
+        Info: Encoded state bit "current_state.sort_inner"
+        Info: Encoded state bit "current_state.sort_outer"
+        Info: Encoded state bit "current_state.load"
+        Info: Encoded state bit "current_state.idle"
+    Info: State "|insertion_sorter|current_state.idle" uses code string "00000"
+    Info: State "|insertion_sorter|current_state.load" uses code string "00011"
+    Info: State "|insertion_sorter|current_state.sort_outer" uses code string "00101"
+    Info: State "|insertion_sorter|current_state.sort_inner" uses code string "01001"
+    Info: State "|insertion_sorter|current_state.done" uses code string "10001"
+Info: Implemented 191 device resources after synthesis - the final resource count might be different
+    Info: Implemented 35 input pins
+    Info: Implemented 33 output pins
+    Info: Implemented 123 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Processing ended: Fri Apr 23 02:03:09 2021
+    Info: Elapsed time: 00:00:03
+
+

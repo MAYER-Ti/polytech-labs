@@ -1,0 +1,8 @@
+
+State Machine - |insertion_sorter|current_state
+Name current_state.done current_state.sort_inner current_state.sort_outer current_state.load current_state.idle 
+current_state.idle 0 0 0 0 0 
+current_state.load 0 0 0 1 1 
+current_state.sort_outer 0 0 1 0 1 
+current_state.sort_inner 0 1 0 0 1 
+current_state.done 1 0 0 0 1 

@@ -5,9 +5,6 @@
 #include <iomanip>
 #include <functional>
 
-
-
-
 static double global_A = 1.0;
 static double global_B = 1.0;
 
@@ -22,12 +19,7 @@ Point gauss_seidel_search(std::function<double(double, double)> f,
                          double x0, double y0,
                          double initial_step, double min_step,
                          int max_iter,
-<<<<<<< HEAD:math_modeling/lab_2/var_1/main.cpp
                          double epsilon, bool verbose = false,
-=======
-                         double epsilon,
-                         bool verbose = false,
->>>>>>> d8b3fe774917bbe287649e6ea96d992aa3406ecb:math_modeling/lab_2/main.cpp
                          int verboseStep = 100) {
     Point current_point = {x0, y0, f(x0, y0)};
     Point previous_point = {0.0, 0.0, DBL_MAX};
@@ -121,11 +113,7 @@ void testSearchFunc(std::function<double(double, double)> f,
                     double x0, double y0,
                     double initial_step, double min_step,
                     int max_iter,
-<<<<<<< HEAD:math_modeling/lab_2/var_1/main.cpp
                     double epsilon, 
-=======
-                    double epsilon,
->>>>>>> d8b3fe774917bbe287649e6ea96d992aa3406ecb:math_modeling/lab_2/main.cpp
                     bool verbose = true,
                     int verboseStep = 100) {
 
@@ -156,34 +144,19 @@ int main() {
     std::cout << "Тест 1\n";
     std::cout << "При A = " << global_A << ", " << "B = " << global_B << std::endl;
     auto ellipsoid_func = [](double x, double y) { return ellipsoid(x, y, global_A, global_B); };
-<<<<<<< HEAD:math_modeling/lab_2/var_1/main.cpp
     testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon, true, 5);
-=======
-    testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon, true, 2);
->>>>>>> d8b3fe774917bbe287649e6ea96d992aa3406ecb:math_modeling/lab_2/main.cpp
     std::cout << "Тест 2\n";
     global_A = 5.0;
     global_B = 0.5;
     std::cout << "При A = " << global_A << ", " << "B = " << global_B << std::endl;
-<<<<<<< HEAD:math_modeling/lab_2/var_1/main.cpp
     testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon, true, 5);
-=======
-    testSearchFunc(ellipsoid_func, 2.1, 0.5, initial_step, min_step, max_iter, epsilon, true, 2);
->>>>>>> d8b3fe774917bbe287649e6ea96d992aa3406ecb:math_modeling/lab_2/main.cpp
 
     // Тест 2: Розенброк
     std::cout << "\n=== Функция Розенброка ===" << std::endl;
     std::cout << "Тест 1\n";
-<<<<<<< HEAD:math_modeling/lab_2/var_1/main.cpp
     testSearchFunc(rosenbrock, -2.0, 1.0, initial_step, min_step, max_iter, epsilon, true, 100);
     std::cout << "Тест 2\n";
-    testSearchFunc(rosenbrock, 2.0, 1.0, initial_step, min_step, max_iter, epsilon, true, 100);
-=======
-    testSearchFunc(rosenbrock, -2.0, 1.0, initial_step, min_step, max_iter, epsilon, true, 50);
-    std::cout << "Тест 2\n";
     testSearchFunc(rosenbrock, 2.0, 1.0, initial_step, min_step, max_iter, epsilon, true, 50);
->>>>>>> d8b3fe774917bbe287649e6ea96d992aa3406ecb:math_modeling/lab_2/main.cpp
-
 
     return 0;
 }

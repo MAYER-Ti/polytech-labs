@@ -1,0 +1,60 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+insertion_sorter
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+insertion_sorter.v
+1744145509
+7
+# storage
+db|insertion_sorter.(0).cnf
+db|insertion_sorter.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+IDLE
+000
+PARAMETER_BIN
+DEF
+LOAD
+001
+PARAMETER_BIN
+DEF
+SORT_OUTER
+010
+PARAMETER_BIN
+DEF
+SORT_INNER
+011
+PARAMETER_BIN
+DEF
+DONE
+100
+PARAMETER_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# end
+# complete
+
