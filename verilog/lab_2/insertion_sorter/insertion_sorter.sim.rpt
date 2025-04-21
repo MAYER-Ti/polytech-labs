@@ -1,5 +1,5 @@
 Simulator report for insertion_sorter
-Fri Apr 23 02:05:31 2021
+Wed May 05 22:23:44 2021
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -85,12 +85,12 @@ Please use Quartus II to view the waveform report data.
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Fri Apr 23 02:05:30 2021
+    Info: Processing started: Wed May 05 22:23:44 2021
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off insertion_sorter -c insertion_sorter
 Info: Simulation coverage is      31.68 %
 Info: Number of transitions in simulation is 467
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
-    Info: Processing ended: Fri Apr 23 02:05:31 2021
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Wed May 05 22:23:44 2021
+    Info: Elapsed time: 00:00:00
 
 

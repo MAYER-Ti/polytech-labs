@@ -1,5 +1,5 @@
 Flow report for insertion_sorter
-Fri Apr 23 02:03:24 2021
+Wed May 05 21:51:10 2021
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +--------------------------+------------------------------------------+
-; Flow Status              ; Successful - Fri Apr 23 02:03:24 2021    ;
+; Flow Status              ; Successful - Wed May 05 21:51:10 2021    ;
 ; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name            ; insertion_sorter                         ;
 ; Top-level Entity Name    ; insertion_sorter                         ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/23/2021 02:03:07 ;
+; Start date & time ; 05/05/2021 21:51:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; insertion_sorter    ;
 +-------------------+---------------------+
@@ -70,11 +70,11 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
-; Analysis & Synthesis ; 00:00:03     ;
-; Fitter               ; 00:00:07     ;
+; Analysis & Synthesis ; 00:00:01     ;
+; Fitter               ; 00:00:04     ;
 ; Assembler            ; 00:00:02     ;
-; Timing Analyzer      ; 00:00:02     ;
-; Total                ; 00:00:14     ;
+; Timing Analyzer      ; 00:00:01     ;
+; Total                ; 00:00:08     ;
 +----------------------+--------------+
 
 

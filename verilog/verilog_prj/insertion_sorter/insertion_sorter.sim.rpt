@@ -1,0 +1,140 @@
+Simulator report for insertion_sorter
+Wed May 05 22:21:59 2021
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Simulator INI Usage
+  6. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 207 nodes    ;
+; Simulation Coverage         ;      31.02 % ;
+; Total Number of Transitions ; 499          ;
++-----------------------------+--------------+
+
+
++-----------------------------------------------------------------+
+; Simulator Settings                                              ;
++-------------------------------------------------------+---------+
+; Option                                                ; Setting ;
++-------------------------------------------------------+---------+
+; Simulation mode                                       ; Timing  ;
+; Start time                                            ; 0ns     ;
+; Add pins automatically to simulation output waveforms ; On      ;
+; Check outputs                                         ; Off     ;
+; Report simulation coverage                            ; On      ;
+; Detect setup and hold time violations                 ; Off     ;
+; Detect glitches                                       ; Off     ;
+; Automatically save/load simulation netlist            ; Off     ;
+; Disable timing delays in Timing Simulation            ; Off     ;
+; Generate Signal Activity File                         ; Off     ;
++-------------------------------------------------------+---------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Wed May 05 22:21:58 2021
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off insertion_sorter -c insertion_sorter
+Warning: Can't display state machine states -- register holding state machine bit "|insertion_sorter|state.LOAD" was synthesized away
+Warning: Can't display state machine states -- register holding state machine bit "|insertion_sorter|state.SORT_OUTER" was synthesized away
+Warning: Can't display state machine states -- register holding state machine bit "|insertion_sorter|state.SORT_INNER" was synthesized away
+Warning: Can't display state machine states -- register holding state machine bit "|insertion_sorter|state.IDLE" was synthesized away
+Warning: Can't display state machine states -- register holding state machine bit "|insertion_sorter|state.DONE" was synthesized away
+Warning: Can't find signal in vector source file for input pin "|insertion_sorter|state[0]"
+Warning: Can't find signal in vector source file for input pin "|insertion_sorter|state[1]"
+Warning: Can't find signal in vector source file for input pin "|insertion_sorter|state[2]"
+Warning: Found logic contention at time 136.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 1
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 156.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 0
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 156.41 ns on bus node "|insertion_sorter|state[1]"
+    Info: Node "state[1]" has logic level of 1
+    Info: Node "state[1]" has logic level of X
+Warning: Found logic contention at time 176.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 1
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 196.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 0
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 216.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 1
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 276.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 0
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 296.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 1
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 356.38 ns on bus node "|insertion_sorter|state[0]"
+    Info: Node "state[0]" has logic level of 0
+    Info: Node "state[0]" has logic level of X
+Warning: Found logic contention at time 356.41 ns on bus node "|insertion_sorter|state[1]"
+    Info: Node "state[1]" has logic level of 0
+    Info: Node "state[1]" has logic level of X
+Warning: Found logic contention at time 356.6 ns on bus node "|insertion_sorter|state[2]"
+    Info: Node "state[2]" has logic level of 1
+    Info: Node "state[2]" has logic level of X
+Warning: Found logic contention at time 376.6 ns on bus node "|insertion_sorter|state[2]"
+    Info: Node "state[2]" has logic level of 0
+    Info: Node "state[2]" has logic level of X
+Info: Simulation coverage is      31.02 %
+Info: Number of transitions in simulation is 499
+Info: Quartus II Simulator was successful. 0 errors, 20 warnings
+    Info: Processing ended: Wed May 05 22:21:59 2021
+    Info: Elapsed time: 00:00:01
+
+

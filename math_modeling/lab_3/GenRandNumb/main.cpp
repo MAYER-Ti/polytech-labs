@@ -69,7 +69,7 @@ void test_builtin_rng() {
 void test_custom_rng() {
     const int n = 100000;
     const double mx = 0.0;
-    const double max_y_table = 40.0; // 15.6204
+    const double max_y_table = 15.6204; //  15.6204; // 40.0
     const double sigma_x = 0.05 * max_y_table; // 0.05 * 15.6204 = 0.78102
 
     NormalDistributionGenerator generator;
