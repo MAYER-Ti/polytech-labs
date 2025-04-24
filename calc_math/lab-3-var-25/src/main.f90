@@ -16,7 +16,7 @@ program main
     EXTERNAL F_SYSTEM
     INTEGER :: NEQN, IFLAG, IWORK(5)
     REAL :: T, Y(2), TOUT, RELERR, ABSERR, WORK(27)
-    REAL :: TPRINT, FINAL, H_ADAMS1, H_ADAMS2
+    REAL :: TPRINT, FINAL, H_ADAMS1, H_ADAMS2, H_CRIT
 
     ! Количество уравнений
     NEQN = 2
@@ -35,7 +35,7 @@ program main
     TPRINT = 0.02
     FINAL = 0.4
 
-    ! Два шага для метода Адамса
+    ! Два фиксированных шага
     H_ADAMS1 = 0.0020
     H_ADAMS2 = 0.00020
 
@@ -51,6 +51,9 @@ program main
     print *, "Интервал интегрирования: [0.0, 0.4]"
     print *, "===================================================="
 
+    ! Расчёт критического шага
+    H_CRIT = critical_step_adams3()
+
     ! 1. Решение методом RKF45
     call solve_rkf45()
 
@@ -63,6 +66,11 @@ program main
     print *, ""
     print *, "3. Метод Адамса 3-го порядка с h =", H_ADAMS2
     call solve_adams(H_ADAMS2)
+
+    ! 4. Метод Адамса с критическим шагом
+    print *, ""
+    print *, "4. Метод Адамса 3-го порядка с критическим шагом h =", H_CRIT
+    call solve_adams(H_CRIT)
 
 contains
 
@@ -173,6 +181,60 @@ subroutine solve_adams(h_adams)
 
     200 format(F8.5, 2X, F20.10, 2X, F20.10)
 end subroutine solve_adams
+
+    function critical_step_adams3() result(h_crit)
+        real :: h_crit
+        real :: A(2,2), trace, det, discr, lambda1, lambda2
+
+        ! Матрица A — линейная часть системы
+        A(1,1) = -40.0
+        A(1,2) = 260.0
+        A(2,1) = 30.0
+        A(2,2) = -270.0
+
+        ! Характеристический многочлен: λ^2 - tr(А)λ + det(А)
+        trace = A(1,1) + A(2,2)
+        det = A(1,1)*A(2,2) - A(1,2)*A(2,1)
+        discr = trace**2 - 4.0*det
+
+        print *, ""
+        print *, "================ Расчёт критического шага =================="
+        print *, "Матрица A:"
+        print '(2F10.2)', A(1,1), A(1,2)
+        print '(2F10.2)', A(2,1), A(2,2)
+
+        print *, ""
+        print *, "Характеристическое уравнение:"
+        print *, "det(A - λI) = 0"
+        print *, "λ^2 +", trace, "*λ +", det, "= 0"
+
+        if (discr >= 0.0) then
+            lambda1 = 0.5 * (trace + sqrt(discr))
+            lambda2 = 0.5 * (trace - sqrt(discr))
+            print *, ""
+            print *, "Корни уравнения (действительные):"
+        else
+            lambda1 = 0.5 * trace
+            lambda2 = lambda1
+            print *, ""
+            print *, "Комплексные корни с действительной частью:"
+        end if
+
+        print *, "λ1 =", lambda1
+        print *, "λ2 =", lambda2
+
+        print *, ""
+        print *, "Формула критического шага:"
+        print *, "h_кр = 6 / (max(|λ1|, |λ2|) * 11 )"
+
+        h_crit = 6.0 / (11.0 * max(abs(lambda1), abs(lambda2)))
+
+
+        print *, ""
+        print '(A, F10.6)', "Критический шаг h_кр ≈ ", h_crit
+        print *, "============================================================"
+    end function critical_step_adams3
+
 
 end program main
 
