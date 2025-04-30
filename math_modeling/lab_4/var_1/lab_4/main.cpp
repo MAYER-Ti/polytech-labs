@@ -82,7 +82,7 @@ struct Point {
 };
 // Метод покоординатного спуска с адаптивным шагом
 Point gauss_seidel_search(std::function<double(double, double)> f,
-                         double x0, double y0,
+                         double x0, double y0, std::ofstream& fileIterationResults,
                          double initial_step, double min_step,
                          int max_iter,
                          double epsilon, bool verbose = false,
@@ -142,6 +142,11 @@ Point gauss_seidel_search(std::function<double(double, double)> f,
             step *= 0.5;
         }
 
+        // Запись успешного шага в файл
+        if (improved) {
+            fileIterationResults << current_point.x << "\t" << current_point.y << "\t" << current_point.value << "\n";
+        }
+
         if (verbose && iter % verboseStep == 0) {
             std::cout << "Итерация " << iter << ": (" << current_point.x << ", " << current_point.y
                  << "), значение: " << current_point.value << ", шаг: " << step << std::endl;
@@ -172,15 +177,24 @@ void searchFunc(std::function<double(double, double)> f,
                     int max_iter = 500000,
                     double epsilon = 1e-8,
                     bool verbose = true,
-                    int verboseStep = 100) {
+                    int verboseStep = 10) {
     std::cout << "Тест:" << std::endl;
     std::cout << "Начальный шаг = " << initial_step << std::endl;
     std::cout << "Минимальный шаг = " << min_step << std::endl;
     std::cout << "Максимальное кол-во итераций = " << max_iter << std::endl;
     std::cout << "Эпсилон = " << epsilon << std::endl;
     std::cout << "Начальные координаты = " << "(" << x0 << "," << y0 << ")\n";
-    Point res_ell = gauss_seidel_search(f, x0, y0, initial_step, min_step,
+
+    std::ofstream fileIterationResults("iteration_results" + std::to_string(x0) + "_" + std::to_string(y0) + ".txt");
+    if (!fileIterationResults.is_open()) {
+        std::cout << "Error open file!";
+        return;
+    }
+
+    Point res_ell = gauss_seidel_search(f, x0, y0, fileIterationResults, initial_step, min_step,
         max_iter, epsilon, verbose, verboseStep);
+
+    fileIterationResults.close();
 
     std::cout << "\nРезультат:\nНайденный минимум: (" << res_ell.x << ", " << res_ell.y << ")\n"
          << "Значение функции: " << res_ell.value << std::endl;
