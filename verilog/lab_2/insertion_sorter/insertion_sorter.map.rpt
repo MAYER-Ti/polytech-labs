@@ -1,5 +1,5 @@
 Analysis & Synthesis report for insertion_sorter
-Wed May 05 21:51:02 2021
+Wed May 19 22:47:56 2021
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed May 05 21:51:02 2021    ;
+; Analysis & Synthesis Status ; Successful - Wed May 19 22:47:56 2021    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; insertion_sorter                         ;
 ; Top-level Entity Name       ; insertion_sorter                         ;
@@ -212,7 +212,7 @@ The equations can be found in Z:/lab_2/insertion_sorter/insertion_sorter.map.eqn
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Wed May 05 21:51:01 2021
+    Info: Processing started: Wed May 19 22:47:55 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off insertion_sorter -c insertion_sorter
 Info: Found 2 design units, including 1 entities, in source file insertion_sorter.vhd
     Info: Found design unit 1: insertion_sorter-Behavioral
@@ -238,7 +238,7 @@ Info: Implemented 191 device resources after synthesis - the final resource coun
     Info: Implemented 33 output pins
     Info: Implemented 123 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Wed May 05 21:51:02 2021
+    Info: Processing ended: Wed May 19 22:47:56 2021
     Info: Elapsed time: 00:00:01
 
 

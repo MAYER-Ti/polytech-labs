@@ -1,0 +1,1 @@
+assign zero1 nor zero2;

@@ -1,0 +1,21 @@
+[ModelSim]
+MY_PROJECT_LIB1 = $HDS_PROJECT_DIR\MY_PROJECT_LIB1\work
+TUTORIAL = $HDS_PROJECT_DIR\TUTORIAL\work
+[hdl]
+my_project_lib = $HDS_PROJECT_DIR/my_project_lib/hdl
+MY_PROJECT_LIB1 = C:/FPGAdv72LS/Hds/examples/tutorial_ref/Import
+TUTORIAL = $HDS_PROJECT_DIR/TUTORIAL/hdl
+[hds]
+my_project_lib = $HDS_PROJECT_DIR/my_project_lib/hds
+MY_PROJECT_LIB1 = $HDS_PROJECT_DIR/MY_PROJECT_LIB1/hds
+TUTORIAL = $HDS_PROJECT_DIR/TUTORIAL/hds
+[hds_settings]
+default_library = TUTORIAL
+design_root = MY_PROJECT_LIB1.eth_top()Ethernet/data/rtl/verilog/eth_top.v
+version = 1
+[library_type]
+my_project_lib = regular
+MY_PROJECT_LIB1 = regular
+TUTORIAL = regular
+[shared]
+others = $HDS_TEAM_HOME/shared.hdp
