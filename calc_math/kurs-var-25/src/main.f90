@@ -51,15 +51,17 @@ program variable_length_pendulum
 
     T = 0.0
     FINAL_T = 10.0
-    TPRINT = 0.2
+    TPRINT = 0.1
     TOUT = T + TPRINT
     RELERR = 1.0E-6
     ABSERR = 1.0E-6
     IFLAG = 1
 
-    print *, "t", "V(t)", "V'(t)", "z(t)"
+    print *, "     t            V(t)           V'(t)           z(t)"
+    print *, "----------------------------------------------------------"
+
     do while (T < FINAL_T)
-        call RKF45(system_ode, NEQN, Y, T, TOUT, RELERR, ABSERR, IFLAG, WORK, IWORK)
+        call RKF45(F_VDP, NEQN, Y, T, TOUT, RELERR, ABSERR, IFLAG, WORK, IWORK)
         if (IFLAG /= 2) then
             print *, "Ошибка в RKF45, IFLAG =", IFLAG
             exit
@@ -96,11 +98,12 @@ contains
         C = X(3)
 
         ! Найти x*, корень уравнения tan((pi*x)/4) = x + 3 методом бисекции
-        xstar = bisect_root(0.1, 2.0, 1.0E-7)
+        xstar = bisect(1.0, 1.75, 1.0e-7)
 
         print *, 'xstar res', xstar
 
         global_tau = 0.05763710 * xstar
+        !global_tau = 1.73499428
         global_mu = 0.1
 
         ! Вычисление Omega0 через QUANC8
@@ -114,17 +117,20 @@ contains
 
     end subroutine initialize_parameters
 
-    subroutine system_ode(t, y, yp)
-        use pendulum_params
+    subroutine F_VDP(T, Y, YP)
         implicit none
-        real, intent(in) :: t, y(3)
-        real, intent(inout) :: yp(3)
+        real, intent(in) :: T, Y(3)
+        real, intent(out) :: YP(3)
+        real :: w0, mu, tau
 
-        yp(1) = y(2)
-        yp(3) = (y(1)**2 - y(3)) / global_tau
-        yp(2) = -global_omega0**2 * y(1) + 2.0 * global_mu * (-yp(3) * y(1) + (1.0 - y(3)) * y(2))
+        w0 = global_omega0
+        mu = global_mu
+        tau = global_tau
 
-    end subroutine system_ode
+        YP(1) = Y(2)
+        YP(3) = (Y(1)**2 - Y(3)) / tau
+        YP(2) = -w0**2 * Y(1) + 2.0 * mu * ( -YP(3) * Y(1) + (1.0 - Y(3)) * Y(2) )
+    end subroutine F_VDP
 
     real function integrand(x)
         real, intent(in) :: x
@@ -144,40 +150,32 @@ contains
 
     end subroutine print_parameters
 
-    real function bisect_root(a, b, tol)
+    real function bisect(a, b, tol)
         real, intent(in) :: a, b, tol
-        real :: tmp_a, tmp_b
-        real :: fa, fb, fm, m
+
+        real :: fa, fb, fx, x, tmp_a, tmp_b
+        real, parameter :: pi = 3.1415927
         integer :: max_iter, i
+
         tmp_a = a
         tmp_b = b
         max_iter = 100
-        fa = f_root(a)
-        fb = f_root(b)
-        if (fa * fb > 0.0) then
-            print *, 'Корень вне интервала'
-            bisect_root = tmp_a
-            return
-        end if
+
         do i = 1, max_iter
-            m = 0.5 * (tmp_a + tmp_b)
-            fm = f_root(m)
-            if (abs(fm) < tol) exit
-            if (fa * fm < 0.0) then
-                tmp_b = m
-                fb = fm
+            x = 0.5 * (tmp_a + tmp_b)
+            fa = tan(pi * tmp_a / 4.0) - tmp_a - 3.0
+            fb = tan(pi * tmp_b / 4.0) - tmp_b - 3.0
+            fx = tan(pi * x / 4.0) - x - 3.0
+
+            if (abs(fx) < tol) exit
+
+            if (fa * fx < 0.0) then
+                tmp_b = x
             else
-                tmp_a = m
-                fa = fm
+                tmp_a = x
             end if
         end do
-        bisect_root = m
-    end function bisect_root
-
-    real function f_root(x)
-    real, intent(in) :: x
-    real, parameter :: pi = 3.1415927
-    f_root = tan(pi*x/4.0) - (x + 3.0)
-end function f_root
+        bisect = x
+    end function bisect
 
 end program variable_length_pendulum
