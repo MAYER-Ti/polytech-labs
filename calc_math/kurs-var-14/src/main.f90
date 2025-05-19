@@ -46,7 +46,7 @@ program variable_length_pendulum
 
     ! Инициализация параметров и начальных условий
     call initialize_parameters(A_init, B_init, C_init, D_init)
-    Y = [A_init, B_init, C_init, D_init]
+    Y = [A_init, B_init, D_init, C_init]
 
     CALL print_parameters(A_init, B_init, C_init, D_init)
 
@@ -58,7 +58,7 @@ program variable_length_pendulum
     ABSERR = 1.0E-6
     IFLAG = 1
 
-    print *, "t", "x(t)", "x'(t)", "theta(t)", "theta'(t)"
+    print '(A4, 4(2X, A13))', "t", "x(t)", "x'(t)", "theta(t)", "theta'(t)"
     do while (T < FINAL)
         call RKF45(system_ode, NEQN, Y, T, TOUT, RELERR, ABSERR, IFLAG, WORK, IWORK)
         if (IFLAG /= 2) then

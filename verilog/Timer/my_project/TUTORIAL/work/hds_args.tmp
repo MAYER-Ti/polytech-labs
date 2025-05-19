@@ -1,1 +1,1 @@
- -L TUTORIAL -L MY_PROJECT_LIB1 -l transcript.txt -i -t ns -multisource_delay latest +typdelays TUTORIAL.Timer
+ -L TUTORIAL -L MY_PROJECT_LIB1 -l transcript.txt -i -t ns -multisource_delay latest +typdelays TUTORIAL.Timer_tb
