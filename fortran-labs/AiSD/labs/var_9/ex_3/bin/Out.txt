@@ -1,0 +1,20 @@
+
+Неотсортированный список:
+Frolov
+Arhimedova
+Borisov
+Melnikov
+Kukuruzov
+Kutuzov
+Stalin
+Putin
+
+Отсортированный список:
+Arhimedova
+Borisov
+Frolov
+Kukuruzov
+Kutuzov
+Melnikov
+Putin
+Stalin
