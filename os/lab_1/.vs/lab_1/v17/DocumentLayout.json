@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\studing\\os\\lab_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C902134-DC62-4900-A9F0-0A2730634A8E}|lab_1_process\\lab_1_process.vcxproj|C:\\studing\\os\\lab_1\\lab_1_process\\lab_1_process.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6C902134-DC62-4900-A9F0-0A2730634A8E}|lab_1_process\\lab_1_process.vcxproj|solutionrelative:lab_1_process\\lab_1_process.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C7F29EB-3DDC-4872-BECF-603A04BF0BAE}|lab_1\\lab_1.vcxproj|C:\\studing\\os\\lab_1\\lab_1\\lab_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2C7F29EB-3DDC-4872-BECF-603A04BF0BAE}|lab_1\\lab_1.vcxproj|solutionrelative:lab_1\\lab_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "lab_1_process.cpp",
+              "DocumentMoniker": "C:\\studing\\os\\lab_1\\lab_1_process\\lab_1_process.cpp",
+              "RelativeDocumentMoniker": "lab_1_process\\lab_1_process.cpp",
+              "ToolTip": "C:\\studing\\os\\lab_1\\lab_1_process\\lab_1_process.cpp",
+              "RelativeToolTip": "lab_1_process\\lab_1_process.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-10T15:53:15.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "lab_1.cpp",
+              "DocumentMoniker": "C:\\studing\\os\\lab_1\\lab_1\\lab_1.cpp",
+              "RelativeDocumentMoniker": "lab_1\\lab_1.cpp",
+              "ToolTip": "C:\\studing\\os\\lab_1\\lab_1\\lab_1.cpp",
+              "RelativeToolTip": "lab_1\\lab_1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-10T15:45:16.586Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

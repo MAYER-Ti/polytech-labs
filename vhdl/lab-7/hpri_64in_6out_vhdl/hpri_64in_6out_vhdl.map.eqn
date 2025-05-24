@@ -1,0 +1,763 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--D1L2 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_first|reduce_or~28
+--operation mode is normal
+
+D1L2 = !r[7] & !r[6] & !r[5] & !r[4];
+
+
+--D1L3 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_first|reduce_or~29
+--operation mode is normal
+
+D1L3 = !r[3] & !r[2];
+
+
+--D1L1 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_first|reduce_or~0
+--operation mode is normal
+
+D1L1 = D1L2 & D1L3 & !r[0] & !r[1];
+
+
+--D2L1 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second|reduce_or~39
+--operation mode is normal
+
+D2L1 = !r[14] & !r[15] & !r[12] & !r[13];
+
+
+--D2L2 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second|reduce_or~40
+--operation mode is normal
+
+D2L2 = !r[10] & !r[11] & !r[8] & !r[9];
+
+
+--C1L1 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|a[0]~862
+--operation mode is normal
+
+C1L1 = D1L1 & (!D2L2 # !D2L1) # !D1L1 & !ei & (!D2L2 # !D2L1);
+
+
+--B1L1 is hpri_32in_5out_vhdl:hpri_first|a[0]~1033
+--operation mode is normal
+
+B1L1 = !r[12] & (r[11] # r[9] & !r[10]);
+
+
+--B1L2 is hpri_32in_5out_vhdl:hpri_first|a[0]~1034
+--operation mode is normal
+
+B1L2 = r[15] # !r[14] & (r[13] # B1L1);
+
+
+--B1L3 is hpri_32in_5out_vhdl:hpri_first|a[0]~1035
+--operation mode is normal
+
+B1L3 = !r[4] & (r[3] # r[1] & !r[2]);
+
+
+--B1L4 is hpri_32in_5out_vhdl:hpri_first|a[0]~1036
+--operation mode is normal
+
+B1L4 = r[7] # !r[6] & (r[5] # B1L3);
+
+
+--B1L5 is hpri_32in_5out_vhdl:hpri_first|a[0]~1037
+--operation mode is normal
+
+B1L5 = ei & (B1L4 # C1L1 & B1L2) # !ei & C1L1 & B1L2;
+
+
+--D3L3 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first|reduce_or~55
+--operation mode is normal
+
+D3L3 = !r[18] & !r[16] & !r[17] & !r[22];
+
+
+--D3L4 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first|reduce_or~56
+--operation mode is normal
+
+D3L4 = !r[20] & !r[21];
+
+
+--D3L2 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first|reduce_or~0
+--operation mode is normal
+
+D3L2 = D3L3 & D3L4 & !r[23] & !r[19];
+
+
+--D4L2 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second|reduce_or~41
+--operation mode is normal
+
+D4L2 = !r[31] & !r[30] & !r[29] & !r[28];
+
+
+--D4L3 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second|reduce_or~42
+--operation mode is normal
+
+D4L3 = !r[27] & !r[26];
+
+
+--D4L1 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second|reduce_or~0
+--operation mode is normal
+
+D4L1 = D4L2 & D4L3 & !r[24] & !r[25];
+
+
+--D3L1 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first|eo~53
+--operation mode is normal
+
+D3L1 = !D4L1 & (D3L2 # C1L1);
+
+
+--B1L6 is hpri_32in_5out_vhdl:hpri_first|a[0]~1038
+--operation mode is normal
+
+B1L6 = r[27] # r[25] & (!r[26]);
+
+
+--B1L7 is hpri_32in_5out_vhdl:hpri_first|a[0]~1039
+--operation mode is normal
+
+B1L7 = !r[30] & (r[29] # B1L6 & !r[28]);
+
+
+--B1L8 is hpri_32in_5out_vhdl:hpri_first|a[0]~1040
+--operation mode is normal
+
+B1L8 = D3L1 & (r[31] # B1L7) # !D3L1 & B1L5;
+
+
+--D5L1 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_first|reduce_or~41
+--operation mode is normal
+
+D5L1 = !r[34] & !r[32] & !r[33] & !r[38];
+
+
+--D5L2 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_first|reduce_or~42
+--operation mode is normal
+
+D5L2 = !r[36] & !r[37] & !r[39] & !r[35];
+
+
+--D6L3 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second|reduce_or~41
+--operation mode is normal
+
+D6L3 = !r[42] & !r[40] & !r[41] & !r[46];
+
+
+--D6L4 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second|reduce_or~42
+--operation mode is normal
+
+D6L4 = !r[44] & !r[45];
+
+
+--D6L2 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second|reduce_or~0
+--operation mode is normal
+
+D6L2 = D6L3 & D6L4 & !r[47] & !r[43];
+
+
+--D6L1 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_first|hpri_8in_3out_vhdl:hpri_second|eo~10
+--operation mode is normal
+
+D6L1 = !D6L2 & (D3L1 # D5L1 & D5L2);
+
+
+--D7L1 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first|reduce_or~41
+--operation mode is normal
+
+D7L1 = !r[50] & !r[48] & !r[49] & !r[54];
+
+
+--D7L2 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_first|reduce_or~42
+--operation mode is normal
+
+D7L2 = !r[52] & !r[53] & !r[55] & !r[51];
+
+
+--D8L2 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second|reduce_or~44
+--operation mode is normal
+
+D8L2 = !r[63] & !r[62] & !r[61] & !r[60];
+
+
+--D8L3 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second|reduce_or~45
+--operation mode is normal
+
+D8L3 = !r[59] & !r[58];
+
+
+--D8L1 is hpri_32in_5out_vhdl:hpri_second|hpri_16in_4out_vhdl:hpri_second|hpri_8in_3out_vhdl:hpri_second|reduce_or~0
+--operation mode is normal
+
+D8L1 = D8L2 & D8L3 & !r[57] & !r[56];
+
+
+--A1L8 is a~382
+--operation mode is normal
+
+A1L8 = !D8L1 & (D6L1 # D7L1 & D7L2);
+
+
+--A1L9 is a~383
+--operation mode is normal
+
+A1L9 = r[59] # r[57] & (!r[58]);
+
+
+--A1L01 is a~384
+--operation mode is normal
+
+A1L01 = !r[62] & (r[61] # A1L9 & !r[60]);
+
+
+--A1L11 is a~385
+--operation mode is normal
+
+A1L11 = A1L8 & (r[63] # A1L01) # !A1L8 & B1L8;
+
+
+--B1L9 is hpri_32in_5out_vhdl:hpri_first|a[1]~1041
+--operation mode is normal
+
+B1L9 = !r[29] & !r[28];
+
+
+--B1L01 is hpri_32in_5out_vhdl:hpri_first|a[1]~1042
+--operation mode is normal
+
+B1L01 = r[31] # r[30] # B1L9 & !D4L3;
+
+
+--C1L2 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|a[1]~863
+--operation mode is normal
+
+C1L2 = !r[12] & !r[13] & (r[10] # r[11]);
+
+
+--C1L3 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|a[1]~864
+--operation mode is normal
+
+C1L3 = C1L1 & (r[14] # r[15] # C1L2);
+
+
+--C1L4 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|a[1]~865
+--operation mode is normal
+
+C1L4 = ei & (r[7] # r[6] # !C1L5);
+
+
+--B1L11 is hpri_32in_5out_vhdl:hpri_first|a[1]~1043
+--operation mode is normal
+
+B1L11 = D3L1 & B1L01 # !D3L1 & (C1L3 # C1L4);
+
+
+--C1L6 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|a[2]~866
+--operation mode is normal
+
+C1L6 = ei & (C1L1 & !D2L1 # !D1L2) # !ei & C1L1 & (!D2L1);
+
+
+--B1L21 is hpri_32in_5out_vhdl:hpri_first|a[2]~1044
+--operation mode is normal
+
+B1L21 = D3L1 & (!D4L2) # !D3L1 & C1L6;
+
+
+--A1L21 is a~386
+--operation mode is normal
+
+A1L21 = A1L8 & (!D8L2) # !A1L8 & B1L21;
+
+
+--A1L31 is a~387
+--operation mode is normal
+
+A1L31 = !A1L8 & (D4L1 # !D3L2 & !C1L1);
+
+
+--A1L91 is eo~24
+--operation mode is normal
+
+A1L91 = ei & !D1L1 # !D2L2 # !D2L1;
+
+
+--A1L02 is eo~25
+--operation mode is normal
+
+A1L02 = A1L8 # A1L91 # D3L2 & !D4L1;
+
+
+--C1L5 is hpri_32in_5out_vhdl:hpri_first|hpri_16in_4out_vhdl:hpri_first|a[1]~867
+--operation mode is normal
+
+C1L5 = r[5] # r[4] # !r[3] & !r[2];
+
+
+--A1L41 is a~388
+--operation mode is normal
+
+A1L41 = C1L1 # A1L8 # D3L2 & !D4L1;
+
+
+--A1L51 is a~389
+--operation mode is normal
+
+A1L51 = r[63] # !r[60] & !r[61] & !D8L3;
+
+
+--A1L61 is a~390
+--operation mode is normal
+
+A1L61 = A1L8 & (r[62] # A1L51) # !A1L8 & (B1L11);
+
+
+--ei is ei
+--operation mode is input
+
+ei = INPUT();
+
+
+--r[7] is r[7]
+--operation mode is input
+
+r[7] = INPUT();
+
+
+--r[6] is r[6]
+--operation mode is input
+
+r[6] = INPUT();
+
+
+--r[5] is r[5]
+--operation mode is input
+
+r[5] = INPUT();
+
+
+--r[4] is r[4]
+--operation mode is input
+
+r[4] = INPUT();
+
+
+--r[3] is r[3]
+--operation mode is input
+
+r[3] = INPUT();
+
+
+--r[2] is r[2]
+--operation mode is input
+
+r[2] = INPUT();
+
+
+--r[0] is r[0]
+--operation mode is input
+
+r[0] = INPUT();
+
+
+--r[1] is r[1]
+--operation mode is input
+
+r[1] = INPUT();
+
+
+--r[14] is r[14]
+--operation mode is input
+
+r[14] = INPUT();
+
+
+--r[15] is r[15]
+--operation mode is input
+
+r[15] = INPUT();
+
+
+--r[12] is r[12]
+--operation mode is input
+
+r[12] = INPUT();
+
+
+--r[13] is r[13]
+--operation mode is input
+
+r[13] = INPUT();
+
+
+--r[10] is r[10]
+--operation mode is input
+
+r[10] = INPUT();
+
+
+--r[11] is r[11]
+--operation mode is input
+
+r[11] = INPUT();
+
+
+--r[8] is r[8]
+--operation mode is input
+
+r[8] = INPUT();
+
+
+--r[9] is r[9]
+--operation mode is input
+
+r[9] = INPUT();
+
+
+--r[18] is r[18]
+--operation mode is input
+
+r[18] = INPUT();
+
+
+--r[16] is r[16]
+--operation mode is input
+
+r[16] = INPUT();
+
+
+--r[17] is r[17]
+--operation mode is input
+
+r[17] = INPUT();
+
+
+--r[22] is r[22]
+--operation mode is input
+
+r[22] = INPUT();
+
+
+--r[20] is r[20]
+--operation mode is input
+
+r[20] = INPUT();
+
+
+--r[21] is r[21]
+--operation mode is input
+
+r[21] = INPUT();
+
+
+--r[23] is r[23]
+--operation mode is input
+
+r[23] = INPUT();
+
+
+--r[19] is r[19]
+--operation mode is input
+
+r[19] = INPUT();
+
+
+--r[31] is r[31]
+--operation mode is input
+
+r[31] = INPUT();
+
+
+--r[30] is r[30]
+--operation mode is input
+
+r[30] = INPUT();
+
+
+--r[29] is r[29]
+--operation mode is input
+
+r[29] = INPUT();
+
+
+--r[28] is r[28]
+--operation mode is input
+
+r[28] = INPUT();
+
+
+--r[27] is r[27]
+--operation mode is input
+
+r[27] = INPUT();
+
+
+--r[26] is r[26]
+--operation mode is input
+
+r[26] = INPUT();
+
+
+--r[24] is r[24]
+--operation mode is input
+
+r[24] = INPUT();
+
+
+--r[25] is r[25]
+--operation mode is input
+
+r[25] = INPUT();
+
+
+--r[34] is r[34]
+--operation mode is input
+
+r[34] = INPUT();
+
+
+--r[32] is r[32]
+--operation mode is input
+
+r[32] = INPUT();
+
+
+--r[33] is r[33]
+--operation mode is input
+
+r[33] = INPUT();
+
+
+--r[38] is r[38]
+--operation mode is input
+
+r[38] = INPUT();
+
+
+--r[36] is r[36]
+--operation mode is input
+
+r[36] = INPUT();
+
+
+--r[37] is r[37]
+--operation mode is input
+
+r[37] = INPUT();
+
+
+--r[39] is r[39]
+--operation mode is input
+
+r[39] = INPUT();
+
+
+--r[35] is r[35]
+--operation mode is input
+
+r[35] = INPUT();
+
+
+--r[42] is r[42]
+--operation mode is input
+
+r[42] = INPUT();
+
+
+--r[40] is r[40]
+--operation mode is input
+
+r[40] = INPUT();
+
+
+--r[41] is r[41]
+--operation mode is input
+
+r[41] = INPUT();
+
+
+--r[46] is r[46]
+--operation mode is input
+
+r[46] = INPUT();
+
+
+--r[44] is r[44]
+--operation mode is input
+
+r[44] = INPUT();
+
+
+--r[45] is r[45]
+--operation mode is input
+
+r[45] = INPUT();
+
+
+--r[47] is r[47]
+--operation mode is input
+
+r[47] = INPUT();
+
+
+--r[43] is r[43]
+--operation mode is input
+
+r[43] = INPUT();
+
+
+--r[50] is r[50]
+--operation mode is input
+
+r[50] = INPUT();
+
+
+--r[48] is r[48]
+--operation mode is input
+
+r[48] = INPUT();
+
+
+--r[49] is r[49]
+--operation mode is input
+
+r[49] = INPUT();
+
+
+--r[54] is r[54]
+--operation mode is input
+
+r[54] = INPUT();
+
+
+--r[52] is r[52]
+--operation mode is input
+
+r[52] = INPUT();
+
+
+--r[53] is r[53]
+--operation mode is input
+
+r[53] = INPUT();
+
+
+--r[55] is r[55]
+--operation mode is input
+
+r[55] = INPUT();
+
+
+--r[51] is r[51]
+--operation mode is input
+
+r[51] = INPUT();
+
+
+--r[63] is r[63]
+--operation mode is input
+
+r[63] = INPUT();
+
+
+--r[62] is r[62]
+--operation mode is input
+
+r[62] = INPUT();
+
+
+--r[61] is r[61]
+--operation mode is input
+
+r[61] = INPUT();
+
+
+--r[60] is r[60]
+--operation mode is input
+
+r[60] = INPUT();
+
+
+--r[59] is r[59]
+--operation mode is input
+
+r[59] = INPUT();
+
+
+--r[58] is r[58]
+--operation mode is input
+
+r[58] = INPUT();
+
+
+--r[57] is r[57]
+--operation mode is input
+
+r[57] = INPUT();
+
+
+--r[56] is r[56]
+--operation mode is input
+
+r[56] = INPUT();
+
+
+--a[0] is a[0]
+--operation mode is output
+
+a[0] = OUTPUT(A1L11);
+
+
+--a[1] is a[1]
+--operation mode is output
+
+a[1] = OUTPUT(A1L61);
+
+
+--a[2] is a[2]
+--operation mode is output
+
+a[2] = OUTPUT(A1L21);
+
+
+--a[3] is a[3]
+--operation mode is output
+
+a[3] = OUTPUT(A1L41);
+
+
+--a[4] is a[4]
+--operation mode is output
+
+a[4] = OUTPUT(!A1L31);
+
+
+--a[5] is a[5]
+--operation mode is output
+
+a[5] = OUTPUT(A1L8);
+
+
+--eo is eo
+--operation mode is output
+
+eo = OUTPUT(!A1L02);
+
+
+--g is g
+--operation mode is output
+
+g = OUTPUT(A1L02);
+
+

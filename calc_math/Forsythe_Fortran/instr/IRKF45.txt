@@ -1,0 +1,372 @@
+
+     PAÇÄEË:       ÄÈÔÔEPEHÖÈAËÜHÛE ÓPABHEHÈß
+
+     ÏPOÃPAMMA:    RKF45
+
+     HAÇHA×EHÈE:   ÏOÄÏPOÃPAMMA RKF45 ÈHTEÃPÈPÓET CÈCTEMÓ ÈÇ
+                NEQN OÁÛKHOBEHHÛX ÄÈÔÔEPEHÖÈAËÜHÛX ÓPABHEHÈÉ
+                ÏEPBOÃO ÏOPßÄKA CËEÄÓÞÙEÃO BÈÄA:
+
+                   DY(I)/DT=F(T,Y(1),Y(2),...,Y(NEQN),
+
+                ÃÄE Y(I) ÇAÄAHÛ B T.
+                   RKF45 ÏPEÄHAÇHA×EHA ÃËABHÛM OÁPAÇOM ÄËß
+                PEØEHÈß HEÆECKÈX È CËAÁO ÆECTKÈX ÄÈÔÔEPEH-
+                ÖÈAËÜHÛX ÓPABHEHÈÉ, KOÃÄA BÛ×ÈCËEHÈE ÏPOÈÇ-
+                BOÄHÛX HE CËÈØKOM ÄOPOÃO.
+                   OÁÛ×HO ÏOÄÏPOÃPAMMÓ ÏPÈMEHßÞT ÄËß ÈHTEÃ-
+                PÈPOBAHÈß OT T ÄO TOUT, OÄHAKO EE MOÆHO
+                ÈCÏOËÜÇOBATÜ È KAK OÄHOØAÃOBÛÉ ÈHTEÃPATOP,
+                ×TOÁÛ ÏPOÄOËÆÈTÜ PEØEHÈE HA OÄÈH ØAÃ B
+                HAÏPABËEHÈÈ TOUT. HA BÛXOÄE ÏAPAMETPAM,
+                ÔÈÃÓPÈPÓÞÙÈM B CÏÈCKE BÛÇOBA, ÏPÈCBAÈBAÞTCß
+                ÇHA×EHÈß, HEOÁXOÄÈMÛE ÄËß ÏPOÄOËÆEHÈß ÈHTEÃ-
+                PÈPOBAHÈß. ÏOËÜÇOBATEËÞ HÓÆHO ËÈØÜ EÙE PAÇ
+                OÁPATÈTÜCß K RKF45 (È,BOÇMOÆHO,OÏPEÄEËÈTÜ
+                HOBOE ÇHA×EHÈE ÄËß TOUT).
+
+1. OÏÈCAHÈE ÏOÄÏPOÃPAMMÛ È EE ÔOPMAËÜHÛX ÏAPAMETPOB
+
+      SUBROUTINE RKF45(F,NEQN,Y,T,TOUT,RELERR,ABSERR,
+     *                 IFLAG,WORK,IWORK)
+C
+      EXTERNAL F
+      INTEGER NEQN,IFLAG,IWORK(5)
+      REAL Y(NEQN),T,TOUT,RELERR,ABSERR,WORK(1)
+C
+C ÔOPMAËÜHÛE ÏAPAMETPÛ ÏPOÃPAMMÛ:
+C
+C     F       -ÏOÄÏPOÃPAMMA F(T,Y,YP) ÄËß BÛ×ÈCËEHÈß
+C              ÏPOÈÇBOÄHÛX YP(I)=DY(I)/DT
+C
+C     NEQN    -×ÈCËO ÈHTEÃPÈPÓEMÛX ÓPABHEHÈÉ
+C
+C     Y(*)    -PEØEHÈE B TO×KE T
+C
+C     T       -HEÇABÈCÈMAß ÏEPEMEHHAß
+C
+C     TOUT    -TO×KA BÛXOÄA,B KOTOPOÉ HÓÆHO OÏPEÄEËÈTÜ
+C              ÇHA×EHÈE PEØEHÈß
+C
+C     RELERR  -ÃPAHÈÖA OTHOCÈTEËÜHOÉ ÏOÃPEØHOCTÈ
+C              ÄËß TECTA ËOKAËÜHOÉ OØÈÁKÈ.
+C
+C     ABSERR  -ÃPAHÈÖA ABCOËÞTHOÉ ÏOÃPEØHOCTÈ
+C              ÄËß TECTA ËOKAËÜHOÉ OØÈÁKÈ.
+C              HA KAÆÄOM ØAÃE ÏPOÃPAMMA TPEÁÓET BÛÏOËHEHÈß
+C              ÓCËOBÈß ABS(LOCAL ERROR) .LE. RELERR*ABS(Y) +
+C              ABSERR ÄËß KAÆÄOÉ KOMÏOHEHTÛ BEKTOPOB
+C              ËOKAËÜHOÉ OØÈÁKÈ È PEØEHÈß.
+C
+C     IFLAG   -ÓKAÇATEËÜ PEÆÈMA ÈHTEÃPÈPOBAHÈß.
+C
+C     WORK(*) -MACCÈB, COÄEPÆAÙÈÉ ÈHÔOPMAÖÈÞ, BHÓTPEHHÞÞ
+C              ÄËß RKF45, KOTOPAß HEOÁXOÄÈMA ÏPÈ ÏOCËEÄÓ-
+C              ÞÙÈX BÛÇOBAX. EÃO PAÇMEPHOCTÜ ÄOËÆHA ÁÛTÜ
+C              HE MEHÜØE 3+6*NEQN
+C
+C     IWORK(*)-ÖEËÛÉ MACCÈB, COÄEPÆAÙÈÉ ÈHÔOPMAÖÈÞ, BHÓTPEH-
+C              HÞÞ ÄËß RKF45, KOTOPAß HEOÁXOÄÈMA ÏPÈ ÏOCËE-
+C              ÄÓÞÙÈX BÛÇOBAX EÃO PAÇMEPHOCTÜ ÄOËÆHA ÁÛTÜ
+C              HE MEHÜØE 5.
+C
+C     ÏEPBOE OÁPAÙEHÈE K RKF45
+C
+C     ÏOËÜÇOBATEËÜ ÄOËÆEH:
+C
+C     1. ÏPEÄÓCMOTPETÜ B CBOEÉ BÛÇÛBAÞÙEÉ ÏPOÃPAMME ÏAMßTÜ
+C        ÄËß CËEÄÓÞÙÈX MACCÈBOB, ÔÈÃÓPÈPÓÞÙÈX B CÏÈCKE
+C        BÛÇOBA- Y(NEQN), WORK(3+6*NEQN), IWORK(5);
+C
+C     2. OÁ'ßBÈTÜ F B OÏEPATOPE EXTERNAL,
+C
+C     3. ÏOÄÃOTOBÈTÜ ÏOÄÏPOÃPAMMÓ F(T,Y,YP), KOTOPAß
+C        BÛ×ÈCËEßT BEKTOP ÏPOÈÇBOÄHÛX YP(*) (ÏPABÓÞ ×ACTÜ
+C        CÈCTEMÛ ÓPABHEHÈÉ) ÏO BEKTOPÓ PEØEHÈß Y(*) B
+C        TO×KE T.
+C
+C     4. ÏPÈCBOÈTÜ HA×AËÜHÛE ÇHA×EHÈß ÏAPAMETPAM-
+C
+C     NEQN  -×ÈCËO ÈHTEÃPÈPÓEMÛX ÓPABHEHÈÉ (NEQN.GE.1)
+C
+C     Y(*)  -BEKTOP HA×AËÜHÛX ÓCËOBÈÉ
+C
+C     T     -HA×AËÜHAß TO×KA ÈHTEÃPÈPOBAHÈß,
+C            T ÄOËÆHO ÁÛTÜ ÏEPEMEHHOÉ.
+C
+C     TOUT  -TO×KA BÛXOÄA,B KOTOPOÉ HÓÆHO HAÉTÈ ÇHA×EHÈE
+C            PEØEHÈß. T=TOUT BOÇMOÆHO ËÈØÜ ÏPÈ ÏEPBOM
+C            OÁPAÙEHÈÈ.B ÝTOM CËÓ×AE BÛXOÄ ÈÇ RKF45 ÏPOÈ-
+C            CXOÄÈT CO ÇHA×EHÈEM ÏAPAMETPA IFLAG=2, ECËÈ
+C            MOÆHO ÏPOÄOËÆATÜ ÈHTEÃPÈPOBAHÈE.
+C
+C     RELERR-ÃPAHÈÖA ÄËß OTHOCÈTEËÜHOÉ ËOKAËÜHÛÉ ÏOÃPEØHOCTEÈ.
+C            RELERR ÄOËÆHA ÁÛTÜ ÏOËOÆÈTEËÜHOÉ ÏEPEMEHHOÉ
+C            ÏPOÃPAMME, BOOÁÙE ÃOBOPß HE CËEÄÓET ÇAÄABATÜ
+C            ÃPAHÈÖÓ ÄËß OTHOCÈTEËÜHOÉ OØÈÁKÈ, MEHÜØÓÞ, ×EM
+C            ÏPÈMEPHO 1.E-7, ÄAÁÛ ÈÇÁEÆATÜ TPÓÄHOCTEÉ,
+C            CBßÇAHHÛX C O×EHÜ BÛCOKÈMÈ ÇAÏPOCAMÈ K TO×HOCTÈ.
+C            ÏPOÃPAMMA TPEÁÓET, ×TOÁÛ RELERR ÁÛËA ÁOËÜØE,
+C            ×EM HEKOTOPÛÉ ÏAPAMETP OTHOCÈTEËÜHOÉ OØÈÁKÈ,
+C            BÛ×ÈCËßEMÛÉ BHÓTPÈ EE È ÇABÈCßÙÈÉ OT MAØÈHÛ.
+C            ECËÈ ÆE ÇAÄAHO ÇHA×EHÈE RELERR, MEHÜØEE
+C            ÄOÏÓCTÈMOÃO, TO RKF45 ÓBEËÈ×ÈBAET RELERR
+C            HAÄËEÆAÙÈM OÁPAÇOM È BOÇBPAÙAET ÓÏPABËEHÈE
+C            ÏOËÜÇOBATEËÞ, ÏPEÆÄE ×EM ÏPOÄOËÆATÜ ÈHTEÃPÈPOBAHÈE.
+C
+C     ABSERR-ÃPAHÈÖA ÄËß AÁCOËÞTHOÉ ËOKAËÜHÛÉ ÏOÃPEØHOCTÈ.
+C            ABSERR MOÆET ÁÛTÜ ÇAÄAHA ÏEPEMEHHOÉ ÈËÈ KOHCTAHTOÉ.
+C            ÇAÄAHÈE TOËÜKO AÁCOËÞTHOÉ OØÈÁKÈ HE PAÇPEØAETCß.
+C
+C     IFLAG-+1,-1.ÝTO ÓKAÇATEËÜ HACTPOÉKÈ ÏPOÃPAMMÛ ÄËß KAÆÄOÉ
+C            HOBOÉ ÇAÄA×È. HOPMAËÜHOE BXOÄHOE ÇHA×EHÈE PABHO+1.
+C            ÏOËÜÇOBATEËÜ ÄOËÆEH ÇAÄABATÜ IFLAG=-1 ËÈØÜ B TOM
+C            CËÓ×AE,  KOÃÄA HEOÁXOÄÈMO ÓÏPABËEHÈE OÄHOØAÃOBÛM
+C            ÈHTEÃPATOPOM.B ÝTOM CËÓ×AE RKF45 ÏÛTAETCß ÏPOÄOËÆÈTÜ
+C            PEØEHÈE HA OÄÈH ØAÃ B HAÏPABËEHÈÈ TOUT ÏPÈ KAÆÄOM
+C            O×EPEÄHOM BÛÇOBE. ÏOCKOËÜKÓ ÝTOT PEÆÈM PAÁOTÛ
+C            BECÜMA HEÝKOHOMÈ×EH, EÃO CËEÄÓET ÏPÈMEHßTÜ
+C            ËÈØÜ B CËÓ×AE KPAÉHEÉ HEOÁXOÄÈMOCTÈ.
+C
+C     ÈHÔOPMAÖÈß HA BÛXOÄE
+C
+C     Y(*)    -PEØEHÈE B TO×KE T
+C
+C     T       -ÏOCËEÄHßß TO×KA, ÄOCTÈÃHÓTAß ÏPÈ ÈHTEÃPÈPOBAHÈÈ.
+C
+C     IFLAG=2 -ÏPÈÈHTEÃPÈPOBAHÈÈ ÄOCTÈÃHÓTO TOUT. ÝTO ÇHA×EHÈE
+C              ÏAPAMETPA ÓKAÇÛBAET HA ÓCÏEØHÛÉ BÛXOÄ È
+C              ßBËßETCß HOPMAËÜHÛM PEÆÈMOM ÄËß ÏPOÄOËÆEHÈß
+C              ÈHTEÃPÈPOBAHÈß.
+C
+C          =3 -ÈHTEÃPÈPOBAHÈE HE ÁÛËO ÇAKOH×EHO ÈÇ-ÇA TOÃO,
+C              ×TO ÇAÄAHHOE ÇHA×EHÈE ÃPAHÈÖÛ ÄËß OTHOCÈTEËÜHOÉ
+C              OØÈÁKÈ OKAÇAËOCÜ CËÈØKOM MAËO. ÄËß ÏPOÄOËÆEHÈß
+C              ÈHTEÃPÈPOBAHÈß RELERR ÁÛËO HAÄËEÆAÙÈM OÁPAÇOM
+C              ÓBEËÈ×EHO.
+C
+C          =4 -ÈHTEÃPÈPOBAHÈE HE ÁÛËO ÇAKOH×EHO ÈÇ-ÇA TOÃO,
+C              ×TO ÏOTPEÁOBAËOCÜ ÁOËEE 3000 BÛ×ÈCËEHÈÉ ÏPO-
+C              ÈÇBOÄHOÉ.ÝTO COOTBETCTBYET ÏPÈÁËÈÇÈTEËÜHO
+C              500 ØAÃAM.
+C
+C          =5 -ÈHTEÃPÈPOBAHÈE HE ÁÛËO ÇAKOH×EHO ÈÇ-ÇA TOÃO,
+C              ×TO PEØEHÈE OÁPATÈËOCÜ B HYËÜ,BCËEÄCTBÈE ×EÃO
+C              TECT TOËÜKO OTHOCÈTEËÜHOÉ OØÈÁKÈ HE ÏPOXOÄÈT.
+C              ÄËß ÏPOÄOËÆEHÈß HEOÁXOÄÈMO HEHYËEBOE ÇHA×EHÈE
+C              ÏAPAMETPA ABSERR. ÈCÏOËÜÇOBAHÈE HA OÄÈH ØAÃ
+C              PEÆÈMA ÏOØAÃOBOÃO ÈHTEÃPÈPOBAHÈß ßBËßETCß
+C              PAÇYMHÛM BÛXOÄOM ÈÇ ÏOËOÆEHÈß.
+C
+C          =6 -ÈHTEÃPÈPOBAHÈE  HE ÁÛËO ÇAKOH×EHO ÈÇ-ÇA TOÃO,
+C              ×TO TPEÁYEMAß TO×HOCTÜ HE MOÃËA ÁÛTÜ ÄOCTÈÃHÓTA
+C              ÄAÆE ÏPÈ HAÈMEHÜØEÉ ÄOÏÓCTÈ MOÉ BEËÈ×ÈHE ØAÃA.
+C              ÏOËÜÇOBATEËÜ ÄOËÆEH ÓBEËÈ×ÈTÜ ÃPAHÈÖÓ ÏOÃPEØ-
+C              HOCTÈ,ÏPEÆÄE ×EM MOÆHO ÁÓÄET ÏOÏÛTATÜCß
+C              ÏPOÄOËÆATÜ ÈHTEÃPÈPOBAHÈE.
+C
+C          =7 -ÏO BCEÉ BÈÄÈMOCTÈ, RKF45 HEÝÔÔEKTÈBHA ÏPÈ
+C              PEØEHÈÈ ÝTOÉ ÇAÄA×È. CËÈØKOM ÁOËÜØOE ×ÈCËO
+C              TPEÁÓEMÛX BÛXOÄHÛX TO×EK ÏPEÏßTCTBÓET BÛÁOPÓ
+C              ECTECTBEHHOÉ BEËÈ×ÈHÛ ØAÃA.CËEÄÓET ÈCÏOËÜÇOBATÜ
+C              PEÆÈM ÏOØAÃOBOÃO ÈHTEÃPÈPOBAHÈß.
+C
+C          =8 -HEÏPABÈËÜHOE ÇAÄAHÈE BXOÄHÛX ÏAPAMETPOB.ÝTO
+C              ÇHA×EHÈE ÏOßBËßETCß,ECËÈ ÄOÏÓÙEHA OÄHA ÈÇ
+C              CËEÄÓÞÙÈX OØÈÁOK-
+C                              NEQN.LE.0
+C                  T=TOUT  È  IFLAG.NE.+1  ÈËÈ -1
+C                  RELERR  ÈËÈ  ABSERR.LT.0
+C                  IFLAG.EQ.0  ÈËÈ .LT.-2  ÈËÈ .GT.8
+C
+C     WORK(*) -ÈHÔOPMAÖÈß, KOTOPAß OÁÛ×HO HE ÏPEÄCTABËßET ÈHTE-
+C              PECA ÄËß ÏOËÜÇOBATEËß, HO HEOÁXOÄÈMA ÏPÈ ÏOCËE-
+C              ÄÓÞÙÈX BÛÇOBAX. WORK(1),...,WORK(NEQN) COÄEPÆAT
+C              ÏEPBÛE ÏPOÈÇBOÄHÛE BEKTOPA PEØEHÈß Y B TO×KE T.
+C              WORK(NEQN+1) XPAHÈT BEËÈ×ÈHÓ ØAÃA H,C KOTOPOÉ
+C              MOÆHO ÏOÏÛTATÜCß ÏPOBECTÈ CËEÄÓÞÙÈÉ ØAÃ.
+C
+C     IWORK(*) -ÈHÔOPMAÖÈß, KOTOPAß OÁÛ×HO HE ÏPEÄCTABËßET ÈHTE-
+C               PECA ÄËß ÏOËÜÇOBATEËß, HO HEOÁXOÄÈMA ÏPÈ ÏOCËE-
+C               ÄÓÞÙÈX BÛÇOBAX. B IWORK(1) COÄEPÆÈTCß
+C               C×ET×ÈK ×ÈCËA BÛ×ÈCËEHÈÉ ÏPOÈÇBOÄHÛX.
+C
+C     ÏOCËEÄÓÞÙÈE OÁPAÙEHÈß K RKF45
+C
+C          HA BÛXOÄE ÏOÄÏPOÃPAMMÛ RKF45 ÈMEETCß BCß ÈHÔOPMAÖÈß,
+C     HEOÁXOÄÈMAß  ÄËß ÏPOÄOËÆEHÈß ÈHTEÃPÈPOBAHÈß. ECËÈ ÏPÈ
+C     ÈHTEÃPÈPOBAHÈÈ ÄOCTÈÃHÓTO TOUT, TO ÏOËÜÇOBATEËÞ ÄOCTA-
+C     TO×HO OÏPEÄEËÈTÜ HOBOE ÇHA×EHÈE TOUT È CHOBA OÁPATÈTÜCß
+C     K RKF45.
+C
+C     ÇAME×AHÈß
+C
+C          B PEÆÈME ÏOØAÃOBOÃO ÈHTEÃPÈPOBAHÈß (IFLAG=-2)
+C     ÏOËÜÇOBATEËÜ ÄOËÆEH ÈMETÜ B BÈÄÓ, ×TO KAÆÄÛÉ ØAÃ
+C     BÛÏOËHßETCß B HAÏPABËEHÈÈ TEKÓÙEÃO ÇHA×EHÈß TOUT
+C     (CÈÃHAËÈÇÈPÓEMOM  ÈÇMEHEHÈEM IFLAG HA 2). ÏOËÜÇOBATEËÜ
+C     ÄOËÆEH ÇAÄATÜ HOBOE ÇHA×EHÈE TOUT È ÏEPEOÏPEÄEËÈTÜ
+C     IFLAG HA -2, ×TOÁÛ ÏPOÄOËÆATÜ B PEÆÈME ÏOØAÃOBOÃO
+C     ÈHTEÃPÈPOBAHÈß.
+C          ECËÈ ÈHTEÃPÈPOBAHÈE HE ÁÛËO ÇAKOH×EHO,HO
+C     ÏOËÜÇOBATEËÜ XO×ET ÏPOÄOËÆATÜ (CËÓ×AÈ IFLAG=3,4), OH
+C     ÏOÏPOCTÓ CHOBA OÁPAÙAETCß K RKF45.
+C          ÏPÈ IFLAG=3 ÏAPAMETP RELERR ÁÛË  ÈÇMEHEH
+C     HAÄËEÆAÙÈM ÄËß ÏPOÄOËÆEHÈß ÈHTEÃPÈPOBAHÈß OÁPAÇOM.
+C          B CËÓ×AE IFLAG=4 C×ET×ÈK ×ÈCËA ÇHA×EHÈÉ ÔÓHKÖÈÈ
+C     ÁÓÄET ÏEPEOÏPEÄEËEH HA 0, È ÁÓÄÓT PAÇPEØEHÛ EÙE 3000
+C     BÛ×ÈCËEHÈÉ ÔÓHKÖÈÈ.
+C          OÄHAKO B CËÓ×AE IFLAG=5, ÏPEÆÄE ×EM MOÆHO ÁÓÄET
+C     ÏPOÄOËÆATÜ ÈHTEÃPÈPOBAHÈE, ÏOËÜÇOBATEËÜ ÄOËÆEH CHA×AËA
+C     ÈÇMEHÈTÜ KPÈTEPÈÉ OØÈÁKÈ, ÇAÄAB ÏOËOÆÈTEËÜHOE ÇHA×EHÈE
+C     ÄËß ABSERR. ECËÈ OH HE CÄEËAET ÝTOÃO, BÛÏOËHEHÈE ÏPO-
+C     ÃPAMMÛ ÁÓÄET ÏPEKPAÙEHO.
+C        TO×HO TAK ÆE, B CËÓ×AE IFLAG=6,ÏPEÆÄE ×EM ÏPOÄOË-
+C     ÆATÜ ÈHTEÃPÈPOBAHÈE, ÏOËÜÇOBATEËÞ HEOÁXOÄÈMO ÏEPEOÏPE-
+C     ÄEËÈTÜ IFLAG HA 2 (ÈËÈ -2, ECËÈ ÈCÏOËÜÇÓETCß PEÆÈM
+C     ÏOØAÃOBOÃO ÈHTEÃPÈPOBAHÈß) È ÓBEËÈ×ÈTÜ ÇHA×EHÈE ÄËß
+C     ABSERR ËÈÁO RELERR, ËÈÁO È ÄËß TOÃO,È ÄËß ÄPÓÃOÃO.
+C     ECËÈ ÝTO HE ÁÓÄET CÄEËAHO, BÛÏOËHEHÈE ÏPOÃPAMMÛ
+C     ÏPEKPAÙAETCß. ÏOßBËEHÈE IFLAG=6 ÓKAÇÛBAET HA HEPEÃÓ-
+C     ËßPHOCTÜ (PEØEHÈE ÁÛCTPO MEHßETCß ÈËÈ, BOÇMOÆHO,
+C     ÈMEETCß OCOÁEHHOCTÜ), È ×ACTO B ÏOÄOÁHÛX CËÓ×AßX
+C     HE ÈMEET CMÛCËA ÏPOÄOËÆATÜ ÈHTEÃPÈPOBAHÈE.
+C          ECËÈ ÁÓÄET ÏOËÓ×EHO ÇHA×EHÈE IFLAG=7, TO ÏOËÜÇO-
+C     BATEËÜ ÄOËÆEH ÏEPEÉTÈ K PEÆÈMÓ ÏOØAÃOBOÃO ÈHTEÃPÈPO-
+C     BAHÈß C BEËÈ×ÈHOÉ ØAÃA, OÏPEÄEËßEMOÉ ÏPOÃPAMMOÉ, ÈËÈ
+C     PACCMOTPETÜ BOÇMOÆHOCTTÜ ÏEPEXOÄA HA ÏPOÃPAMMÛ METOÄOB
+C     AÄAMCA.ECËÈ BCE ÆE ÏOËÜÇOBATEËÜ XO×ET ÏPOÄOËÆATÜ
+C     ÈHTEÃPÈPOBAHÈE ÏO ÏOÄÏPOÃPAMME RKF45, OH ÄOËÆEH ÄO HOBOÃO
+C     OÁPAÙEHÈß K HEÉ ÏEPEOÏPEÄEËÈTÜ IFLAG HA 2. B ÏPOTÈBHOM
+C     CËÓ×AE BÛÏOËHEHÈE ÏPOÃPAMMÛ ÁÓÄET ÏPEKPAÙEHO.
+C          ECËÈ ÏOËÓ×EHO ÇHA×EHÈE IFLAG=8, TO ÈHTEÃPÈPOBAHÈE
+C     HEËÜÇß ÏPOÄOËÆATÜ, ÏOKA HE ÁÓÄÓT ÈCÏPABËEHÛ OØÈÁO×HÛE
+C     BXOÄHÛE ÏAPAMETPÛ.
+C          HÓÆHO OTMETÈTÜ, ×TO MACCÈBÛ WORK È IWORK COÄEPÆAT
+C     ÈHÔOPMAÖÈÞ, HEOÁXOÄÈMÓÞ ÄËß ÄAËÜHEÉØEÃO ÈHTEÃPÈPOBAHÈß.
+C     ÏOÝTOMÓ B ÝTÈ MACCÈBÛ HEËÜÇß BHOCÈTÜ ÈÇMEHEHÈÉ.
+C
+C  BHÓTPEHHÈE ÏOÄÏPOÃPAMMÛ
+C
+C     RKFS  È FEHL
+C
+
+2. ÏPÈMEP ÈCÏOËÜÇOBAHÈß ÏOÄÏPOÃPAMMÛ.
+
+C     ÈËËÞCTPÈPÓÞÙAß ÏPOÃPAMMA ÄËß RKF45
+C
+      SUBROUTINE ORBIT(T,Y,YP)
+      REAL T,Y(4),YP(4),R,ALFASQ
+      COMMON ALFASQ
+      R=Y(1)*Y(1)+Y(2)*Y(2)
+      R=R*SQRT(R)/ALFASQ
+      YP(1)=Y(3)
+      YP(2)=Y(4)
+      YP(3)=-Y(1)/R
+      YP(4)=-Y(2)/R
+      RETURN
+      END
+C
+      EXTERNAL ORBIT
+      REAL T,Y(4),TOUT,RELERR,ABSERR,
+     *     TFINAL,TPRINT,ECC,ALFA,ALFASQ,WORK(27)
+      INTEGER IWORK(5),IFLAG,NEQN
+      COMMON ALFASQ
+      ECC=0.25
+      ALFA=3.1415927/4.0
+      ALFASQ=ALFA*ALFA
+      NEQN=4
+      T=0.0
+      Y(1)=1.0-ECC
+      Y(2)=0.0
+      Y(3)=0.0
+      Y(4)=ALFA*SQRT((1.0+ECC)/(1.0-ECC))
+      RELERR=0.1E-06
+      ABSERR=0.0
+      TFINAL=12.0
+      TPRINT=0.5
+      IFLAG=1
+      TOUT=T
+   10 CALL RKF45(ORBIT,NEQN,Y,T,TOUT,RELERR,ABSERR,
+     *           IFLAG,WORK,IWORK)
+      PRINT 11,T,Y(1),Y(2)
+      GO TO (80,20,30,40,50,60,70,80),IFLAG
+   20 TOUT=TPRINT+T
+      IF(T.LT.TFINAL) GO TO 10
+      STOP
+   30 PRINT 31,RELERR,ABSERR
+      GO TO 10
+   40 PRINT 41
+      GO TO 10
+   50 ABSERR=0.1E-07
+      PRINT 31,RELERR,ABSERR
+      GO TO 10
+   60 RELERR=RELERR*10.0
+      PRINT 31,RELERR,ABSERR
+      IFLAG=2
+      GO TO 10
+   70 PRINT 71
+      IFLAG=2
+      GO TO 10
+   80 PRINT 81
+      STOP
+   11 FORMAT(' T=',F5.1,2X,'Y1=',F10.6,2X,'Y2=',F10.6)
+   31 FORMAT(' ÃPAHÈÖÛ ÏOÃPEØHOCTEÉ ÈÇMEHEHÛ  '/
+     *' RELERR=',E10.3,2X,'ABSERR=',E10.3)
+   41 FORMAT(' MHOÃO ØAÃOB ')
+   71 FORMAT(' MHOÃO BÛXOÄOB ')
+   81 FORMAT(' HEÏPABÈËÜHÛÉ BÛÇOB ')
+      END
+
+   B PEÇÓËÜTATE EE BÛÏOËHEHÈß ÁÓÄET ÏOËÓ×EHO
+
+      T=  0.0  Y1=  0.750000  Y2=  0.0
+      ÃPAHÈÖÛ ÏOÃPEØHOCTEÉ ÈÇMEHEHÛ
+      RELERR= 0.954E-06  ABSERR= 0.0
+      T=  0.0  Y1=  0.750000  Y2=  0.0
+      T=  0.5  Y1=  0.619768  Y2=  0.477791
+      T=  1.0  Y1=  0.294417  Y2=  0.812177
+      T=  1.5  Y1= -0.105177  Y2=  0.958036
+      T=  2.0  Y1= -0.490301  Y2=  0.939871
+      T=  2.5  Y1= -0.813944  Y2=  0.799585
+      T=  3.0  Y1= -1.054030  Y2=  0.575698
+      T=  3.5  Y1= -1.200730  Y2=  0.300150
+      T=  4.0  Y1= -1.249990  Y2= -0.000013
+      T=  4.5  Y1= -1.200718  Y2= -0.300175
+      T=  5.0  Y1= -1.054007  Y2= -0.575719
+      T=  5.5  Y1= -0.813909  Y2= -0.799599
+      T=  6.0  Y1= -0.490256  Y2= -0.939873
+      T=  6.5  Y1= -0.105125  Y2= -0.958019
+      T=  7.0  Y1=  0.294469  Y2= -0.812132
+      T=  7.5  Y1=  0.619801  Y2= -0.477712
+      T=  8.0  Y1=  0.749989  Y2=  0.000100
+      T=  8.5  Y1=  0.619704  Y2=  0.477877
+      T=  9.0  Y1=  0.294320  Y2=  0.812224
+      T=  9.5  Y1= -0.105284  Y2=  0.958037
+      T= 10.0  Y1= -0.490398  Y2=  0.939831
+      T= 10.5  Y1= -0.814020  Y2=  0.799513
+      T= 11.0  Y1= -1.054079  Y2=  0.575602
+      T= 11.5  Y1= -1.200747  Y2=  0.300039
+      T= 12.0  Y1= -1.249969  Y2= -0.000130
+
+3. ÇAME×AHÈß
+
+   1. PEÇÓËÜTATÛ ÏOËÓ×EHÛ HA EC-1045 (TPAHCËßTOP FORTOE)
+
+   2. RKF45, BOOÁÙE ÃOBOPß, HE CËEÄÓET ÈCÏOËÜÇOBATÜ
+      ECËÈ ÏOËÜÇOBATEËÞ TPEÁÓETCß TO×HOCTÜ BÛØE, ×EM 1.0E-12
+
+   3. AHAËOÃ ÏOÄÏPOÃPAMMÛ RKF45, HO C ÄBOÉHOÉ TO×HOCTÜÞ -
+      ÏOÄÏPOÃPAMMA DRKF45. ÏOCËEÄOBATEËÜHOCTÜ ÓKAÇAHÈß
+      ÏAPAMETPOB ÏPÈ BÛÇOBE ÏOÄÏPOÃAMMÛ DRKF45 TA ÆE,
+      ×TO È Ó RKF45, ÇA ÈCKËÞ×EHÈEM TOÃO, ×TO ÏEPEMEHHÛE
+      Y, T, TOUT, RELERR, ABSERR, WORK  ÈMEÞT TÈÏ DOUBLE
+      PRECISION  A, BHÓTPEHHÈE ÏOÄÏPOÃPAMMÛ HAÇÛBAÞTCß
+      DRKFS È DFEHL
+
+5. ËÈTEPATÓPA
+
+   1. ÔOPCAÉT ÄÆ.,MAËÜKOËÜM M., MOÓËEP K.
+      MAØÈHHÛE METOÄÛ MATEMATÈ×ECKÈX BÛ×ÈCËEHÈÉ.
+      M.: MÈP, 1980, C.126 -171.
+

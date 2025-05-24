@@ -1,0 +1,99 @@
+-- Copyright (C) 1988-1998 Altera Corporation
+-- Any megafunction design, and related net list (encrypted or decrypted),
+-- support information, device programming or simulation file, and any other
+-- associated documentation or information provided by Altera or a partner
+-- under Altera's Megafunction Partnership Program may be used only to
+-- program PLD devices (but not masked PLD devices) from Altera.  Any other
+-- use of such megafunction design, net list, support information, device
+-- programming or simulation file, or any other related documentation or
+-- information is prohibited for any other purpose, including, but not
+-- limited to modification, reverse engineering, de-compiling, or use with
+-- any other silicon devices, unless such use is explicitly licensed under
+-- a separate agreement with Altera or a megafunction partner.  Title to
+-- the intellectual property, including patents, copyrights, trademarks,
+-- trade secrets, or maskworks, embodied in any such megafunction design,
+-- net list, support information, device programming or simulation file, or
+-- any other related documentation or information provided by Altera or a
+-- megafunction partner, remains with Altera, the megafunction partner, or
+-- their respective licensors.  No other licenses, including any licenses
+-- needed under any third party's intellectual property, are provided herein.
+
+
+
+N.C. = Not Connected.
+VCCINT = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+VCCIO = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+GND = Dedicated ground pin or unused dedicated input, which MUST be connected to GND.
+RESERVED = Unused I/O pin, which MUST be left unconnected.
+
+----------------------------------------------------------------------------
+
+CHIP "hpri_32in_5out" ASSIGNED TO AN EPM7064LC68-7
+GND                              : 1
+GND                              : 2
+VCCINT                           : 3
+r18                              : 4
+r19                              : 5
+GND                              : 6
+r21                              : 7
+r9                               : 8
+r7                               : 9
+r6                               : 10
+VCCIO                            : 11
+r5                               : 12
+r4                               : 13
+r3                               : 14
+r2                               : 15
+GND                              : 16
+r1                               : 17
+r10                              : 18
+r8                               : 19
+r27                              : 20
+VCCIO                            : 21
+r28                              : 22
+r11                              : 23
+r13                              : 24
+r29                              : 25
+GND                              : 26
+r30                              : 27
+r31                              : 28
+r23                              : 29
+r22                              : 30
+VCCIO                            : 31
+r17                              : 32
+r14                              : 33
+GND                              : 34
+VCCINT                           : 35
+r24                              : 36
+r26                              : 37
+GND                              : 38
+a1                               : 39
+r0                               : 40
+r16                              : 41
+r12                              : 42
+VCCIO                            : 43
+r20                              : 44
+EI                               : 45
+r25                              : 46
+a0                               : 47
+GND                              : 48
+RESERVED                         : 49
+RESERVED                         : 50
+RESERVED                         : 51
+RESERVED                         : 52
+VCCIO                            : 53
+a2                               : 54
+a3                               : 55
+a4                               : 56
+EO                               : 57
+GND                              : 58
+r15                              : 59
+G                                : 60
+RESERVED                         : 61
+RESERVED                         : 62
+VCCIO                            : 63
+RESERVED                         : 64
+RESERVED                         : 65
+GND                              : 66
+GND                              : 67
+GND                              : 68

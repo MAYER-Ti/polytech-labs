@@ -1,0 +1,62 @@
+NDB006
+The number of symbol table entries is: 1
+The length of the symbol table is: 13
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+
+The number of name info structs is : 50
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	IGdW	!	:100	"t
+#	LGPw	!	F	19	9	1	E	:12	z
+$	LGPw	!	H	19	9	1	G	:13	{
+%	LGPw	!	J	19	9	1	I	:14	|
+&	LGPw	!	L	19	9	1	K	:15	}
+'	IeEA	!	22	9	:23	"'
+(	IGdW	!	:71	"W
+)	IGdW	!	:72	"X
+*	IGdW	!	:73	"Y
++	IGdW	!	:74	"Z
+,	IGdW	!	:75	"[
+-	IGdW	!	:76	"\
+.	IGdW	!	:77	"]
+/	IGdW	!	:78	"^
+0	IGdW	!	:79	"_
+1	IGdW	!	:80	"`
+2	IGdW	!	:81	"a
+3	IGdW	!	:82	"b
+4	IGdW	!	:83	"c
+5	IGdW	!	:84	"d
+6	IGdW	!	:85	"e
+7	IGdW	!	:86	"f
+8	IGdW	!	:87	"g
+9	IGdW	!	:88	"h
+:	IGdW	!	:89	"i
+;	IGdW	!	:90	"j
+<	IGdW	!	:91	"k
+=	IGdW	!	:92	"l
+>	IGdW	!	:93	"m
+?	IGdW	!	:94	"n
+@	IGdW	!	:95	"o
+A	IGdW	!	:96	"p
+B	IGdW	!	:97	"q
+C	IGdW	!	:98	"r
+D	IGdW	!	:99	"s
+E	IeE[	!	12	9	Q1	v
+F	INvO	!	#	Q1S	z
+G	IeE[	!	13	9	Q2	w
+H	INvO	!	$	Q2S	{
+I	IeE[	!	14	9	Q3	x
+J	INvO	!	%	Q3S	|
+K	IeE[	!	15	9	Q4	y
+L	INvO	!	&	Q4S	}
+M	L8ef	!	11	9	4	E	G	I	K	read	u
+N	(@\6H	!	10	9	4	#	$	%	&	reset	t
+O	(@\6H	!	9	9	4	#	$	%	&	write	s
+P	L8ef	!	5	9	1	#	x1	o
+Q	L8ef	!	6	9	1	$	x2	p
+R	L8ef	!	7	9	1	%	x3	q
+S	L8ef	!	8	9	1	&	x4	r

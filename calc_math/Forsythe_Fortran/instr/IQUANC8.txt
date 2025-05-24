@@ -1,0 +1,132 @@
+
+       PAÇÄEË:     BÛ×ÈCËEHÈE OÏPEÄEËEHHOÃO ÈHTEÃPAËA
+
+       ÏPOÃPAMMA:  QUANC8
+
+       HAÇHA×EHÈE: ÏPOÃPAMMA QUANC8 ÏPEÄHAÇHA×EHA ÄËß
+                   BÛ×ÈCËEHÈß OÏPEÄEËEHHOÃO ÈHTEÃPAËA
+                   C ÏOMOÙÜÞ ÔOPMÓËÛ HÜÞTOHA-KOTECA
+                   8 ÏOPßÄKA.
+
+1. OÏÈCAHÈE ÏOÄÏPOÃPAMMÛ È EE ÔOPMAËÜHÛX ÏAPAMETPOB
+
+     SUBROUTINE QUANC8(FUN,A,B,ABSERR,RELERR,RESULT,
+    *                  ERREST,NOFUN,FLAG)
+C
+     EXTERNAL FUN
+     INTEGER NOFUN
+     REAL FUN,A,B,ABSERR,RELERR,RESULT,ERREST,FLAG
+
+C  BXOÄHÛE ÏAPAMETPÛ
+C
+C    FUN    -ÈMß BHEØHEÉ ÔÓHKÖÈÈ,PEAËÈÇÓÞÙEÉ
+C            BÛ×ÈCËEHÈE ÏOÄÈHTEÃPAËÜHOÉ ÔÓHKÖÈÈ
+C
+C    A      -HÈÆHÈÉ  ÏPEÄEË ÈHTEÃPÈPOBAHÈß
+C
+C    B      -BEPXHÈÉ ÏPEÄEË ÈHTEÃPÈPOBAHÈß (B MOÆET
+C            ÁÛTÜ MEHÜØE, ×EM  A)
+C
+C    RELERR -OTHOCÈTEËÜHAß ÆEËAEMAß ÏOÃPEØHOCTÜ
+C
+C    ABSERR -AÁCOËÞTHAß ÆEËAEMAß  ÏOÃPEØHOCTÜ
+C
+C  BÛXOÄHÛE ÏAPAMETPÛ
+C
+C    RESULT -ÏPÈÁËÈÆEHHOE ÇHA×EHÈE ÈHTEÃPAËA
+C
+C    ERREST -OÖEHKA BEËÈ×ÈHÛ ÄEÉCTBÈTEËÜHOÉ OØÈÁKÈ
+C
+C    NOFUN  -×ÈCËO ÇHA×EHÈÉ ÔÓHKÖÈÈ,ÈCÏOËÜÇOBAHHÛX
+C            ÏPÈ BÛ×ÈCËEHÈÈ ÈHTEÃPAËA.
+C
+C    FLAG   -ÈHÄÈKATOP HAÄEÆHOCTÈ. ECËÈ FLAG PABEH HÓËÞ,
+C            TO RESULT ÓÄOBËETBOPßET ÇAÄAHHOÉ ÃPAHÈÖE
+C            ÏOÃPEØHOCTÈ.ECËÈ FLAG=XXX.YYY,TO  XXX-×ÈCËO
+C            ÈHTEPBAËOB ÄËß KOTOPÛX HE ÁÛËO CXOÄÈMOCTÈ,
+C            A 0.YYY-ÄOËß OCHOBHOÃO ÈHTEPBAËA,OCTABØAßCß
+C            ÄËß OÁPAÁOTKÈ B TOT MOMEHT,KOÃÄA ÏOÄÏPOÃPAMMA
+C            ÏPÈÁËÈÇÈËACÜ K ÏPEÄEËÜHOMÓ ×ÈCËÓ ÄËß NOFUN.
+C
+
+2. ÄËß TOÃO, ×TOÁÛ BÛ×ÈCËÈTÜ ÈHTEÃPAË OT ÔÓHKÖÈÈ F(X)
+   HA ÏPOMEÆÓTKE (A,B) C OTHOCÈTEËÜHOÉ TO×HOCTÜÞ RELERR
+   (AÁCOËÞTHOÉ TO×HOCTÜÞ ABSERR) HEOÁXOÄÈMO:
+
+   1. HAÏÈCATÜ ÏOÄÏPOÃPAMMÓ-ÔÓHKÖÈÞ F(X)
+
+        REAL FUNCTION F(X)
+        REAL X,F
+C       F=
+        RETURN
+        END
+
+      BÛ×ÈCËßÞÙÓÞ ÏOÄÈHTEÃPAËÜHÓÞ ÔÓHKÖÈÞ B TO×KE X
+
+   2. OÏÈCATÜ B BÛÇÛBAÞÙEÉ ÏPOÃPAMME BCE ÏEPEMEHHÛE,
+      ßBËßÞÙÈECß ÏAPAMETPAMÈ ÏOÄÏPOÃPAMMÛ
+
+   3. OÁ'ßBÈTÜ F B OÏEPATOPE EXTERNAL B BÛÇÛBAÞÙEÉ ÏPOÃPAMME
+
+   4. ÇAÄATÜ ÇHA×EHÈß BXOÄHÛX ÏAPAMETPOB:
+
+        A      -HÈÆHÈÉ  ÏPEÄEË ÈHTEÃPÈPOBAHÈß
+        B      -BEPXHÈÉ ÏPEÄEË ÈHTEÃPÈPOBAHÈß( B MOÆET
+                ÁÛTÜ MEHÜØE, ×EM  A)
+        RELERR -OTHOCÈTEËÜHÓÞ ÆEËAEMÓÞ ÏOÃPEØHOCTÜ
+        ABSERR -AÁCOËÞTHÓÞ ÆEËAEMÓÞ  ÏOÃPEØHOCTÜ
+
+   5. BÛÇBATÜ ÏOÄÏPOÃPAMMÓ QUANC8 OÏEPATOPOM
+
+      CALL QUANC8(FUN,A,B,ABSERR,RELERR,RESULT,
+     *            ERREST,NOFUN,FLAG)
+
+3. ÏPÈMEP ÈCÏOËÜÇOBAHÈß ÏOÄÏPOÃPAMMÛ.
+
+C     B ÏPÈMEPE BÛ×ÈCËßETCß ÈHTEÃPAË OT ÔÓHKÖÈÈ
+C     SIN(X)/X ÏO X OT 0 ÄO 2
+
+      REAL FUNCTION FUN(X)
+      REAL X
+      IF(X .EQ. 0.0) FUN=1.
+      IF(X .NE. 0.0) FUN=SIN(X)/X
+      RETURN
+      END
+C
+      EXTERNAL FUN
+      INTEGER NOFUN
+      REAL FUN,A,B,RELERR,ABSERR,RESULT,ERREST,FLAG
+      DATA A/0./,B/2.0/,RELERR/1.E-06/,ABSERR/0.0/
+C
+      CALL QUANC8(FUN,A,B,ABSERR,RELERR,RESULT,
+     *            ERREST,NOFUN,FLAG)
+C
+      PRINT 1,RESULT,ERREST,NOFUN,FLAG
+      STOP
+    1 FORMAT(10X,'RESULT=',E14.7,3X,'ERREST=',E12.5/
+     *    11X,'NOFUN=',I8,11X,'FLAG=',F10.3)
+      END
+
+C  B PEÇÓËÜTATE EE BÛÏOËHEHÈß ÁÓÄET ÏOËÓ×EHO
+
+          RESULT= 0.1605412E+01   ERREST= 0.14319E-05
+           NOFUN=      33           FLAG=     0.0
+
+4. ÇAME×AHÈß
+
+   1. PEÇÓËÜTATÛ ÏOËÓ×EHÛ HA EC-1045 (TPAHCËßTOP FORTOE)
+
+   2. AHAËOÃ ÏOÄÏPOÃPAMMÛ QUANC8, HO C ÄBOÉHOÉ TO×HOCTÜÞ -
+      ÏOÄÏPOÃPAMMA DQUANC. ÏOCËEÄOBATEËÜHOCTÜ ÓKAÇAHÈß
+      ÏAPAMETPOB ÏPÈ BÛÇOBE ÏOÄÏPOÃAMMÛ DQUANC TA ÆE,
+      ×TO È Ó QUANC8, ÇA ÈCKËÞ×EHÈEM TOÃO, ×TO ÏEPEMEHHÛE
+      FUN, A, B, ABSERR, RELEERR, RESULT, ERREST, FLAG
+      ÈMEÞT TÈÏ DOUBLE PRECISION
+
+5. ËÈTEPATÓPA
+
+   1. ÔOPCAÉT ÄÆ.,MAËÜKOËÜM M., MOÓËEP K.
+      MAØÈHHÛE METOÄÛ MATEMATÈ×ECKÈX BÛ×ÈCËEHÈÉ.
+      M.: MÈP, 1980, C.94 - 125.
+
+

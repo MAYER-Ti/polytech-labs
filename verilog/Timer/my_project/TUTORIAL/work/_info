@@ -1,0 +1,69 @@
+m255
+13
+cModel Technology
+dZ:\Timer\my_project\TUTORIAL\work
+vControl
+I[bcXkhoNZTh8e>zVJ6jKh0
+VnLi4E4B@j7;dalf26AAG=0
+w1621344339
+FZ:/Timer/my_project/TUTORIAL/hdl/control_fsm.v
+L0 12
+VnLi4E4B@j7;dalf26AAG=0
+OE;L;6.1c;31
+r1
+31
+o-work Z:/Timer/my_project/TUTORIAL/work -nologo
+tGenerateLoopIterationMax 100000
+n@control
+vCounter
+I5M=8eRab_fdbZ?fz_b9Ej3
+VgPYHekC?hIRmc0kS2zd:X2
+w1621446674
+FZ:/Timer/my_project/TUTORIAL/hdl/counter_struct.v
+L0 13
+VgPYHekC?hIRmc0kS2zd:X2
+OE;L;6.1c;31
+r1
+31
+o-work Z:/Timer/my_project/TUTORIAL/work -nologo
+tGenerateLoopIterationMax 100000
+n@counter
+vTimer
+IIOMHz_1OLmS3IFN=>Oi[<2
+VR>`[67]h4;k6YjakhEk[D0
+w1746473441
+FZ:/Timer/my_project/TUTORIAL/hdl/timer_struct.v
+L0 13
+VR>`[67]h4;k6YjakhEk[D0
+OE;L;6.1c;31
+r1
+31
+o-work Z:/Timer/my_project/TUTORIAL/work -nologo
+tGenerateLoopIterationMax 100000
+n@timer
+vTimer_tb
+IAnVVG3h7Y:BMAdz[cRhTb2
+V>2VmXQ_E3UeL?J:2nYz0G3
+w1746474260
+FZ:/Timer/my_project/TUTORIAL/hdl/timer_tb_struct.v
+L0 13
+V>2VmXQ_E3UeL?J:2nYz0G3
+OE;L;6.1c;31
+r1
+31
+o-work Z:/Timer/my_project/TUTORIAL/work -nologo
+tGenerateLoopIterationMax 100000
+n@timer_tb
+vTimer_tester
+I9gbQ8J:48I=A9U`b:k;V12
+Ve5:n:Rd??9f9K`;l6[cA^2
+w1746474143
+FZ:/Timer/my_project/TUTORIAL/hdl/timer_tester_flow.v
+L0 13
+Ve5:n:Rd??9f9K`;l6[cA^2
+OE;L;6.1c;31
+r1
+31
+o-work Z:/Timer/my_project/TUTORIAL/work -nologo
+tGenerateLoopIterationMax 100000
+n@timer_tester

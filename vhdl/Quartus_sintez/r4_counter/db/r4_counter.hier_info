@@ -1,0 +1,16 @@
+|r4_counter
+jk => q0_s.ENA
+clk => q1_s.CLK
+clk => q2_s.CLK
+clk => q3_s.CLK
+clk => q0_s.CLK
+r => q1_s.ACLR
+r => q2_s.ACLR
+r => q3_s.ACLR
+r => q0_s.ACLR
+q0 <= q0_s.DB_MAX_OUTPUT_PORT_TYPE
+q1 <= q1_s.DB_MAX_OUTPUT_PORT_TYPE
+q2 <= q2_s.DB_MAX_OUTPUT_PORT_TYPE
+q3 <= q3_s.DB_MAX_OUTPUT_PORT_TYPE
+
+

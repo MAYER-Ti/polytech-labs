@@ -1,0 +1,28 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+dmx
+# case_insensitive
+# source_file
+dmx.bdf
+1732983630
+23
+# storage
+db|dmx.(0).cnf
+db|dmx.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

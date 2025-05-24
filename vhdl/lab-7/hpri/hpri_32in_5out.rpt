@@ -1,0 +1,639 @@
+Project Information                           e:\lab-7\hpri\hpri_32in_5out.rpt
+
+MAX+plus II Compiler Report File
+Version 9.01 07/30/98
+Compiled: 12/10/20 22:28:22
+
+Copyright (C) 1988-1998 Altera Corporation
+Any megafunction design, and related net list (encrypted or decrypted),
+support information, device programming or simulation file, and any other
+associated documentation or information provided by Altera or a partner
+under Altera's Megafunction Partnership Program may be used only to
+program PLD devices (but not masked PLD devices) from Altera.  Any other
+use of such megafunction design, net list, support information, device
+programming or simulation file, or any other related documentation or
+information is prohibited for any other purpose, including, but not
+limited to modification, reverse engineering, de-compiling, or use with
+any other silicon devices, unless such use is explicitly licensed under
+a separate agreement with Altera or a megafunction partner.  Title to
+the intellectual property, including patents, copyrights, trademarks,
+trade secrets, or maskworks, embodied in any such megafunction design,
+net list, support information, device programming or simulation file, or
+any other related documentation or information provided by Altera or a
+megafunction partner, remains with Altera, the megafunction partner, or
+their respective licensors.  No other licenses, including any licenses
+needed under any third party's intellectual property, are provided herein.
+
+
+
+***** Project compilation was successful
+
+
+
+
+** DEVICE SUMMARY **
+
+Chip/                     Input   Output   Bidir         Shareable
+POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
+
+hpri_32in_5out
+      EPM7064LC68-7        33       7        0      11      6           17 %
+
+User Pins:                 33       7        0  
+
+
+
+Project Information                           e:\lab-7\hpri\hpri_32in_5out.rpt
+
+** FILE HIERARCHY **
+
+
+
+|hpri_16in_4out:2|
+|hpri_16in_4out:2|hpri_8in_3out:2|
+|hpri_16in_4out:2|hpri_8in_3out:1|
+|hpri_16in_4out:1|
+|hpri_16in_4out:1|hpri_8in_3out:2|
+|hpri_16in_4out:1|hpri_8in_3out:1|
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+***** Logic for device 'hpri_32in_5out' compiled without errors.
+
+
+
+
+Device: EPM7064LC68-7
+
+Device Options:
+    Turbo Bit                                    = ON
+    Security Bit                                 = OFF
+    MultiVolt I/O                              = OFF
+
+                                                  R  R     R  R  
+                                                  E  E     E  E  
+                                V                 S  S     S  S  
+                                C                 E  E  V  E  E  
+                                C                 R  R  C  R  R  
+                    r  G  r  r  I  G  G  G  G  G  V  V  C  V  V  
+              r  r  2  N  1  1  N  N  N  N  N  N  E  E  I  E  E  
+              7  9  1  D  9  8  T  D  D  D  D  D  D  D  O  D  D  
+            -----------------------------------------------------_ 
+          /   9  8  7  6  5  4  3  2  1 68 67 66 65 64 63 62 61   | 
+      r6 | 10                                                  60 | G 
+   VCCIO | 11                                                  59 | r15 
+      r5 | 12                                                  58 | GND 
+      r4 | 13                                                  57 | EO 
+      r3 | 14                                                  56 | a4 
+      r2 | 15                                                  55 | a3 
+     GND | 16                                                  54 | a2 
+      r1 | 17                                                  53 | VCCIO 
+     r10 | 18                  EPM7064LC68-7                   52 | RESERVED 
+      r8 | 19                                                  51 | RESERVED 
+     r27 | 20                                                  50 | RESERVED 
+   VCCIO | 21                                                  49 | RESERVED 
+     r28 | 22                                                  48 | GND 
+     r11 | 23                                                  47 | a0 
+     r13 | 24                                                  46 | r25 
+     r29 | 25                                                  45 | EI 
+     GND | 26                                                  44 | r20 
+         |_  27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43  _| 
+           ------------------------------------------------------ 
+              r  r  r  r  V  r  r  G  V  r  r  G  a  r  r  r  V  
+              3  3  2  2  C  1  1  N  C  2  2  N  1  0  1  1  C  
+              0  1  3  2  C  7  4  D  C  4  6  D        6  2  C  
+                          I           I                       I  
+                          O           N                       O  
+                                      T                          
+                                                                 
+                                                                 
+
+
+N.C. = Not Connected.
+VCCINT = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+VCCIO = Dedicated power pin, which MUST be connected to VCC (5.0 volts).
+GND = Dedicated ground pin or unused dedicated input, which MUST be connected to GND.
+RESERVED = Unused I/O pin, which MUST be left unconnected.
+
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+** RESOURCE USAGE **
+
+                                                Shareable     External
+Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
+
+A:     LC1 - LC16     0/16(  0%)  12/12(100%)   0/16(  0%)   0/36(  0%) 
+B:    LC17 - LC32     0/16(  0%)  12/12(100%)   0/16(  0%)   0/36(  0%) 
+C:    LC33 - LC48     2/16( 12%)  10/12( 83%)   5/16( 31%)  31/36( 86%) 
+D:    LC49 - LC64     9/16( 56%)   6/12( 50%)   8/16( 50%)  33/36( 91%) 
+
+
+Total dedicated input pins used:                 0/4      (  0%)
+Total I/O pins used:                            40/48     ( 83%)
+Total logic cells used:                         11/64     ( 17%)
+Total shareable expanders used:                  6/64     (  9%)
+Total Turbo logic cells used:                   11/64     ( 17%)
+Total shareable expanders not available (n/a):   7/64     ( 10%)
+Average fan-in:                                  21.90
+Total fan-in:                                   241
+
+Total input pins required:                      33
+Total output pins required:                      7
+Total bidirectional pins required:               0
+Total logic cells required:                     11
+Total flipflops required:                        0
+Total product terms required:                   46
+Total logic cells lending parallel expanders:    0
+Total shareable expanders in database:           6
+
+Synthesized logic cells:                         4/  64   (  6%)
+
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+** INPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  45   (43)  (C)      INPUT               0      0   0    0    0    7    0  EI
+  40   (37)  (C)      INPUT               0      0   0    0    0    2    0  r0
+  17    (3)  (A)      INPUT               0      0   0    0    0    3    0  r1
+  15    (4)  (A)      INPUT               0      0   0    0    0    4    0  r2
+  14    (5)  (A)      INPUT               0      0   0    0    0    4    0  r3
+  13    (6)  (A)      INPUT               0      0   0    0    0    5    0  r4
+  12    (8)  (A)      INPUT               0      0   0    0    0    5    0  r5
+  10    (9)  (A)      INPUT               0      0   0    0    0    5    0  r6
+   9   (11)  (A)      INPUT               0      0   0    0    0    5    0  r7
+  19   (32)  (B)      INPUT               0      0   0    0    0    4    2  r8
+   8   (12)  (A)      INPUT               0      0   0    0    0    6    1  r9
+  18    (1)  (A)      INPUT               0      0   0    0    0    5    2  r10
+  23   (28)  (B)      INPUT               0      0   0    0    0    6    2  r11
+  42   (40)  (C)      INPUT               0      0   0    0    0    4    2  r12
+  24   (27)  (B)      INPUT               0      0   0    0    0    5    2  r13
+  33   (17)  (B)      INPUT               0      0   0    0    0    5    2  r14
+  59   (57)  (D)      INPUT               0      0   0    0    0    6    2  r15
+  41   (38)  (C)      INPUT               0      0   0    0    0    5    2  r16
+  32   (19)  (B)      INPUT               0      0   0    0    0    6    2  r17
+   4   (16)  (A)      INPUT               0      0   0    0    0    6    2  r18
+   5   (14)  (A)      INPUT               0      0   0    0    0    7    3  r19
+  44   (41)  (C)      INPUT               0      0   0    0    0    5    2  r20
+   7   (13)  (A)      INPUT               0      0   0    0    0    6    3  r21
+  30   (20)  (B)      INPUT               0      0   0    0    0    6    3  r22
+  29   (21)  (B)      INPUT               0      0   0    0    0    7    4  r23
+  36   (33)  (C)      INPUT               0      0   0    0    0    5    2  r24
+  46   (44)  (C)      INPUT               0      0   0    0    0    6    3  r25
+  37   (35)  (C)      INPUT               0      0   0    0    0    6    3  r26
+  20   (30)  (B)      INPUT               0      0   0    0    0    7    4  r27
+  22   (29)  (B)      INPUT               0      0   0    0    0    7    0  r28
+  25   (25)  (B)      INPUT               0      0   0    0    0    6    3  r29
+  27   (24)  (B)      INPUT               0      0   0    0    0    7    2  r30
+  28   (22)  (B)      INPUT               0      0   0    0    0    7    4  r31
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+** OUTPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  47     45    C     OUTPUT      t        3      0   1   22    2    0    0  a0
+  39     36    C     OUTPUT      t        2      0   1   21    2    0    0  a1
+  54     52    D     OUTPUT      t        4      0   1   29    0    0    0  a2
+  55     53    D     OUTPUT      t        0      0   0   25    0    0    0  a3
+  56     54    D     OUTPUT      t        0      0   0   17    0    0    0  a4
+  57     56    D     OUTPUT      t        0      0   0   33    0    0    0  EO
+  60     59    D     OUTPUT      t        0      0   0   33    0    0    0  G
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+** BURIED LOGIC **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+ (51)    49    D       SOFT    s t        1      0   1   17    0    1    0  ~36~1
+   -     50    D       SOFT    s t        1      0   1   12    0    1    0  ~36~2
+ (52)    51    D       SOFT    s t        1      0   1   17    0    1    0  ~39~1
+ (59)    57    D       SOFT    s t        1      0   1   11    0    1    0  ~39~2
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'C':
+
+             Logic cells placed in LAB 'C'
+        +--- LC45 a0
+        | +- LC36 a1
+        | | 
+        | |   Other LABs fed by signals
+        | |   that feed LAB 'C'
+LC      | | | A B C D |     Logic cells that feed LAB 'C':
+
+Pin
+45   -> * * | - - * * | <-- EI
+17   -> * - | - - * * | <-- r1
+15   -> * * | - - * * | <-- r2
+14   -> * * | - - * * | <-- r3
+13   -> * * | - - * * | <-- r4
+12   -> * * | - - * * | <-- r5
+10   -> * * | - - * * | <-- r6
+9    -> * * | - - * * | <-- r7
+8    -> * * | - - * * | <-- r9
+18   -> - * | - - * * | <-- r10
+23   -> * * | - - * * | <-- r11
+24   -> * - | - - * * | <-- r13
+33   -> - * | - - * * | <-- r14
+59   -> * * | - - * * | <-- r15
+32   -> * - | - - * * | <-- r17
+4    -> - * | - - * * | <-- r18
+5    -> * * | - - * * | <-- r19
+7    -> * - | - - * * | <-- r21
+30   -> - * | - - * * | <-- r22
+29   -> * * | - - * * | <-- r23
+46   -> * - | - - * * | <-- r25
+37   -> - * | - - * * | <-- r26
+20   -> * * | - - * * | <-- r27
+22   -> * * | - - * * | <-- r28
+25   -> * - | - - * * | <-- r29
+27   -> * * | - - * * | <-- r30
+28   -> * * | - - * * | <-- r31
+LC49 -> * - | - - * - | <-- ~36~1
+LC50 -> * - | - - * - | <-- ~36~2
+LC51 -> - * | - - * - | <-- ~39~1
+LC57 -> - * | - - * - | <-- ~39~2
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'D':
+
+                           Logic cells placed in LAB 'D'
+        +----------------- LC52 a2
+        | +--------------- LC53 a3
+        | | +------------- LC54 a4
+        | | | +----------- LC56 EO
+        | | | | +--------- LC59 G
+        | | | | | +------- LC49 ~36~1
+        | | | | | | +----- LC50 ~36~2
+        | | | | | | | +--- LC51 ~39~1
+        | | | | | | | | +- LC57 ~39~2
+        | | | | | | | | | 
+        | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | |   that feed LAB 'D'
+LC      | | | | | | | | | | A B C D |     Logic cells that feed LAB 'D':
+
+Pin
+45   -> * * * * * - - - - | - - * * | <-- EI
+40   -> - - - * * - - - - | - - - * | <-- r0
+17   -> - - - * * - - - - | - - * * | <-- r1
+15   -> - - - * * - - - - | - - * * | <-- r2
+14   -> - - - * * - - - - | - - * * | <-- r3
+13   -> * - - * * - - - - | - - * * | <-- r4
+12   -> * - - * * - - - - | - - * * | <-- r5
+10   -> * - - * * - - - - | - - * * | <-- r6
+9    -> * - - * * - - - - | - - * * | <-- r7
+19   -> * * - * * * - * - | - - - * | <-- r8
+8    -> * * - * * * - - - | - - * * | <-- r9
+18   -> * * - * * * - * - | - - * * | <-- r10
+23   -> * * - * * * - * - | - - * * | <-- r11
+42   -> * * - * * * - * - | - - - * | <-- r12
+24   -> * * - * * * - * - | - - * * | <-- r13
+33   -> * * - * * * - * - | - - * * | <-- r14
+59   -> * * - * * * - * - | - - * * | <-- r15
+41   -> * * * * * * - * - | - - - * | <-- r16
+32   -> * * * * * * - * - | - - * * | <-- r17
+4    -> * * * * * - * * - | - - * * | <-- r18
+5    -> * * * * * * * * - | - - * * | <-- r19
+44   -> * * * * * - * - * | - - - * | <-- r20
+7    -> * * * * * * * - * | - - * * | <-- r21
+30   -> * * * * * - * * * | - - * * | <-- r22
+29   -> * * * * * * * * * | - - * * | <-- r23
+36   -> * * * * * - * - * | - - - * | <-- r24
+46   -> * * * * * * * - * | - - * * | <-- r25
+37   -> * * * * * - * * * | - - * * | <-- r26
+20   -> * * * * * * * * * | - - * * | <-- r27
+22   -> * * * * * - - - - | - - * * | <-- r28
+25   -> * * * * * * * - * | - - * * | <-- r29
+27   -> * * * * * - - * * | - - * * | <-- r30
+28   -> * * * * * * * * * | - - * * | <-- r31
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information:                  e:\lab-7\hpri\hpri_32in_5out.rpt
+hpri_32in_5out
+
+** EQUATIONS **
+
+EI       : INPUT;
+r0       : INPUT;
+r1       : INPUT;
+r2       : INPUT;
+r3       : INPUT;
+r4       : INPUT;
+r5       : INPUT;
+r6       : INPUT;
+r7       : INPUT;
+r8       : INPUT;
+r9       : INPUT;
+r10      : INPUT;
+r11      : INPUT;
+r12      : INPUT;
+r13      : INPUT;
+r14      : INPUT;
+r15      : INPUT;
+r16      : INPUT;
+r17      : INPUT;
+r18      : INPUT;
+r19      : INPUT;
+r20      : INPUT;
+r21      : INPUT;
+r22      : INPUT;
+r23      : INPUT;
+r24      : INPUT;
+r25      : INPUT;
+r26      : INPUT;
+r27      : INPUT;
+r28      : INPUT;
+r29      : INPUT;
+r30      : INPUT;
+r31      : INPUT;
+
+-- Node name is 'a0' 
+-- Equation name is 'a0', location is LC045, type is output.
+ a0      = LCELL( _EQ001 $  _EQ002);
+  _EQ001 =  EI & !_LC049 & !_LC050 &  r2 & !r3 & !r5 & !r7 & !r9 & !r11 & 
+             !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & 
+             !r31 &  _X001 &  _X002
+         #  EI & !_LC049 & !_LC050 & !r1 & !r3 & !r5 & !r7 & !r9 & !r11 & 
+             !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & 
+             !r31 &  _X001 &  _X002
+         #  EI & !_LC049 & !_LC050 &  r4 & !r5 & !r7 & !r9 & !r11 & !r13 & 
+             !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31 & 
+              _X001 &  _X002
+         #  EI & !_LC049 & !_LC050 &  r6 & !r7 & !r9 & !r11 & !r13 & !r15 & 
+             !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31 &  _X001 & 
+              _X002;
+  _X001  = EXP( r28 & !r29 & !r31);
+  _X002  = EXP( r30 & !r31);
+  _EQ002 =  EI & !_LC049 & !_LC050 &  _X001 &  _X002;
+  _X001  = EXP( r28 & !r29 & !r31);
+  _X002  = EXP( r30 & !r31);
+
+-- Node name is 'a1' 
+-- Equation name is 'a1', location is LC036, type is output.
+ a1      = LCELL( _EQ003 $  _EQ004);
+  _EQ003 =  EI & !_LC051 & !_LC057 & !r2 & !r3 & !r6 & !r7 & !r10 & !r11 & 
+             !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & 
+             !r31 &  _X003
+         #  EI & !_LC051 & !_LC057 &  r5 & !r6 & !r7 & !r10 & !r11 & !r14 & 
+             !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31 & 
+              _X003
+         #  EI & !_LC051 & !_LC057 &  r4 & !r6 & !r7 & !r10 & !r11 & !r14 & 
+             !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31 & 
+              _X003
+         #  EI & !_LC051 & !_LC057 &  r9 & !r10 & !r11 & !r14 & !r15 & !r18 & 
+             !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31 &  _X003;
+  _X003  = EXP( r28 & !r30 & !r31);
+  _EQ004 =  EI & !_LC051 & !_LC057 &  _X003;
+  _X003  = EXP( r28 & !r30 & !r31);
+
+-- Node name is 'a2' 
+-- Equation name is 'a2', location is LC052, type is output.
+ a2      = LCELL( _EQ005 $  EI);
+  _EQ005 =  EI & !r4 & !r5 & !r6 & !r7 & !r12 & !r13 & !r14 & !r15 & !r20 & 
+             !r21 & !r22 & !r23 & !r28 & !r29 & !r30 & !r31
+         #  EI & !r12 & !r13 & !r14 & !r15 & !r20 & !r21 & !r22 & !r23 & !r28 & 
+             !r29 & !r30 & !r31 &  _X004
+         #  EI & !r20 & !r21 & !r22 & !r23 & !r28 & !r29 & !r30 & !r31 & 
+              _X005
+         #  EI & !r28 & !r29 & !r30 & !r31 &  _X006;
+  _X004  = EXP(!r8 & !r9 & !r10 & !r11);
+  _X005  = EXP(!r16 & !r17 & !r18 & !r19);
+  _X006  = EXP(!r24 & !r25 & !r26 & !r27);
+
+-- Node name is 'a3' 
+-- Equation name is 'a3', location is LC053, type is output.
+ a3      = LCELL( _EQ006 $  VCC);
+  _EQ006 =  EI & !r8 & !r9 & !r10 & !r11 & !r12 & !r13 & !r14 & !r15 & !r16 & 
+             !r17 & !r18 & !r19 & !r20 & !r21 & !r22 & !r23 & !r24 & !r25 & 
+             !r26 & !r27 & !r28 & !r29 & !r30 & !r31;
+
+-- Node name is 'a4' 
+-- Equation name is 'a4', location is LC054, type is output.
+ a4      = LCELL( _EQ007 $  VCC);
+  _EQ007 =  EI & !r16 & !r17 & !r18 & !r19 & !r20 & !r21 & !r22 & !r23 & !r24 & 
+             !r25 & !r26 & !r27 & !r28 & !r29 & !r30 & !r31;
+
+-- Node name is 'EO' 
+-- Equation name is 'EO', location is LC056, type is output.
+ EO      = LCELL( _EQ008 $  GND);
+  _EQ008 =  EI & !r0 & !r1 & !r2 & !r3 & !r4 & !r5 & !r6 & !r7 & !r8 & !r9 & 
+             !r10 & !r11 & !r12 & !r13 & !r14 & !r15 & !r16 & !r17 & !r18 & 
+             !r19 & !r20 & !r21 & !r22 & !r23 & !r24 & !r25 & !r26 & !r27 & 
+             !r28 & !r29 & !r30 & !r31;
+
+-- Node name is 'G' 
+-- Equation name is 'G', location is LC059, type is output.
+ G       = LCELL( _EQ009 $  EI);
+  _EQ009 =  EI & !r0 & !r1 & !r2 & !r3 & !r4 & !r5 & !r6 & !r7 & !r8 & !r9 & 
+             !r10 & !r11 & !r12 & !r13 & !r14 & !r15 & !r16 & !r17 & !r18 & 
+             !r19 & !r20 & !r21 & !r22 & !r23 & !r24 & !r25 & !r26 & !r27 & 
+             !r28 & !r29 & !r30 & !r31;
+
+-- Node name is '~36~1' 
+-- Equation name is '~36~1', location is LC049, type is buried.
+-- synthesized logic cell 
+_LC049   = LCELL( _EQ010 $  GND);
+  _EQ010 =  r8 & !r9 & !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & 
+             !r27 & !r29 & !r31
+         #  r10 & !r11 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & 
+             !r27 & !r29 & !r31
+         #  r12 & !r13 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & 
+             !r29 & !r31
+         #  r14 & !r15 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & 
+             !r31
+         #  r16 & !r17 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31;
+
+-- Node name is '~36~2' 
+-- Equation name is '~36~2', location is LC050, type is buried.
+-- synthesized logic cell 
+_LC050   = LCELL( _EQ011 $  GND);
+  _EQ011 =  r18 & !r19 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31
+         #  r20 & !r21 & !r23 & !r25 & !r27 & !r29 & !r31
+         #  r22 & !r23 & !r25 & !r27 & !r29 & !r31
+         #  r24 & !r25 & !r27 & !r29 & !r31
+         #  r26 & !r27 & !r29 & !r31;
+
+-- Node name is '~39~1' 
+-- Equation name is '~39~1', location is LC051, type is buried.
+-- synthesized logic cell 
+_LC051   = LCELL( _EQ012 $  GND);
+  _EQ012 =  r8 & !r10 & !r11 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & 
+             !r27 & !r30 & !r31
+         #  r13 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & 
+             !r30 & !r31
+         #  r12 & !r14 & !r15 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & 
+             !r30 & !r31
+         #  r17 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31
+         #  r16 & !r18 & !r19 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31;
+
+-- Node name is '~39~2' 
+-- Equation name is '~39~2', location is LC057, type is buried.
+-- synthesized logic cell 
+_LC057   = LCELL( _EQ013 $  GND);
+  _EQ013 =  r21 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31
+         #  r20 & !r22 & !r23 & !r26 & !r27 & !r30 & !r31
+         #  r25 & !r26 & !r27 & !r30 & !r31
+         #  r24 & !r26 & !r27 & !r30 & !r31
+         #  r29 & !r30 & !r31;
+
+
+
+--     Shareable expanders that are duplicated in multiple LABs:
+--     (none)
+
+
+
+
+Project Information                           e:\lab-7\hpri\hpri_32in_5out.rpt
+
+** COMPILATION SETTINGS & TIMES **
+
+Processing Menu Commands
+------------------------
+
+Design Doctor                             = off
+
+Logic Synthesis:
+
+   Synthesis Type Used                    = Standard
+
+   Default Synthesis Style                = NORMAL
+
+      Logic option settings in 'NORMAL' style for 'MAX7000' family
+
+      DECOMPOSE_GATES                     = on
+      DUPLICATE_LOGIC_EXTRACTION          = on
+      MINIMIZATION                        = full
+      MULTI_LEVEL_FACTORING               = on
+      NOT_GATE_PUSH_BACK                  = on
+      PARALLEL_EXPANDERS                  = off
+      REDUCE_LOGIC                        = on
+      REFACTORIZATION                     = on
+      REGISTER_OPTIMIZATION               = on
+      RESYNTHESIZE_NETWORK                = on
+      SLOW_SLEW_RATE                      = off
+      SOFT_BUFFER_INSERTION               = on
+      SUBFACTOR_EXTRACTION                = on
+      TURBO_BIT                           = on
+      XOR_SYNTHESIS                       = on
+      IGNORE_SOFT_BUFFERS                 = off
+      USE_LPM_FOR_AHDL_OPERATORS          = off
+
+   Other logic synthesis settings:
+
+      Automatic Global Clock              = on
+      Automatic Global Clear              = on
+      Automatic Global Preset             = on
+      Automatic Global Output Enable      = on
+      Automatic Fast I/O                  = off
+      Automatic Register Packing          = off
+      Automatic Open-Drain Pins           = on
+      Automatic Implement in EAB          = off
+      One-Hot State Machine Encoding      = off
+      Optimize                            = 5
+
+Default Timing Specifications: None
+
+Cut All Bidir Feedback Timing Paths       = on
+Cut All Clear & Preset Timing Paths       = on
+
+Ignore Timing Assignments                 = off
+
+Functional SNF Extractor                  = off
+
+Linked SNF Extractor                      = off
+Timing SNF Extractor                      = on
+Optimize Timing SNF                       = off
+Generate AHDL TDO File                    = off
+Fitter Settings                           = NORMAL
+Smart Recompile                           = off
+Total Recompile                           = off
+
+Interfaces Menu Commands
+------------------------
+
+EDIF Netlist Writer                       = off
+Verilog Netlist Writer                    = off
+VHDL Netlist Writer                       = off
+
+Compilation Times
+-----------------
+
+   Compiler Netlist Extractor             00:00:00
+   Database Builder                       00:00:00
+   Logic Synthesizer                      00:00:00
+   Partitioner                            00:00:00
+   Fitter                                 00:00:00
+   Timing SNF Extractor                   00:00:00
+   Assembler                              00:00:00
+   --------------------------             --------
+   Total Time                             00:00:00
+
+
+Memory Allocated
+-----------------
+
+Peak memory allocated during compilation  = 3,245K

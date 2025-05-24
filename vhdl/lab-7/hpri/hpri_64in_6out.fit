@@ -1,0 +1,208 @@
+-- MAX+plus II Compiler Fit File      
+-- Version 9.01 07/30/98              
+-- Compiled: 12/10/20 22:24:03        
+
+-- Copyright (C) 1988-1998 Altera Corporation
+-- Any megafunction design, and related net list (encrypted or decrypted),
+-- support information, device programming or simulation file, and any other
+-- associated documentation or information provided by Altera or a partner
+-- under Altera's Megafunction Partnership Program may be used only to
+-- program PLD devices (but not masked PLD devices) from Altera.  Any other
+-- use of such megafunction design, net list, support information, device
+-- programming or simulation file, or any other related documentation or
+-- information is prohibited for any other purpose, including, but not
+-- limited to modification, reverse engineering, de-compiling, or use with
+-- any other silicon devices, unless such use is explicitly licensed under
+-- a separate agreement with Altera or a megafunction partner.  Title to
+-- the intellectual property, including patents, copyrights, trademarks,
+-- trade secrets, or maskworks, embodied in any such megafunction design,
+-- net list, support information, device programming or simulation file, or
+-- any other related documentation or information provided by Altera or a
+-- megafunction partner, remains with Altera, the megafunction partner, or
+-- their respective licensors.  No other licenses, including any licenses
+-- needed under any third party's intellectual property, are provided herein.
+
+CHIP "hpri_64in_6out"
+BEGIN
+
+    DEVICE = "EPM7096QC100-7";
+    UNROUTED;
+
+    "EI"                           : INPUT_PIN  = ANY    ;
+    "EI"                           : UNROUTED ;
+    "r0"                           : INPUT_PIN  = ANY    ;
+    "r0"                           : UNROUTED ;
+    "r1"                           : INPUT_PIN  = ANY    ;
+    "r1"                           : UNROUTED ;
+    "r2"                           : INPUT_PIN  = ANY    ;
+    "r2"                           : UNROUTED ;
+    "r3"                           : INPUT_PIN  = ANY    ;
+    "r3"                           : UNROUTED ;
+    "r4"                           : INPUT_PIN  = ANY    ;
+    "r4"                           : UNROUTED ;
+    "r5"                           : INPUT_PIN  = ANY    ;
+    "r5"                           : UNROUTED ;
+    "r6"                           : INPUT_PIN  = ANY    ;
+    "r6"                           : UNROUTED ;
+    "r7"                           : INPUT_PIN  = ANY    ;
+    "r7"                           : UNROUTED ;
+    "r8"                           : INPUT_PIN  = ANY    ;
+    "r8"                           : UNROUTED ;
+    "r9"                           : INPUT_PIN  = ANY    ;
+    "r9"                           : UNROUTED ;
+    "r11"                          : INPUT_PIN  = ANY    ;
+    "r11"                          : UNROUTED ;
+    "r12"                          : INPUT_PIN  = ANY    ;
+    "r12"                          : UNROUTED ;
+    "r13"                          : INPUT_PIN  = ANY    ;
+    "r13"                          : UNROUTED ;
+    "r14"                          : INPUT_PIN  = ANY    ;
+    "r14"                          : UNROUTED ;
+    "r15"                          : INPUT_PIN  = ANY    ;
+    "r15"                          : UNROUTED ;
+    "r16"                          : INPUT_PIN  = ANY    ;
+    "r16"                          : UNROUTED ;
+    "r17"                          : INPUT_PIN  = ANY    ;
+    "r17"                          : UNROUTED ;
+    "r18"                          : INPUT_PIN  = ANY    ;
+    "r18"                          : UNROUTED ;
+    "r19"                          : INPUT_PIN  = ANY    ;
+    "r19"                          : UNROUTED ;
+    "r20"                          : INPUT_PIN  = ANY    ;
+    "r20"                          : UNROUTED ;
+    "r21"                          : INPUT_PIN  = ANY    ;
+    "r21"                          : UNROUTED ;
+    "r22"                          : INPUT_PIN  = ANY    ;
+    "r22"                          : UNROUTED ;
+    "r23"                          : INPUT_PIN  = ANY    ;
+    "r23"                          : UNROUTED ;
+    "r24"                          : INPUT_PIN  = ANY    ;
+    "r24"                          : UNROUTED ;
+    "r25"                          : INPUT_PIN  = ANY    ;
+    "r25"                          : UNROUTED ;
+    "r26"                          : INPUT_PIN  = ANY    ;
+    "r26"                          : UNROUTED ;
+    "r27"                          : INPUT_PIN  = ANY    ;
+    "r27"                          : UNROUTED ;
+    "r28"                          : INPUT_PIN  = ANY    ;
+    "r28"                          : UNROUTED ;
+    "r29"                          : INPUT_PIN  = ANY    ;
+    "r29"                          : UNROUTED ;
+    "r30"                          : INPUT_PIN  = ANY    ;
+    "r30"                          : UNROUTED ;
+    "r31"                          : INPUT_PIN  = ANY    ;
+    "r31"                          : UNROUTED ;
+    "r32"                          : INPUT_PIN  = ANY    ;
+    "r32"                          : UNROUTED ;
+    "r33"                          : INPUT_PIN  = ANY    ;
+    "r33"                          : UNROUTED ;
+    "r34"                          : INPUT_PIN  = ANY    ;
+    "r34"                          : UNROUTED ;
+    "r35"                          : INPUT_PIN  = ANY    ;
+    "r35"                          : UNROUTED ;
+    "r36"                          : INPUT_PIN  = ANY    ;
+    "r36"                          : UNROUTED ;
+    "r37"                          : INPUT_PIN  = ANY    ;
+    "r37"                          : UNROUTED ;
+    "r38"                          : INPUT_PIN  = ANY    ;
+    "r38"                          : UNROUTED ;
+    "r39"                          : INPUT_PIN  = ANY    ;
+    "r39"                          : UNROUTED ;
+    "r40"                          : INPUT_PIN  = ANY    ;
+    "r40"                          : UNROUTED ;
+    "r41"                          : INPUT_PIN  = ANY    ;
+    "r41"                          : UNROUTED ;
+    "r42"                          : INPUT_PIN  = ANY    ;
+    "r42"                          : UNROUTED ;
+    "r43"                          : INPUT_PIN  = ANY    ;
+    "r43"                          : UNROUTED ;
+    "r44"                          : INPUT_PIN  = ANY    ;
+    "r44"                          : UNROUTED ;
+    "r45"                          : INPUT_PIN  = ANY    ;
+    "r45"                          : UNROUTED ;
+    "r46"                          : INPUT_PIN  = ANY    ;
+    "r46"                          : UNROUTED ;
+    "r47"                          : INPUT_PIN  = ANY    ;
+    "r47"                          : UNROUTED ;
+    "r48"                          : INPUT_PIN  = ANY    ;
+    "r48"                          : UNROUTED ;
+    "r49"                          : INPUT_PIN  = ANY    ;
+    "r49"                          : UNROUTED ;
+    "r50"                          : INPUT_PIN  = ANY    ;
+    "r50"                          : UNROUTED ;
+    "r51"                          : INPUT_PIN  = ANY    ;
+    "r51"                          : UNROUTED ;
+    "r52"                          : INPUT_PIN  = ANY    ;
+    "r52"                          : UNROUTED ;
+    "r53"                          : INPUT_PIN  = ANY    ;
+    "r53"                          : UNROUTED ;
+    "r54"                          : INPUT_PIN  = ANY    ;
+    "r54"                          : UNROUTED ;
+    "r55"                          : INPUT_PIN  = ANY    ;
+    "r55"                          : UNROUTED ;
+    "r56"                          : INPUT_PIN  = ANY    ;
+    "r56"                          : UNROUTED ;
+    "r57"                          : INPUT_PIN  = ANY    ;
+    "r57"                          : UNROUTED ;
+    "r58"                          : INPUT_PIN  = ANY    ;
+    "r58"                          : UNROUTED ;
+    "r59"                          : INPUT_PIN  = ANY    ;
+    "r59"                          : UNROUTED ;
+    "r60"                          : INPUT_PIN  = ANY    ;
+    "r60"                          : UNROUTED ;
+    "r61"                          : INPUT_PIN  = ANY    ;
+    "r61"                          : UNROUTED ;
+    "r62"                          : INPUT_PIN  = ANY    ;
+    "r62"                          : UNROUTED ;
+    "r63"                          : INPUT_PIN  = ANY    ;
+    "r63"                          : UNROUTED ;
+    "10"                           : INPUT_PIN  = ANY    ;
+    "10"                           : UNROUTED ;
+    "a0"                           : OUTPUT_PIN = ANY    ;
+    "a0"                           : UNROUTED ;
+    "a1"                           : OUTPUT_PIN = ANY    ;
+    "a1"                           : UNROUTED ;
+    "a2"                           : OUTPUT_PIN = ANY    ;
+    "a2"                           : UNROUTED ;
+    "a3"                           : OUTPUT_PIN = ANY    ;
+    "a3"                           : UNROUTED ;
+    "a4"                           : OUTPUT_PIN = ANY    ;
+    "a4"                           : UNROUTED ;
+    "a5"                           : OUTPUT_PIN = ANY    ;
+    "a5"                           : UNROUTED ;
+    "EO"                           : OUTPUT_PIN = ANY    ;
+    "EO"                           : UNROUTED ;
+    "G"                            : OUTPUT_PIN = ANY    ;
+    "G"                            : UNROUTED ;
+    "~83~1"                        : LOCATION   = ANY    ;
+    "~83~1"                        : UNROUTED ;
+    "~83~2"                        : LOCATION   = ANY    ;
+    "~83~2"                        : UNROUTED ;
+    "~83~3"                        : LOCATION   = ANY    ;
+    "~83~3"                        : UNROUTED ;
+    "~83~4"                        : LOCATION   = ANY    ;
+    "~83~4"                        : UNROUTED ;
+    "~83~5"                        : LOCATION   = ANY    ;
+    "~83~5"                        : UNROUTED ;
+    "~86~1"                        : LOCATION   = ANY    ;
+    "~86~1"                        : UNROUTED ;
+    "~86~2"                        : LOCATION   = ANY    ;
+    "~86~2"                        : UNROUTED ;
+    "~86~3"                        : LOCATION   = ANY    ;
+    "~86~3"                        : UNROUTED ;
+    "~86~4"                        : LOCATION   = ANY    ;
+    "~86~4"                        : UNROUTED ;
+    "~86~5"                        : LOCATION   = ANY    ;
+    "~86~5"                        : UNROUTED ;
+    "~89~1"                        : LOCATION   = ANY    ;
+    "~89~1"                        : UNROUTED ;
+    "~89~2"                        : LOCATION   = ANY    ;
+    "~89~2"                        : UNROUTED ;
+    "~89~3"                        : LOCATION   = ANY    ;
+    "~89~3"                        : UNROUTED ;
+    "~89~4"                        : LOCATION   = ANY    ;
+    "~89~4"                        : UNROUTED ;
+    "~89~5"                        : LOCATION   = ANY    ;
+    "~89~5"                        : UNROUTED ;
+
+END;

@@ -1,0 +1,98 @@
+NDB006
+The number of symbol table entries is: 3
+The length of the symbol table is: 49
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|hpri_8in_3out:2|
+@	|hpri_8in_3out:1|
+
+The number of name info structs is : 84
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	IGdW	!	:20	"I
+#	IGdW	!	:21	"F
+$	IGdW	!	:25	"H
+%	IGdW	!	:29	"J
+&	IGdW	!	:30	"G
+'	NLG+	!	5	a0	""
+(	NLG+	!	4	a1	"'
+)	NLG+	!	1	a2	"&
+*	IGdq	!	a3	"%
++	Ky&|	!	6	'	(	)	*	,	-	EI	p
+,	IGdq	!	EO	"#
+-	IGdq	!	G	"$
+.	Ky&|	!	2	,	-	r0	~
+/	Ky&|	!	3	'	,	-	r1	"!
+0	Ky&|	!	6	'	(	)	*	,	-	r10	s
+1	Ky&|	!	6	'	(	)	*	,	-	r11	t
+2	Ky&|	!	6	'	(	)	*	,	-	r12	u
+3	Ky&|	!	6	'	(	)	*	,	-	r13	q
+4	Ky&|	!	6	'	(	)	*	,	-	r14	r
+5	Ky&|	!	6	'	(	)	*	,	-	r15	o
+6	Ky&|	!	4	'	(	,	-	r2	|
+7	Ky&|	!	4	'	(	,	-	r3	}
+8	Ky&|	!	5	'	(	)	,	-	r4	y
+9	Ky&|	!	5	'	(	)	,	-	r5	z
+:	Ky&|	!	5	'	(	)	,	-	r6	{
+;	Ky&|	!	5	'	(	)	,	-	r7	v
+<	Ky&|	!	6	'	(	)	*	,	-	r8	w
+=	Ky&|	!	6	'	(	)	*	,	-	r9	x
+>	IGdW	@	:10	#*
+?	IGdW	@	:11	#-
+@	IGdW	@	:12	#.
+A	IGdW	@	:13	#,
+B	IGdW	@	:14	#+
+C	IGdW	@	:15	#4
+D	IGdW	@	:17	#5
+E	IGdW	@	:18	#7
+F	IGdW	@	:19	#8
+G	IGdW	@	:20	#6
+H	IVOQ	@	U	:21	#1
+I	IVOQ	@	V	:22	#/
+J	IVOQ	@	W	:23	#0
+K	IVOQ	@	Y	:24	#3
+L	IVOQ	@	X	:25	#2
+M	IGdW	@	:26	#9
+N	IGdW	@	:27	#@
+O	IGdW	@	:31	#?
+P	IGdW	@	:32	#>
+Q	IGdW	@	:34	#=
+R	IGdW	@	:35	#<
+S	IGdW	@	:37	#;
+T	IGdW	@	:38	#:
+U	INu}	@	H	a0	#1
+V	INu}	@	I	a1	#/
+W	INu}	@	J	a2	#0
+X	INu}	@	L	EO	#2
+Y	INu}	@	K	G	#3
+Z	IGdW	.	:10	"^
+[	IGdW	.	:11	"a
+\	IGdW	.	:12	"b
+]	IGdW	.	:13	"`
+^	IGdW	.	:14	"_
+_	IGdW	.	:15	"h
+`	IGdW	.	:17	"i
+a	IGdW	.	:18	"k
+b	IGdW	.	:19	"l
+c	IGdW	.	:20	"j
+d	IVOQ	.	q	:21	"e
+e	IVOQ	.	r	:22	"c
+f	IVOQ	.	s	:23	"d
+g	IVOQ	.	u	:24	"g
+h	IVOQ	.	t	:25	"f
+i	IGdW	.	:26	"m
+j	IGdW	.	:27	"t
+k	IGdW	.	:31	"s
+l	IGdW	.	:32	"r
+m	IGdW	.	:34	"q
+n	IGdW	.	:35	"p
+o	IGdW	.	:37	"o
+p	IGdW	.	:38	"n
+q	INu}	.	d	a0	"e
+r	INu}	.	e	a1	"c
+s	INu}	.	f	a2	"d
+t	INu}	.	h	EO	"f
+u	INu}	.	g	G	"g

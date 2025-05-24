@@ -1,0 +1,19 @@
+|dmx_vhdl
+x[0] => Mux~0.IN4
+x[0] => Mux~1.IN4
+x[0] => Mux~2.IN4
+x[0] => Mux~3.IN4
+x[1] => Mux~0.IN3
+x[1] => Mux~1.IN3
+x[1] => Mux~2.IN3
+x[1] => Mux~3.IN3
+e => Mux~0.IN5
+e => Mux~1.IN5
+e => Mux~2.IN5
+e => Mux~3.IN5
+f[0] <= Mux~3.DB_MAX_OUTPUT_PORT_TYPE
+f[1] <= Mux~2.DB_MAX_OUTPUT_PORT_TYPE
+f[2] <= Mux~1.DB_MAX_OUTPUT_PORT_TYPE
+f[3] <= Mux~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

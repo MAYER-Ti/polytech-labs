@@ -1,0 +1,1317 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L161Q is done_out~reg0 at LC_X17_Y28_N9
+--operation mode is normal
+
+A1L161Q_lut_out = current_state.idle & (current_state.done # A1L161Q) # !current_state.idle & (A1L161Q & !start);
+A1L161Q = DFFEAS(A1L161Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--A1L54Q is data_out0[0]~reg0 at LC_X19_Y27_N2
+--operation mode is normal
+
+A1L54Q_lut_out = data_reg[0][0];
+A1L54Q = DFFEAS(A1L54Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L74Q is data_out0[1]~reg0 at LC_X17_Y28_N6
+--operation mode is normal
+
+A1L74Q_lut_out = GND;
+A1L74Q = DFFEAS(A1L74Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[0][1], , , VCC);
+
+
+--A1L94Q is data_out0[2]~reg0 at LC_X17_Y28_N7
+--operation mode is normal
+
+A1L94Q_lut_out = GND;
+A1L94Q = DFFEAS(A1L94Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[0][2], , , VCC);
+
+
+--A1L15Q is data_out0[3]~reg0 at LC_X17_Y28_N4
+--operation mode is normal
+
+A1L15Q_lut_out = GND;
+A1L15Q = DFFEAS(A1L15Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[0][3], , , VCC);
+
+
+--A1L35Q is data_out0[4]~reg0 at LC_X17_Y28_N8
+--operation mode is normal
+
+A1L35Q_lut_out = GND;
+A1L35Q = DFFEAS(A1L35Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[0][4], , , VCC);
+
+
+--A1L55Q is data_out0[5]~reg0 at LC_X19_Y27_N8
+--operation mode is normal
+
+A1L55Q_lut_out = GND;
+A1L55Q = DFFEAS(A1L55Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[0][5], , , VCC);
+
+
+--A1L75Q is data_out0[6]~reg0 at LC_X17_Y28_N0
+--operation mode is normal
+
+A1L75Q_lut_out = GND;
+A1L75Q = DFFEAS(A1L75Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[0][6], , , VCC);
+
+
+--A1L95Q is data_out0[7]~reg0 at LC_X17_Y28_N2
+--operation mode is normal
+
+A1L95Q_lut_out = data_reg[0][7];
+A1L95Q = DFFEAS(A1L95Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L26Q is data_out1[0]~reg0 at LC_X19_Y27_N0
+--operation mode is normal
+
+A1L26Q_lut_out = GND;
+A1L26Q = DFFEAS(A1L26Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[1][0], , , VCC);
+
+
+--A1L46Q is data_out1[1]~reg0 at LC_X17_Y28_N3
+--operation mode is normal
+
+A1L46Q_lut_out = data_reg[1][1];
+A1L46Q = DFFEAS(A1L46Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L66Q is data_out1[2]~reg0 at LC_X17_Y28_N1
+--operation mode is normal
+
+A1L66Q_lut_out = data_reg[1][2];
+A1L66Q = DFFEAS(A1L66Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L86Q is data_out1[3]~reg0 at LC_X17_Y29_N5
+--operation mode is normal
+
+A1L86Q_lut_out = data_reg[1][3];
+A1L86Q = DFFEAS(A1L86Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L07Q is data_out1[4]~reg0 at LC_X17_Y29_N9
+--operation mode is normal
+
+A1L07Q_lut_out = GND;
+A1L07Q = DFFEAS(A1L07Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[1][4], , , VCC);
+
+
+--A1L27Q is data_out1[5]~reg0 at LC_X17_Y27_N4
+--operation mode is normal
+
+A1L27Q_lut_out = data_reg[1][5];
+A1L27Q = DFFEAS(A1L27Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L47Q is data_out1[6]~reg0 at LC_X17_Y29_N6
+--operation mode is normal
+
+A1L47Q_lut_out = data_reg[1][6];
+A1L47Q = DFFEAS(A1L47Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L67Q is data_out1[7]~reg0 at LC_X17_Y29_N4
+--operation mode is normal
+
+A1L67Q_lut_out = data_reg[1][7];
+A1L67Q = DFFEAS(A1L67Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L97Q is data_out2[0]~reg0 at LC_X18_Y24_N5
+--operation mode is normal
+
+A1L97Q_lut_out = data_reg[2][0];
+A1L97Q = DFFEAS(A1L97Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L18Q is data_out2[1]~reg0 at LC_X18_Y24_N6
+--operation mode is normal
+
+A1L18Q_lut_out = data_reg[2][1];
+A1L18Q = DFFEAS(A1L18Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L38Q is data_out2[2]~reg0 at LC_X18_Y24_N2
+--operation mode is normal
+
+A1L38Q_lut_out = data_reg[2][2];
+A1L38Q = DFFEAS(A1L38Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L58Q is data_out2[3]~reg0 at LC_X18_Y24_N1
+--operation mode is normal
+
+A1L58Q_lut_out = data_reg[2][3];
+A1L58Q = DFFEAS(A1L58Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L78Q is data_out2[4]~reg0 at LC_X19_Y27_N4
+--operation mode is normal
+
+A1L78Q_lut_out = GND;
+A1L78Q = DFFEAS(A1L78Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[2][4], , , VCC);
+
+
+--A1L98Q is data_out2[5]~reg0 at LC_X19_Y27_N6
+--operation mode is normal
+
+A1L98Q_lut_out = GND;
+A1L98Q = DFFEAS(A1L98Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[2][5], , , VCC);
+
+
+--A1L19Q is data_out2[6]~reg0 at LC_X17_Y27_N5
+--operation mode is normal
+
+A1L19Q_lut_out = data_reg[2][6];
+A1L19Q = DFFEAS(A1L19Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L39Q is data_out2[7]~reg0 at LC_X17_Y29_N2
+--operation mode is normal
+
+A1L39Q_lut_out = GND;
+A1L39Q = DFFEAS(A1L39Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[2][7], , , VCC);
+
+
+--A1L69Q is data_out3[0]~reg0 at LC_X17_Y24_N6
+--operation mode is normal
+
+A1L69Q_lut_out = GND;
+A1L69Q = DFFEAS(A1L69Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[3][0], , , VCC);
+
+
+--A1L89Q is data_out3[1]~reg0 at LC_X17_Y24_N8
+--operation mode is normal
+
+A1L89Q_lut_out = GND;
+A1L89Q = DFFEAS(A1L89Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[3][1], , , VCC);
+
+
+--A1L001Q is data_out3[2]~reg0 at LC_X17_Y24_N9
+--operation mode is normal
+
+A1L001Q_lut_out = data_reg[3][2];
+A1L001Q = DFFEAS(A1L001Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L201Q is data_out3[3]~reg0 at LC_X17_Y24_N2
+--operation mode is normal
+
+A1L201Q_lut_out = GND;
+A1L201Q = DFFEAS(A1L201Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[3][3], , , VCC);
+
+
+--A1L401Q is data_out3[4]~reg0 at LC_X17_Y27_N0
+--operation mode is normal
+
+A1L401Q_lut_out = GND;
+A1L401Q = DFFEAS(A1L401Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[3][4], , , VCC);
+
+
+--A1L601Q is data_out3[5]~reg0 at LC_X17_Y27_N1
+--operation mode is normal
+
+A1L601Q_lut_out = data_reg[3][5];
+A1L601Q = DFFEAS(A1L601Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L801Q is data_out3[6]~reg0 at LC_X17_Y27_N7
+--operation mode is normal
+
+A1L801Q_lut_out = data_reg[3][6];
+A1L801Q = DFFEAS(A1L801Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, , , , );
+
+
+--A1L011Q is data_out3[7]~reg0 at LC_X17_Y29_N8
+--operation mode is normal
+
+A1L011Q_lut_out = GND;
+A1L011Q = DFFEAS(A1L011Q_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.done, data_reg[3][7], , , VCC);
+
+
+--current_state.idle is current_state.idle at LC_X17_Y28_N5
+--operation mode is normal
+
+current_state.idle_lut_out = !current_state.done & (current_state.idle # start);
+current_state.idle = DFFEAS(current_state.idle_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--current_state.done is current_state.done at LC_X18_Y27_N2
+--operation mode is normal
+
+current_state.done_lut_out = i[0] & i[1] & A1L822;
+current_state.done = DFFEAS(current_state.done_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--A1L311 is data_reg[0][0]~COMBOUT at LC_X18_Y25_N8
+--operation mode is normal
+
+A1L311 = A1L622 & A1L112 # !A1L622 & (key[0]);
+
+--data_reg[0][0] is data_reg[0][0] at LC_X18_Y25_N8
+--operation mode is normal
+
+data_reg[0][0] = DFFEAS(A1L311, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[0], , , !current_state.sort_inner);
+
+
+--A1L511 is data_reg[0][1]~COMBOUT at LC_X18_Y26_N9
+--operation mode is normal
+
+A1L511 = A1L622 & A1L312 # !A1L622 & (key[1]);
+
+--data_reg[0][1] is data_reg[0][1] at LC_X18_Y26_N9
+--operation mode is normal
+
+data_reg[0][1] = DFFEAS(A1L511, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[1], , , !current_state.sort_inner);
+
+
+--A1L711 is data_reg[0][2]~COMBOUT at LC_X18_Y25_N9
+--operation mode is normal
+
+A1L711 = A1L622 & (A1L512) # !A1L622 & key[2];
+
+--data_reg[0][2] is data_reg[0][2] at LC_X18_Y25_N9
+--operation mode is normal
+
+data_reg[0][2] = DFFEAS(A1L711, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[2], , , !current_state.sort_inner);
+
+
+--A1L911 is data_reg[0][3]~COMBOUT at LC_X18_Y26_N8
+--operation mode is normal
+
+A1L911 = A1L622 & A1L712 # !A1L622 & (key[3]);
+
+--data_reg[0][3] is data_reg[0][3] at LC_X18_Y26_N8
+--operation mode is normal
+
+data_reg[0][3] = DFFEAS(A1L911, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[3], , , !current_state.sort_inner);
+
+
+--A1L321 is data_reg[0][4]~COMBOUT at LC_X18_Y26_N7
+--operation mode is normal
+
+A1L321 = A1L622 & A1L912 # !A1L622 & (key[4]);
+
+--data_reg[0][4] is data_reg[0][4] at LC_X18_Y26_N7
+--operation mode is normal
+
+data_reg[0][4] = DFFEAS(A1L321, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[4], , , !current_state.sort_inner);
+
+
+--A1L521 is data_reg[0][5]~COMBOUT at LC_X18_Y26_N4
+--operation mode is normal
+
+A1L521 = A1L622 & (A1L122) # !A1L622 & key[5];
+
+--data_reg[0][5] is data_reg[0][5] at LC_X18_Y26_N4
+--operation mode is normal
+
+data_reg[0][5] = DFFEAS(A1L521, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[5], , , !current_state.sort_inner);
+
+
+--A1L721 is data_reg[0][6]~COMBOUT at LC_X18_Y26_N6
+--operation mode is normal
+
+A1L721 = A1L622 & A1L322 # !A1L622 & (key[6]);
+
+--data_reg[0][6] is data_reg[0][6] at LC_X18_Y26_N6
+--operation mode is normal
+
+data_reg[0][6] = DFFEAS(A1L721, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[6], , , !current_state.sort_inner);
+
+
+--A1L921 is data_reg[0][7]~COMBOUT at LC_X18_Y26_N5
+--operation mode is normal
+
+A1L921 = A1L622 & (A1L522) # !A1L622 & key[7];
+
+--data_reg[0][7] is data_reg[0][7] at LC_X18_Y26_N5
+--operation mode is normal
+
+data_reg[0][7] = DFFEAS(A1L921, GLOBAL(clk), !GLOBAL(reset), , A1L121, data_in0[7], , , !current_state.sort_inner);
+
+
+--data_reg[1][0] is data_reg[1][0] at LC_X19_Y25_N7
+--operation mode is normal
+
+data_reg[1][0]_lut_out = current_state.sort_inner & (A1L311) # !current_state.sort_inner & (data_in1[0]);
+data_reg[1][0] = DFFEAS(data_reg[1][0]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[1][1] is data_reg[1][1] at LC_X17_Y25_N7
+--operation mode is normal
+
+data_reg[1][1]_lut_out = current_state.sort_inner & (A1L511) # !current_state.sort_inner & data_in1[1];
+data_reg[1][1] = DFFEAS(data_reg[1][1]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[1][2] is data_reg[1][2] at LC_X17_Y25_N1
+--operation mode is normal
+
+data_reg[1][2]_lut_out = current_state.sort_inner & (A1L711) # !current_state.sort_inner & data_in1[2];
+data_reg[1][2] = DFFEAS(data_reg[1][2]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[1][3] is data_reg[1][3] at LC_X17_Y25_N9
+--operation mode is normal
+
+data_reg[1][3]_lut_out = current_state.sort_inner & (A1L911) # !current_state.sort_inner & data_in1[3];
+data_reg[1][3] = DFFEAS(data_reg[1][3]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[1][4] is data_reg[1][4] at LC_X19_Y26_N6
+--operation mode is normal
+
+data_reg[1][4]_lut_out = current_state.sort_inner & A1L321 # !current_state.sort_inner & (data_in1[4]);
+data_reg[1][4] = DFFEAS(data_reg[1][4]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[1][5] is data_reg[1][5] at LC_X19_Y26_N3
+--operation mode is normal
+
+data_reg[1][5]_lut_out = current_state.sort_inner & (A1L521) # !current_state.sort_inner & data_in1[5];
+data_reg[1][5] = DFFEAS(data_reg[1][5]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[1][6] is data_reg[1][6] at LC_X17_Y26_N9
+--operation mode is normal
+
+data_reg[1][6]_lut_out = current_state.sort_inner & (A1L721) # !current_state.sort_inner & data_in1[6];
+data_reg[1][6] = DFFEAS(data_reg[1][6]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[1][7] is data_reg[1][7] at LC_X17_Y26_N5
+--operation mode is normal
+
+data_reg[1][7]_lut_out = current_state.sort_inner & (A1L921) # !current_state.sort_inner & data_in1[7];
+data_reg[1][7] = DFFEAS(data_reg[1][7]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L431, , , , );
+
+
+--data_reg[2][0] is data_reg[2][0] at LC_X18_Y24_N8
+--operation mode is normal
+
+data_reg[2][0]_lut_out = current_state.sort_inner & (A1L311) # !current_state.sort_inner & data_in2[0];
+data_reg[2][0] = DFFEAS(data_reg[2][0]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[2][1] is data_reg[2][1] at LC_X18_Y24_N9
+--operation mode is normal
+
+data_reg[2][1]_lut_out = current_state.sort_inner & A1L511 # !current_state.sort_inner & (data_in2[1]);
+data_reg[2][1] = DFFEAS(data_reg[2][1]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[2][2] is data_reg[2][2] at LC_X18_Y24_N4
+--operation mode is normal
+
+data_reg[2][2]_lut_out = current_state.sort_inner & (A1L711) # !current_state.sort_inner & data_in2[2];
+data_reg[2][2] = DFFEAS(data_reg[2][2]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[2][3] is data_reg[2][3] at LC_X18_Y24_N0
+--operation mode is normal
+
+data_reg[2][3]_lut_out = current_state.sort_inner & (A1L911) # !current_state.sort_inner & data_in2[3];
+data_reg[2][3] = DFFEAS(data_reg[2][3]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[2][4] is data_reg[2][4] at LC_X19_Y27_N1
+--operation mode is normal
+
+data_reg[2][4]_lut_out = current_state.sort_inner & (A1L321) # !current_state.sort_inner & data_in2[4];
+data_reg[2][4] = DFFEAS(data_reg[2][4]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[2][5] is data_reg[2][5] at LC_X19_Y27_N7
+--operation mode is normal
+
+data_reg[2][5]_lut_out = current_state.sort_inner & A1L521 # !current_state.sort_inner & (data_in2[5]);
+data_reg[2][5] = DFFEAS(data_reg[2][5]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[2][6] is data_reg[2][6] at LC_X17_Y26_N3
+--operation mode is normal
+
+data_reg[2][6]_lut_out = current_state.sort_inner & (A1L721) # !current_state.sort_inner & data_in2[6];
+data_reg[2][6] = DFFEAS(data_reg[2][6]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[2][7] is data_reg[2][7] at LC_X17_Y26_N8
+--operation mode is normal
+
+data_reg[2][7]_lut_out = current_state.sort_inner & (A1L921) # !current_state.sort_inner & data_in2[7];
+data_reg[2][7] = DFFEAS(data_reg[2][7]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L941, , , , );
+
+
+--data_reg[3][0] is data_reg[3][0] at LC_X17_Y24_N1
+--operation mode is normal
+
+data_reg[3][0]_lut_out = current_state.sort_inner & (A1L311) # !current_state.sort_inner & data_in3[0];
+data_reg[3][0] = DFFEAS(data_reg[3][0]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--data_reg[3][1] is data_reg[3][1] at LC_X17_Y24_N3
+--operation mode is normal
+
+data_reg[3][1]_lut_out = current_state.sort_inner & A1L511 # !current_state.sort_inner & (data_in3[1]);
+data_reg[3][1] = DFFEAS(data_reg[3][1]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--data_reg[3][2] is data_reg[3][2] at LC_X17_Y24_N0
+--operation mode is normal
+
+data_reg[3][2]_lut_out = current_state.sort_inner & (A1L711) # !current_state.sort_inner & data_in3[2];
+data_reg[3][2] = DFFEAS(data_reg[3][2]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--data_reg[3][3] is data_reg[3][3] at LC_X17_Y24_N5
+--operation mode is normal
+
+data_reg[3][3]_lut_out = current_state.sort_inner & A1L911 # !current_state.sort_inner & (data_in3[3]);
+data_reg[3][3] = DFFEAS(data_reg[3][3]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--data_reg[3][4] is data_reg[3][4] at LC_X19_Y26_N2
+--operation mode is normal
+
+data_reg[3][4]_lut_out = current_state.sort_inner & A1L321 # !current_state.sort_inner & (data_in3[4]);
+data_reg[3][4] = DFFEAS(data_reg[3][4]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--data_reg[3][5] is data_reg[3][5] at LC_X19_Y26_N0
+--operation mode is normal
+
+data_reg[3][5]_lut_out = current_state.sort_inner & (A1L521) # !current_state.sort_inner & data_in3[5];
+data_reg[3][5] = DFFEAS(data_reg[3][5]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--data_reg[3][6] is data_reg[3][6] at LC_X17_Y24_N4
+--operation mode is normal
+
+data_reg[3][6]_lut_out = current_state.sort_inner & (A1L721) # !current_state.sort_inner & data_in3[6];
+data_reg[3][6] = DFFEAS(data_reg[3][6]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--data_reg[3][7] is data_reg[3][7] at LC_X17_Y24_N7
+--operation mode is normal
+
+data_reg[3][7]_lut_out = current_state.sort_inner & (A1L921) # !current_state.sort_inner & data_in3[7];
+data_reg[3][7] = DFFEAS(data_reg[3][7]_lut_out, GLOBAL(clk), !GLOBAL(reset), , A1L751, , , , );
+
+
+--i[1] is i[1] at LC_X18_Y27_N6
+--operation mode is normal
+
+i[1]_lut_out = i[0] & (A1L822 # i[1] & !A1L221) # !i[0] & i[1] & (!A1L221);
+i[1] = DFFEAS(i[1]_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--i[0] is i[0] at LC_X18_Y27_N7
+--operation mode is normal
+
+i[0]_lut_out = A1L221 # i[0] & (i[1] # !A1L822) # !i[0] & (A1L822);
+i[0] = DFFEAS(i[0]_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--current_state.sort_inner is current_state.sort_inner at LC_X17_Y25_N2
+--operation mode is normal
+
+current_state.sort_inner_lut_out = current_state.sort_outer # current_state.sort_inner & A1L622;
+current_state.sort_inner = DFFEAS(current_state.sort_inner_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--j[1] is j[1] at LC_X19_Y25_N0
+--operation mode is normal
+
+j[1]_lut_out = A1L761 & (A1L961 $ (current_state.sort_outer # !j[1])) # !A1L761 & (j[1]);
+j[1] = DFFEAS(j[1]_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--j[0] is j[0] at LC_X19_Y25_N1
+--operation mode is normal
+
+j[0]_lut_out = A1L761 & (current_state.sort_outer & !i[0] # !current_state.sort_outer & (!j[0])) # !A1L761 & (j[0]);
+j[0] = DFFEAS(j[0]_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--A1L781 is LessThan~105 at LC_X18_Y25_N7
+--operation mode is normal
+
+A1L781_carry_eqn = (!A1L591 & A1L981) # (A1L591 & A1L091);
+A1L781 = key[7] & A1L781_carry_eqn & A1L522 # !key[7] & (A1L781_carry_eqn # A1L522);
+
+
+--A1L822 is Select~1138 at LC_X19_Y26_N7
+--operation mode is normal
+
+A1L822 = current_state.sort_inner & (j[0] & j[1] # !A1L781);
+
+
+--key[0] is key[0] at LC_X17_Y27_N2
+--operation mode is normal
+
+key[0]_lut_out = i[1] & (A1L971 & (data_reg[3][0]) # !A1L971 & data_reg[2][0]) # !i[1] & (A1L971);
+key[0] = DFFEAS(key[0]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L012 is Mux~164 at LC_X19_Y25_N6
+--operation mode is normal
+
+A1L012 = j[0] & (data_reg[1][0] # j[1]) # !j[0] & data_reg[0][0] & (!j[1]);
+
+
+--A1L112 is Mux~165 at LC_X19_Y25_N4
+--operation mode is normal
+
+A1L112 = j[1] & (A1L012 & data_reg[3][0] # !A1L012 & (data_reg[2][0])) # !j[1] & (A1L012);
+
+
+--A1L622 is process0~18 at LC_X19_Y25_N9
+--operation mode is normal
+
+A1L622 = A1L781 & (!j[1] # !j[0]);
+
+
+--current_state.load is current_state.load at LC_X17_Y25_N0
+--operation mode is normal
+
+current_state.load_lut_out = !current_state.idle & (start);
+current_state.load = DFFEAS(current_state.load_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--A1L121 is data_reg[0][4]~477 at LC_X17_Y25_N3
+--operation mode is normal
+
+A1L121 = current_state.sort_inner & j[0] & j[1] # !current_state.sort_inner & (current_state.load);
+
+
+--key[1] is key[1] at LC_X18_Y27_N0
+--operation mode is normal
+
+key[1]_lut_out = i[1] & (A1L081 & data_reg[3][1] # !A1L081 & (data_reg[2][1])) # !i[1] & (A1L081);
+key[1] = DFFEAS(key[1]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L212 is Mux~166 at LC_X19_Y25_N2
+--operation mode is normal
+
+A1L212 = j[0] & (data_reg[1][1] # j[1]) # !j[0] & data_reg[0][1] & (!j[1]);
+
+
+--A1L312 is Mux~167 at LC_X19_Y25_N3
+--operation mode is normal
+
+A1L312 = j[1] & (A1L212 & (data_reg[3][1]) # !A1L212 & data_reg[2][1]) # !j[1] & (A1L212);
+
+
+--key[2] is key[2] at LC_X18_Y27_N5
+--operation mode is normal
+
+key[2]_lut_out = i[1] & (A1L181 & data_reg[3][2] # !A1L181 & (data_reg[2][2])) # !i[1] & (A1L181);
+key[2] = DFFEAS(key[2]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L412 is Mux~168 at LC_X19_Y25_N5
+--operation mode is normal
+
+A1L412 = j[0] & (data_reg[1][2] # j[1]) # !j[0] & (data_reg[0][2] & !j[1]);
+
+
+--A1L512 is Mux~169 at LC_X18_Y24_N7
+--operation mode is normal
+
+A1L512 = j[1] & (A1L412 & (data_reg[3][2]) # !A1L412 & data_reg[2][2]) # !j[1] & (A1L412);
+
+
+--key[3] is key[3] at LC_X18_Y27_N9
+--operation mode is normal
+
+key[3]_lut_out = i[0] & (A1L281 & (data_reg[3][3]) # !A1L281 & data_reg[1][3]) # !i[0] & A1L281;
+key[3] = DFFEAS(key[3]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L612 is Mux~170 at LC_X17_Y25_N4
+--operation mode is normal
+
+A1L612 = j[0] & (data_reg[1][3] # j[1]) # !j[0] & (data_reg[0][3] & !j[1]);
+
+
+--A1L712 is Mux~171 at LC_X18_Y24_N3
+--operation mode is normal
+
+A1L712 = j[1] & (A1L612 & data_reg[3][3] # !A1L612 & (data_reg[2][3])) # !j[1] & (A1L612);
+
+
+--key[4] is key[4] at LC_X17_Y27_N9
+--operation mode is normal
+
+key[4]_lut_out = i[1] & (A1L381 & data_reg[3][4] # !A1L381 & (data_reg[2][4])) # !i[1] & (A1L381);
+key[4] = DFFEAS(key[4]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L812 is Mux~172 at LC_X19_Y26_N1
+--operation mode is normal
+
+A1L812 = j[0] & (data_reg[1][4] # j[1]) # !j[0] & (data_reg[0][4] & !j[1]);
+
+
+--A1L912 is Mux~173 at LC_X19_Y26_N4
+--operation mode is normal
+
+A1L912 = A1L812 & (data_reg[3][4] # !j[1]) # !A1L812 & (data_reg[2][4] & j[1]);
+
+
+--key[5] is key[5] at LC_X17_Y27_N3
+--operation mode is normal
+
+key[5]_lut_out = i[0] & (A1L481 & (data_reg[3][5]) # !A1L481 & data_reg[1][5]) # !i[0] & (A1L481);
+key[5] = DFFEAS(key[5]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L022 is Mux~174 at LC_X19_Y26_N9
+--operation mode is normal
+
+A1L022 = j[0] & (j[1]) # !j[0] & (j[1] & (data_reg[2][5]) # !j[1] & data_reg[0][5]);
+
+
+--A1L122 is Mux~175 at LC_X19_Y26_N8
+--operation mode is normal
+
+A1L122 = j[0] & (A1L022 & data_reg[3][5] # !A1L022 & (data_reg[1][5])) # !j[0] & (A1L022);
+
+
+--key[6] is key[6] at LC_X17_Y27_N8
+--operation mode is normal
+
+key[6]_lut_out = i[1] & (A1L581 & data_reg[3][6] # !A1L581 & (data_reg[2][6])) # !i[1] & (A1L581);
+key[6] = DFFEAS(key[6]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L222 is Mux~176 at LC_X17_Y26_N0
+--operation mode is normal
+
+A1L222 = j[1] & j[0] # !j[1] & (j[0] & (data_reg[1][6]) # !j[0] & data_reg[0][6]);
+
+
+--A1L322 is Mux~177 at LC_X17_Y26_N1
+--operation mode is normal
+
+A1L322 = j[1] & (A1L222 & data_reg[3][6] # !A1L222 & (data_reg[2][6])) # !j[1] & (A1L222);
+
+
+--key[7] is key[7] at LC_X17_Y27_N6
+--operation mode is normal
+
+key[7]_lut_out = i[0] & (A1L681 & (data_reg[3][7]) # !A1L681 & data_reg[1][7]) # !i[0] & (A1L681);
+key[7] = DFFEAS(key[7]_lut_out, GLOBAL(clk), !GLOBAL(reset), , current_state.sort_outer, , , , );
+
+
+--A1L422 is Mux~178 at LC_X17_Y26_N2
+--operation mode is normal
+
+A1L422 = j[0] & (j[1]) # !j[0] & (j[1] & data_reg[2][7] # !j[1] & (data_reg[0][7]));
+
+
+--A1L522 is Mux~179 at LC_X17_Y26_N6
+--operation mode is normal
+
+A1L522 = j[0] & (A1L422 & data_reg[3][7] # !A1L422 & (data_reg[1][7])) # !j[0] & (A1L422);
+
+
+--A1L431 is data_reg[1][2]~478 at LC_X17_Y25_N5
+--operation mode is normal
+
+A1L431 = current_state.sort_inner & !j[0] & !j[1] # !current_state.sort_inner & (current_state.load);
+
+
+--A1L941 is data_reg[2][7]~479 at LC_X17_Y25_N8
+--operation mode is normal
+
+A1L941 = current_state.sort_inner & j[0] & !j[1] # !current_state.sort_inner & (current_state.load);
+
+
+--A1L751 is data_reg[3][5]~480 at LC_X17_Y25_N6
+--operation mode is normal
+
+A1L751 = current_state.sort_inner & !j[0] & j[1] # !current_state.sort_inner & (current_state.load);
+
+
+--A1L221 is data_reg[0][4]~481 at LC_X18_Y26_N2
+--operation mode is normal
+
+A1L221 = !current_state.sort_inner & current_state.load;
+
+
+--current_state.sort_outer is current_state.sort_outer at LC_X18_Y27_N3
+--operation mode is normal
+
+current_state.sort_outer_lut_out = current_state.load # A1L822 & (!i[1] # !i[0]);
+current_state.sort_outer = DFFEAS(current_state.sort_outer_lut_out, GLOBAL(clk), !GLOBAL(reset), , , , , , );
+
+
+--A1L761 is j[0]~575 at LC_X19_Y25_N8
+--operation mode is normal
+
+A1L761 = current_state.sort_inner & (A1L622) # !current_state.sort_inner & (current_state.sort_outer);
+
+
+--A1L961 is j[1]~576 at LC_X19_Y27_N9
+--operation mode is normal
+
+A1L961 = current_state.sort_outer & (i[1] $ i[0]) # !current_state.sort_outer & j[0];
+
+
+--A1L981 is LessThan~112 at LC_X18_Y25_N6
+--operation mode is arithmetic
+
+A1L981_cout_0 = A1L322 & (!A1L291 # !key[6]) # !A1L322 & !key[6] & !A1L291;
+A1L981 = CARRY(A1L981_cout_0);
+
+--A1L091 is LessThan~112COUT1_150 at LC_X18_Y25_N6
+--operation mode is arithmetic
+
+A1L091_cout_1 = A1L322 & (!A1L391 # !key[6]) # !A1L322 & !key[6] & !A1L391;
+A1L091 = CARRY(A1L091_cout_1);
+
+
+--A1L971 is key~109 at LC_X19_Y27_N3
+--operation mode is normal
+
+A1L971 = i[1] & (i[0]) # !i[1] & (i[0] & (data_reg[1][0]) # !i[0] & data_reg[0][0]);
+
+
+--A1L081 is key~111 at LC_X18_Y27_N8
+--operation mode is normal
+
+A1L081 = i[1] & (i[0]) # !i[1] & (i[0] & data_reg[1][1] # !i[0] & (data_reg[0][1]));
+
+
+--A1L181 is key~113 at LC_X18_Y27_N4
+--operation mode is normal
+
+A1L181 = i[0] & (data_reg[1][2] # i[1]) # !i[0] & (data_reg[0][2] & !i[1]);
+
+
+--A1L281 is key~115 at LC_X18_Y27_N1
+--operation mode is normal
+
+A1L281 = i[0] & i[1] # !i[0] & (i[1] & (data_reg[2][3]) # !i[1] & data_reg[0][3]);
+
+
+--A1L381 is key~117 at LC_X19_Y26_N5
+--operation mode is normal
+
+A1L381 = i[1] & (i[0]) # !i[1] & (i[0] & (data_reg[1][4]) # !i[0] & data_reg[0][4]);
+
+
+--A1L481 is key~119 at LC_X19_Y27_N5
+--operation mode is normal
+
+A1L481 = i[1] & (data_reg[2][5] # i[0]) # !i[1] & data_reg[0][5] & (!i[0]);
+
+
+--A1L581 is key~121 at LC_X17_Y26_N4
+--operation mode is normal
+
+A1L581 = i[0] & (i[1] # data_reg[1][6]) # !i[0] & !i[1] & data_reg[0][6];
+
+
+--A1L681 is key~123 at LC_X17_Y26_N7
+--operation mode is normal
+
+A1L681 = i[0] & i[1] # !i[0] & (i[1] & (data_reg[2][7]) # !i[1] & data_reg[0][7]);
+
+
+--A1L291 is LessThan~117 at LC_X18_Y25_N5
+--operation mode is arithmetic
+
+A1L291_cout_0 = key[5] & (!A1L591 # !A1L122) # !key[5] & !A1L122 & !A1L591;
+A1L291 = CARRY(A1L291_cout_0);
+
+--A1L391 is LessThan~117COUT1_149 at LC_X18_Y25_N5
+--operation mode is arithmetic
+
+A1L391_cout_1 = key[5] & (!A1L591 # !A1L122) # !key[5] & !A1L122 & !A1L591;
+A1L391 = CARRY(A1L391_cout_1);
+
+
+--A1L591 is LessThan~122 at LC_X18_Y25_N4
+--operation mode is arithmetic
+
+A1L591 = A1L691;
+
+
+--A1L991 is LessThan~127 at LC_X18_Y25_N3
+--operation mode is arithmetic
+
+A1L991_cout_0 = key[3] & (!A1L202 # !A1L712) # !key[3] & !A1L712 & !A1L202;
+A1L991 = CARRY(A1L991_cout_0);
+
+--A1L002 is LessThan~127COUT1 at LC_X18_Y25_N3
+--operation mode is arithmetic
+
+A1L002_cout_1 = key[3] & (!A1L302 # !A1L712) # !key[3] & !A1L712 & !A1L302;
+A1L002 = CARRY(A1L002_cout_1);
+
+
+--A1L202 is LessThan~132 at LC_X18_Y25_N2
+--operation mode is arithmetic
+
+A1L202_cout_0 = key[2] & A1L512 & !A1L502 # !key[2] & (A1L512 # !A1L502);
+A1L202 = CARRY(A1L202_cout_0);
+
+--A1L302 is LessThan~132COUT1_148 at LC_X18_Y25_N2
+--operation mode is arithmetic
+
+A1L302_cout_1 = key[2] & A1L512 & !A1L602 # !key[2] & (A1L512 # !A1L602);
+A1L302 = CARRY(A1L302_cout_1);
+
+
+--A1L502 is LessThan~137 at LC_X18_Y25_N1
+--operation mode is arithmetic
+
+A1L502_cout_0 = A1L312 & key[1] & !A1L802 # !A1L312 & (key[1] # !A1L802);
+A1L502 = CARRY(A1L502_cout_0);
+
+--A1L602 is LessThan~137COUT1_147 at LC_X18_Y25_N1
+--operation mode is arithmetic
+
+A1L602_cout_1 = A1L312 & key[1] & !A1L902 # !A1L312 & (key[1] # !A1L902);
+A1L602 = CARRY(A1L602_cout_1);
+
+
+--A1L802 is LessThan~142 at LC_X18_Y25_N0
+--operation mode is arithmetic
+
+A1L802_cout_0 = A1L112 & !key[0];
+A1L802 = CARRY(A1L802_cout_0);
+
+--A1L902 is LessThan~142COUT1_146 at LC_X18_Y25_N0
+--operation mode is arithmetic
+
+A1L902_cout_1 = A1L112 & !key[0];
+A1L902 = CARRY(A1L902_cout_1);
+
+
+--start is start at PIN_F14
+--operation mode is input
+
+start = INPUT();
+
+
+--clk is clk at PIN_L2
+--operation mode is input
+
+clk = INPUT();
+
+
+--reset is reset at PIN_L3
+--operation mode is input
+
+reset = INPUT();
+
+
+--data_in0[0] is data_in0[0] at PIN_C14
+--operation mode is input
+
+data_in0[0] = INPUT();
+
+
+--data_in0[1] is data_in0[1] at PIN_K15
+--operation mode is input
+
+data_in0[1] = INPUT();
+
+
+--data_in0[2] is data_in0[2] at PIN_B17
+--operation mode is input
+
+data_in0[2] = INPUT();
+
+
+--data_in0[3] is data_in0[3] at PIN_D12
+--operation mode is input
+
+data_in0[3] = INPUT();
+
+
+--data_in0[4] is data_in0[4] at PIN_M15
+--operation mode is input
+
+data_in0[4] = INPUT();
+
+
+--data_in0[5] is data_in0[5] at PIN_D13
+--operation mode is input
+
+data_in0[5] = INPUT();
+
+
+--data_in0[6] is data_in0[6] at PIN_B14
+--operation mode is input
+
+data_in0[6] = INPUT();
+
+
+--data_in0[7] is data_in0[7] at PIN_D14
+--operation mode is input
+
+data_in0[7] = INPUT();
+
+
+--data_in1[0] is data_in1[0] at PIN_K10
+--operation mode is input
+
+data_in1[0] = INPUT();
+
+
+--data_in1[1] is data_in1[1] at PIN_C15
+--operation mode is input
+
+data_in1[1] = INPUT();
+
+
+--data_in1[2] is data_in1[2] at PIN_E17
+--operation mode is input
+
+data_in1[2] = INPUT();
+
+
+--data_in1[3] is data_in1[3] at PIN_A17
+--operation mode is input
+
+data_in1[3] = INPUT();
+
+
+--data_in1[4] is data_in1[4] at PIN_G9
+--operation mode is input
+
+data_in1[4] = INPUT();
+
+
+--data_in1[5] is data_in1[5] at PIN_B11
+--operation mode is input
+
+data_in1[5] = INPUT();
+
+
+--data_in1[6] is data_in1[6] at PIN_C18
+--operation mode is input
+
+data_in1[6] = INPUT();
+
+
+--data_in1[7] is data_in1[7] at PIN_E15
+--operation mode is input
+
+data_in1[7] = INPUT();
+
+
+--data_in2[0] is data_in2[0] at PIN_H19
+--operation mode is input
+
+data_in2[0] = INPUT();
+
+
+--data_in2[1] is data_in2[1] at PIN_K17
+--operation mode is input
+
+data_in2[1] = INPUT();
+
+
+--data_in2[2] is data_in2[2] at PIN_B12
+--operation mode is input
+
+data_in2[2] = INPUT();
+
+
+--data_in2[3] is data_in2[3] at PIN_J15
+--operation mode is input
+
+data_in2[3] = INPUT();
+
+
+--data_in2[4] is data_in2[4] at PIN_E13
+--operation mode is input
+
+data_in2[4] = INPUT();
+
+
+--data_in2[5] is data_in2[5] at PIN_K14
+--operation mode is input
+
+data_in2[5] = INPUT();
+
+
+--data_in2[6] is data_in2[6] at PIN_E16
+--operation mode is input
+
+data_in2[6] = INPUT();
+
+
+--data_in2[7] is data_in2[7] at PIN_B15
+--operation mode is input
+
+data_in2[7] = INPUT();
+
+
+--data_in3[0] is data_in3[0] at PIN_H20
+--operation mode is input
+
+data_in3[0] = INPUT();
+
+
+--data_in3[1] is data_in3[1] at PIN_F22
+--operation mode is input
+
+data_in3[1] = INPUT();
+
+
+--data_in3[2] is data_in3[2] at PIN_G18
+--operation mode is input
+
+data_in3[2] = INPUT();
+
+
+--data_in3[3] is data_in3[3] at PIN_J19
+--operation mode is input
+
+data_in3[3] = INPUT();
+
+
+--data_in3[4] is data_in3[4] at PIN_L15
+--operation mode is input
+
+data_in3[4] = INPUT();
+
+
+--data_in3[5] is data_in3[5] at PIN_A11
+--operation mode is input
+
+data_in3[5] = INPUT();
+
+
+--data_in3[6] is data_in3[6] at PIN_J16
+--operation mode is input
+
+data_in3[6] = INPUT();
+
+
+--data_in3[7] is data_in3[7] at PIN_F21
+--operation mode is input
+
+data_in3[7] = INPUT();
+
+
+--done_out is done_out at PIN_C21
+--operation mode is output
+
+done_out = OUTPUT(A1L161Q);
+
+
+--data_out0[0] is data_out0[0] at PIN_H10
+--operation mode is output
+
+data_out0[0] = OUTPUT(A1L54Q);
+
+
+--data_out0[1] is data_out0[1] at PIN_G16
+--operation mode is output
+
+data_out0[1] = OUTPUT(A1L74Q);
+
+
+--data_out0[2] is data_out0[2] at PIN_C16
+--operation mode is output
+
+data_out0[2] = OUTPUT(A1L94Q);
+
+
+--data_out0[3] is data_out0[3] at PIN_D18
+--operation mode is output
+
+data_out0[3] = OUTPUT(A1L15Q);
+
+
+--data_out0[4] is data_out0[4] at PIN_F16
+--operation mode is output
+
+data_out0[4] = OUTPUT(A1L35Q);
+
+
+--data_out0[5] is data_out0[5] at PIN_C12
+--operation mode is output
+
+data_out0[5] = OUTPUT(A1L55Q);
+
+
+--data_out0[6] is data_out0[6] at PIN_A16
+--operation mode is output
+
+data_out0[6] = OUTPUT(A1L75Q);
+
+
+--data_out0[7] is data_out0[7] at PIN_B16
+--operation mode is output
+
+data_out0[7] = OUTPUT(A1L95Q);
+
+
+--data_out1[0] is data_out1[0] at PIN_A12
+--operation mode is output
+
+data_out1[0] = OUTPUT(A1L26Q);
+
+
+--data_out1[1] is data_out1[1] at PIN_C17
+--operation mode is output
+
+data_out1[1] = OUTPUT(A1L46Q);
+
+
+--data_out1[2] is data_out1[2] at PIN_D16
+--operation mode is output
+
+data_out1[2] = OUTPUT(A1L66Q);
+
+
+--data_out1[3] is data_out1[3] at PIN_D15
+--operation mode is output
+
+data_out1[3] = OUTPUT(A1L86Q);
+
+
+--data_out1[4] is data_out1[4] at PIN_E14
+--operation mode is output
+
+data_out1[4] = OUTPUT(A1L07Q);
+
+
+--data_out1[5] is data_out1[5] at PIN_J17
+--operation mode is output
+
+data_out1[5] = OUTPUT(A1L27Q);
+
+
+--data_out1[6] is data_out1[6] at PIN_E22
+--operation mode is output
+
+data_out1[6] = OUTPUT(A1L47Q);
+
+
+--data_out1[7] is data_out1[7] at PIN_E18
+--operation mode is output
+
+data_out1[7] = OUTPUT(A1L67Q);
+
+
+--data_out2[0] is data_out2[0] at PIN_B13
+--operation mode is output
+
+data_out2[0] = OUTPUT(A1L97Q);
+
+
+--data_out2[1] is data_out2[1] at PIN_G14
+--operation mode is output
+
+data_out2[1] = OUTPUT(A1L18Q);
+
+
+--data_out2[2] is data_out2[2] at PIN_C13
+--operation mode is output
+
+data_out2[2] = OUTPUT(A1L38Q);
+
+
+--data_out2[3] is data_out2[3] at PIN_A18
+--operation mode is output
+
+data_out2[3] = OUTPUT(A1L58Q);
+
+
+--data_out2[4] is data_out2[4] at PIN_A15
+--operation mode is output
+
+data_out2[4] = OUTPUT(A1L78Q);
+
+
+--data_out2[5] is data_out2[5] at PIN_K8
+--operation mode is output
+
+data_out2[5] = OUTPUT(A1L98Q);
+
+
+--data_out2[6] is data_out2[6] at PIN_L16
+--operation mode is output
+
+data_out2[6] = OUTPUT(A1L19Q);
+
+
+--data_out2[7] is data_out2[7] at PIN_F17
+--operation mode is output
+
+data_out2[7] = OUTPUT(A1L39Q);
+
+
+--data_out3[0] is data_out3[0] at PIN_D17
+--operation mode is output
+
+data_out3[0] = OUTPUT(A1L69Q);
+
+
+--data_out3[1] is data_out3[1] at PIN_H17
+--operation mode is output
+
+data_out3[1] = OUTPUT(A1L89Q);
+
+
+--data_out3[2] is data_out3[2] at PIN_G20
+--operation mode is output
+
+data_out3[2] = OUTPUT(A1L001Q);
+
+
+--data_out3[3] is data_out3[3] at PIN_L17
+--operation mode is output
+
+data_out3[3] = OUTPUT(A1L201Q);
+
+
+--data_out3[4] is data_out3[4] at PIN_G19
+--operation mode is output
+
+data_out3[4] = OUTPUT(A1L401Q);
+
+
+--data_out3[5] is data_out3[5] at PIN_F15
+--operation mode is output
+
+data_out3[5] = OUTPUT(A1L601Q);
+
+
+--data_out3[6] is data_out3[6] at PIN_B18
+--operation mode is output
+
+data_out3[6] = OUTPUT(A1L801Q);
+
+
+--data_out3[7] is data_out3[7] at PIN_K16
+--operation mode is output
+
+data_out3[7] = OUTPUT(A1L011Q);
+
+
+

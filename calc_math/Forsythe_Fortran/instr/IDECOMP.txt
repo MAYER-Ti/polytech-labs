@@ -1,0 +1,127 @@
+
+     PAÇÄEË:    ËÈHEÉHAß AËÃEÁPA
+
+     ÏPOÃPAMMA: DECOMP
+
+     HAÇHA×EHÈE:ÏOÄÏPOÃPAMMA BÛ×ÈCËßET PAÇËOÆEHÈE BEÙECTBEH-
+                HOÉ MATPÈÖÛ ÏOCPEÄCTBOM ÃAÓCCOBA ÈCKËÞ×EHÈß
+                È OÖEHÈBAET OÁÓCËOBËEHHOCTÜ  MATPÈÖÛ.
+
+1. OÏÈCAHÈE ÏOÄÏPOÃPAMMÛ È EE ÔOPMAËÜHÛX ÏAPAMETPOB
+
+      SUBROUTINE DECOMP (NDIM,N,A,COND,IPVT,WORK)
+C
+      INTEGER NDIM,N
+      INTEGER IPVT(N)
+      REAL A(NDIM,N),COND,WORK(N)
+C
+C  BXOÄHÛE ÏAPAMETPÛ
+C
+C     NDIM -×ÈCËO CTPOK B MACCÈBE A, COÄEPÆAÙEÃO MATPÈÖÓ A.
+C
+C     N    -ÏOPßÄOK MATPÈÖÛ.
+C
+C     A    -MATPÈÖA, KOTOPÓÞ HÓÆHO PAÇËOÆÈTÜ.
+C
+C  BÛXOÄHÛE ÏAPAMETPÛ
+C
+C     A     COÄEPÆÈT BEPXHÞÞ TPEÓÃOËÜHÓÞ MATPÈÖÓ U
+C           È Ó×ÈTÛBAÞÙÓÞ ÏEPECTAHOBKÈ BEPCÈÞ
+C           HÈÆHEÉ TPEÓÃOËÜHOÉ MATPÈÖÛ I-L,TAKÈE,
+C           ×TO (MATPÈÖA  ÏEPECTAHOBOK) *A=L*U
+C
+C     COND -COÄEPÆÈT OÖEHKÓ ×ÈCËA OÁÓCËOBËEHHOCTÈ MATPÈÖÛ A.
+C           ÄËß ËÈHEÉHOÉ CÈCTEMÛ A*X=B ÈÇMEHEHÈß B A È B
+C           MOÃÓT BÛÇBATÜ ÈÇMEHEHÈß B X,ÁOËÜØÈE B COND PAÇ.
+C           ECËÈ COND+1.0.EQ.COND, TO A B ÏPEÄEËAX MAØÈHHOÉ
+C           TO×HOCTÈ ßBËßETCß BÛPOÆÄEHHOÉ MATPÈÖEÉ.
+C           COND ÏOËAÃAETCß PABHÛM 1.0E+32,
+C           ECËÈ OÁHAPÓÆEHA TO×HAß BÛPOÆÄEHHOCTÜ.
+C
+C     IPVT -COÄEPÆÈT ÈHÔOPMAÖÈÞ O ÏEPECTAHOBKAX
+C           IPVT(K)=ÈHÄEKC K-É BEÄÓÙEÉ CTPOKÈ
+C           IPVT(N)=(-1)**(×ÈCËO ÏEPECTAHOBOK)
+C
+C  PAÁO×ÈE ÏAPAMETPÛ
+C
+C     WORK -PAÁO×ÈÉ BEKTOP. EÃO BÛXOÄHOE COÄEPÆAHÈE
+C           OÁÛ×HO HE ÄAET BAÆHOÉ ÈHÔOPMAÖÈÈ.
+C
+C  BHÓTPEHHÈE ÏOÄÏPOÃPAMMÛ
+C
+C     SOLVE
+C
+
+2. ÄËß TOÃO ×TOÁÛ HAÉTÈ PAÇËOÆEHÈE MATPÈÖÛ A
+   È OÖEHÈTÜ EE OÁÓCËOBËEHHOCTÜ HEOÁXOÄÈMO:
+
+   1. OÏÈCATÜ B BÛÇÛBAÞÙEÉ ÏPOÃPAMME BCE ÏEPEMEHHÛE
+        È MACCÈBÛ, ßBËßÞÙÈECß ÏAPAMETPAMÈ ÏOÄÏPOÃPAMMÛ
+
+   2. ÇAÄATÜ ÇHA×EHÈß BXOÄHÛX ÏAPAMETPOB:
+
+C     NDIM -×ÈCËO CTPOK B MACCÈBE A, COÄEPÆAÙEÃO MATPÈÖÓ A.
+C     N    -ÏOPßÄOK MATPÈÖÛ.
+C       A    -MATPÈÖÓ,KOTOPÓÞ HÓÆHO PAÇËOÆÈTÜ.
+
+   3. BÛÇBATÜ ÏOÄÏPOÃPAMMÓ DECOMP OÏEPATOPOM
+
+        CALL DECOMP(NDIM,N,A,COND,IPVT,WORK)
+
+3. ÏPÈMEP ÈCÏOËÜÇOBAHÈß ÏOÄÏPOÃPAMMÛ.
+
+C     ÈËËÞCTPÈPÓÞÙAß ÏOÄÏPOÃPAMMA ÄËß DECOMP
+C     B ÏPÈMEPE ÈÙETCß PAÇËOÆEHÈE MATPÈÖÛ A
+C     È OÖEHÈBAETCß EE OÁÓCËOBËEHHOCTÜ
+C
+      INTEGER NDIM/3/,N/3/,IPVT(3)
+      REAL A(3,3),WORK(3),COND
+      DATA A/10.,-3., 5.,
+     *       -7., 2.,-1.,
+     *        0., 6., 5./
+C
+      PRINT 101,((A(I,J),J=1,N),I=1,N)
+C
+      CALL DECOMP(NDIM,N,A,COND,IPVT,WORK)
+C
+      PRINT 102,COND
+      CONDP1=COND+1.0
+      IF(CONDP1.EQ.COND) PRINT 103
+      IF(CONDP1.EQ.COND) STOP
+C
+      STOP
+  101 FORMAT(13X,'A',3(/5X,3F5.0))
+  102 FORMAT(5X,'COND=',E12.5)
+  103 FORMAT(5X,'MATPÈÖA KËACCÈÔÈÖÈPÓETCß KAK BÛPOÆÄEHHAß')
+      END
+
+   B PEÇÓËÜTATE EE BÛÏOËHEHÈß ÁÓÄET ÏOËÓ×EHO
+
+             A
+       10.  -7.   0.
+       -3.   2.   6.
+        5.  -1.   5.
+     COND= 0.11207E+02
+
+4. ÇAME×AHÈß
+
+   1. PEÇÓËÜTATÛ ÏOËÓ×EHÛ HA EC-1045 (TPAHCËßTOP FORTOE)
+
+   2. OÏPEÄEËÈTEËÜ MATPÈÖÛ A MOÆET ÁÛTÜ ÏOËÓ×EH HA BÛXOÄE
+      ÏO ÔOPMÓËE:
+
+          DET(A)=IPVT(N)*A(1,1)*A(2,2)*...*A(N,N).
+
+   3. AHAËOÃ ÏOÄÏPOÃPAMMÛ DECOMP, HO C ÄBOÉHOÉ TO×HOCTÜÞ -
+      ÏOÄÏPOÃPAMMA DDECOM. ÏOCËEÄOBATEËÜHOCTÜ ÓKAÇAHÈß
+      ÏAPAMETPOB ÏPÈ BÛÇOBE ÏOÄÏPOÃAMMÛ DDECOM TA ÆE,
+      ×TO È Ó DECOMP, ÇA ÈCKËÞ×EHÈEM TOÃO, ×TO ÏEPEMEHHÛE
+      A, COND, WORK  ÈMEÞT TÈÏ DOUBLE PRECISION
+
+5. ËÈTEPATÓPA
+
+   1. ÔOPCAÉT ÄÆ.,MAËÜKOËÜM M., MOÓËEP K.
+      MAØÈHHÛE METOÄÛ MATEMATÈ×ECKÈX BÛ×ÈCËEHÈÉ.
+      M.: MÈP, 1980, C.43 - 77.
+
+

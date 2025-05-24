@@ -1,0 +1,69 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+dc_3in_8out
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dc_3in_8out.vhd
+1730478969
+4
+# storage
+db|dc_6in_64out.(1).cnf
+db|dc_6in_64out.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+dc_3in_8out:\gen_top_decoders:0:dec_top_inst
+dc_3in_8out:\gen_top_decoders:1:dec_top_inst
+dc_3in_8out:\gen_top_decoders:2:dec_top_inst
+dc_3in_8out:\gen_top_decoders:3:dec_top_inst
+dc_3in_8out:\gen_top_decoders:4:dec_top_inst
+dc_3in_8out:\gen_top_decoders:5:dec_top_inst
+dc_3in_8out:\gen_top_decoders:6:dec_top_inst
+dc_3in_8out:\gen_top_decoders:7:dec_top_inst
+}
+# end
+# entity
+dc_6in_64out
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dc_6in_64out.vhd
+1730828911
+4
+# storage
+db|dc_6in_64out.(0).cnf
+db|dc_6in_64out.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# complete
+

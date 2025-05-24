@@ -1,0 +1,94 @@
+|par_reg
+OUTRESULT[0] <= always0~7.DB_MAX_OUTPUT_PORT_TYPE
+OUTRESULT[1] <= always0~6.DB_MAX_OUTPUT_PORT_TYPE
+OUTRESULT[2] <= always0~5.DB_MAX_OUTPUT_PORT_TYPE
+OUTRESULT[3] <= always0~4.DB_MAX_OUTPUT_PORT_TYPE
+OUTRESULT[4] <= always0~3.DB_MAX_OUTPUT_PORT_TYPE
+OUTRESULT[5] <= always0~2.DB_MAX_OUTPUT_PORT_TYPE
+OUTRESULT[6] <= always0~1.DB_MAX_OUTPUT_PORT_TYPE
+OUTRESULT[7] <= always0~0.DB_MAX_OUTPUT_PORT_TYPE
+EWR => EWR~0.IN8
+CLOCK => CLOCK~0.IN8
+RESET => RESET~0.IN8
+DATA[0] => DATA[0]~7.IN1
+DATA[1] => DATA[1]~6.IN1
+DATA[2] => DATA[2]~5.IN1
+DATA[3] => DATA[3]~4.IN1
+DATA[4] => DATA[4]~3.IN1
+DATA[5] => DATA[5]~2.IN1
+DATA[6] => DATA[6]~1.IN1
+DATA[7] => DATA[7]~0.IN1
+EDY => always0~9.DATAIN
+EDY => always0~10.DATAIN
+EDY => always0~11.DATAIN
+EDY => always0~12.DATAIN
+EDY => always0~13.DATAIN
+EDY => always0~14.DATAIN
+EDY => always0~15.DATAIN
+EDY => always0~8.DATAIN
+
+
+|par_reg|DTrigger:dtrig_gen[0].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+
+|par_reg|DTrigger:dtrig_gen[1].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+
+|par_reg|DTrigger:dtrig_gen[2].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+
+|par_reg|DTrigger:dtrig_gen[3].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+
+|par_reg|DTrigger:dtrig_gen[4].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+
+|par_reg|DTrigger:dtrig_gen[5].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+
+|par_reg|DTrigger:dtrig_gen[6].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+
+|par_reg|DTrigger:dtrig_gen[7].Dtrig
+Result <= Result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data => Result~reg0.DATAIN
+Clock => Result~reg0.CLK
+Reset => Result~reg0.ACLR
+Ewr => Result~reg0.ENA
+
+

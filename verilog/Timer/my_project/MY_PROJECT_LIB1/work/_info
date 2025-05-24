@@ -1,0 +1,17 @@
+m255
+13
+cModel Technology
+dZ:\Timer\my_project\MY_PROJECT_LIB1\work
+vBCDCounter
+I>HAn_gF7fo=gFKjVY;I?]2
+V1khN]11z7kW7o4hWH3WOc2
+w1139313810
+FC:/FPGAdv72LS/Hds/examples/tutorial_ref/Import/Timer/Timer_BCDCounter.v
+L0 6
+V1khN]11z7kW7o4hWH3WOc2
+OE;L;6.1c;31
+r1
+31
+o-work Z:/Timer/my_project/MY_PROJECT_LIB1/work -nologo
+tGenerateLoopIterationMax 100000
+n@b@c@d@counter

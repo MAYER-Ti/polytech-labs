@@ -1,0 +1,8 @@
+
+State Machine - |insertion_sorter|state
+Name state.LOAD state.SORT_OUTER state.SORT_INNER state.IDLE state.DONE 
+state.IDLE 0 0 0 0 0 
+state.SORT_INNER 0 0 1 1 0 
+state.SORT_OUTER 0 1 0 1 0 
+state.LOAD 1 0 0 1 0 
+state.DONE 0 0 0 1 1 

@@ -1,0 +1,164 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L11 is inst15~8 at LC_X48_Y30_N0
+--operation mode is normal
+
+A1L11 = !r6 & !r7;
+
+
+--A1L51 is inst18~9 at LC_X48_Y30_N9
+--operation mode is normal
+
+A1L51 = !r4 & !r3 & !r5 & A1L11;
+
+
+--inst20 is inst20 at LC_X48_Y30_N8
+--operation mode is normal
+
+inst20 = r0 & !r2 & !r1 & A1L51;
+
+
+--inst19 is inst19 at LC_X48_Y30_N6
+--operation mode is normal
+
+inst19 = !r2 & r1 & A1L51;
+
+
+--inst18 is inst18 at LC_X48_Y30_N2
+--operation mode is normal
+
+inst18 = r2 & A1L51;
+
+
+--inst17 is inst17 at LC_X48_Y30_N1
+--operation mode is normal
+
+inst17 = !r4 & r3 & !r5 & A1L11;
+
+
+--inst16 is inst16 at LC_X48_Y30_N5
+--operation mode is normal
+
+inst16 = r4 & !r6 & !r5 & !r7;
+
+
+--inst15 is inst15 at LC_X48_Y30_N4
+--operation mode is normal
+
+inst15 = r5 & !r6 & !r7;
+
+
+--inst14 is inst14 at LC_X48_Y30_N3
+--operation mode is normal
+
+inst14 = r6 & !r7;
+
+
+--r7 is r7 at PIN_B7
+--operation mode is input
+
+r7 = INPUT();
+
+
+--r6 is r6 at PIN_A6
+--operation mode is input
+
+r6 = INPUT();
+
+
+--r3 is r3 at PIN_A4
+--operation mode is input
+
+r3 = INPUT();
+
+
+--r4 is r4 at PIN_F7
+--operation mode is input
+
+r4 = INPUT();
+
+
+--r5 is r5 at PIN_J7
+--operation mode is input
+
+r5 = INPUT();
+
+
+--r0 is r0 at PIN_E6
+--operation mode is input
+
+r0 = INPUT();
+
+
+--r2 is r2 at PIN_C6
+--operation mode is input
+
+r2 = INPUT();
+
+
+--r1 is r1 at PIN_D6
+--operation mode is input
+
+r1 = INPUT();
+
+
+--a0 is a0 at PIN_B5
+--operation mode is output
+
+a0 = OUTPUT(inst20);
+
+
+--a1 is a1 at PIN_K7
+--operation mode is output
+
+a1 = OUTPUT(inst19);
+
+
+--a2 is a2 at PIN_A5
+--operation mode is output
+
+a2 = OUTPUT(inst18);
+
+
+--a3 is a3 at PIN_E5
+--operation mode is output
+
+a3 = OUTPUT(inst17);
+
+
+--a4 is a4 at PIN_D5
+--operation mode is output
+
+a4 = OUTPUT(inst16);
+
+
+--a5 is a5 at PIN_C5
+--operation mode is output
+
+a5 = OUTPUT(inst15);
+
+
+--a6 is a6 at PIN_C4
+--operation mode is output
+
+a6 = OUTPUT(inst14);
+
+
+--a7 is a7 at PIN_B6
+--operation mode is output
+
+a7 = OUTPUT(r7);
+
+
+

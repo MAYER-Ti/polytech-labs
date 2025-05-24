@@ -1,0 +1,161 @@
+
+     PAÇÄEË:    CÈHÃÓËßPHOE PAÇËOÆEHÈE
+
+     ÏPOÃPAMMA: SVD
+
+     HAÇHA×EHÈE:ÏOÄÏPOÃPAMMA BÛ×ÈCËßET CÈHÃÓËßPHOE PAÇËOÆEHÈE
+                     T
+                A=USV  ÄEÉCTBÈTEËÜHOÉ ÏPßMOÓÃOËÜHOÉ MATPÈÖÛ A
+                C PAÇMEPAMÈ M È N. ÏPÈ ÝTOM ÈCÏOËÜÇÓÞTCß
+                ÄBÓXÄÈAÃOHAËÈÇAÖÈß ÏOCPEÄCTBOM XAÓCXOËÄEPOBÛX
+                OTPAÆEHÈÉ È BAPÈAHT QR-AËÃOPÈTMA.
+
+1. OÏÈCAHÈE ÏOÄÏPOÃPAMMÛ È EE ÔOPMAËÜHÛE  ÏAPAMETPÛ
+
+      SUBROUTINE SVD(NM,M,N,A,W,MATU,U,MATV,V,IERR,RV1)
+C
+      INTEGER I,J,K,L,M,N,II,I1,KK,K1,LL,L1,MN,NM,ITS,IERR
+      REAL    A(NM,N),W(N),U(NM,N),V(NM,N),RV1(N)
+C
+C  BXOÄHÛE ÏAPAMETPÛ
+C
+C     NM   CËEÄÓET ÏOËOÆÈTÜ PABHÛM CTPO×HOÉ PAÇMEPHOCTÈ
+C          ÄBÓXMEPHÛX MACCÈBOB ,ÇAßBËEHHOÉ B OÏEPATOPE PAÇ-
+C          MEPHOCTÈ BÛÇÛBAÞÙEÉ ÏPOÃPAMMÛ. ÇAMETÈM, ×TO NM
+C          ÄOËÆHO ÁÛTÜ H  MEHÜØE,×EM MAKCÈMÓM ÈÇ M È N.
+C
+C     M    ×ÈCËO CTPOK A (È U).
+C
+C     N    ×ÈCËO CTOËÁÖOB A (È U) È ÏOPßÄOK V.
+C
+C     A    COÄEPÆÈT ÏPßMOÓÃOËÜHÓÞ BXOÄHÓÞ MATPÈÖÓ, ÄËß
+C          KOTOPOÉ HAXOÄÈTCß  PAÇËOÆEHÈE.
+C
+C     MATU ÄOËÆEH ÈMETÜ ÇHA×EHÈE .TRUE., ECËÈ HÓÆHO
+C          BÛ×ÈCËßTÜ MATPÈÖÓ U ÈÇ PAÇËOÆEHÈß, È ÇHA×EHÈE
+C          .FALSE. B ÏPOTÈBHOM CËÓ×AE.
+C
+C     MATV ÄOËÆEH ÈMETÜ ÇHA×EHÈE .TRUE., ECËÈ HÓÆHO
+C          BÛ×ÈCËßTÜ MATPÈÖÓ V ÈÇ PAÇËOÆEHÈß, È ÇHA×EHÈE
+C          .FALSE. B ÏPOTÈBHOM CËÓ×AE.
+C
+C  BÛXOÄHÛE ÏAPAMETPÛ
+C
+C     A    HE ÈÇMEHßETCß (ECËÈ HA EE MECTE HE ÇAÏÈCÛBAÞTCß
+C          U ËÈÁO V).
+C
+C     W    COÄEPÆÈT N (HEOTPÈÖATEËÜHÛX) CÈHÃÓËßPHÛX ×ÈCEË
+C          A (ÄÈAÃOHAËÜHÛX ÝËEMEHTOB S). OHÈ HE ÓÏOPßÄO×EHÛ.
+C          ECËÈ ÏPOÈCXOÄÈT BÛXOÄ ÏO OØÈÁKE, TO ÄËß ÇHA×EHÈÉ
+C          IERR+1, IERR+2,...,N CÈHÃÓ ËßPHÛE ×ÈCËA ÄOËÆHÛ
+C          ÁÛTÜ BEPHÛ.
+C
+C     U    COÄEPÆÈT MATPÈÖÓ U (C OPTOÃOHAËÜHÛMÈ CTOËÁÖAMÈ)
+C          ÈÇ PAÇËOÆEHÈß, ECËÈ ÄËß ÏAPAMETPA MATU ÁÛËO
+C          ÇAÄAHO ÇHA×EHÈE .TRUE. B ÏPOTÈBHOM CËÓ×AE HA U
+C          ÈCÏOËÜÇÓETCß KAK BPEMEHHÛÉ MACCÈB. U TAKÆE MOÆET
+C          COBÏAÄATÜ C A. ECËÈ ÏPOÈCXOÄÈT BÛXOÄ
+C          ÏO OØÈÁKE, TO CTOËÁÖÛ U, COOTBETCTBÓÞÙÈE ÈHÄEKCAM
+C          BEPHÛX CÈHÃÓËßPHÛX ×ÈCEË, ÄOËÆHÛ ÁÛTÜ TAKÆE BEPHÛ.
+C
+C     V    COÄEPÆÈT MATPÈÖÓ V (OPTOÃOHAËÜHÓÞ) ÈÇ PAÇËOÆEHÈß,
+C          ECËÈ ÄËß ÏAPAMETPA MATV ÁÛËO ÇAÄAHO ÇHA×EHÈE
+C          .TRUE. B ÏPOTÈBHOM CËÓ×AE HA V HE ÏPOÈÇBOÄÈTCß
+C          CCÛËOK. V TAKÆE MOÆET COBÏAÄATÜ C  A, ECËÈ U HE
+C          BÛ×ÈCËßETCß. ECËÈ ÏPOÈCXOÄÈT BÛXOÄ ÏO OØÈÁKE,
+C          TO CTOËÁÖÛ V, COOTBETCTBÓÞÙÈE ÈHÄEKCAM BEPHÛX
+C          CÈHÃÓËßPHÛX ×ÈCEË, ÄOËÆHÛ ÁÛTÜ TAKÆE BEPHÛ.
+C
+C     IERR PABHO
+C            0,  ECËÈ ÏPOÈCXOÄÈT HOPMAËÜHÛÉ BÛXOÄ ÈÇ ÏOÄÏPOÃ-
+C                PAMMÛ,
+C            K,  ECËÈ K-E CÈHÃÓËßPHOE ×ÈCËO HE ÁÛËO OÏPEÄE-
+C                ËEHO ÏOCËE 30 ÈTEPAÖÈÉ.
+C
+C  PAÁO×ÈE ÏAPAMETPÛ
+C
+C     RV1  ÝTO MACCÈB ÏPOMEÆÓTO×HOÃO XPAHEHÈß.
+C
+
+2. ÄËß TOÃO ×TOÁÛ HAÉTÈ PAÇËOÆEHÈE MATPÈÖÛ A
+   HEOÁXOÄÈMO:
+
+   1. OÏÈCATÜ B BÛÇÛBAÞÙEÉ ÏPOÃPAMME BCE ÏEPEMEHHÛE
+      È MACCÈBÛ, ßBËßÞÙÈECß ÏAPAMETPAMÈ ÏOÄÏPOÃPAMMÛ
+
+   2. ÇAÄATÜ ÇHA×EHÈß BXOÄHÛX ÏAPAMETPOB:
+
+
+   3. BÛÇBATÜ ÏOÄÏPOÃPAMMÓ SVD OÏEPATOPOM
+
+      CALL SVD(NM,M,N,A,W,MATU,U,MATV,V,IERR,RV1)
+
+3. ÏPÈMEP ÈCÏOËÜÇOBAHÈß ÏOÄÏPOÃPAMMÛ.
+
+C     ÈËËÞCTPÈPÓÞÙAß ÏPOÃPAMMA ÄËß SVD
+C
+      REAL A(5,3),U(5,3),V(5,3),SIGMA(5),WORK(5)
+      INTEGER I,IERR,J,M,N,NM
+      NM=5
+      M=5
+      N=3
+      DO 1 I=1,M
+      DO 1 J=1,N
+        A(I,J)=I+(J-1)*M
+   1  CONTINUE
+C
+      CALL SVD(NM,M,N,A,SIGMA,.TRUE.,U,.TRUE.,V,IERR,WORK)
+C
+      IF(IERR.NE.0) WRITE (6,2) IERR
+   2  FORMAT(' TROUBLE IERR=',I4)
+      DO 3 J=1,N
+         WRITE (6,6) SIGMA(J)
+   3  CONTINUE
+      WRITE (6,7)
+      DO 4 I=1,M
+        WRITE (6,6) (U(I,J),J=1,N)
+   4  CONTINUE
+      WRITE (6,7)
+      DO 5 I=1,N
+        WRITE (6,6) (V(I,J),J=1,N)
+   5  CONTINUE
+   6  FORMAT(3F10.6)
+   7  FORMAT(1H )
+      STOP
+      END
+
+   B PEÇÓËÜTATE EE BÛÏOËHEHÈß ÁÓÄET ÏOËÓ×EHO
+
+       35.127121
+        2.465384
+        0.000006
+
+       -0.354556 -0.688685  0.607387
+       -0.398696 -0.375556 -0.731421
+       -0.442836 -0.062423 -0.204670
+       -0.486975  0.250709  0.174067
+       -0.531115  0.563842  0.154638
+
+       -0.201665  0.890317 -0.408248
+       -0.516829  0.257331  0.816495
+       -0.831995 -0.375654 -0.408248
+
+4. ÇAME×AHÈß
+
+   1. PEÇÓËÜTATÛ ÏOËÓ×EHÛ HA EC-1045 (TPAHCËßTOP FORTOE)
+
+   2. HA HEKOTOPÛX MAØÈHAX ÇHAKÈ CTOËÁÖOB MATPÈÖ U È V
+      MOÃÓT ÁÛTÜ ÄPÓÃÈE
+
+   3. AHAËOÃ ÏOÄÏPOÃPAMMÛ SVD, HO C ÄBOÉHOÉ TO×HOCTÜÞ -
+      ÏOÄÏPOÃPAMMA DSVD. ÏOCËEÄOBATEËÜHOCTÜ ÓKAÇAHÈß
+      ÏAPAMETPOB ÏPÈ BÛÇOBE ÏOÄÏPOÃAMMÛ DSVD TA ÆE,
+      ×TO È Ó SVD, ÇA ÈCKËÞ×EHÈEM TOÃO, ×TO ÏEPEMEHHÛE
+      A,W,U,V,RV1 ÈMEÞT TÈÏ DOUBLE PRECISION
+
+5. ËÈTEPATÓPA
+
+   1. ÔOPCAÉT ÄÆ.,MAËÜKOËÜM M., MOÓËEP K.
+      MAØÈHHÛE METOÄÛ MATEMATÈ×ECKÈX BÛ×ÈCËEHÈÉ.
+      M.: MÈP, 1980, C.210 - 259.
+

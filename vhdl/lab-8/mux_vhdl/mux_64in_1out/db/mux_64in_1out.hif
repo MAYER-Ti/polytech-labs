@@ -1,0 +1,82 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+mux_64in_1out
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+mux_64in_1out_vhdl.vhd
+1732971938
+4
+# storage
+db|mux_64in_1out.(0).cnf
+db|mux_64in_1out.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# entity
+mux_vhdl
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+mux_vhdl.vhd
+1732970035
+4
+# storage
+db|mux_64in_1out.(1).cnf
+db|mux_64in_1out.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+mux_vhdl:\initFirst16Mux:0:firstMuxes
+mux_vhdl:\initFirst16Mux:1:firstMuxes
+mux_vhdl:\initFirst16Mux:2:firstMuxes
+mux_vhdl:\initFirst16Mux:3:firstMuxes
+mux_vhdl:\initFirst16Mux:4:firstMuxes
+mux_vhdl:\initFirst16Mux:5:firstMuxes
+mux_vhdl:\initFirst16Mux:6:firstMuxes
+mux_vhdl:\initFirst16Mux:7:firstMuxes
+mux_vhdl:\initFirst16Mux:8:firstMuxes
+mux_vhdl:\initFirst16Mux:9:firstMuxes
+mux_vhdl:\initFirst16Mux:10:firstMuxes
+mux_vhdl:\initFirst16Mux:11:firstMuxes
+mux_vhdl:\initFirst16Mux:12:firstMuxes
+mux_vhdl:\initFirst16Mux:13:firstMuxes
+mux_vhdl:\initFirst16Mux:14:firstMuxes
+mux_vhdl:\initFirst16Mux:15:firstMuxes
+mux_vhdl:\initSecond4Mux:0:secondMuxes
+mux_vhdl:\initSecond4Mux:1:secondMuxes
+mux_vhdl:\initSecond4Mux:2:secondMuxes
+mux_vhdl:\initSecond4Mux:3:secondMuxes
+mux_vhdl:muxLast
+}
+# end
+# complete
+
